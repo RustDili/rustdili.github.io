@@ -1,0 +1,12 @@
+span.caption {
+	font-size: .8em;
+	font-weight: 600;
+}
+span.filename {
+	font-size: .85em;
+	font-weight: 500;
+}
+span.caption code {
+	font-size: 0.875em;
+	font-weight: 400
+}

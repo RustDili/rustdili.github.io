@@ -1,0 +1,976 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Rust Programlama Dili</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="custom.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { } 
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <ol class="chapter"><li class="affix"><a href="title-page.html">Rust Programlama Dili</a></li><li class="affix"><a href="foreword.html">Önsöz</a></li><li class="affix"><a href="ch00-00-introduction.html">Giriş</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> Başlarken</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> Kurulum</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Merhaba, Dünya</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Merhaba, Cargo</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> Bir Tahmin Oyunu Programlamak</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> Ortak Programlama Kavramları</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> Değişkenler ve Değişkenlik</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> Veri Türleri</a></li><li><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> İşlevler</a></li><li><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> Yorumlar</a></li><li><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> Kontrol Akışı</a></li></ol></li><li><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> Mülkiyeti Anlamak</a></li><li><ol class="section"><li><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> Mülkiyet Nedir?</a></li><li><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> Referanslar ve Borçlanma</a></li><li><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> Dilim Türü</a></li></ol></li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> İlişkili Verileri Yapılandırmak için Yapıları Kullanmak</a></li><li><ol class="section"><li><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> Yapıları Tanımlamak ve Örneklemek</a></li><li><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> Yapıları Kullanan Örnek Bir Program</a></li><li><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> Metod Sözdizimi</a></li></ol></li><li><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> Sıralamalar ve Örüntü Eşleme</a></li><li><ol class="section"><li><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> Bir Sıralama Tanımlamak</a></li><li><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> Kontrol Akışı İşleci match</a></li><li><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> if let ile Kısa Kontrol Akışı</a></li></ol></li><li><a href="ch07-00-managing-growing-projects-with-packages-crates-and-modules.html"><strong aria-hidden="true">7.</strong> Büyüyen Projeleri Paketler, Sandıklar ve Modüller ile Yönetmek</a></li><li><ol class="section"><li><a href="ch07-01-packages-and-crates.html"><strong aria-hidden="true">7.1.</strong> Paketler ve Sandıklar</a></li><li><a href="ch07-02-defining-modules-to-control-scope-and-privacy.html"><strong aria-hidden="true">7.2.</strong> Kapsam ve Gizlilik Kontrolü İçin Modül Tanımlamak</a></li><li><a href="ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html"><strong aria-hidden="true">7.3.</strong> Modül Ağacındaki Bir Öğeye Başvurmanın Yolları</a></li><li><a href="ch07-04-bringing-paths-into-scope-with-the-use-keyword.html"><strong aria-hidden="true">7.4.</strong> use Anahtar Kelimesi ile Yolları Kapsama Getirmek</a></li><li><a href="ch07-05-separating-modules-into-different-files.html"><strong aria-hidden="true">7.5.</strong> Modülleri Farklı Dosyalara Ayırmak</a></li></ol></li><li><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> Ortak Koleksiyonlar</a></li><li><ol class="section"><li><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> Değer Listelerini Vektör Kullanarak Depolamak</a></li><li><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> Dizgelerle UTF-8 Kodlu Metinleri Saklamak</a></li><li><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> İlişkili Değerlere Sahip Anahtarları Eşleme Haritalarında Saklamak</a></li></ol></li><li><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> Hata Yönetimi</a></li><li><ol class="section"><li><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> panic! ile Kurtarılamaz Hatalar</a></li><li><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Result ile Kurtarılabilir Hatalar</a></li><li><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> panic! Olmak ya da panic! Olmamak</a></li></ol></li><li><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> Genellenmiş Türler, Özellikler ve Yaşam Süreleri</a></li><li><ol class="section"><li><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> Genellenmiş Veri Türleri</a></li><li><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> Özellikler: Paylaşılan Davranışı Tanımlamak</a></li><li><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> Referansları Yaşam Süreleri ile  Doğrulamak</a></li></ol></li><li><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> Otomatik Testler Yazmak</a></li><li><ol class="section"><li><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> Testler Nasıl Yazılır?</a></li><li><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> Testlerin Nasıl Çalıştırılacağını Denetlemek</a></li><li><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> Test Organizasyonu</a></li></ol></li><li><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> Bir I/O Projesi: Komut Satırı Programı Oluşturmak</a></li><li><ol class="section"><li><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> Komut Satırı Argümanlarını Kabul Etmek</a></li><li><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> Bir Dosyayı Okumak</a></li><li><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> Modülerlik ve Hata Yönetimini Geliştirmek İçin Yeniden Düzenlemek</a></li><li><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> Test Odaklı Geliştirme ile Kütüphane İşlevselliğini Artırmak</a></li><li><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> Ortam Değişkenleriyle Çalışmak</a></li><li><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> Hata Mesajlarını Standart Çıktı Yerine Standart Hataya Yazmak</a></li></ol></li><li><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> İşlevsel Dil Özellikleri: Yineleyiciler ve Kapamalar</a></li><li><ol class="section"><li><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler</a></li><li><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> Yineleyiciler ile Bir Dizi Öğeyi İşlemek</a></li><li><a href="ch13-03-improving-our-io-project.html"><strong aria-hidden="true">13.3.</strong> I/O Projemizi Geliştirmek</a></li><li><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> Performans Karşılaştırması: Döngüler vs. Yineleyiciler</a></li></ol></li><li><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> Cargo ve Crates.io Hakkında Daha Fazla Bilgi</a></li><li><ol class="section"><li><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> Sürüm Profilleriyle Derlemeleri Özelleştirmek</a></li><li><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Bir Sandığı Crates.io Üzerinde Yayınlamak</a></li><li><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo Çalışma Alanları</a></li><li><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> Crates.io Üzerindeki İkili Sandıkları cargo install Komutuyla Yüklemek</a></li><li><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> Özel Komutlarla Cargo Olanaklarını Genişletmek</a></li></ol></li><li><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> Akıllı İşaretçiler</a></li><li><ol class="section"><li><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Heap Üzerindeki Verilere İşaret Etmek İçin Box<T> Kullanmak</a></li><li><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Deref Özelliği ile Akıllı İşaretçilere Normal Referanslar Gibi Davranmak</a></li><li><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Drop Özelliği ile Kodu Temizlik Amaçlı Çalıştırmak</a></li><li><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc<T>, Referans Sayılı Akıllı İşaretçi</a></li><li><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell<T> ve İç Değişkenlik Modeli</a></li><li><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> Referans Çevrimleri Bellek Sızıntısına Yol Açabilir</a></li></ol></li><li><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> Korkusuz Eşzamanlılık</a></li><li><ol class="section"><li><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> Eşzamanlı Kod Çalıştırmak İçin İşlikleri Kullanmak</a></li><li><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> İşlikler Arasında Veri Aktarmak Amacıyla Mesajlaşma</a></li><li><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> Durum Paylaşımlı Eşzamanlılık</a></li><li><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> Sync and Send Özellikleri ile Genişletilebilir Eşzamanlılık</a></li></ol></li><li><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> Rust'ın Nesne Yönelimli Programlama Özellikleri</a></li><li><ol class="section"><li><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> Nesne Yönelimli Dillerin Özellikleri</a></li><li><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> Farklı Türden Değerlere İzin Veren Özellik Nesnelerini Kullanmak</a></li><li><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> Nesne Yönelimli Tasarım Kalıbı Uygulamak</a></li></ol></li><li><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> Örüntü ve Eşleme</a></li><li><ol class="section"><li><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> Örüntüler Her Yerde Kullanılabilir</a></li><li><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> Çürütülebilirlik: Bir Örüntünün Eşleşmeme İhtimali</a></li><li><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> Örüntü Sözdizimi</a></li></ol></li><li><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> Gelişmiş Özellikler</a></li><li><ol class="section"><li><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> Emniyetsiz Rust</a></li><li><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.2.</strong> Gelişmiş Özellikler</a></li><li><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.3.</strong> Gelişmiş Türler</a></li><li><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.4.</strong> Gelişmiş İşlev ve Kapamalar</a></li><li><a href="ch19-06-macros.html"><strong aria-hidden="true">19.5.</strong> Makrolar</a></li></ol></li><li><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> Final Projesi: Çok İşlikli Web Sunucusu Oluşturmak</a></li><li><ol class="section"><li><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> Tek İşlikli Bir Web Sunucusu Oluşturmak</a></li><li><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> Tek İşlikli Sunucumuzu Çok İşlikli Bir Sunucuya Dönüştürmek</a></li><li><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> Sorunsuzca Kapatmak ve Temizlik</a></li></ol></li><li><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Ekler</a></li><li><ol class="section"><li><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - Anahtar Kelimeler</a></li><li><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - İşleçler ve Semboller</a></li><li><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - Türetilebilir Özellikler</a></li><li><a href="appendix-04-useful-development-tools.html"><strong aria-hidden="true">21.4.</strong> D - Faydalı Geliştirme Araçları</a></li><li><a href="appendix-05-editions.html"><strong aria-hidden="true">21.5.</strong> E - Sürümler</a></li><li><a href="appendix-06-translation.html"><strong aria-hidden="true">21.6.</strong> F - Kitabın Çevirileri</a></li><li><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - Rust Nasıl “Nightly Rust” Yapılır? </a></li></ol></li></ol>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
+                                <i id="git-repository-button" class="fa fa-github"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <a class="header" href="#rust-programlama-dili" id="rust-programlama-dili"><h1>Rust Programlama Dili</h1></a>
+<a class="header" href="#Önsöz" id="Önsöz"><h1>Önsöz</h1></a>
+<a class="header" href="#giriş" id="giriş"><h1>Giriş</h1></a>
+<a class="header" href="#başlarken" id="başlarken"><h1>Başlarken</h1></a>
+<a class="header" href="#kurulum" id="kurulum"><h1>Kurulum</h1></a>
+<a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h1>Merhaba, Dünya</h1></a>
+<a class="header" href="#merhaba-cargo" id="merhaba-cargo"><h1>Merhaba, Cargo</h1></a>
+<a class="header" href="#bir-tahmin-oyunu-programlamak" id="bir-tahmin-oyunu-programlamak"><h1>Bir Tahmin Oyunu Programlamak</h1></a>
+<a class="header" href="#ortak-programlama-kavramları" id="ortak-programlama-kavramları"><h1>Ortak Programlama Kavramları</h1></a>
+<a class="header" href="#değişkenler-ve-değişkenlik" id="değişkenler-ve-değişkenlik"><h2>Değişkenler ve Değişkenlik</h2></a>
+<a class="header" href="#veri-türleri" id="veri-türleri"><h2>Veri Türleri</h2></a>
+<a class="header" href="#İşlevler" id="İşlevler"><h2>İşlevler</h2></a>
+<a class="header" href="#yorumlar" id="yorumlar"><h2>Yorumlar</h2></a>
+<a class="header" href="#kontrol-akışı" id="kontrol-akışı"><h2>Kontrol Akışı</h2></a>
+<a class="header" href="#mülkiyeti-anlamak" id="mülkiyeti-anlamak"><h1>Mülkiyeti Anlamak</h1></a>
+<p>Mülkiyet kavramı, Rust’ın bellek garantilerini bir çöp toplayıcı mekanizmasına gerek duymadan vermesini sağlayan benzersiz bir özelliktir. Bu nedenle, Rust’ ta mülkiyetin nasıl çalıştığını anlamak oldukça önemlidir. Bu bölümde mülkiyetin yanı sıra bu kavramla ilişkili; borçlanma, dilimler ve Rust’ın verileri belleğe nasıl yerleştirdiğinden bahsedeceğiz.</p>
+<a class="header" href="#mülkiyet-nedir" id="mülkiyet-nedir"><h2>Mülkiyet Nedir?</h2></a>
+<a class="header" href="#referanslar-ve-borçlanma" id="referanslar-ve-borçlanma"><h2>Referanslar ve Borçlanma</h2></a>
+<a class="header" href="#dilim-türü" id="dilim-türü"><h2>Dilim Türü</h2></a>
+<a class="header" href="#İlişkili-verileri-yapılandırmak-için-yapıları-kullanmak" id="İlişkili-verileri-yapılandırmak-için-yapıları-kullanmak"><h1>İlişkili Verileri Yapılandırmak için Yapıları Kullanmak</h1></a>
+<a class="header" href="#yapıları-tanımlamak-ve-Örneklemek" id="yapıları-tanımlamak-ve-Örneklemek"><h2>Yapıları Tanımlamak ve Örneklemek</h2></a>
+<a class="header" href="#yapıları-kullanan-Örnek-bir-program" id="yapıları-kullanan-Örnek-bir-program"><h2>Yapıları Kullanan Örnek Bir Program</h2></a>
+<a class="header" href="#metod-sözdizimi" id="metod-sözdizimi"><h2>Metod Sözdizimi</h2></a>
+<a class="header" href="#sıralamalar-ve-Örüntü-eşleme" id="sıralamalar-ve-Örüntü-eşleme"><h1>Sıralamalar ve Örüntü Eşleme</h1></a>
+<a class="header" href="#bir-sıralama-tanımlamak" id="bir-sıralama-tanımlamak"><h2>Bir Sıralama Tanımlamak</h2></a>
+<a class="header" href="#kontrol-akışı-İşleci-match" id="kontrol-akışı-İşleci-match"><h2>Kontrol Akışı İşleci <code>match</code></h2></a>
+<a class="header" href="#if-let-ile-kısa-kontrol-akışı" id="if-let-ile-kısa-kontrol-akışı"><h2><code>if let</code> ile Kısa Kontrol Akışı</h2></a>
+<a class="header" href="#büyüyen-projeleri-paketler-sandıklar-ve-modüller-ile-yönetmek" id="büyüyen-projeleri-paketler-sandıklar-ve-modüller-ile-yönetmek"><h1>Büyüyen Projeleri Paketler, Sandıklar ve Modüller ile Yönetmek</h1></a>
+<a class="header" href="#paketler-ve-sandıklar" id="paketler-ve-sandıklar"><h2>Paketler ve Sandıklar</h2></a>
+<a class="header" href="#kapsam-ve-gizlilik-kontrolü-İçin-modül-tanımlamak" id="kapsam-ve-gizlilik-kontrolü-İçin-modül-tanımlamak"><h2>Kapsam ve Gizlilik Kontrolü İçin Modül Tanımlamak</h2></a>
+<a class="header" href="#modül-ağacındaki-bir-Öğeye-başvurmanın-yolları" id="modül-ağacındaki-bir-Öğeye-başvurmanın-yolları"><h2>Modül Ağacındaki Bir Öğeye Başvurmanın Yolları</h2></a>
+<a class="header" href="#use-anahtar-kelimesi-ile-yolları-kapsama-getirmek" id="use-anahtar-kelimesi-ile-yolları-kapsama-getirmek"><h2><code>use</code> Anahtar Kelimesi ile Yolları Kapsama Getirmek</h2></a>
+<a class="header" href="#modülleri-farklı-dosyalara-ayırmak" id="modülleri-farklı-dosyalara-ayırmak"><h2>Modülleri Farklı Dosyalara Ayırmak</h2></a>
+<a class="header" href="#ortak-koleksiyonlar" id="ortak-koleksiyonlar"><h1>Ortak Koleksiyonlar</h1></a>
+<a class="header" href="#değer-listelerini-vektör-kullanarak-depolamak" id="değer-listelerini-vektör-kullanarak-depolamak"><h2>Değer Listelerini Vektör Kullanarak Depolamak</h2></a>
+<a class="header" href="#dizgelerle-utf-8-kodlu-metinleri-saklamak" id="dizgelerle-utf-8-kodlu-metinleri-saklamak"><h2>Dizgelerle UTF-8 Kodlu Metinleri Saklamak</h2></a>
+<a class="header" href="#İlişkili-değerlere-sahip-anahtarları-eşleme-haritalarında-saklamak" id="İlişkili-değerlere-sahip-anahtarları-eşleme-haritalarında-saklamak"><h2>İlişkili Değerlere Sahip Anahtarları Eşleme Haritalarında Saklamak</h2></a>
+<a class="header" href="#hata-yönetimi" id="hata-yönetimi"><h1>Hata Yönetimi</h1></a>
+<a class="header" href="#panic-ile-kurtarılamayan-hatalar" id="panic-ile-kurtarılamayan-hatalar"><h2><code>panic!</code> ile Kurtarılamayan Hatalar</h2></a>
+<a class="header" href="#result-ile-kurtarılabilir-hatalar" id="result-ile-kurtarılabilir-hatalar"><h2><code>Result</code> ile Kurtarılabilir Hatalar</h2></a>
+<a class="header" href="#panic-olmak-ya-da-panic-olmamak" id="panic-olmak-ya-da-panic-olmamak"><h2><code>panic!</code> Olmak ya da <code>panic!</code> Olmamak</h2></a>
+<a class="header" href="#genellenmiş-türler-Özellikler-ve-yaşam-süreleri" id="genellenmiş-türler-Özellikler-ve-yaşam-süreleri"><h1>Genellenmiş Türler, Özellikler ve Yaşam Süreleri</h1></a>
+<a class="header" href="#genellenmiş-veri-türleri" id="genellenmiş-veri-türleri"><h2>Genellenmiş Veri Türleri</h2></a>
+<a class="header" href="#Özellikler-paylaşılan-davranışı-tanımlamak" id="Özellikler-paylaşılan-davranışı-tanımlamak"><h2>Özellikler: Paylaşılan Davranışı Tanımlamak</h2></a>
+<a class="header" href="#referansları-yaşam-süreleri-ile--doğrulamak" id="referansları-yaşam-süreleri-ile--doğrulamak"><h2>Referansları Yaşam Süreleri ile  Doğrulamak</h2></a>
+<a class="header" href="#otomatik-testler-yazmak" id="otomatik-testler-yazmak"><h1>Otomatik Testler Yazmak</h1></a>
+<a class="header" href="#testler-nasıl-yazılır" id="testler-nasıl-yazılır"><h2>Testler Nasıl Yazılır?</h2></a>
+<a class="header" href="#testlerin-nasıl-Çalıştırılacağını-denetlemek" id="testlerin-nasıl-Çalıştırılacağını-denetlemek"><h2>Testlerin Nasıl Çalıştırılacağını Denetlemek</h2></a>
+<a class="header" href="#test-organizasyonu" id="test-organizasyonu"><h2>Test Organizasyonu</h2></a>
+<a class="header" href="#bir-io-projesi-komut-satırı-programı-oluşturmak" id="bir-io-projesi-komut-satırı-programı-oluşturmak"><h1>Bir I/O Projesi: Komut Satırı Programı Oluşturmak</h1></a>
+<a class="header" href="#komut-satırı-argümanlarını-kabul-etmek" id="komut-satırı-argümanlarını-kabul-etmek"><h2>Komut Satırı Argümanlarını Kabul Etmek</h2></a>
+<a class="header" href="#bir-dosyayı-okumak" id="bir-dosyayı-okumak"><h2>Bir Dosyayı Okumak</h2></a>
+<a class="header" href="#modülerlik-ve-hata-yönetimini-geliştirmek-İçin-yeniden-düzenlemek" id="modülerlik-ve-hata-yönetimini-geliştirmek-İçin-yeniden-düzenlemek"><h2>Modülerlik ve Hata Yönetimini Geliştirmek İçin Yeniden Düzenlemek</h2></a>
+<a class="header" href="#test-odaklı-geliştirme-ile-kütüphane-İşlevselliğini-artırmak" id="test-odaklı-geliştirme-ile-kütüphane-İşlevselliğini-artırmak"><h2>Test Odaklı Geliştirme ile Kütüphane İşlevselliğini Artırmak</h2></a>
+<a class="header" href="#ortam-değişkenleriyle-Çalışmak" id="ortam-değişkenleriyle-Çalışmak"><h2>Ortam Değişkenleriyle Çalışmak</h2></a>
+<a class="header" href="#hata-mesajlarını-standart-Çıktı-yerine-standart-hataya-yazmak" id="hata-mesajlarını-standart-Çıktı-yerine-standart-hataya-yazmak"><h2>Hata Mesajlarını Standart Çıktı Yerine Standart Hataya Yazmak</h2></a>
+<a class="header" href="#İşlevsel-dil-Özellikleri-yineleyiciler-ve-kapamalar" id="İşlevsel-dil-Özellikleri-yineleyiciler-ve-kapamalar"><h1>İşlevsel Dil Özellikleri: Yineleyiciler ve Kapamalar</h1></a>
+<p>Rust’un tasarımında mevcut birçok dil ve teknikten esinlenilmesinin dile en önemli katkısı işlevsel programlama olmuştur. İşlevsel programlamanın temelindeyse; işlevleri bağımsız değişkenlere geçirirerek değer olarak kullanmak, başka işlevlerden değer döndürmek, elde edilen değerleri daha sonra kullanmak üzere değişkenlere atamak gibi işlemler bulunur.</p>
+<p>Bu bölümde, işlevsel programlamanın ne olup olmadığını tartışmak yerine Rust’ın, işlevsel olarak adlandırılan birçok dildeki özelliklere benzer bazı özelliklerini tartışacağız.</p>
+<p>Dahası özellikle şu konuları ele alacağız:</p>
+<ul>
+<li><em>Kapamalar</em>, bir değişkene depolanabilen işlev benzeri yapılar</li>
+<li><em>Yineleyiciler</em>, dizi öğelerini seri olarak işlemenin yolları</li>
+<li>Bu iki özeliğin, Bölüm 12’deki I/O projesini geliştirmek için kullanılması</li>
+<li>Ve bu özelliklerin performansı (Spoiler uyarısı: düşündüğünüzden daha hızlı!)</li>
+</ul>
+<p>Diğer bölümlerde ele aldığımız <strong>sıralamalar</strong> ve <strong>örüntü eşleme</strong> gibi diğer Rust özellikleri de işlevsel programlama tekniklerinden etkilenirler. Kapamalar ve yineleyicilerde uzmanlaşmak, hızlı ve deyimsel Rust kodları üretmenin önemli bir parçası olduğundan bu bölümün tamamını bu konulara ayıracağız.</p>
+<a class="header" href="#kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler" id="kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler"><h2>Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler</h2></a>
+<p>Rust’un kapamaları, bir değişkene kaydedebileceğiniz veya diğer işlevlere argüman olarak iletebileceğiniz isimsiz işlevlerdir. Kapamaları tek bir yerde oluşturabilir ve daha sonra farklı bir bağlamda değerlendirmek için yeniden çağırabilirsiniz. İşlevlerin aksine kapamalar, kullanacakları değerleri tanımlandıkları kapsamdan elde edebilirler. Kapamaların sahip olduğu bu özelliklerin, kodların yeniden kullanımına ve davranışlarının özelleştirilmesine nasıl izin verdiğini göstereceğiz.</p>
+<a class="header" href="#kapamalar-ile-bir-davranışı-soyutlamak" id="kapamalar-ile-bir-davranışı-soyutlamak"><h3>Kapamalar ile bir davranışı soyutlamak</h3></a>
+<p>Bir kapamayı daha sonra işletilmek üzere saklamanın yararlı olduğu bir örnek üzerinden ilerleyerek, kapama söz dizimi, tür çıkarımı ve özelliklerinden bahsedelim.</p>
+<p>Özel egzersiz planları üreten bir uygulama projesinde çalıştığımızı varsayalım. Egzersiz planlarını oluştururken kullanıcısının belirttiği; yaş, vücut kitle indeksi, egzersiz tercihleri, son egzersizler gibi birçok faktörü dikkate alan bu algoritmanın arka ucunu da Rust ile yazdığımızı düşünelim. Bu örnekte algoritmanın kullanılabilir olmasından ziyade birkaç saniye gibi kısa bir sürede çalışması beklendiğinden, algoritmayı bir kez ve sadece ihtiyacımız olduğunda çağararak kullanıcıyı boş yere bekletmek istemiyoruz.</p>
+<p>Bu varsayımsal algoritmayı örnek 13-1’ de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">use std::thread;
+use std::time::Duration; 
+
+fn simulated_expensive_calculation(intensity: u32) -&gt; u32 {
+    println!(&quot;yavaşça hesaplanıyor...&quot;);
+    thread::sleep(Duration::from_secs(2));
+    intensity
+}
+
+#fn main() { 
+#    simulated_expensive_calculation(10);
+#}
+</code></pre></pre>
+<p><span class="caption"> Örnek 13-1: İki saniyelik ayakta durma egzersizinde kullanılan ve çalışması iki saniye süren kurgusal hesaplama işlevi</span></p>
+<p>Bu programın bir sonraki önemli adımı ise, egzersiz uygulamasının bölümlerini içeren <code>main</code> işlevidir. Bu işlevdeyse kullanıcı bir egzersiz planı istediğinde uygulamanın çağıracağı kod yer alır. Çünkü uygulamanın ön ucuyla etkileşim, kapamaların kullanımıyla ilgili olmadığından, programımıza girdileri temsil eden değerleri kodlayacak ve ardından çıktıları yazdıracağız.</p>
+<p>İhtiyacımız olan girdiler şunlardır:</p>
+<ul>
+<li>Kullanıcının talep ettiği egzersizin düşük ya da yüksek yoğunluklu olduğunu gösteren bir egzersiz yoğunluk numarası</li>
+<li>Farklı antreman planlarının üretilmesini sağlayan rastgele bir sayı</li>
+</ul>
+<p>Çıktımız ise önerilen egzersiz planı olacaktır. Örnek 13-2 bu verilerin <code>main</code> işlevinde nasıl kullanıldığı gösterilir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+#fn simulated_expensive_calculation(intensity: u32) -&gt; u32 {
+#    println!(&quot;yavaşça hesaplanıyor...&quot;);
+#    thread::sleep(Duration::from_secs(2));
+#    intensity
+#}
+#
+#fn generate_workout(intensity: u32, random_number: u32) { 
+#    if intensity &lt; 25 { 
+#        println!( 
+#            &quot;Bugün, {} şınav çek!&quot;, 
+#            simulated_expensive_calculation(intensity) 
+#        ); 
+#        println!( 
+#            &quot;Sonrasında {} mekik çek!&quot;, 
+#            simulated_expensive_calculation(intensity) 
+#        ); 
+#    } else { 
+#        if random_number == 3 { 
+#            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;); 
+#        } else { 
+#            println!( 
+#                &quot;Bugün, {} dakika koş!&quot;, 
+#                simulated_expensive_calculation(intensity) 
+#            ); 
+#        } 
+#    }
+#}
+
+fn main() { 
+    let simulated_user_specified_value = 10;
+    let simulated_random_number = 7;
+    
+    generate_workout(
+        simulated_user_specified_value,
+        simulated_random_number
+    );
+}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-2: Kullanıcı girişi ve rastgele sayı oluşturmayı simüle etmek için kodlanmış değerlerden oluşan <code>main</code> işlevi</span></p>
+<p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm’ deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
+<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3’ te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+#fn simulated_expensive_calculation(intensity: u32) -&gt; u32 {
+#    println!(&quot;yavaşça hesaplanıyor...&quot;);
+#    thread::sleep(Duration::from_secs(2));
+#    intensity
+#}
+#
+fn generate_workout(intensity: u32, random_number: u32) { 
+    if intensity &lt; 25 { 
+        println!( 
+            &quot;Bugün, {} şınav çek!&quot;, 
+            simulated_expensive_calculation(intensity) 
+        ); 
+        println!( 
+            &quot;Sonrasında {} mekik çek!&quot;, 
+            simulated_expensive_calculation(intensity) 
+        ); 
+    } else { 
+        if random_number == 3 { 
+            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;); 
+        } else { 
+            println!( 
+                &quot;Bugün, {} dakika koş!&quot;, 
+                simulated_expensive_calculation(intensity) 
+            ); 
+        } 
+    }
+}
+#
+#fn main() { 
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 7;
+#    
+#    generate_workout(
+#        simulated_user_specified_value,
+#        simulated_random_number
+#    );
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-3: Girdi ve çağrılarına göre egzersiz planları yazdıran <code>simulated_expensive_calculation</code> işlevi</span></p>
+<p>Örnek13-3’teki kod, yavaş hesaplama yapan işleve çok sayıda başvuruda bulunur. İlk <code>if</code> bloğu <code>simulated_expensive_calculation</code> işlevini iki defa çağırırken, <code>else</code> bloğunun içindeki birinci <code>if</code> bloğu ise başvuruda bulunmaz. Oysa bir sonraki <code>else</code> bloğunda <code>simulated_expensive_calculation</code> işlevine yeniden çağrıda bulunulur.</p>
+<p>Öncelikle <code>generate_workout</code> işlevinin beklenen davranışı, kullanıcının düşük yoğunluklu bir egzersizi mi <em>(25’ten az bir sayı ile gösterilir)</em> yoksa yüksek yoğunluklu bir egzersizi mi <em>(25 veya daha büyük bir sayı)</em> isteyip istemediğini kontrol etmektir.</p>
+<p>Düşük yoğunluklu egzersiz planları, simüle ettiğimiz karmaşık algoritmaya dayanan bir dizi şınav ve mekik antremanını önerecektir.</p>
+<p>Kullanıcının yüksek yoğunluklu bir egzersiz planı istemesi halinde; işin içine biraz daha mantık girecek ve: Uygulamanın oluşturduğu rastgele sayı 3 olduğunda kullanıcıya mola vererek sıvı tüketmesi önerilecek, diğer hallerdeyse algoritmanın belirlediği süre kadar koşması önerilecektir.</p>
+<p>Bu kod, şimdilik işverenimizin istediği şekilde çalışmaktadır. Ancak bir süre sonra, şirketimizin veri bilimi ekibinin, <code>simulated_expensive_calculation</code> işlevini çağırma yönteminde bir takım değişiklikler yapılması gerektiğine karar verdiğini varsayalım. Bu güncelleme senaryosunda değişikliklerin basit tutulabilmesi için <code>simulated_expensive_calculation</code> işlevini kendisine başka bir çağrı eklemeden, sadece bir kez çağırmak ve halihazırda kendisine yapılmakta olan gereksiz çağrıları da kesip atmak istiyoruz. Nihayetinde bu işlev maliyetli bir işlev olduğundan, gerekmedikçe çağrıda bulunmamak, gerekiyorsa da sadece bir kez çağrıda bulunmak istiyoruz.</p>
+<a class="header" href="#İşlevleri-kullanarak-yeniden-düzenlemek" id="İşlevleri-kullanarak-yeniden-düzenlemek"><h4>İşlevleri kullanarak yeniden düzenlemek</h4></a>
+<p>Egzersiz programını birçok şekilde yeniden yapılandırabiliriz. Öncelikle, örnek 13-4’ te gösterildiği gibi, <code>simulated_expensive_calculation</code> işlevi için tekrarlanan çağrıyı bir değişkene çıkarmayı deneyeceğiz.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+#fn simulated_expensive_calculation(intensity: u32) -&gt; u32 {
+#    println!(&quot;yavaşça hesaplanıyor...&quot;);
+#    thread::sleep(Duration::from_secs(2));
+#    intensity
+#}
+#
+fn generate_workout(intensity: u32, random_number: u32) { 
+    let expensive_result =
+        simulated_expensive_calculation(intensity);
+    if intensity &lt; 25 { 
+        println!( 
+            &quot;Bugün, {} şınav çek!&quot;, 
+            expensive_result 
+        ); 
+        println!( 
+            &quot;Sonrasında {} mekik çek!&quot;, 
+            expensive_result 
+        ); 
+    } else { 
+        if random_number == 3 { 
+            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;); 
+        } else { 
+            println!( 
+                &quot;Bugün, {} dakika koş!&quot;, 
+                expensive_result 
+            ); 
+        } 
+    }
+}
+#
+#fn main() { 
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 7;
+#    
+#    generate_workout(
+#        simulated_user_specified_value,
+#        simulated_random_number
+#    );
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-4: <code>simulated_expensive_calculation</code> çağrılarını tek bir yere çıkarmak ve sonucunu <code>expensive_result</code> değişkenine kaydetmek</span></p>
+<p>Bu değişiklik, <code>simulated_expensive_calculation</code> çağrılarını birleştirerek işlevi gereksiz yere iki kez çağıran ilk <code>if</code> bloğunun sorununu çözecektir. Fakat ne yazık ki, bu defa da sonuç değerini hiç kullanmayan iç <code>if</code> bloğu da dahil, her durumda sonucu beklemek zorunda kalıyoruz.</p>
+<p>Oysa biz bu kodu, programımızın tek bir yerinde tanımlamak ve sadece sonuca gerçekten ihtiyaç duyduğumuz yerde <em>çalıştırmak</em> istiyorduk. İşte bu durum tam da kapamaların kullanılmasını gerektiren bir durumdur.</p>
+<a class="header" href="#bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek" id="bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek"><h4>Bir kodu kapama işlevi kullanarak yeniden düzenlemek</h4></a>
+<p>Her <code>if</code> bloğu öncesinde <code>simulated_expensive_calculation</code> işlevini çağırmak yerine, örnek 13-5’te gösterildiği gibi bir <em>kapama</em> işlevi tanımlayabilir ve bu kapama işlevini bir değişkene depolayarak işlev çağrısı sonucunu saklamaktan kurtulabiliriz. Hatta gerektiğinde <code>simulated_expensive_calculation</code>‘ ın tüm gövdesini de bu kapama işlevine taşıyabiliriz.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+#fn generate_workout(intensity: u32, random_number: u32) { 
+    let expensive_closure = |num| {
+        println!(&quot;yavaşça hesaplanıyor...&quot;);
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+#    if intensity &lt; 25 { 
+#        println!( 
+#            &quot;Bugün, {} şınav çek!&quot;, 
+#            expensive_closure(intensity) 
+#        ); 
+#        println!( 
+#            &quot;Sonrasında {} mekik çek!&quot;, 
+#            expensive_closure(intensity) 
+#        ); 
+#    } else { 
+#        if random_number == 3 { 
+#            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;); 
+#        } else { 
+#            println!( 
+#                &quot;Bugün, {} dakika koş!&quot;, 
+#                expensive_closure(intensity) 
+#            ); 
+#        } 
+#    }
+#}
+#
+#fn main() { 
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 7;
+#    
+#    generate_workout(
+#        simulated_user_specified_value,
+#        simulated_random_number
+#    );
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-5: Bir kapama işlevinin <code>expensive_closure</code> değişkeninde saklanması</span></p>
+<p>Kapama tanımı <code>expensive_closure</code> değişkenine atanabilmesi için atama operatöründen sonra gerçekleştirilir. Bir kapamanın tanımlanmasına içinde kapama parametrelerinin yer alacağı bir çift dikey boru <code>(|)</code> ile başlanır. Bu sözdizimi, Smalltalk ve Ruby’deki kapama tanımlarına benzediğinden dolayı seçilmiştir. Örneğimizdeki kapama, <code>num</code> adında yalnızca bir parametreye sahip olduğundan <code>|num|</code> biçiminde ifade edilir: Eğer kullanmamız gereken çok sayıda parametremiz olsaydı, bu parametreleri yine çift boru içine <code>|param1, param2|</code> şeklinde virgüllerle ayırırarak kullanmamız gerekecekti.</p>
+<p>Parametrelerin ardından, kapama gövdesini tutan kıvrımlı parantezleri yerleştirilir. Eğer kapama gövdesi tek bir ifadeden oluşuyorsa bu parantezleri kullanmak tercihinize bırakılır. <code>let</code> ifadesinin tamamlanabilmesi için kapamanın sonunda, yani kıvrımlı parantezin bitiminde, <strong><code>;</code></strong> noktalı virgülün kullanılması şarttır. İşlev gövdelerinde olduğu gibi kapama gövdelerindeki son değerler de döndürülen değer statüsünde olduklarından <em>(örneğimizde num)</em> noktalı virgül ile sonlandırılmazlar.</p>
+<p><code>expensive_closure</code> adındaki bu <code>let</code> ifadesinin; isimsiz işlevin çağrılmasıyla oluşan sonuç değerini değil, <strong>isimsiz işlev tanımını</strong> içerdiğine dikkat edin. Kapamaları: Bir noktada çağrılacak kodu tanımlamak, bu kodu saklamak ve programın ilerleyen safhalarında kendisine yeniden başvurabilmek için kullandığımızı unutmayın. Bu aşamada çağırmak istediğimiz kod artık <code>expensive_closure</code> içinde saklanmaya başlamıştır.</p>
+<p>Tanımlanan kapama işleviyle kodu yürüterek oluşan değeri elde etmek için <code>if</code> blokları arasındaki kodu değiştirebiliriz. Kapamaları, örnek 13-6’ da gösterilene benzer şekilde, tıpkı bir işlev çağırıyormuş gibi, kapama tanımını tutan değişken adını verip, parantez içindede alacağı bağımsız değişkenleri belirtirek çağırabiliyoruz.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+fn generate_workout(intensity: u32, random_number: u32) { 
+    let expensive_closure = |num| {
+        println!(&quot;yavaş bir hesaplama...&quot;);
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+    if intensity &lt; 25 { 
+        println!( 
+            &quot;Bugün, {} şınav çek!&quot;, 
+            expensive_closure(intensity) 
+        ); 
+        println!( 
+            &quot;Sonrasında {} mekik çek!&quot;, 
+            expensive_closure(intensity) 
+        ); 
+    } else { 
+        if random_number == 3 { 
+            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;); 
+        } else { 
+            println!( 
+                &quot;Bugün, {} dakika koş!&quot;, 
+                expensive_closure(intensity) 
+            ); 
+        } 
+    }
+}
+#
+#fn main() { 
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 7;
+#    
+#    generate_workout(
+#        simulated_user_specified_value,
+#        simulated_random_number
+#    );
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-6: Tanımladığımız <code>expensive_closure</code> adlı kapama işlevini çağırmak</span></p>
+<p>Şimdi, pahalı hesaplama işlevi sadece tek bir yerde çağrılıyor ve bu kodu, sadece gerçekten sonuçlara ihtiyacımız olan yerde işletmiş oluyoruz.</p>
+<p>Bununla birlikte bu defa da, ilk <code>if</code> bloğundaki kapamayı iki kez çağırmakla örnek 13-3’teki sorunlardan biriyle yeniden karşılaşıyor ve bu pahalı kodu ikinci kez çağırılmasıyla, kullanıcının uzun zaman alan iki işlem boyunca beklemesine neden oluyoruz. Bu sorunu ilk <code>if</code> bloğu kapsamında, kapamayı çağıran ve elde ettiği sonucu tutan yerel bir değişken tanımlayarak çözümleyebiliriz. Ancak kapamalar bize başka bir çözüm sağlar. Bu çözüm hakkında konuşmaya başlamadan önce, neden kapama tanımında ek açıklamalar bulunmadığından ve kapalarla ilgili bazı özelliklerden bahsedelim.</p>
+<a class="header" href="#kapamalarda-tür-çıkarımı-ve-ek-açıklamalar" id="kapamalarda-tür-çıkarımı-ve-ek-açıklamalar"><h4>Kapamalarda tür çıkarımı ve ek açıklamalar</h4></a>
+<p>Kapamalar, <code>fn</code> işlevlerinin gerektirdiği gibi parametre türlerinde veya dönüş değerlerinde açıklama girilmesine ihtiyaç duymazlar. Bununla birlikte standart işlevler, kullanıcılara açık bir arayüzün parçaları olduklarından tür ek açıklamaları gerektirirler. İşlevin ne tür değerler kullandığı veya hangi türden değerler döndürdüğünün, tüm kullanıcılar tarafından açıkça anlaşılabilmesi için, bu arayüzü katı bir şekilde tanımlamak önemlidir. Ancak kapamalar böyle açık bir arayüzde kullanılmak yerine; değişkenlerde depolanmakta, isimsiz olarak kullanılmakta ve kütüphanemizin diğer kullanıcılarına gösterilmeden değerlendirilebilmektedir.</p>
+<p>Bir kapama işlevi genellikle kısa ve herhangi bir keyfi senaryodan ziyade, sadece dar bir bağlamda geçerlidir. Bu sınırlı bağlamda derleyici, değişken türlerinin çıkarsanmasına benzer şekilde, kapama parametre ve dönüş türlerini güvenli bir şekilde çıkarsayabilmektedir.</p>
+<p>Programcıların bu isimsiz ve küçük işlevlerdeki türlere açıklama eklemesi, derleyicinin zaten sahip olduğu bilgilerle oldukça can sıkıcı ve büyük ölçüde gereksiz olacaktır.</p>
+<p>Değişkenlerde olduğu gibi, açıklığı ve netliği gerekli olandan daha ayrıntılı olma pahasına artırmak istiyorsak, kapamalara da tür ek açıklamaları ekleyebiliriz. Örnek 13-5’te tanımladığımız kapama işlevinin kullanacağı türler için ekleyeceğimiz tür ek açıklamaları örnek 13-7’ deki kodda gösterilmektedir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration;
+
+#fn generate_workout(intensity: u32, random_number: u32) {
+    let expensive_closure = |num: u32| -&gt; u32 {
+        println!(&quot;yavaş bir hesaplama...&quot;);
+        thread::sleep(Duration::from_secs(2));
+        num
+    };
+#
+#   if intensity &lt; 25 {
+#        println!(&quot;Bugün {} şınav çek!&quot;, expensive_closure(intensity));
+#        println!(&quot;Ardından, {} mekik çek!&quot;, expensive_closure(intensity));
+#    } else {
+#        if random_number == 3 {
+#            println!(&quot;Bugün mola ver! Sıvı tüketmeyi ihmal etme!&quot;);
+#        } else {
+#            println!(
+#                &quot;Bugün {} dakika koş!&quot;,
+#                expensive_closure(intensity)
+#            );
+#        }
+#    }
+#}
+#
+#fn main() {
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 7;
+#
+ #   generate_workout(simulated_user_specified_value, simulated_random_number);
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-7:Kapama parametre ve dönüş değerlerine isteğe bağlı tür ek açıklamalarını eklemek</span></p>
+<p>Tür ek açıklamaları eklenildiğinde, kapama sözdizimi işlev sözdizimine benzemeye başlıyor. Aşağıda, parametresine 1 değeri ekleyen bir işlev tanımı ile aynı davranışa sahip bir kapama sözdiziminin dikey karşılaştırması yer almaktadır. İlgili parçaları hizalamak için bazı alanlar ekledik. Bu örnekleme; boru kullanımı ve isteğe bağlı sözdizimi haricinde, kapama sözdizimi ile işlev söz diziminin birbirlerine nasıl benzediğini göstermektedir:</p>
+<pre><code class="language-rust ignore">fn  add_one_v1   (x: u32) -&gt; u32 { x + 1 }
+let add_one_v2 = |x: u32| -&gt; u32 { x + 1 };
+let add_one_v3 = |x|             { x + 1 };
+let add_one_v4 = |x|               x + 1  ;
+</code></pre>
+<p>Örneğin ilk satırında bir işlev tanımı, ikinci satırında giriş ve dönüş türleri açıklanan bir kapama tanımı yer almaktadır. Üçüncü satırda, tür açıklamaları kapama tanımından kaldırılırken, dördüncü satırda  isteğe bağlı olan parantezler dahi kaldırılmıştır. Hatırlayacağınız gibi bir kapama işlevi tanımlanırken, kapama gövdesi yalnızca bir ifadeden oluştuğunda süslü parantezler kullanılmamaktaydı. Yukarıda sunduğumuz kapama ifadelerinin her biri, çağrıldığında aynı davranışı üretecek geçerli tanımlamalardır.</p>
+<p>Kapama tanımlarında, her bir parametre ve dönüş değeri için somut bir tür hesaplanır. Örnek 13-8, yalnızca parametre olarak aldığı değeri döndüren kısa bir kapama tanımını göstermektedir. Bu kapama, sadece bu örneği sunabilmek için tasarlandığından gerçek kullanım için uygun değildir. Kapamayı ik kez çağırdığımızda, dizgiyi bir argüman olarak geçirmeyi başarırız, ancak u32 türü kullanan ikinci denememiz bir hata ile sonuçlanacaktır. Tanıma herhangi bir tür ek açıklaması eklenmediğine dikkat ediniz.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><code class="language-rust ignore">let example_closure = |x| x; 
+let s = example_closure(String::from(&quot;hello&quot;)); 
+let n = example_closure(5);
+</code></pre>
+<p><span class="caption">Örnek 13-8: Girdi ve çıktı değerlerinin, iki farklı tür üzerinden çıkarsanması beklenen bir kapama örneği</span></p>
+<p>Derleyici bize şu hatayı verir:</p>
+<pre><code class="language-console">error[E0308]: mismatched types
+ --&gt; src/main.rs
+  |
+  | let n = example_closure(5);
+  |                         ^ expected struct `std::string::String`, found
+  integer
+  |
+  = note: expected type `std::string::String`
+             found type `{integer}`
+</code></pre>
+<p>kapama işlevimiz olan <code>example_closure</code> dizgi değeri ile çağrıldığında, derleyici <code>x</code> parametresi ve dönüş türünü dizgi olarak algılar. Algılanan bu türler daha sonra <code>example_closure</code> içindeki kapamaya kilitlenir ve aynı kapama ile farklı bir tür kullanmaya çalışıldığında bir <em>uyumsuz tür</em> hatası ile karşılaşılır.</p>
+<a class="header" href="#jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak" id="jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak"><h3>Jenerik parametreler ve <code>Fn</code> özelliklerini kullanarak kapamaları hafızaya almak</h3></a>
+<p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6’ daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
+<p>Neyse ki bizim için başka bir çözüm yolu daha var. Kapamayı tutacak bir yapı tanımlayıp, kapama çağrıldığında sonuç değerini o yapı üzerinden oluşturabiliriz. Tanımlayacağımız bu yapı kapamayı yalnızca sonuç değerine ihtiyaç duyduğumuzda işleterek sonucunu önbelleğe alacak, böylelikle kodun geri kalanı sonucu kaydetmek ve yeniden kullanmak zorunda kalmamış olacaktır. Bu kalıbı daha önceki tecrübelerinizden, <strong>tembel değerlendirmeler</strong> veya <strong>ezberleme</strong> olarak biliyor olabilirsiniz.</p>
+<p>Kapama tutabilen yapıların tanımlanabilmesi için, kapama işlevinin giriş ve dönüş türlerinin bildirilmesi gereklidir. Çünkü yapılar oluşturulurken sahip oldukları alanlar isimlendirildiklerinde türlerinin de bildirilmesi gerekmektedir. Her kapama örneğinin kendine özgü isimsiz türü olacağından, iki kapama aynı imzaya sahip olsalar bile, farklı türlerde oldukları kabul edilmektedir. Kapamaları kullanan <strong>yapı</strong>, <strong>enum</strong> veya <strong>işlev parametreleri</strong>ni tanımlarken Bölüm 10’da tartıştığımız <strong>jenerikler ve özellik sınırlarını</strong> da kullanabiliyoruz.</p>
+<p><code>Fn</code> özellikleriyse standart kütüphane tarafından sağlanmaktadır ve tüm kapama işlevleri; <code>Fn</code>, <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden en az birini uygular. Bu özelliklerin arasındaki farkları <a href="#kapamalar-ile-ortam-bilgilerini-elde-etmek">“Kapamalar ile ortam bilgilerini elde etmek”</a><!-- ignore --> bölümünde tartışacağız; bu örnek için, <code>Fn</code> özelliğini kullanmamızda sakınca yok.</p>
+<p>Parametrelerin türlerini temsil etmek ve kapamaların bu özellik sınırıyla eşleşmesi gereken değerleri döndürmek için <code>Fn</code> özelliğine bağlı türler ekliyoruz. Bu durumda, kapama işlevinin <code>u32</code> türünde bir parametresi olacak ve bir <code>u32</code> türü döndüreceğinden belirttiğimiz özellik sınırı <code>Fn (u32) -&gt; u32</code> olacaktır.</p>
+<p>Örnek 13-9, bir kapama ve opsiyonel sonuç değeri tutan <code>Cacher</code> yapısının tanımını gösterir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">struct Cacher&lt;T&gt;
+    where T: Fn(u32) -&gt; u32
+{
+    calculation: T,
+    value: Option&lt;u32&gt;,
+}
+#fn main() {}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-9: Bir <code>calculation</code> ve opsiyonel sonuç değerinden oluşan kapamayı tutan <code>Cacher</code> adlı yapının tanımlanması</span></p>
+<p><code>Cacher</code> yapısı, <code>T</code> türünde jenerik bir hesaplama alanına sahiptir. <code>T</code> üzerindeki özellik sınırları, bunun <code>Fn</code> özelliğini kullanmakta olan bir kapama olduğunu belirtir. Yapının <code>calculation</code> adlı hesaplama alanında saklamak istediğimiz tüm kapamaların <code>u32</code> türünden bir parametresi <em>(Fn’den sonra parantez içinde belirtilir)</em> bulunmalı ve bu kapamadan bir <code>u32</code> türünde <em>(-&gt; işaretinden sonra belirtilir)</em> değer döndürülmelidir.</p>
+<blockquote>
+<p>Not: İşlevler Fn özelliklerinin üçünü de uygulayabilir. Yapmak istediğimiz şey, ortamdan bir değer yakalamayı
+gerektirmiyorsa ve Fn özelliğini uygulayan bir şeye ihtiyacımız varsa kapatma yerine işlev kullanmayı tercih edebiliriz.</p>
+</blockquote>
+<p>Yapının <code>value</code> adındaki alanı <code>Option&lt;u32&gt;</code> türündedir. Kapama işletilmeden önce bu alan <code>None</code> varyantını göstermektedir. Eğer <code>Cacher</code> yapısını kullanan bir program kapamanın sonucunu isterse, yapı içerisindeki kapama işletilecek, bu defa da oluşan sonuç değeri <code>value</code> alanının <code>Some</code> varyantı içinde saklanacaktır. Eğer kapamanın sonucu bu program tarafından yeniden talep edilirse, sonuç zaten depolanmış olduğundan kapama tekrar işletilmeyecek, bu yapının <code>Some</code> varyantında tutulan değer döndürülecektir.</p>
+<p>Az önce tanımladığımız <code>value</code> alanının mantığı örnek 13-10’ da gösterilmektedir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">struct Cacher&lt;T&gt;
+where
+    T: Fn(u32) -&gt; u32,
+{
+    calculation: T,
+    value: Option&lt;u32&gt;,
+}
+
+impl&lt;T&gt; Cacher&lt;T&gt;
+where
+    T: Fn(u32) -&gt; u32,
+{
+    fn new(calculation: T) -&gt; Cacher&lt;T&gt; {
+        Cacher {
+            calculation,
+            value: None,
+        }
+    }
+
+    fn value(&amp;mut self, arg: u32) -&gt; u32 {
+        match self.value {
+            Some(v) =&gt; v,
+            None =&gt; {
+                let v = (self.calculation)(arg);
+                self.value = Some(v);
+                v
+            }
+        }
+    }
+}
+
+#fn main() {}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-10: <code>Cacher</code> yapısının önbellek mantığı</span></p>
+<p>Bu yapıyı çağıracak olan kodun alanlardaki değerleri doğrudan değiştirmesini tercih etmek yerine, sadece yapı alanlarının değerleriyle ilgilenmesini istediğimizden bu alanları dışarıdan erişime kapatarak özelleştiriyoruz.</p>
+<p><code>Cacher::new</code> işlevi, <code>Cacher</code> yapısıyla aynı özelliğe bağlı olarak tanımladığımız jenerik <code>T</code> parametresi alır. Daha sonra kapama işlevini henüz gerçekleştirmemiş olduğundan <code>calculation</code> alanında belirtilen kapama değeri ve <code>value</code> alanındaki <code>None</code> değerinden oluşan bir <code>Cacher</code> örneği döndürür.</p>
+<p>Böylelikle kodu çağıran taraf, kapama işleminden elde edilen sonuca ihtiyaç duyduğunda, kapamayı doğrudan çağırmak yerine <code>value</code> yöntemini çağırmış olacaktır. Bu yöntem, <code>Some</code> varyantında <code>self.value</code> türünde bir değere sahip olup olmadığımızı kontrol eder. Bu değere sahipsek kapama bir daha işletilmez ve <code>Some</code> içinde depolanmakta olan değer döndürülür.</p>
+<p>Ancak <code>self.value</code> değeri <code>None</code> olarak görünüyorsa, kod <code>self.calculation</code>‘da depolanan kapamayı çağıracak, sonucu ileride kullanılmak üzere <code>self.value</code>‘ye kaydedecek ve oluşan değeri çağıran tarafa döndürecektir.</p>
+<p>Aşağıdaki örnek, <code>Cacher</code> yapısını örnek 13-6’da bulunan <code>create_workout</code> işlevinde nasıl kullanabileceğimizi göstermektedir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#use std::thread;
+#use std::time::Duration; 
+#
+#struct Cacher&lt;T&gt;
+#    where T: Fn(u32) -&gt; u32
+#{
+#    calculation: T,
+#    value: Option&lt;u32&gt;,
+#}
+#
+#impl&lt;T&gt; Cacher&lt;T&gt;
+#    where T: Fn(u32) -&gt; u32
+#{
+#    fn new(calculation: T) -&gt; Cacher&lt;T&gt; {
+#        Cacher {
+#            calculation,
+#            value: None,
+#        }
+#    }
+#
+#    fn value(&amp;mut self, arg: u32) -&gt; u32 {
+#        match self.value {
+#            Some(v) =&gt; v,
+#            None =&gt; {
+#                let v = (self.calculation)(arg);
+#                self.value = Some(v);
+#                v
+#            },
+#        }
+#    }
+#}
+#
+fn generate_workout(intensity: u32, random_number: u32) {
+    let mut expensive_result = Cacher::new(|num| {
+        println!(&quot;yavaşça hesaplanıyor...&quot;);
+        thread::sleep(Duration::from_secs(2));
+        num
+    });
+
+    if intensity &lt; 25 {
+        println!(
+            &quot;Bugün, {} şınav çek!&quot;,
+            expensive_result.value(intensity)
+        );
+        println!(
+            &quot;Sonrasında {} mekik çek!&quot;,
+            expensive_result.value(intensity)
+        );
+    } else {
+        if random_number == 3 {
+            println!(&quot;Bugün mola ver! Sıvı tüketmeyi de ihmal etme!&quot;);
+        } else {
+            println!(
+                &quot;Bugün, {} dakika koş!&quot;,
+                expensive_result.value(intensity)
+            );
+        }
+    }
+}
+#
+#fn main() { 
+#    let simulated_user_specified_value = 10;
+#    let simulated_random_number = 3;
+#    
+#    generate_workout(
+#        simulated_user_specified_value,
+#        simulated_random_number
+#    );
+#}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-11:Önbellek mantığını soyutlamak için generate_workout işlevinde Cacher yapısını kullanmak</span></p>
+<p>Böylelikle kapamayı doğrudan bir değişkene kaydetmek yerine, bu kapamayı tutması için yeni bir <code>Cacher</code> örneğini kaydediyoruz. Bu noktadan itibaren sonuca ihtiyacımız olan her yerde, <code>Cacher</code> yapısının bir örneğini oluşturup, <code>value</code> metodunu çağırırarak tembelce hesaplanan sonuca ulaşırız. Ayrıca pahalı hesaplama sonucunu döndüren <code>expensive_result</code> işlevi en fazla bir kez çağırılacağından <code>value</code> yöntemini çağırmak tercihimize kalmıştır.</p>
+<p>Bu programı örnek 13-2’ deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
+<a class="header" href="#cacher-uygulamasının-kısıtlamaları" id="cacher-uygulamasının-kısıtlamaları"><h3>Cacher Uygulamasının Kısıtlamaları</h3></a>
+<p>Değerleri önbelleğe almak, kodumuzun diğer bölümlerinde genellikle farklı kapamalarda kullanmak isteyebileceğimiz yararlı bir davranıştır. Bununla birlikte, <code>Cacher</code>‘in mevcut uygulamasında, farklı bağlamlarda yeniden kullanılmasını zorlaştıracak iki sorun bulunmaktadır.</p>
+<p>İlk sorun, bir <code>Cacher</code> örneğinin <code>value</code> metodunda bulunan <code>arg</code> parametresinin her zaman aynı değeri alacağı varsayılır. Yani, bu <code>Cacher</code> testi başarısız olacaktır:</p>
+<pre><code class="language-rust ignore panics">#struct Cacher&lt;T&gt;
+#where
+#    T: Fn(u32) -&gt; u32,
+#{
+#    calculation: T,
+#    value: Option&lt;u32&gt;,
+#}
+#
+#impl&lt;T&gt; Cacher&lt;T&gt;
+#where
+#    T: Fn(u32) -&gt; u32,
+#{
+#    fn new(calculation: T) -&gt; Cacher&lt;T&gt; {
+#        Cacher {
+#            calculation,
+#            value: None,
+#        }
+#    }
+#
+#    fn value(&amp;mut self, arg: u32) -&gt; u32 {
+#        match self.value {
+#            Some(v) =&gt; v,
+#            None =&gt; {
+#                let v = (self.calculation)(arg);
+#                self.value = Some(v);
+#                v
+#            }
+#        }
+#    }
+#}
+#
+#[cfg(test)]
+#mod tests {
+#    use super::*;
+#
+    #[test]
+    fn call_with_different_values() {
+        let mut c = Cacher::new(|a| a);
+
+        let v1 = c.value(1);
+        let v2 = c.value(2);
+
+        assert_eq!(v2, 2);
+    }
+}
+</code></pre>
+<p>Bu testte, kendisine iletilen değeri döndüren bir kapamayla yeni bir <code>Cacher</code> örneği oluşturulmaktadır. Örneğin <code>value</code> metodunu <code>arg</code> parametre değeri olarak önce 1, ardından 2 vererek çağırdığımızda; <code>arg</code> 2 değeriyle yaptığımız çağrının 2 değerini döndürmesini bekleriz.</p>
+<p>Oysa bu testi örnek 13-9 veya 13-10’daki <code>Cacher</code> uygulaması ile gerçekleştirdiğimizde program <code>assert_eq!</code>‘ de başarız olacak ve şu hata mesajını döndürecektir:</p>
+<pre><code class="language-console">$ cargo test
+   Compiling cacher v0.1.0 (file:///projects/cacher)
+    Finished test [unoptimized + debuginfo] target(s) in 0.72s
+     Running target/debug/deps/cacher-4116485fb32b3fff
+
+running 1 test
+test tests::call_with_different_values ... FAILED
+
+failures:
+
+---- tests::call_with_different_values stdout ----
+thread 'main' panicked at 'assertion failed: `(left == right)`
+  left: `1`,
+ right: `2`', src/lib.rs:43:9
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace.
+
+
+failures:
+    tests::call_with_different_values
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
+
+error: test failed, to rerun pass '--lib'
+</code></pre>
+<p>Buradaki sorun, başlangıçta <code>c.value</code>‘yu 1 ile çağırdığımızda, Catcher örneğinin <code>Some(1)</code> değerini <code>self.value</code> içine kaydetmesinden kaynaklanmaktadır. Bu noktadan sonra, value yöntemine hangi değeri iletirsek iletelim, her zaman başlangıçta verdiğimiz 1 değerini döndürecektir.</p>
+<p><code>Cacher</code>‘ı tek bir değer yerine bir eşleme tablosu tutacak şekilde değiştirmeyi deneyin. <code>value</code> metoduna geçirilecek <code>arg</code> değerleri eşleme tablosunun anahtarlarını oluşturacak şekilde verildiğinde, eşleme tablosunun değerlerinde de kapama çağrılarının sonuçları tutulmuş olacaktır. Böylece <code>self.value</code> öğesinin doğrudan <code>Some</code> veya <code>None</code> değeri olup olmadığını kontrol etmek yerine, <code>value</code> işlevi eşleme tablosunun anahtarlarında <code>arg</code> öğesini arayacak bulduğu anda değerini döndürecektir. Eğer <code>arg</code> öğesi tabloda yoksa, <code>Cacher</code> tarafından kapama çağırılacak ve oluşan değer, <code>arg</code> değeriyle ilişkili eşleme tablosuna kaydedecektir.</p>
+<p>Bu uygulamadaki ikinci sorun ise yalnızca <code>u32</code> türünde parametre alması ve <code>u32</code> türünde değer döndüren kapamaları kabul etmesidir. Örneğin, bir dizgi dilimi alan ve <code>usize</code> değerleri döndüren kapama sonuçlarını önbelleğe almak isteyebiliriz. Bu sorunu gidermek ve <code>Cacher</code> işlevinin esnekliğini artırmak için jenerik parametreler eklemeyi deneyin.</p>
+<a class="header" href="#a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek" id="a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek"><h3><a name="kapamalar-ile-ortam-bilgilerini-elde-etmek"></a>Kapamalar ile ortam bilgilerini elde etmek</h3></a>
+<p>Egzersiz planı oluşturan örneğimizde, kapamaları sadece satır içi isimsiz işlevler olarak kullandık. Bununla birlikte kapamalar, işlevlerin sahip olmadığı ek bir yeteneğe sahiplerdir: ortam bilgilerini yakalayabilir ve tanımlandıkları kapsamdan değişkenlere erişebilirler.</p>
+<p>Örnek 13-12’de, tanımlandığı kapsamda bulunan <code>x</code> değişkenini <code>equal_to_x</code> adlı değişkene depolayarak kullanan bir kapama örneği sunulmaktadır.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust"> fn main() {
+    let x = 4;
+
+    let equal_to_x = |z| z == x;
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
+}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-12: Tanımlandığı kapsam içindeki bir değişkene başvuran kapama örneği</span></p>
+<p>Burada <code>x</code> değişkeni, <code>equal_to_x</code> kapama parametrelerinden biri olmamasına rağmen, <code>equal_to_x</code> kapamasının, kendisiyle aynı kapsamda tanımlanan <code>x</code> değişkenini kullanmasına izin verilmektedir.</p>
+<p>Oysa aynı şeyi işlevlerle gerçekleştiremeyiz. Aşağıdaki örnek kod derlenmeyecektir:</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let x = 4;
+
+    fn equal_to_x(z: i32) -&gt; bool { z == x }
+
+    let y = 4;
+
+    assert!(equal_to_x(y));
+}
+</code></pre>
+<p>Alacağımız hata aşağıdaki gibidir:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling equal-to-x v0.1.0 (file:///projects/equal-to-x)
+error[E0434]: can't capture dynamic environment in a fn item
+ --&gt; src/main.rs:5:14
+  |
+5 |         z == x
+  |              ^
+  |
+  = help: use the `|| { ... }` closure form instead
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0434`.
+error: could not compile `equal-to-x`.
+
+To learn more, run the command again with --verbose.
+
+</code></pre>
+<p>Derleyici bize bu kodun sadece kapamalarla çalıştığını anımsatıyor!</p>
+<p>Kapamalar ortamlarından bir değer yakaladıklarında, bu değerleri kapama gövdesinde kullanmak üzere saklamak için bellek kullanmak zorundadırlar. Bu bellek kullanımı, daha yaygın kullanım örneklerinde olduğu gibi, ortamlarını yakalamayan kodların işletilmesindeki maliyetten daha fazladır. İşlevlerin ortamlarını yakalamalarına asla izin verilmediğinden, işlevlerin tanımlanması ve kullanılması böyle bir ek yüke neden olmaz.</p>
+<p>Kapamalar çevrelerindeki değerleri üç şekilde yakalayabilirler ve bunlar bir işlevin parametre alacağı üç yolla doğrudan eşleşir: Mülkiyeti üzerlerine alırken, değişebilir borçlanma ve değişmez borçlanma. Bunlar aşağıdaki sunulan üç <code>Fn</code> özelliğinde kodlanmıştır:</p>
+<ul>
+<li><code>FnOnce</code> kapama ortamı olarak bilinen, çevrelendiği kapsamdan yakaladığı değişkenleri tüketir. Kapamanın yakaladığı değişkenleri tüketebilmesi için bu değişkenlerin mülkiyetini alması ve tanımına taşıması gerekmektedir. İsmin <code>Once</code> adlı parçası, kapamanın aynı değişkenlerin mülkiyetini sadece bir kez alabileceğini gösterdiğinden, bu özellik yalnızca bir kez çağrılabilir.</li>
+<li><code>FnMut</code> Değişebilen değerleri ödünç aldığı için ortamı değiştirebilir.</li>
+<li><code>Fn</code> ortamdaki değerleri değişmez olarak ödünç alır.</li>
+</ul>
+<p>Bir kapama oluşturduğunuzda, Rust, kapamanın ortamdaki değerleri nasıl kullandığına bağlı olarak hangi özelliğin kullanılacağını otomatik olarak belirler. Tüm kapamalar <code>FnOnce</code>‘i uygular, çünkü hepsi en az bir kez çağrılabilir. Yakalanan değişkenleri taşımayan kapamalar da <code>FnMut</code>‘u uygularlar. Yakalanan değişkenlere değiştirilebilir erişim gerektirmeyen kapamalar ise <code>Fn</code>‘i uygularlar.
+Örnek 13-12’de <code>equal_to_x</code> değişkenine depolanan kapama, değişmez olarak tanımlanan <code>x</code> değişkenini, değişmez olarak ödünç alır; yani <code>equal_to_x</code> <code>Fn</code> özelliğine sahiptir, çünkü kapama gövdesinin sadece <code>x</code> değerini okuması gerekmektedir.</p>
+<p>Kapamaları ortamlarından kullandığı değerlerin mülkiyetini almaya zorlamak istiyorsanız, parametre listesinden önce <code>move</code> anahtar sözcüğünü kullanabilirsiniz. Bu teknik, verilerin mülkiyetlerinin işlenmek üzere yeni iş parçasına aktarırken oldukça yararlıdır.</p>
+<p>Bölüm 16’da eşzamanlılık hakkında konuşurken, kapamaların taşınması hakkında daha fazla örnek vereceğiz. Ancak şimdilik, tam sayılar taşınmak yerine kopyalandıklarından, bunların yerine vektör kullanan ve tanımına <code>move</code> anahtar sözcüğü ekleyerek yeniden düzenlediğimiz kapama işlevini gösteren örnek 13-12’yi sunalım. Bu kodun henüz derlenmeyeceğini unutmayın:</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><code class="language-rust ignore does_not_compile">fn main() {
+    let x = vec![1, 2, 3];
+
+    let equal_to_x = move |z| z == x;
+
+    println!(&quot;can't use x here: {:?}&quot;, x);
+
+    let y = vec![1, 2, 3];
+
+    assert!(equal_to_x(y));
+}
+
+</code></pre>
+<p>Aldığımız hata aşağıdaki gibidir:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling equal-to-x v0.1.0 (file:///projects/equal-to-x)
+error[E0382]: borrow of moved value: `x`
+ --&gt; src/main.rs:6:40
+  |
+2 |     let x = vec![1, 2, 3];
+  |         - move occurs because `x` has type `std::vec::Vec&lt;i32&gt;`, which does not implement the `Copy` trait
+3 | 
+4 |     let equal_to_x = move |z| z == x;
+  |                      --------      - variable moved due to use in closure
+  |                      |
+  |                      value moved into closure here
+5 | 
+6 |     println!(&quot;can't use x here: {:?}&quot;, x);
+  |                                        ^ value borrowed here after move
+
+error: aborting due to previous error
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `equal-to-x`.
+
+To learn more, run the command again with --verbose.
+</code></pre>
+<p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>‘in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>‘i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
+<p>Nihayetinde derleyici, kapama gövdesini analiz ederek <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden hangisine ihtiyacınız olup olmadığını söyleyeceğinden, özellik sınırlarından birini belirlerken, <code>Fn</code> ile başlamak çoğu zaman iyi fikirdir</p>
+<p>Ortamlarını yakalayabilen kapamaların işlev parametreleri olarak kullanılmasının yararlı olduğu durumları daha iyi gösterebilmek için bir sonraki Yineleyiciler başlığımıza geçelim.</p>
+<a class="header" href="#yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek" id="yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek"><h2>Yineleyiciler ile Bir Dizi Öğeyi İşlemek</h2></a>
+<a class="header" href="#io-projemizi-geliştirmek" id="io-projemizi-geliştirmek"><h2>I/O Projemizi Geliştirmek</h2></a>
+<a class="header" href="#performans-karşılaştırması-döngüler-vs-yineleyiciler" id="performans-karşılaştırması-döngüler-vs-yineleyiciler"><h2>Performans Karşılaştırması: Döngüler vs. Yineleyiciler</h2></a>
+<a class="header" href="#cargo-ve-cratesio-hakkında-daha-fazla-bilgi" id="cargo-ve-cratesio-hakkında-daha-fazla-bilgi"><h1>Cargo ve Crates.io Hakkında Daha Fazla Bilgi</h1></a>
+<a class="header" href="#sürüm-profilleriyle-derlemeleri-Özelleştirmek" id="sürüm-profilleriyle-derlemeleri-Özelleştirmek"><h2>Sürüm Profilleriyle Derlemeleri Özelleştirmek</h2></a>
+<a class="header" href="#bir-sandığı-cratesio-Üzerinde-yayınlamak" id="bir-sandığı-cratesio-Üzerinde-yayınlamak"><h2>Bir Sandığı Crates.io Üzerinde Yayınlamak</h2></a>
+<a class="header" href="#cargo-Çalışma-alanları" id="cargo-Çalışma-alanları"><h2>Cargo Çalışma Alanları</h2></a>
+<a class="header" href="#cratesio-Üzerindeki-İkili-sandıkları-cargo-install-komutuyla-yüklemek" id="cratesio-Üzerindeki-İkili-sandıkları-cargo-install-komutuyla-yüklemek"><h2>Crates.io Üzerindeki İkili Sandıkları <code>cargo install</code> Komutuyla Yüklemek</h2></a>
+<a class="header" href="#Özel-komutlarla-cargo-olanaklarını-genişletmek" id="Özel-komutlarla-cargo-olanaklarını-genişletmek"><h2>Özel Komutlarla Cargo Olanaklarını Genişletmek</h2></a>
+<a class="header" href="#akıllı-İşaretçiler" id="akıllı-İşaretçiler"><h1>Akıllı İşaretçiler</h1></a>
+<a class="header" href="#heap-Üzerindeki-verilere-İşaret-etmek-İçin-boxt-kullanmak" id="heap-Üzerindeki-verilere-İşaret-etmek-İçin-boxt-kullanmak"><h2>Heap Üzerindeki Verilere İşaret Etmek İçin <code>Box&lt;T&gt;</code> Kullanmak</h2></a>
+<a class="header" href="#deref-Özelliği-ile-akıllı-İşaretçilere-normal-referanslar-gibi-davranmak" id="deref-Özelliği-ile-akıllı-İşaretçilere-normal-referanslar-gibi-davranmak"><h2><code>Deref</code> Özelliği ile Akıllı İşaretçilere Normal Referanslar Gibi Davranmak</h2></a>
+<a class="header" href="#drop-Özelliği-ile-kodu-temizlik-amaçlı-Çalıştırmak" id="drop-Özelliği-ile-kodu-temizlik-amaçlı-Çalıştırmak"><h2><code>Drop</code> Özelliği ile Kodu Temizlik Amaçlı Çalıştırmak</h2></a>
+<a class="header" href="#rct-referans-sayılı-akıllı-İşaretçi" id="rct-referans-sayılı-akıllı-İşaretçi"><h2><code>Rc&lt;T&gt;</code>, Referans Sayılı Akıllı İşaretçi</h2></a>
+<a class="header" href="#refcellt-ve-İç-değişkenlik-modeli" id="refcellt-ve-İç-değişkenlik-modeli"><h2><code>RefCell&lt;T&gt;</code> ve İç Değişkenlik Modeli</h2></a>
+<a class="header" href="#referans-Çevrimleri-bellek-sızıntısına-yol-açabilir" id="referans-Çevrimleri-bellek-sızıntısına-yol-açabilir"><h2>Referans Çevrimleri Bellek Sızıntısına Yol Açabilir</h2></a>
+<a class="header" href="#korkusuz-eşzamanlılık" id="korkusuz-eşzamanlılık"><h1>Korkusuz Eşzamanlılık</h1></a>
+<a class="header" href="#eşzamanlı-kod-Çalıştırmak-İçin-İşlikleri-kullanmak" id="eşzamanlı-kod-Çalıştırmak-İçin-İşlikleri-kullanmak"><h2>Eşzamanlı Kod Çalıştırmak İçin İşlikleri Kullanmak</h2></a>
+<a class="header" href="#İşlikler-arasında-veri-aktarmak-amacıyla-mesajlaşma" id="İşlikler-arasında-veri-aktarmak-amacıyla-mesajlaşma"><h2>İşlikler Arasında Veri Aktarmak Amacıyla Mesajlaşma</h2></a>
+<a class="header" href="#durum-paylaşımlı-eşzamanlılık" id="durum-paylaşımlı-eşzamanlılık"><h2>Durum Paylaşımlı Eşzamanlılık</h2></a>
+<a class="header" href="#sync-and-send-Özellikleri-ile-genişletilebilir-eşzamanlılık" id="sync-and-send-Özellikleri-ile-genişletilebilir-eşzamanlılık"><h2><code>Sync</code> and <code>Send</code> Özellikleri ile Genişletilebilir Eşzamanlılık</h2></a>
+<a class="header" href="#rustın-nesne-yönelimli-programlama-Özellikleri" id="rustın-nesne-yönelimli-programlama-Özellikleri"><h1>Rust’ın Nesne Yönelimli Programlama Özellikleri</h1></a>
+<a class="header" href="#nesne-yönelimli-dillerin-Özellikleri" id="nesne-yönelimli-dillerin-Özellikleri"><h2>Nesne Yönelimli Dillerin Özellikleri</h2></a>
+<a class="header" href="#farklı-türden-değerlere-İzin-veren-Özellik-nesnelerini-kullanmak" id="farklı-türden-değerlere-İzin-veren-Özellik-nesnelerini-kullanmak"><h2>Farklı Türden Değerlere İzin Veren Özellik Nesnelerini Kullanmak</h2></a>
+<a class="header" href="#nesne-yönelimli-tasarım-kalıbı-uygulamak" id="nesne-yönelimli-tasarım-kalıbı-uygulamak"><h2>Nesne Yönelimli Tasarım Kalıbı Uygulamak</h2></a>
+<a class="header" href="#Örüntü-ve-eşleme" id="Örüntü-ve-eşleme"><h1>Örüntü ve Eşleme</h1></a>
+<a class="header" href="#Örüntüler-her-yerde-kullanılabilir" id="Örüntüler-her-yerde-kullanılabilir"><h2>Örüntüler Her Yerde Kullanılabilir</h2></a>
+<a class="header" href="#Çürütülebilirlik-bir-Örüntünün-eşleşmeme-İhtimali" id="Çürütülebilirlik-bir-Örüntünün-eşleşmeme-İhtimali"><h2>Çürütülebilirlik: Bir Örüntünün Eşleşmeme İhtimali</h2></a>
+<a class="header" href="#Örüntü-sözdizimi" id="Örüntü-sözdizimi"><h2>Örüntü Sözdizimi</h2></a>
+<a class="header" href="#gelişmiş-Özellikler" id="gelişmiş-Özellikler"><h1>Gelişmiş Özellikler</h1></a>
+<a class="header" href="#emniyetsiz-rust" id="emniyetsiz-rust"><h2>Emniyetsiz Rust</h2></a>
+<a class="header" href="#gelişmiş-Özellikler-1" id="gelişmiş-Özellikler-1"><h2>Gelişmiş Özellikler</h2></a>
+<a class="header" href="#gelişmiş-türler" id="gelişmiş-türler"><h2>Gelişmiş Türler</h2></a>
+<a class="header" href="#gelişmiş-İşlev-ve-kapamalar" id="gelişmiş-İşlev-ve-kapamalar"><h2>Gelişmiş İşlev ve Kapamalar</h2></a>
+<a class="header" href="#makrolar" id="makrolar"><h2>Makrolar</h2></a>
+<a class="header" href="#final-projesi-Çok-İşlikli-web-sunucusu-oluşturmak" id="final-projesi-Çok-İşlikli-web-sunucusu-oluşturmak"><h1>Final Projesi: Çok İşlikli Web Sunucusu Oluşturmak</h1></a>
+<a class="header" href="#tek-İşlikli-bir-web-sunucusu-oluşturmak" id="tek-İşlikli-bir-web-sunucusu-oluşturmak"><h2>Tek İşlikli Bir Web Sunucusu Oluşturmak</h2></a>
+<a class="header" href="#tek-İşlikli-sunucumuzu-Çok-İşlikli-bir-sunucuya-dönüştürmek" id="tek-İşlikli-sunucumuzu-Çok-İşlikli-bir-sunucuya-dönüştürmek"><h2>Tek İşlikli Sunucumuzu Çok İşlikli Bir Sunucuya Dönüştürmek</h2></a>
+<a class="header" href="#sorunsuzca-kapatmak-ve-temizlik" id="sorunsuzca-kapatmak-ve-temizlik"><h2>Sorunsuzca Kapatmak ve Temizlik</h2></a>
+<a class="header" href="#ekler" id="ekler"><h1>Ekler</h1></a>
+<p>Aşağıdaki bölümler Rust yolculuğunuzda faydalı olabilecek referans materyalleri içermektedir.</p>
+<a class="header" href="#ek-a-anahtar-kelimeler" id="ek-a-anahtar-kelimeler"><h2>Ek A: Anahtar Kelimeler</h2></a>
+<a class="header" href="#ek-b-İşleçler-ve-semboller" id="ek-b-İşleçler-ve-semboller"><h2>Ek B: İşleçler ve Semboller</h2></a>
+<a class="header" href="#ek-c-türetilebilir-Özellikler" id="ek-c-türetilebilir-Özellikler"><h2>Ek C: Türetilebilir Özellikler</h2></a>
+<a class="header" href="#ek-d-faydalı-geliştirme-araçları" id="ek-d-faydalı-geliştirme-araçları"><h2>Ek D: Faydalı Geliştirme Araçları</h2></a>
+<a class="header" href="#ek-e-sürümler" id="ek-e-sürümler"><h2>Ek E: Sürümler</h2></a>
+<a class="header" href="#ek-f-kitabın-Çevirileri" id="ek-f-kitabın-Çevirileri"><h2>Ek F: Kitabın Çevirileri</h2></a>
+<a class="header" href="#ek-g-rust-nasıl-nightly-rust-yapılır" id="ek-g-rust-nasıl-nightly-rust-yapılır"><h2>Ek G: Rust Nasıl “Nightly Rust” Yapılır?</h2></a>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-123456-7', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
