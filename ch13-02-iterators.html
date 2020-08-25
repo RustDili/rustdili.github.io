@@ -147,6 +147,359 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek" id="yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek"><h2>Yineleyiciler ile Bir Dizi Öğeyi İşlemek</h2></a>
+<p>Bir koleksiyonun tüm elemanları tükenene kadar her bir elemanı üzerinde sırasıyla belirli işlemleri gerçekleştirmekten yineleyiciler sorumludurlar. Yineleyici kullandığınızda bütün bu işlemlerin her birini tekrar tekrar gerçekleştirmek zorunda kalmazsınız.</p>
+<p>Rust’ta yineleyiciler tembel olduklarından, kendilerini tüketen yöntemler çağırılana kadar programlarınızı etkilemezler. Örneğin aşağıdaki kod; <code>Vec&lt;T&gt;</code> üzerinde tanımlanan <code>iter</code> yöntemini çağırarak <code>v1</code> vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kod tek başına anlamlı bir şey gerçekleştirmez.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let v1 = vec![1, 2, 3];
+
+    let v1_iter = v1.iter();
+}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-13: Bir yineleyici oluşturmak</span></p>
+<p>Bir yineleyici oluşturduktan sonra artık bunu çeşitli şekillerde kullanabiliriz. Bölüm 3’ün sonlarında yer alan örnek 3-5’te, her eleman üzerinde bir takım işlemleri gerçekleştirmek amacıyla <code>for</code> döngüsünün tüketimine verilen <code>iter</code> tanımlamasıyla yineleyici kullanmış, ancak yineleyicilere şu ana kadar derinlemesine odaklanamamıştık.</p>
+<p>Aşağıdaki örnekte, yineleyicinin oluşturulması ile <code>for</code> döngüsünde kullanımı birbirinden bağımsız olarak sunulmaktadır. Kendi başına <code>v1_iter</code> değişkeninde saklanan yineleyicinin tanımlandığı satırda hiç bir işlem gerçekleşmezken, bu değişkene adapte edilmiş yineleyiciyi kullanan bir <code>for</code> döngüsü ile çağrıldığında, kendisine geçirilmiş olan her öğenin değerini ekrana yazdıran bir döngü yineleyicisi olarak kullanışlı hale gelir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    let v1 = vec![1, 2, 3];
+
+    let v1_iter = v1.iter();
+
+    for val in v1_iter {
+        println!(&quot;Got: {}&quot;, val);
+    }
+}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-14: Bir yineleyici <code>for</code> döngüsünde kullanmak</span></p>
+<p>Standart kitaplıklarında yineleyici bulunmayan dillerde bu tarz bir işlev, olasılıkla dizinin ilk elemanıyla değerinin arttırıldığı bir sayaç değişkeniyle başlatılacak, dizinin sonuna erişilene kadar her eleman için değişken birer birer güncellenerek işletilecektir.</p>
+<p>Oysa yineleyiciler bütün bu karmaşık sayım sürecindeki mantığı sizin için üstlenebilir, muhtemel kod tekrarlarını azaltarak potansiyel karışıklıkların üstesinden gelebilirler. Yineleyiciler sadece vektörler gibi indekslenebilir veri yapılarıyle değil, aynı mantığın uygulandığı pekçok farklı koleksiyon türüyle kullanılılırken de fazlasıyla esnektirler. Haydi yineleyicilerin bunu nasıl yaptığını birlikte inceleyelim.</p>
+<a class="header" href="#iterator-Özelliği-ve-next-metodu" id="iterator-Özelliği-ve-next-metodu"><h3><code>Iterator</code> Özelliği ve <code>next</code> Metodu</h3></a>
+<p>Tüm yineleyiciler standart kitaplıkta tanımlanan <code>Iterator</code> adlı bir özelliği uygular. Özelliğin tanımı şuna benzer:</p>
+<pre><pre class="playpen"><code class="language-rust">#![allow(unused_variables)]
+fn main() {
+    pub trait Iterator {
+        type Item;
+
+        fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt;;
+
+        // Şu an için varsayılan uygulamaları gösterilmeyen metodlar
+    }
+}
+</code></pre></pre>
+<p>Bu tanımda <code>type Item</code> ve <code>Self::Item</code> gibi bu özelliklerle ilişkilendirilmiş türü bildiren yeni söz dizimleri kullanıldığına dikkat edin. İlişkili türlerden bölüm 19’da ayrıntılı olarak bahsedeceğimizden şimdilik bilmeniz gereken tek şey; bu kodun yineleyici özelliğini <em>(<code>Itarator trait</code>)</em> uygulayabilmek için bir öğe türü <em>(<code>Item type</code>)</em> tanımlanması gerektiği ve bu öğe türünün <code>next</code> metodunun dönüş türünde kullanıldığını belirtmesidir. Başka bir deyişle öğe türü yineleyiciden döndürülen tür olacaktır.</p>
+<p>Yineleyici özelliği uygulayıcılara sadece bir metodu tanımlamak için ihtiyaç duyar. Tanımlanan <code>next</code> metodu yineleme devam ettiği sürece öğeleri <code>Some</code> ile sarmalayarak birer birer döndürürken, yineleme sona erdiğinde <code>None</code> döndürecektir.</p>
+<p>Yineleyicideki <code>next</code> metodunu doğrudan kendimiz de çağırabiliriz. Örnek 13-15’te, <code>v1</code> vektöründe oluşturulan yineleyiciye yapılan çağrılardan <code>next</code> metoduna hangi değerlerin döndürüldüğü gösterilmektedir.</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn iterator_demonstration() {
+        let v1 = vec![1, 2, 3];
+
+        let mut v1_iter = v1.iter();
+
+        assert_eq!(v1_iter.next(), Some(&amp;1));
+        assert_eq!(v1_iter.next(), Some(&amp;2));
+        assert_eq!(v1_iter.next(), Some(&amp;3));
+        assert_eq!(v1_iter.next(), None);
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-15: Yineleyicideki <code>next</code> metodunu çağırmak</span></p>
+<p>Öncelikle <code>v1_iter</code> değişmezinin <code>mut</code> anahtar sözcüğüyle değişebilir hale dönüştürülmesi gerektiğine dikkat edin. Bir yineleyicide <code>next</code> metodunun çağrılması, yineleyicinin dizide bulunduğu yeri izlemek için kullandığı iç konumu değiştirir. Başka bir deyişle, metodu çağıran kod yineleyiciyi tüketir veya kullanır. Her <code>next</code> metodu çağrısı yineleyicide bir öğenin tüketilmesine neden olur. Oysa <code>v1_iter</code> değişkeni <code>for</code> döngüsü ile kullanıldığında, değişkenin mülkiyeti döngüye aktarıldığından, durumu perde arkasında değişebilir olarak değiştirilir ve böylelikle <code>v1_iter</code> değişmezinin değişebilir olarak dönüştürülmesine gerek duyulmaz.</p>
+<p>Ayrıca <code>next</code> metodu çağrılarından aldığımız değerlerin, vektör elemanlarının değişmez referansları olduğunu ve <code>Iter</code> metodunun değişmez referanslar üzerinde bir yineleyici oluşturduğunu unutmayın. Eğer <code>v1</code> vektörünün mülkiyetini alarak, sahip olunan değerleri döndürecek bir yineleyici oluşturmak istiyorsanız, iter yerine <code>into_iter</code> metodunu çağırabilirsiniz. Benzer şekilde, değişebilir referanslar üzerinde yineleme yapmanız gerektiğinde, <code>iter</code> kullanmak yerine, <code>iter_mut</code> metodunu kullanabilirsiniz.</p>
+<a class="header" href="#yineleyici-tüketen-metodlar" id="yineleyici-tüketen-metodlar"><h3>Yineleyici Tüketen Metodlar</h3></a>
+<p>Standart kitaplık tarafından sağlanan <code>Iterator</code> özelliğinin varsayılan uygulaması, halihazırda bir dizi metoda sahip olduğundan, bu metodlar hakkındaki bilgilere <code>Iterator</code> özelliğinin API belgelerini inceleyerek ulaşabilirsiniz. Bu metodlardan bazıları tanımlarında bulunan <code>next</code> metodunu çağırdığından <code>Iterator</code> özelliğini uygularken bu metodu da uygulamanız gerekmektedir.</p>
+<p>Bu metodunu çağıran işlevler ise çağrıları sırasında yineleyiciyi kullandıklarından onlara <em>tüketici adaptörleri</em> adı verilir. Yineleyicinin mülkiyetini alarak her öğe için <code>next()</code> metod çağırısını yineleyen ve bu esnada yineleyiciyi tüketen <code>sum</code> metodu buna iyi bir örnektir. Bu metod yineleme süresince her elemanı toplama ekleyer ve yineleme sona erdiğinde bu toplamı döndürür. Örnek 13-16 <code>sum</code> metodu kullanımını örnekleyen bir test içerir.</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#[cfg(test)]
+mod tests {
+    #[test]
+    fn iterator_sum() {
+        let v1 = vec![1, 2, 3];
+
+        let v1_iter = v1.iter();
+
+        let total: i32 = v1_iter.sum();
+
+        assert_eq!(total, 6);
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p><span class="caption">Örnek 13-16: Yineleyicideki tüm öğelerin toplamını alan <code>sum</code> metodunu çağırmak</span></p>
+<p><code>sum</code> metodu, kendisine yapılan çağrı ile <code>v1_iter</code> değişmezindeki yineleyicinin mülkiyetini üzerine alacağından bu değişkenin kullanılmasına izin verilmez.</p>
+<a class="header" href="#diğer-yineleyicileri-Üreten-metodlar" id="diğer-yineleyicileri-Üreten-metodlar"><h3>Diğer Yineleyicileri Üreten Metodlar</h3></a>
+<p><code>Iterator</code> özelliğinde tanımlanan ve <em>yineleyici adaptörleri</em> adı verilen diğer yöntemler ise yineleyicileri farklı yineleyicilerle değiştirmenize olanak sağlarlar. Bu adaptörlere karmaşık eylemleri okunabilir şekilde gerçekleştirmek çok sayıda çağrı zincirleyebilirsiniz. Ancak tüm yineleyiciler tembel olduklarından, yineleyici adaptörlerine yapılan çağrılardan sonuç alabilmek için <em>tüketici adaptörleri</em>nden birini çağırmanız gerekir.</p>
+<p>Örnek 13-17’de yeni bir yineleyici üretmek üzere her öğenin çağrıldığı bir kapama işlevine sahip yineleyici adaptörü olan <code>map</code> metodunun bir örneği gösterilir. Buradaki kapama işlevi vektördeki her öğe değerinin 1 arttırıldığı yeni bir yineleyici oluşturacaktır. Ancak bu kod bir uyarı vermektedir.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust not_desired_behavior">
+fn main() {
+    let v1: Vec&lt;i32&gt; = vec![1, 2, 3];
+
+    v1.iter().map(|x| x + 1);
+}
+
+</code></pre></pre>
+<p><span class="caption">Bir yineleyici adaptörü olan <code>map</code> metodunu yeni bir yineleyici oluşturmak üzere çağırmak</span></p>
+<p>Aldığımız uyarının çıktısı aşağıdaki gibidir:</p>
+<pre><code class="language-console">
+$ cargo run
+   Compiling iterators v0.1.0 (file:///projects/iterators)
+warning: unused `std::iter::Map` that must be used
+ --&gt; src/main.rs:4:5
+  |
+4 |     v1.iter().map(|x| x + 1);
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_must_use)]` on by default
+  = note: iterators are lazy and do nothing unless consumed
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.47s
+     Running `target/debug/iterators`
+
+</code></pre>
+<p>Örnek 13-17’de yer alan kod hiçbir şey yapmadığı gibi bildirdiğimiz kapama işlevi de hiçbir zaman çağrılmaz. Yineleyici adaptörleri tembel olduklarından, derleyicinin uyarısı bize yinelecinin tüketilmesi gerektiği uyarısını yapıyor.</p>
+<p>Bu durumu düzeltmek ve yineleyiciyi kullanabilmek için Bölüm 12, Örnek 12-1’de yer alan ve <code>env::args</code> ile kullandığımız <code>collect</code> metodundan yararlanacağız. Bu metod yineleyiciyi tüketerek elde ettiği değerleri bir koleksiyon veri türüne depolar.</p>
+<p>Örnek 13-18’de <code>map</code> metoduna yapılan çağrı vasıtasıyla yineleyici üzerinde yapılan yinelemeden döndürülen sonuçları bir vektörde topluyoruz. Sonuçların depolandığu bu vektör, orijinal vektördeki her öğenin değerine 1 eklenmiş sayılardan oluşmaktadır.</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">
+fn main() {
+    let v1: Vec&lt;i32&gt; = vec![1, 2, 3];
+
+    let v2: Vec&lt;_&gt; = v1.iter().map(|x| x + 1).collect();
+
+    assert_eq!(v2, vec![2, 3, 4]);
+}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-18: Yeni bir yineleyici oluşturmak üzere <code>map</code> yöntemini ve üretilen bu yineleyiciyi vektör oluştururken tüketen <code>collect</code> yöntemini çağırmak</span></p>
+<p><code>map</code> metodu bir kapama işlevi aldığından, her bir öğe için uygulamak istediğimiz herhangi bir işlemi belirtebiliriz. Bu örnek, <code>Iterator</code> özelliğinin sağladığı yineleme davranışını yeniden kullanırken, kapamaların bazı davranışları özelleştirmenize nasıl izin verdiğini gösteren harika bir örnektir.</p>
+<a class="header" href="#ortamlarını-yakalayan-kapamalar-kullanmak" id="ortamlarını-yakalayan-kapamalar-kullanmak"><h3>Ortamlarını Yakalayan Kapamalar Kullanmak</h3></a>
+<p>Artık yineleyicileri kullanıma sunduğumuza göre, bir yineleyici adaptörünü olan <code>filter</code> metodu kullanarak ortamlarını yakalayan kapamaların yaygın bir kullanımını gösterebiliriz. Bir yineleyicideki <code>filter</code> metodu, yineleyiciden aldığı her öğe karşılığında Boolean döndüren bir kapama işlevini kullanır. Kapama <code>true</code> döndürdüğünde, değer <code>filter</code> tarafından üretilen yineleyiciye dahil edilecek, <code>false</code> döndürdüğündeyse yineleyiciye dahil edilmeyecektir.</p>
+<p>Örnek 13-19’da <code>Shoe</code> adlı yapı örneklerinden oluşan koleksiyon üzerinde yineleme yapmak üzere <code>shoe_size</code> değişkenini ortamından elde eden bir kapama işleviyle <code>filter</code> metodunu birlikte kullanıyor ve sadece belirtilen boyuttaki ayakkabıları döndürüyoruz.</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">#[derive(PartialEq, Debug)]
+struct Shoe {
+    size: u32,
+    style: String,
+}
+
+fn shoes_in_my_size(shoes: Vec&lt;Shoe&gt;, shoe_size: u32) -&gt; Vec&lt;Shoe&gt; {
+    shoes.into_iter().filter(|s| s.size == shoe_size).collect()
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn filters_by_size() {
+        let shoes = vec![
+            Shoe {
+                size: 10,
+                style: String::from(&quot;Spor ayakkabı&quot;),
+            },
+            Shoe {
+                size: 13,
+                style: String::from(&quot;Sandalet&quot;),
+            },
+            Shoe {
+                size: 10,
+                style: String::from(&quot;Bot&quot;),
+            },
+        ];
+
+        let in_my_size = shoes_in_my_size(shoes, 10);
+
+        assert_eq!(
+            in_my_size,
+            vec![
+                Shoe {
+                    size: 10,
+                    style: String::from(&quot;Spor ayakkabı&quot;)
+                },
+                Shoe {
+                    size: 10,
+                    style: String::from(&quot;Bot&quot;)
+                },
+            ]
+        );
+    }
+}
+
+fn main() {}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-19: <code>shoe_size</code> değerini ortamından yakalayan bir kapama ile <code>filter</code> metodunu birlikte kullanmak</span></p>
+<p><code>shoes_in_my_size</code> işlevi, parametre olarak bir ayakkabı vektörü ve bir ayakkabı numarasının mülkiyetini alarak sadece belirtilen ölçüdeki ayakkabıları içeren bir yeni vektör döndürür.</p>
+<p><code>shoes_in_my_size</code> işlevinin gövdesinde vektörün mülkiyetini alacak bir yineleyici oluşturmak üzere <code>into_iter</code> metodunu çağırıyor, sonra bu yineleyiciyi, kapamanın sadece <code>true</code> döndürdüğü öğelerden oluşan yeni bir yineleyiciye uyarlayamak amacıyla <code>filter</code> metodunu kullanıyoruz.</p>
+<p>Ortamdan <code>shoe_size</code> parametresini yakalayan kapama, bu değeri her bir ayakkabının numarasıyla karşılaştırarak yalnızca belirtilen ölçüdeki ayakkabıları tutar. Son olarak, <code>collect</code> çağrısı, uyarlanmış yineleyici tarafından döndürülen değerleri işlev tarafından döndürülen bir vektöre depolar.</p>
+<p>Örneğimizdeki test, <code>shoes_in_my_size</code> işlevini çağırdığımızda, yalnızca belirttiğimiz ölçülere uygun ayakkabıların döndürüldüğünü göstermektedir.</p>
+<a class="header" href="#iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak" id="iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak"><h3><code>Iterator</code> Özelliği ile Kendi Yineleyicilerimizi Oluşturmak</h3></a>
+<p>Bir vektör üzerinde <code>iter</code>, <code>into_iter</code> veya <code>iter_mut</code> metodlarını çağırarak bir yineleyici oluşturabileceğinizi gösterdik. Tıpkı bu vektör için oluşturduğumuz yineleyici gibi, standart kütüphanedeki eşleme haritaları veya diğer koleksiyon türleri için de yineleyiciler hazırlayabilir, <code>Iterator</code> özelliğini kendi türlerinize uygulayarak dilediğiniz işlemleri gefçekleştiren yineleyiciler oluşturabilirsiniz. Daha önce de belirtildiği gibi, tanımlamanız gereken tek metod <code>next</code> metodu olduğundan, bu metodu tanımladığınızda, <code>Iterator</code> özelliği tarafından sağlanan varsayılan uygulamalara sahip metodların tümünü kullanabilirsiniz!</p>
+<p>Bu bilgiyi pekiştirmek adına, sadece 1’den 5’e kadar sayacak bir yineleyici oluşturalım. Öncelikle bunun için, bazı değerleri tutan bir yapı oluşturacak, ardından bu yapıya <code>Iterator</code> özelliğini uygulayacak ve bu uygulamadaki değerler vasıtasıyla bu yapıyı bir yineleyici haline getireceğiz.</p>
+<p>Örnek 13-20, <code>Counter</code> yapısının tanımını ve bu yapının örneklerini oluşturmak amacıyla ilişkilendirilmiş <code>new()</code> işlevini göstermektedir:</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">struct Counter {
+    count: u32,
+}
+
+impl Counter {
+    fn new() -&gt; Counter {
+        Counter { count: 0 }
+    }
+}
+
+fn main() {}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-20: <code>Counter</code> yapısı ve <code>count</code> alanı başlangıç değeri 0 olan yapı örnekleri başlatan <code>new</code> işlevini tanımlamak</span></p>
+<p><code>Counter</code> yapısının <code>count</code> adlı bir alanı vardır. Bu alan, 1’den 5’e kadar olan yineleme sürecinde nerede olduğumuzu takip edecek <code>u32</code> türünden bir değer tuttuğundan ve <code>count</code> uygulamasının değerini yöneteceğinden özeldir. <code>new</code> işlevi ise her yeni örnek başlatıldığında, başlatılan bu örnekleri <code>count</code> alanı sayesinde daima 0 değeriyle ilklendirmeye çalışır.</p>
+<p>Daha sonra, Örnek 13-21’de gösterildiği gibi, bu yineleyici kullanıldığında üstleneceği görevleri bildiren <code>next</code> metodunun gövdesini tanımlayarak <code>Counter</code> türüne <code>Iterator</code> özelliğini uygulayacağız:</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">
+struct Counter {
+    count: u32,
+}
+
+impl Counter {
+    fn new() -&gt; Counter {
+        Counter { count: 0 }
+    }
+}
+
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        if self.count &lt; 5 {
+            self.count += 1;
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+
+fn main() {}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-21: <code>Counter</code> yapısına <code>Iterator</code> özelliğini uygulamak</span></p>
+<p>Yineleyicimiz için ilişkili öğe türünü <code>u32</code> olarak belirleyip <code>type Item = u32;</code> şeklinde ayarladığımızdan yineleyiciden <code>u32</code> türünde değerler döndürülecektir. Bu noktada <em>İlişkili Türler</em> konusunu Bölüm 19’da ele alacağımızı hatırlatarak konuya devam ediyoruz.</p>
+<p>Yineleyicimizin mevcut duruma 1 eklemesini istediğimizden, 1’i döndürebilmesi için <code>count</code> u 0 olarak başlattık. <code>count</code> değeri 5’ten küçük olduğu sürece <code>next</code> metodu <code>count</code> değerini artırarak <code>Some</code> içine sarılmış geçerli değeri döndürecek, <code>count</code> değeri 5 olduğundaysa, yineleyicimiz <code>count</code> değerini artırmayı sona erdirerek <code>None</code> döndürmeye başlayacaktır.</p>
+<a class="header" href="#counter-yineleyicisinin-next-metodunu-kullanmak" id="counter-yineleyicisinin-next-metodunu-kullanmak"><h4><code>Counter</code> Yineleyicisinin <code>next</code> Metodunu Kullanmak</h4></a>
+<p><code>Iterator</code> özelliğini uyguladığımıza göre artık elimizde bir yineleyicimiz var demektir. Tıpkı Örnek 13-15’te yaptığımız bir <em>vektörden oluşturulan yineleyici</em>de olduğu gibi, aşağıda yer alan Örnek 13-22 de, <code>Counter</code> yapısının yineleme işlevini <code>next</code> metodunu doğrudan çağırarak kullanabileceğimizi gösteren bir test bölümü içerir.</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">struct Counter {
+    count: u32,
+}
+
+impl Counter {
+    fn new() -&gt; Counter {
+        Counter { count: 0 }
+    }
+}
+
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        if self.count &lt; 5 {
+            self.count += 1;
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calling_next_directly() {
+        let mut counter = Counter::new();
+
+        assert_eq!(counter.next(), Some(1));
+        assert_eq!(counter.next(), Some(2));
+        assert_eq!(counter.next(), Some(3));
+        assert_eq!(counter.next(), Some(4));
+        assert_eq!(counter.next(), Some(5));
+        assert_eq!(counter.next(), None);
+    }
+}
+
+fn main() {}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-22: <code>next</code> metodu uygulamasının işlevselliğini test etmek</span></p>
+<p>Bu test, <code>counter</code> değişkeninde yeni bir <code>Counter</code> örneği oluşturur. Ardından <code>next</code> metodunu defalarca çağırıp bu yineleyicinin sahip olmasını istediğimiz davranışı uyguladığımızı doğrulayam 1’den 5’e kadar olan değerleri döndürür.</p>
+<a class="header" href="#diğer-iterator-Özellik-metodlarını-kullanmak" id="diğer-iterator-Özellik-metodlarını-kullanmak"><h4>Diğer <code>Iterator</code> Özellik Metodlarını Kullanmak</h4></a>
+<p>Artık <code>next</code> metodunu tanımlayarak <code>Iterator</code> özelliğini uyguladığımıza ve hepsinin <code>next</code> metodunun işlevselliğini kullandıklarını bildiğimize göre, bundan böyle standart kitaplıkta tanımlanan tüm <code>Iterator</code> özellik metodlarının varsayılan uygulamalarını kullanabiliriz.</p>
+<p>Örnek 13-23’teki testte de gösterildiği gibi, bir <code>Counter</code> örneği tarafından üretilen değerleri almak istediğimizi, bunları ilk değeri atladıktan sonra başka bir <code>Counter</code> örneği tarafından üretilen değerlerle eşleştirdiğimizi, her çifti birbiriyle çarptığımızı ve elde edilen değerlerin sadece 3’e bölünebilenlerini alarak birbiriyle topladığımız bir örneği düşünün:</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">struct Counter {
+    count: u32,
+}
+
+impl Counter {
+    fn new() -&gt; Counter {
+        Counter { count: 0 }
+    }
+}
+
+impl Iterator for Counter {
+    type Item = u32;
+
+    fn next(&amp;mut self) -&gt; Option&lt;Self::Item&gt; {
+        if self.count &lt; 5 {
+            self.count += 1;
+            Some(self.count)
+        } else {
+            None
+        }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn calling_next_directly() {
+        let mut counter = Counter::new();
+
+        assert_eq!(counter.next(), Some(1));
+        assert_eq!(counter.next(), Some(2));
+        assert_eq!(counter.next(), Some(3));
+        assert_eq!(counter.next(), Some(4));
+        assert_eq!(counter.next(), Some(5));
+        assert_eq!(counter.next(), None);
+    }
+
+    #[test]
+    fn using_other_iterator_trait_methods() {
+        let sum: u32 = Counter::new()
+            .zip(Counter::new().skip(1))
+            .map(|(a, b)| a * b)
+            .filter(|x| x % 3 == 0)
+            .sum();
+        assert_eq!(18, sum);
+    }
+}
+
+fn main() {}
+
+</code></pre></pre>
+<p><span class="caption">Örnek 13-23: <code>Counter</code> yineleyicisinde farklı <code>Iterator</code> özellik metodlarını kullanmak</span></p>
+<p><code>zip</code> metodu, girdi yineleyicilerinden herhangi birisinin <code>None</code> döndürmesi halinde <code>None</code> varyantını döndüreceğinden, <code>zip</code> ifadesinin yalnızca dört çift oluşturabildiğini ve teorik olarak beşinci çift <code>(5, None)</code> olacağından, hiçbir zaman üretilmeyeceğini aklınızdan çıkarmayın.</p>
+<p>Standart kitaplık <code>next</code> metodunu çağıran diğer yöntemler için varsayılan uygulamaları sağladığından, <code>next</code> metodunun nasıl çalıştığını belirledikten sonra metod çağrılarının tamamını kullanmamız mümkündür.</p>
 
                     </main>
 

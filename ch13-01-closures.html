@@ -151,7 +151,7 @@
 <a class="header" href="#kapamalar-ile-bir-davranışı-soyutlamak" id="kapamalar-ile-bir-davranışı-soyutlamak"><h3>Kapamalar ile bir davranışı soyutlamak</h3></a>
 <p>Bir kapamayı daha sonra işletilmek üzere saklamanın yararlı olduğu bir örnek üzerinden ilerleyerek, kapama söz dizimi, tür çıkarımı ve özelliklerinden bahsedelim.</p>
 <p>Özel egzersiz planları üreten bir uygulama projesinde çalıştığımızı varsayalım. Egzersiz planlarını oluştururken kullanıcısının belirttiği; yaş, vücut kitle indeksi, egzersiz tercihleri, son egzersizler gibi birçok faktörü dikkate alan bu algoritmanın arka ucunu da Rust ile yazdığımızı düşünelim. Bu örnekte algoritmanın kullanılabilir olmasından ziyade birkaç saniye gibi kısa bir sürede çalışması beklendiğinden, algoritmayı bir kez ve sadece ihtiyacımız olduğunda çağararak kullanıcıyı boş yere bekletmek istemiyoruz.</p>
-<p>Bu varsayımsal algoritmayı örnek 13-1’ de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz.</p>
+<p>Bu varsayımsal algoritmayı örnek 13-1’ de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">use std::thread;
 use std::time::Duration; 
@@ -166,14 +166,14 @@ fn simulated_expensive_calculation(intensity: u32) -&gt; u32 {
 #    simulated_expensive_calculation(10);
 #}
 </code></pre></pre>
-<p><span class="caption"> Örnek 13-1: İki saniyelik ayakta durma egzersizinde kullanılan ve çalışması iki saniye süren kurgusal hesaplama işlevi</span></p>
+<p><span class="caption"> Örnek 13-1: İki saniyelik ayakta durma egzersizinde kullanılan ve çalışması iki saniye süren <code>simulated_expensive_calculation</code> işlevi</span></p>
 <p>Bu programın bir sonraki önemli adımı ise, egzersiz uygulamasının bölümlerini içeren <code>main</code> işlevidir. Bu işlevdeyse kullanıcı bir egzersiz planı istediğinde uygulamanın çağıracağı kod yer alır. Çünkü uygulamanın ön ucuyla etkileşim, kapamaların kullanımıyla ilgili olmadığından, programımıza girdileri temsil eden değerleri kodlayacak ve ardından çıktıları yazdıracağız.</p>
 <p>İhtiyacımız olan girdiler şunlardır:</p>
 <ul>
 <li>Kullanıcının talep ettiği egzersizin düşük ya da yüksek yoğunluklu olduğunu gösteren bir egzersiz yoğunluk numarası</li>
 <li>Farklı antreman planlarının üretilmesini sağlayan rastgele bir sayı</li>
 </ul>
-<p>Çıktımız ise önerilen egzersiz planı olacaktır. Örnek 13-2 bu verilerin <code>main</code> işlevinde nasıl kullanıldığı gösterilir.</p>
+<p>Çıktımız ise önerilen egzersiz planı olacaktır. Örnek 13-2 bu verilerin <code>main</code> işlevinde nasıl kullanıldığı gösterilir:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -218,7 +218,7 @@ fn main() {
 </code></pre></pre>
 <p><span class="caption">Örnek 13-2: Kullanıcı girişi ve rastgele sayı oluşturmayı simüle etmek için kodlanmış değerlerden oluşan <code>main</code> işlevi</span></p>
 <p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm’ deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
-<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3’ te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır.</p>
+<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3’ te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -472,7 +472,7 @@ let n = example_closure(5);
   = note: expected type `std::string::String`
              found type `{integer}`
 </code></pre>
-<p>kapama işlevimiz olan <code>example_closure</code> dizgi değeri ile çağrıldığında, derleyici <code>x</code> parametresi ve dönüş türünü dizgi olarak algılar. Algılanan bu türler daha sonra <code>example_closure</code> içindeki kapamaya kilitlenir ve aynı kapama ile farklı bir tür kullanmaya çalışıldığında bir <em>uyumsuz tür</em> hatası ile karşılaşılır.</p>
+<p>Kapama işlevimiz olan <code>example_closure</code> dizgi değeri ile çağrıldığında, derleyici <code>x</code> parametresi ve dönüş türünü dizgi olarak algılar. Algılanan bu türler daha sonra <code>example_closure</code> içindeki kapamaya kilitlenir ve aynı kapama ile farklı bir tür kullanmaya çalışıldığında bir <em>uyumsuz tür</em> hatası ile karşılaşılır.</p>
 <a class="header" href="#jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak" id="jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak"><h3>Jenerik parametreler ve <code>Fn</code> özelliklerini kullanarak kapamaları hafızaya almak</h3></a>
 <p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6’ daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
 <p>Neyse ki bizim için başka bir çözüm yolu daha var. Kapamayı tutacak bir yapı tanımlayıp, kapama çağrıldığında sonuç değerini o yapı üzerinden oluşturabiliriz. Tanımlayacağımız bu yapı kapamayı yalnızca sonuç değerine ihtiyaç duyduğumuzda işleterek sonucunu önbelleğe alacak, böylelikle kodun geri kalanı sonucu kaydetmek ve yeniden kullanmak zorunda kalmamış olacaktır. Bu kalıbı daha önceki tecrübelerinizden, <strong>tembel değerlendirmeler</strong> veya <strong>ezberleme</strong> olarak biliyor olabilirsiniz.</p>
@@ -608,7 +608,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 #    );
 #}
 </code></pre></pre>
-<p><span class="caption">Örnek 13-11:Önbellek mantığını soyutlamak için generate_workout işlevinde Cacher yapısını kullanmak</span></p>
+<p><span class="caption">Örnek 13-11:Önbellek mantığını soyutlamak için <code>generate_workout</code> işlevinde Cacher yapısını kullanmak</span></p>
 <p>Böylelikle kapamayı doğrudan bir değişkene kaydetmek yerine, bu kapamayı tutması için yeni bir <code>Cacher</code> örneğini kaydediyoruz. Bu noktadan itibaren sonuca ihtiyacımız olan her yerde, <code>Cacher</code> yapısının bir örneğini oluşturup, <code>value</code> metodunu çağırırarak tembelce hesaplanan sonuca ulaşırız. Ayrıca pahalı hesaplama sonucunu döndüren <code>expensive_result</code> işlevi en fazla bir kez çağırılacağından <code>value</code> yöntemini çağırmak tercihimize kalmıştır.</p>
 <p>Bu programı örnek 13-2’ deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
 <a class="header" href="#cacher-uygulamasının-kısıtlamaları" id="cacher-uygulamasının-kısıtlamaları"><h3>Cacher Uygulamasının Kısıtlamaları</h3></a>
@@ -782,12 +782,13 @@ error[E0382]: borrow of moved value: `x`
 error: aborting due to previous error
 
 For more information about this error, try `rustc --explain E0382`.
-error: could not compile `equal-to-x`.
+error: could not compile `equal-to-x'.
 
 To learn more, run the command again with --verbose.
+
 </code></pre>
 <p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>‘in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>‘i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
-<p>Nihayetinde derleyici, kapama gövdesini analiz ederek <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden hangisine ihtiyacınız olup olmadığını söyleyeceğinden, özellik sınırlarından birini belirlerken, <code>Fn</code> ile başlamak çoğu zaman iyi fikirdir</p>
+<p>Nihayetinde derleyici, kapama gövdesini analiz ederek <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden hangisine ihtiyacınız olup olmadığını söyleyeceğinden, özellik sınırlarından birini belirlerken, <code>Fn</code> ile başlamak çoğu zaman iyi fikirdir.</p>
 <p>Ortamlarını yakalayabilen kapamaların işlev parametreleri olarak kullanılmasının yararlı olduğu durumları daha iyi gösterebilmek için bir sonraki Yineleyiciler başlığımıza geçelim.</p>
 
                     </main>
