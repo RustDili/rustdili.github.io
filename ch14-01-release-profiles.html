@@ -147,6 +147,42 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#sürüm-profilleriyle-derlemeleri-Özelleştirmek" id="sürüm-profilleriyle-derlemeleri-Özelleştirmek"><h2>Sürüm Profilleriyle Derlemeleri Özelleştirmek</h2></a>
+<p>Rust’ın <em>sürüm profilleri</em> kodun derleme aşamasında programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
+<p>Cargo’nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
+<p>Bu profil adları size sürüm çıktılarınızdan tanıdık geliyor olabilir:</p>
+<!-- manual-regeneration
+anywhere, run:
+cargo build
+cargo build --release
+and ensure output below is accurate
+-->
+<pre><code class="language-console">
+$ cargo build
+    Finished dev [unoptimized + debuginfo] target(s) in 0.0s
+$ cargo build --release
+    Finished release [optimized] target(s) in 0.0s
+
+</code></pre>
+<p>Yukarıdaki derleme çıktısında gösterilen <code>dev</code> ve <code>release</code> ifadeleri, derleyicinin farklı profiller kullandığını gösterir.</p>
+<p>Eğer projenizin <em>Cargo.toml</em> dosyasında <code>[profil.*]</code> bölümü yoksa Cargo geçerli olan profillerin her biri için varsayılan ayarlara sahip demektir. Özelleştirmek istediğiniz herhangi bir profili <code>[profil.*]</code> bölüm başlığının altına ekleyerek, varsayılan ayarların alt kümelerini geçersiz kılabilirsiniz. Örneğin, <code>dev</code> ve <code>release</code> profilleri için <code>opt-level</code> <em>(tercih düzeyi)</em> ayarları için varsayılan değerler şunlardır:</p>
+<p><span class="filename">Dosya adı: Cargo.toml</span></p>
+<pre><code class="language-toml">[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
+</code></pre>
+<p><code>Opt-level</code> ayarı, Rust’ın kodunuza uygulayacağı 0-3 aralığındaki optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, derleme süresi için fazla zaman ayırmayı sadece kodunuzu yayınlanmaya hazır olduğunuzda tercih edeceksiniz. Yani daha hızlı çalışan kod üretimi daha fazla zaman gerektireceğinden sürüm modunda profili düzeyi düzeyi varysayılanı <code>3</code> olarak ayarlanmıştır.</p>
+<p>Varsayılan ayarların herhangi birini projenizin <em>Cargo.toml</em> dosyasına farklı bir değer ekleyerek geçersiz kılabilirsiniz. Örneğin, <code>dev</code> profilinin optimizasyon düzeyini 1 olarak ayarlamak istiyorsanız, projenizin <em>Cargo.toml</em> dosyasına bu iki satırı eklemeniz yeterlidir:</p>
+<p><span class="filename">Dosya adı: Cargo.toml</span></p>
+<pre><code class="language-toml">
+[profile.dev]
+opt-level = 1
+
+</code></pre>
+<p>Bu kod varsayılan <code>opt-level = 0</code> düzey ayarını geçersiz kılacağından, <code>cargo build</code> komutunu çalıştırdığımızda, Cargo tarafından <code>dev</code> profili için varsayılan değerlerle birlikte, <code>opt-level</code> düzeyinde gerçekleştirdiğimiz özelleştirme seviyesi değerlendirilecektir. Bununla birlikte derleyici, <code>opt-level</code> düzeyini <code>1</code> olarak ayarladığımızdan, sürüm profilinde olduğu kadar olmasa da, varsayılandan daha fazla iyileştirme uygular.</p>
+<p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>‘ni inceleyebilirsiniz.</p>
 
                     </main>
 
