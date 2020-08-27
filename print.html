@@ -1215,7 +1215,7 @@ fn main() {}
 <a class="header" href="#performans-karşılaştırması-döngüler-vs-yineleyiciler" id="performans-karşılaştırması-döngüler-vs-yineleyiciler"><h2>Performans Karşılaştırması: Döngüler vs. Yineleyiciler</h2></a>
 <a class="header" href="#cargo-ve-cratesio-hakkında-daha-fazla-bilgi" id="cargo-ve-cratesio-hakkında-daha-fazla-bilgi"><h1>Cargo ve Crates.io Hakkında Daha Fazla Bilgi</h1></a>
 <p>Şimdiye kadar kodumuzu oluşturmak, çalıştırmak ve test etmek için Cargo’nun yalnızca en temel özelliklerini kullandık,
-ancak Cargo ile çok daha fazlasını yapılabilir. Bu bölümde, aşağıdakilerin nasıl yapılacağını göstermek amacıyla gelişmiş özelliklerinden bazılarını tartışacağız:</p>
+ancak Cargo ile çok daha fazlası yapılabilir. Bu bölümde, aşağıdaki işlemlerin nasıl yapılacağını gösterebilmek amacıyla Cargo’nun gelişmiş özelliklerinden bazılarını tartışacağız:</p>
 <ul>
 <li>Sürüm profilleri aracılığıyla derlemenin özelleştirilmesi</li>
 <li>Kütüphanelerin <a href="https://crates.io/">crates.io</a><!-- ignore -->‘da yayınlanması</li>
@@ -1225,7 +1225,7 @@ ancak Cargo ile çok daha fazlasını yapılabilir. Bu bölümde, aşağıdakile
 </ul>
 <p>Cargo’nun yetenekleri bu bölümde ele aldığımızdan konulardan çok daha fazlasını barındırdığından, tüm özellikleri değerlendirebilmek için <a href="https://doc.rust-lang.org/cargo/">bu bağlantıda yer alan belgelerine</a> başvurabilirsiniz.</p>
 <a class="header" href="#sürüm-profilleriyle-derlemeleri-Özelleştirmek" id="sürüm-profilleriyle-derlemeleri-Özelleştirmek"><h2>Sürüm Profilleriyle Derlemeleri Özelleştirmek</h2></a>
-<p>Rust’ın <em>sürüm profilleri</em> kodun derleme aşamasında programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
+<p>Rust’ın <em>sürüm profilleri</em>, kodunu derleme aşamasına getirmiş olan programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
 <p>Cargo’nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
 <p>Bu profil adları size sürüm çıktılarınızdan tanıdık geliyor olabilir:</p>
 <!-- manual-regeneration
@@ -1242,7 +1242,7 @@ $ cargo build --release
 
 </code></pre>
 <p>Yukarıdaki derleme çıktısında gösterilen <code>dev</code> ve <code>release</code> ifadeleri, derleyicinin farklı profiller kullandığını gösterir.</p>
-<p>Eğer projenizin <em>Cargo.toml</em> dosyasında <code>[profil.*]</code> bölümü yoksa Cargo geçerli olan profillerin her biri için varsayılan ayarlara sahip demektir. Özelleştirmek istediğiniz herhangi bir profili <code>[profil.*]</code> bölüm başlığının altına ekleyerek, varsayılan ayarların alt kümelerini geçersiz kılabilirsiniz. Örneğin, <code>dev</code> ve <code>release</code> profilleri için <code>opt-level</code> <em>(tercih düzeyi)</em> ayarları için varsayılan değerler şunlardır:</p>
+<p>Eğer projenizin <em>Cargo.toml</em> dosyasında <code>[profil.*]</code> bölümü yoksa Cargo geçerli olan profillerin her biri için varsayılan ayarlara sahip demektir. Özelleştirmek istediğiniz herhangi bir profili <code>[profil.*]</code> bölüm başlığının altına ekleyerek, varsayılan ayarların alt kümelerini geçersiz kılabilirsiniz. Örneğin, <code>dev</code> ve <code>release</code> profillerinin <code>opt-level</code> <em>(tercih düzeyi)</em> ayarları için varsayılan değerleri şunlardır:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">[profile.dev]
 opt-level = 0
@@ -1251,7 +1251,7 @@ opt-level = 0
 opt-level = 3
 
 </code></pre>
-<p><code>Opt-level</code> ayarı, Rust’ın kodunuza uygulayacağı 0-3 aralığındaki optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, derleme süresi için fazla zaman ayırmayı sadece kodunuzu yayınlanmaya hazır olduğunuzda tercih edeceksiniz. Yani daha hızlı çalışan kod üretimi daha fazla zaman gerektireceğinden sürüm modunda profili düzeyi düzeyi varysayılanı <code>3</code> olarak ayarlanmıştır.</p>
+<p>0-3 aralığındaki <code>Opt-level</code> ayarı, Rust’ın kodunuza uygulayacağı optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, kodunuzu yayınlamaya hazır olduğunuzda derleme süresi için daha fazla zaman ayırmayı tercih edeceksiniz. Yani daha hızlı çalışan kodun üretim aşaması daha fazla zaman gerektireceğinden sürüm modun için varsayılan profil <code>opt-level = 3</code> düzeyine ayarlanmıştır.</p>
 <p>Varsayılan ayarların herhangi birini projenizin <em>Cargo.toml</em> dosyasına farklı bir değer ekleyerek geçersiz kılabilirsiniz. Örneğin, <code>dev</code> profilinin optimizasyon düzeyini 1 olarak ayarlamak istiyorsanız, projenizin <em>Cargo.toml</em> dosyasına bu iki satırı eklemeniz yeterlidir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
@@ -1262,7 +1262,132 @@ opt-level = 1
 <p>Bu kod varsayılan <code>opt-level = 0</code> düzey ayarını geçersiz kılacağından, <code>cargo build</code> komutunu çalıştırdığımızda, Cargo tarafından <code>dev</code> profili için varsayılan değerlerle birlikte, <code>opt-level</code> düzeyinde gerçekleştirdiğimiz özelleştirme seviyesi değerlendirilecektir. Bununla birlikte derleyici, <code>opt-level</code> düzeyini <code>1</code> olarak ayarladığımızdan, sürüm profilinde olduğu kadar olmasa da, varsayılandan daha fazla iyileştirme uygular.</p>
 <p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>‘ni inceleyebilirsiniz.</p>
 <a class="header" href="#bir-sandığı-cratesio-Üzerinde-yayınlamak" id="bir-sandığı-cratesio-Üzerinde-yayınlamak"><h2>Bir Sandığı Crates.io Üzerinde Yayınlamak</h2></a>
-<a class="header" href="#cargo-Çalışma-alanları" id="cargo-Çalışma-alanları"><h2>Cargo Çalışma Alanları</h2></a>
+<p>Önceki bölümlerde gerçekleştirdiğimiz bazı örnek projeler, çalışabilmek için <a href="https://crates.io/">crates.io</a>‘daki bazı paketlere bağımlı olduklarından, bu paketleri projelerimize dahil etmeyi öğrenmiştik. Halbuki sizler de kendi paketlerinizi yayınlayarak kodlarınızı başkalarıyla paylaşıma açabilirsiniz. <a href="https://crates.io/">Crates.io</a> sitesinde bulunan sandık kayıt defteri, paketlerinizin kaynak kodunu dağıtacağından, öncelikle projenizin açık kaynak kodunu barındırmak zorundadır.</p>
+<p>Rust ve Cargo, yayınlanan paketleri başka geliştiricilerin kolaylıkla bulup kullanabilmesini sağlayan özelliklere sahiptir. Az sonra bu özelliklerin bazılarından bahsedecek ve ardından bir paketin nasıl yayınlanacağını anlatacağız.</p>
+<a class="header" href="#kullanışlı-belgeleme-yorumları-oluşturmak" id="kullanışlı-belgeleme-yorumları-oluşturmak"><h3>Kullanışlı Belgeleme Yorumları Oluşturmak</h3></a>
+<p>Paketlerinizin doğru biçimde belgelenmesi, bu paketlerin başka kullanıcılar tarafından nasıl ve ne zaman kullanılabileceğine ışık tutacağından, belgelendirme sürecine zaman ayırmak önemlidir. Bölüm 3’te iki eğik çizgi <code>//</code> kullanarak Rust kodlarını nasıl yorumlayacağımızı tartışmıştık. Bu normal yorumların yanısıra Rust, <em>belgeleme yorumları</em> olarak bilinen ve kod içinde yapılan açıklamaları, HTML belgelerine çevirmeye yarayan özel bir yorumlama biçimine sahiptir. Bu HTML belgeleri, sandığınızın nasıl <em>uygulandığını</em> anlatmaktan ziyade, nasıl <em>kullanılacağını</em> öğrenmek isteyen programcılara yol gösteren genel API öğelerinin belgelenmiş içeriğinden oluşur.</p>
+<p>Belgeledikleri öğeden hemen önce yerleştirilen ve iki yerine <code>///</code> üç eğik çizgi ile ifade edilen belgeme yorumları metni biçimlendirmek için Markdown gösterimini destekler. Örnek 14-1, <code>sandigim</code> adlı sandıkta yer alan <code>bir_ekle</code> işlevi için belgeleme yorumlarını göstermektedir:</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">
+/// Kendisine iletilen sayıya bir ekler
+///
+/// # Örnekler
+///
+/// ```
+/// let deger = 5;
+/// let yanit = sandigim::bir_ekle(deger);
+///
+/// assert_eq!(6, yanit);
+/// ```
+
+pub fn bir_ekle(x: i32) -&gt; i32 {
+    x + 1
+}
+
+</code></pre>
+<p><span class="caption">Örnek 14-1: Bir işlevin belgelenmesi</span></p>
+<p>Örnekteki <code>bir_ekle</code> işlevinin görevini anlatıp, <code>Örnekler</code> etiketli bir bölüm başlatarak <code>bir_ekle</code> işlevinin nasıl kullanılacağını anlatan kodları ekliyoruz. Bu işlemleri tamamladıktan sonra <code>cargo doc</code> komutunu çalıştırarak bu yorum satırlarının işlenmesiyle oluşturulan bir HTML belgesine sahip oluruz. Bu komutla oluşturulan HTML belgeleri <code>rustdoc</code> araç seti çalıştırılarak <code>target/doc</code> dizinine yerleştirilecektir.</p>
+<p>Biraz daha rahatlık sağlayan <code>cargo doc --open</code> komutu ise, hem sandığınıza ait tüm bağımlılıkların HTML belgelerini oluşturacak, hem de oluşturduğu belgeleri web tarayıcınızda açarak kullanımınıza sunacaktır. Şimdi <code>add_one</code> işlevine giderek, Resim 14-1’de gösterilen belgeleme yorumlarının metne nasıl dönüştürüldüğünü inceleyebilirsiniz:</p>
+<p><img alt="`my_crate` sandığında `add_one` işlevi için oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-01.png" class="center" /></p>
+<p><span class="caption">Resim 14-1: <code>add_one</code> işlevinin HTML belgeleri</span></p>
+<a class="header" href="#yaygın-olarak-kullanılan-bölümler" id="yaygın-olarak-kullanılan-bölümler"><h4>Yaygın Olarak Kullanılan Bölümler</h4></a>
+<p>HTML belgesinde <code># Örnekler</code> başlıklı bir bölüm oluşturabilmek için Örnek 14-1’de <code># Örnek</code> şeklinde bir Markdown başlığı sözdizimi kullandık. Pek çok sandık yazarının belgelerinde yaygın olarak kullandığı bazı bölümler ise aşağıda sıralanmaktadır:</p>
+<ul>
+<li><strong>Panikler:</strong> Belgelenen işlevin panik üretebileceği senaryolar. İşlevin çağrıldığı programlarda panik üretmesi istenmiyorsa, kullanıcıların bu senaryoların gerçekleşebileceği durumlarda işlevi çağırmadıklarından emin olunmalıdır.</li>
+<li><strong>Hatalar:</strong> İşlev bir <code>Result</code> türü döndürdüğünde, oluşması muhtemel hata çeşitlerinin ve bu hataların döndürülme neden ve koşullarının tanımlanması, işlevi çağıran tarafların farklı türden hataları farklı şekillerde işlemelerini sağlayacak şekilde kod üretmelerine yardımcı olabilir.</li>
+<li><strong>Güvenlik:</strong> Eğer işlev çağrısı <code>unsafe</code> yani emniyetsiz bir çağrı ise (Rust’ın emniyetsiz kullanım seçeneğini Bölüm 19’da tartışacağız), işlevin güvensiz olma nedenlerini açıklayan ve çağıran tarafların desteklemesi gereken değişmezleri kapsayan bir bölüm olmalıdır.</li>
+</ul>
+<p>Çoğu belgelendirme çalışmasında bu bölümlerin her birinin yorumlanmasına ihtiyaç duyulmaz. Bununla birlikte bu bölümler kodlarınızı çağıran tarafların bilmek isteyeceği yönleri hatırlamanız amacıyla tavsiye edilen bir kontrol listesidir.</p>
+<a class="header" href="#test-amaçlı-belgeleme-yorumları" id="test-amaçlı-belgeleme-yorumları"><h4>Test Amaçlı Belgeleme Yorumları</h4></a>
+<p>Belgeleme yorumlarınıza örnek kod blokları eklemek, kütüphanenizin nasıl kullanılacağını göstermenize yardımcı olabileceği gibi ek bir avantaj olarak <code>cargo test</code> komutu çalıştırılarak kod örneklerinizin test edilmesine olanak sağşar. Hiçbir şey test edilebilecek örnekler içeren belgelerden daha iyi olamaz. Ancak, belgeleme sonrası gerçekleşen kod değişiklikleri yüzünden işe yaramayan örneklerden daha kötü bir şey de yoktur. Örnek 14-1’deki <code>bir_ekle</code> işlevi için oluşturduğumuz belgelere <code>cargo test</code> komutu uygularsak, aşağıdakine benzer bir test sonucu göreceğiz:</p>
+<pre><code class="language-test">
+   Doc-tests sandigim
+
+running 1 test
+test src/lib.rs - bir_ekle (line 5) ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+
+</code></pre>
+<p>Bu aşamada işlev ya da örnek değiştirilecek olursa, örnekteki <code>assert_eq!</code> ifadesi panik üreteceğinden <code>cargo test</code> komutu tekrar çalıştırıldığında, test sürecinin örnek ve kod bölümlerinin uyumsuzluğunu fark ettiğini gözlemleyeceğiz.</p>
+<a class="header" href="#İçerilen-Öğelerin-yorumlanması" id="İçerilen-Öğelerin-yorumlanması"><h4>İçerilen Öğelerin Yorumlanması</h4></a>
+<p>Bir başka belgeleme biçimi olan <code>//!</code> ise, yorum satırlarının hemen altına eklenenen öğeleri belgelemek yerine, yorumun ait olduğu, yani içerildiği öğeyi belgelemek için kullanılır. Bu tarz yorum satırlarını genellikle sandık veya modülün tamamını bir bütün olarak belgelemek amacıyla, kök dosyasının içinde (kural gereği src/lib.src) ya da bir modül içerisinde kullanırız.</p>
+<p>Örnek 14-2’de gösterildiği gibi, eğer daha önce oluşturduğumuz ve <code>bir_ekle</code> işlevini içeren <code>sandigim</code> için, bu sandığın amacını açıklayan belgeler eklemek istiyorsak, <em>src/lib.rs</em> dosyasının en başına <code>//!</code> işaretini belge yorumu olarak eklememiz gerekir.</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">
+//! # Sandigim
+//!
+//! `Sandigim`, bazı hesaplamaların daha kolay yapılmasını
+//! sağlayan araçlar koleksiyonudur.
+
+/// Kendisine iletilen rakama 1 ekler
+// --snip--
+///
+/// # Örnekler
+///
+/// ```
+/// let rakam = 5;
+/// let yanit = sandigim::bir_ekle(rakam);
+///
+/// assert_eq!(6, yanit);
+/// ```
+pub fn add_one(x: i32) -&gt; i32 {
+    x + 1
+}
+
+</code></pre>
+<p><span class="caption">Örnek 14-2: Bir bütün olarak <code>Sandigim</code> belgeleri</span></p>
+<p><code>//!</code> işaretiyle başlayan son satırın altında herhangi bir kod satırının bulunmadığına ve bir satırın boş bırakılmış olduğuna dikkat edin! Bunun sebebi, yorumları <code>///</code> yerine <code>//!</code> işaretiyle başlattığımızdan sonraki satırlarda bulunan öğeler yerine işaretin bulunduğu satırdaki öğelerin belgelenecek olmasıdır. Bu durumda bu yorumu içeren öğe, sandık kökümüz olan <em>src/lib.rs</em> dosyası olacağından bu yorumlar da sandığın tamamı için yapılan açıklamaları içerecektir.</p>
+<p>Eğer <code>cargo doc --open</code> komutunu çalıştırdığımızda işaretlediğimiz bu yorum satırları Şekil 14-2’de gösterildiği gibi <code>sandigim</code> belgesinin ön sayfasında, sandıktaki genel öğeler listesinin üstünde görüntülenecektir:</p>
+<p><img alt="Sandığın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-02.png" class="center" /></p>
+<p><span class="caption">Resim 14-2: <code>Sandigim</code>‘ın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri</span></p>
+<p>Öğelerdeki belge yorumları, özellikle sandık ve modülleri tanımlamak için kullanışlıdır. Bu yorumları, paketlerinizi kullanacak olan kişilerin paket düzenini anlamalarına yardımcı olmak ve paket kapsamının genel amacını açıklamak için kullanmanız önemlidir.</p>
+<a class="header" href="#uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak" id="uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak"><h3>Uygun Bir Genel API’yi <code>pub use</code> ile Dışa Aktarmak</h3></a>
+<p>Bölüm 7’de, <code>mod</code> anahtar kelimesini kullanarak kodumuzu modüller halinde nasıl düzenleyeceğinizi, <code>pub</code> anahtar sözcüğüyle öğelerin nasıl genelleştirileceğini ve <code>use</code> anahtar kelimesiyle de öğelerin kapsama nasıl dahil edileceğini ele almıştık. Ancak, bir sandığın geliştirilme sürecinde sizin için anlamlı olan organizasyon yapısı, kullanıcılarınız için çok uygun olmayabilir. Sandığınızı çok katmanlı ve hiyerarşik bir yapıda düzenlediğinizde, bu hiyerarşinin alt katmanlarında tanımlanmış bir türü kullanmak isteyen kişiler, bu türe erişmekte sorun yaşayabilirler. Ayrıca bu türe <code>use sandigim::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak yerine,  <code>sandigim::bir_modul::baska_bir_modul::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak oldukça rahatsız edici olabilir.</p>
+<p>Bir sandık yayınlarken herkese açık olarak tasarlanmış olan API’nizin yapısı oldukça önemlidir. Sandığınızı kullanan kişiler bu yapıya sizin kadar aşina olmadıklarından, sandığınız büyüyüp karmaşık bir <em>modüller hiyerarşisine</em> dönüştüğünde, kullanmak istedikleri API parçalarına ulaşmakta zorluk çekebilirler.</p>
+<p>İyi haber şu ki, eğer organizasyon yapınız başkaları tarafından farklı kütüphaneler ile kullanılamayacak gibiyse, API Hiyararşisini veya tasarımını baştan başa yeniden düzenlemek yerine, <code>pub use</code> anahtar kelimesini kullanarak, bu yapının genel kullanıma uygun bir sürümünü tüm öğeleriyle birlikte yeniden ihraç edebilirsiniz. Yeniden ihraç işleminde, bir konumda bulunan genel bir öğe yerinden alınarak, başka bir yerde sanki başka bir konumda tanımlanmış gibi herkese açık hale getirilir.</p>
+<p>Örneğin, sanatsal kavramları modellemek için <code>sanat</code> adında bir kütüphane tasarladığımızı varsayalım. Örnek 14-3’te de görüleceği gibi, bu kütüphanenin içinde <code>BirincilRenk</code> ve <code>IkıncılRenk</code> olarak isimlendirilmiş iki sıralamadan <em>(enum)</em> oluşan <code>turler</code> modülü ve <code>karisim</code> adında bir işlev içeren <code>araclar</code> modülü bulunmaktadır:</p>
+<p><span class="filename">Dosya adı: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">//! # Sanat
+//!
+//! Sanatsal kavramları modellemek için bir kütüphane.
+
+pub mod turler {
+    /// RYB renk modeline göre ana renkler.
+    pub enum BirincilRenk {
+        Kizil,
+        Sari,
+        Mavi,
+    }
+
+    /// RYB renk modeline göre ikincil renkler.
+    pub enum IkincilRenk {
+        Portakal,
+        Yesil,
+        Mor,
+    }
+}
+
+pub mod araclar {
+    use crate::turler::*;
+
+    /// İkincil bir renk oluşturmak için iki ana rengi
+    /// eşit miktarda birleştirir.
+    pub fn karisim(c1: BirincilRenk, c2: IkincilRenk) -&gt; IkincilRenk {
+        // --snip--
+        IkincilRenk::Portakal
+    }
+}
+
+fn main() {}
+</code></pre></pre>
+<p><span class="caption">Örnek 14-3: <code>turler</code> ve <code>araclar</code> modülleri halinde düzenlenmiş öğeler içeren bir <code>sanat</code> kütüphanesi</span></p>
+<p>Resim 14-3, Bu sandık için<code>cargo doc</code> tarafından üretilen belgenin ön yüzünü göstermektedir:</p>
+<p><img alt="`turler` ve `araclar` modüllerini örnekleyen `sanat` sandığı için oluşturulmuş belgeler" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-03.png" class="center" /></p>
+<p><span class="caption">Resim 14-3: <code>turler</code> ve <code>araclar</code> modüllerini örnekleyen <code>sanat</code> sandığının ön yüzü</span></p>
+<p>Belgenin ön sayfasında <code>BirincilRenk</code> ve <code>IkincilRenk</code> türleri ve <code>karisim</code> işlevinin listelenmediğine dikkat edin. Onların görüntülenebilmesi için <code>turler</code> ve <code>araclar</code> bağlantılarının açılması gerekir.</p>
+<p>Bu kütüphaneye bağımlı başka bir sandık, halihazırda tanımlanmış olan <code>sanat</code> modül yapısına ait öğeleri kendi kapsamına alabilmek için <code>use</code> ifadesini kullanmak zorundadır. Örnek 14-4, <code>sanat</code> sandığındaki <code>BirincilRenk</code> ve <code>karisim</code> öğelerini kullanan başka bir sandık örneğini gösternektedir:</p>
+<!-- devam --> <a class="header" href="#cargo-Çalışma-alanları" id="cargo-Çalışma-alanları"><h2>Cargo Çalışma Alanları</h2></a>
 <a class="header" href="#cratesio-Üzerindeki-İkili-sandıkları-cargo-install-komutuyla-yüklemek" id="cratesio-Üzerindeki-İkili-sandıkları-cargo-install-komutuyla-yüklemek"><h2>Crates.io Üzerindeki İkili Sandıkları <code>cargo install</code> Komutuyla Yüklemek</h2></a>
 <a class="header" href="#Özel-komutlarla-cargo-olanaklarını-genişletmek" id="Özel-komutlarla-cargo-olanaklarını-genişletmek"><h2>Özel Komutlarla Cargo Olanaklarını Genişletmek</h2></a>
 <a class="header" href="#akıllı-İşaretçiler" id="akıllı-İşaretçiler"><h1>Akıllı İşaretçiler</h1></a>
