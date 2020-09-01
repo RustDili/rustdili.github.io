@@ -147,8 +147,58 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#rust-programlama-dili" id="rust-programlama-dili"><h1>Rust Programlama Dili</h1></a>
+<p><em>Steve Klabnik ve Carol Nichols’tan, Rust Topluluğu’nun katkılarıyla...</em></p>
+<p>Metnin bu sürümü Rust 2018 baskısının deyimlerinden yararlanabilmek için, tüm projelerin <em>Cargo.toml</em> belgelerinde <code>edition = 2018</code> ifadesini içerdiğini ve Rust 1.41.0 veya daha üst bir sürümünü kullandığınızı varsayar. Rust’ı yüklemek veya güncellemek için kitabın <a href="https://rustdili.github.io/ch01-01-installation.html">Bölüm 1 “Kurulum”</a>  ayracını, sürümler hakkında bilgilere ulaşmak içinse <a href="https://rustdili.github.io/appendix-05-editions.html">Ek E</a> belgesini takip edin.</p>
+<p>Rust dili kitabının 2018 Sürümü, Rust’ı daha ergonomik ve öğrenilmesi kolay bir dil haline getiren iyileştirmeleri içerir. Kitabın bu baskısında aşağıdaki iyileştirmeleri yansıtan bir dizi değişiklik yer almaktadır:</p>
+<ul>
+<li>“Büyüyen Projeleri Paketler, Sandıklar ve Modüller ile Yönetmek” başlıklı 7. Bölüm neredeyse yeniden yazıldı. 2018 Sürümü’ndeki modül sistemi ve yolların çalışma şekli daha tutarlı hale getirildi.</li>
+<li>Bölüm 10’da ise, yeni <code>impl Trait</code> söz dizimini açıklayan “Parametre Olarak Özellikler” ve “Özellikleri Uygulayan Geri Dönüş Türleri” başlıklı yeni konulara yer verildi.</li>
+<li>Bölüm 11’e, testlerin <code>?</code> işlecini kullanarak nasıl yazılacağını gösteren, “Testlerde <code>Result&lt;T, E&gt;</code> Kullanımı” başlıklı yeni bir konu eklendi.</li>
+<li>Derleyicide sağlanan iyileştirmeler yaşam süresi belirtimlerine daha az ihtiyaç duyduğundan, Bölüm 19’daki “Gelişmiş Yaşam Süreleri” bölümü kaldırıldı.</li>
+<li>Daha önce Ek D belgesinde yer alan “Makrolar” konusu, prosedür makrolarını da içerecek şekilde genişletilerek, Bölüm 19’da yer alan “Makrolar” başlıklı müstakil alana taşındı.</li>
+<li>Ek A’da yer alan “Anahtar Kelimeler” başlığında, 2015 ve 2018 Sürümü için yazılmış kodların birlikte çalışmasını sağlayan yeni “ham tanımlayıcılar” özelliğine yer verildi.</li>
+<li>Ek D artık “Faydalı Geliştirme Araçları” olarak adlandırılıyor ve yakın zamanda yayınlanmış olan Rust kodu yazmanıza katkı sağlayacak araçlara yer veriyor.</li>
+<li>Kitap boyunca bir dizi küçük hatayı ve kesin olmayan ifadeleri düzelttik. Bu sorunları bize bildiren okuyuculara teşekkür ederiz!</li>
+</ul>
+<p><em>Rust Programlama Dili</em> kitabının önceki sürümlerinde yer alan kodların, halihazırda kullandığınız Rust derleyicisinin sürümünü yükseltmiş olsanız bile, Cargo.toml belgelerinde <code>edition = &quot;2018&quot;</code> bildirimi olmadan da derlenmeye devam edeceğini hatırlatırız. İşte bu Rust’un geriye dönük uyumluluğunun bir garantisidir!</p>
+<p>Bu kitabın çevrimiçi HTML formatı <a href="https://rustdili.github.io/">https://rustdili.github.io/</a> adresinde yer almaktadır. Kitabın çevrimdışı çalışan Orijinal dildeki kopyası ise, <code>rustup</code> ile gerçekleştirilen Rust kurulumla ile gelir. Bu kitabı okumak için terminalinizde <code>rustup docs --book</code> komutunu çalıştırmanız yeterli olacaktır.</p>
+<p>Bu kitabı kapaksız ve e-kitap biçiminde <a href="https://nostarch.com/rust">No Starch Press</a> adresinden temin edebilirsiniz.</p>
 <a class="header" href="#Önsöz" id="Önsöz"><h1>Önsöz</h1></a>
+<p>Her zaman bu kadar net olmamakla beraber, Rust programlama dili temelde <em>güç vermek</em> ile ilgilidir: Şu anda ne tür bir kod yazıyor olursanız olun, Rust size daha ilerisine gitme, daha önce ulaştığınızdan çok daha geniş bir alanda ve  çeşitlilikte güvenli program yazma gücünü verir.</p>
+<p>Örneğin, bellek yönetimi, veri gösterimi ve eşzamanlılığın düşük düzeyli ayrıntılarıyla ilgilenen “sistem düzeyinde” çalışmayı ele alalım. Programlamanın bu alanı geleneksel olarak gizemli olarak görülmekte ve sadece yıllarını zorunlu olarak onun adı kötüye çıkmış tuzaklarından kaçınmayı öğrenmeye harcayan seçkin birkaç kişi tarafından erişilebilir durumdadır. Ve bu seçkin kişiler dahi kodlarını istismara, çökmeye yahut bozulmaya karşı korumak için dikkatli davranırlar.</p>
+<p>Rust, bu tuzaklardan sıyrılıp kodlama serüveniniz boyunca size yardımcı olacak dost canlısı ve şık bir araç seti sağlayarak bu engelleri aşar. Daha düşük seviyeli kontrole dalması gereken programcılar, bunu Rust ile, geleneksel çökme veya güvenlik açıkları riskini üstlenmeden ve kararsız bir araç zincirinin detaylarını öğrenmek zorunda kalmadan yapabilirler. Daha da güzeli Rust sizin, hız ve bellek kullanımı açısından verimli ve güvenilir kodlara doğallıkla  yönelmenizi sağlayacak şekilde tasarlanmıştır.</p>
+<p>Halihazırda düşük seviyeli kodlarla çalışan programcılar, tutku ve heveslerini diri tutmak amacıyla Rust’ı kullanabilirler. Örneğin, Rust’ta paralel işlemler, derleyicinin klasik hataları kolaylıkla yakalamasından dolayı nispeten düşük risk içerirler. Ek olarak kazaen çökmelere veya güvenlik açıklarına sebep olmayacağınızın güvencesiyle kodunuzda daha agresif iyileştirmeler gerçekleştirebilirsiniz.</p>
+<p>Ancak Rust sadece düşük seviyeli sistem programlama ile sınırlı değildir. Her birinin basit örneklerini kitabın ilerleyen bölümlerinde bulacağınız CLI uygulamaları, web sunucuları ve başka pek çok kod çeşidinin yazılmasını keyifli hale getirecek kadar etkileyici ve ergonomiktir. Rust ile çalışmak, bir alandan diğerine geçiş yapabileceğiniz beceriler geliştirmenize olanak sağlarken; bir web uygulaması yazarak bu dili öğrenebilir, öğrendiklerinizi bir Raspberry Pi üzerinde kolaylıkla uygulayabilirsiniz.</p>
+<p>Bu kitap tam olarak Rust kullanıcılarını güçlendirme potansiyeli taşırken, sadece Rust bilginizi değil, bir programcı olarak gelişim ve güveninizi de arttırmayı hedefleyen samimi ve ulaşılabilir bir metindir. Öğrenmeye hazırsanız buyrun başlayalım. Rust topluluğuna hoş geldiniz!</p>
+<p>— Nicholas Matsakis ve Aaron Turon</p>
 <a class="header" href="#giriş" id="giriş"><h1>Giriş</h1></a>
+<blockquote>
+<p>Not: Kitabın bu baskısı <a href="https://nostarch.com/rust">basılı</a> ve <a href="https://nostarch.com/">e-kitap</a> biçiminde
+No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
+</blockquote>
+<p>Rust üzerine bir giriş kitabı olan Rust Programlama Dili’e hoş geldiniz. Rust programlama dili, daha hızlı ve daha güvenilir programlar yazmanıza yardımcı olur. Programlama dili tasarımlarında üst düzey ergonomi ile düşük seviyeli kontrol, genel bir anlaşmazlık halindedir ve Rust bu çatışmaya meydan okur. Bellek kullanımı gibi geleneksel olarak düşük seviyeli kontrol ile ilişkilendirilen tüm zorlukları ortadan kaldırırken, sağladığı güçlü teknik kapasite ve olağanüstü geliştirici deneyimini dengeleyerek bu ayrıntıları rahatlıkla kontrol etmenizi sağlar.</p>
+<a class="header" href="#rust-kimler-İçin" id="rust-kimler-İçin"><h2>Rust Kimler İçin</h2></a>
+<p>Rust, çeşitli nedenlerle birçok insan için idealdir. En önemli gruplardan birkaçına bakalım.</p>
+<a class="header" href="#geliştirici-ekipler" id="geliştirici-ekipler"><h3>Geliştirici Ekipler</h3></a>
+<p>Rust, sistem programlama bilgileri farklı düzeylerde olan kalabalık geliştirici ekipleri arasında işbirliğini tesis eden verimli bir araç olduğunu kanıtlıyor. Düşük seviyeli kod, pek çok dilde kapsamlı testler ve deneyimli geliştiriciler tarafından, kodun dikkatle incelenmesiyle yakalanabilen çözümü zor hatalara eğilimlidir. Rust derleyicisi, eşzamanlılık hataları dahil bu türden hatalı kodların derlenmesini reddederek adeta bir bekçi rolü oynar. Derleyiciyle birlikte çalışan geliştirici ekibi, değerli zamanlarını hataları takip etmek yerine, programın mantığına odaklanarak geçirebilirler.</p>
+<p>Rust ayrıca sistem programlama dünyasına çağdaş geliştirici araçları da getiriyor:</p>
+<ul>
+<li>Rust ile birlikte gelen bağımlılık yöneticisi ve derleme aracı olan Cargo, Rust ekosisteminde bağımlılıkları ekleme, derleme ve yönetmeyi sancısız ve tutarlı hale getirir.</li>
+<li>Rustfmt ise geliştiriciler arasında tutarlı bir kodlama tarzı oluşturur.</li>
+<li>Rust Dil Sunucusu, kod tamamlama ve satır içi hata mesajları için <em>Entegre Geliştirme Ortamı (IDE)</em>  entegrasyonunu destekler.</li>
+</ul>
+<p>Bunlar ve Rust ekosistemindeki diğer araçları kullanan geliştiriciler sistem düzeyinde kod yazarken daha üretken olabilirler.</p>
+<a class="header" href="#Öğrenciler" id="Öğrenciler"><h3>Öğrenciler</h3></a>
+<p>Rust, öğrenciler ve sistem kavramları hakkında bilgi edinmek isteyenler içindir. Pek çok kişi Rust kullanarak işletim sistemleri geliştirmek gibi konuları öğrendi. Rust topluluğu oldukça misafirperver olup öğrencilerin sorularını yanıtlamaktan mutluluk duyacaktır. Rust ekipleri sistem kavramlarını bu kitaba benzer çabalar üzerinden öncelikle programlamaya yeni başlayanlar olmak üzere daha fazla kişi için erişilebilir kılmak istiyor.</p>
+<a class="header" href="#Şirketler" id="Şirketler"><h3>Şirketler</h3></a>
+<p>Büyüklü küçüklü yüzlerce şirket üretimlerinde çeşitli görevler için Rust’ı kullanıyorlar. Bu görevler arasında komut satırı araçları, web hizmetleri, DevOps araçları, gömülü cihazlar, ses, video analizi ve kod dönüştürme, kripto para birimleri, biyoinformatik, arama motorları, IOT uygulamaları, makine öğrenimi ve hatta Firefox web tarayıcısının önemli bölümleri bile bulunmakta.</p>
+<a class="header" href="#açık-kaynak-geliştiricileri" id="açık-kaynak-geliştiricileri"><h3>Açık Kaynak Geliştiricileri</h3></a>
+<p>Rust, Rust programlama dili, topluluğu, geliştirici araçları ve kütüphanelerinin oluşumuna katkı sağlamak isteyen kişiler içindir. Rust diline katkıda bulunmanızı çok isteriz.</p>
+<a class="header" href="#hız-ve-İstikrara-değer-verenler" id="hız-ve-İstikrara-değer-verenler"><h3>Hız ve İstikrara Değer Verenler</h3></a>
+<p>Biz hızdan bahsederken, hem Rust ile oluşturabileceğiniz programların hızından, hem de Rust’ın kodlama sürecinde sağladığı hızdan bahsediyoruz. Bu sebepten Rust, bir dilden hız bekleyenler içindir.</p>
+<p>Rust derleyicisinin kontrolleri özellik ekleme ve yeniden düzenleme aşamalarında kararlılık sağladığından, bu kontrollerin yapılamadığı dillerde geliştiricilerin eski ve kırılgan kodları değiştirmekten korktukları sürecin tam tersidir. Bu nedenle Rust, bir dilden istikrar bekleyenler içindir,</p>
+<p>Sıfır maliyetli soyutlamalar için çabalayan Rust, elle yazılan kodlar kadar çabuk düşük seviyeli kodlara derlenen üst düzey özellikler için gayret ederken, güvenli çalışan kodu hızlı çalışan bir kod haline getirmeye uğraşır. Dolayısıyla Rust, hız ve istikrar bekleyenler içindir!</p>
+<!-- Çeviride kaldığım yer -->
 <a class="header" href="#başlarken" id="başlarken"><h1>Başlarken</h1></a>
 <a class="header" href="#kurulum" id="kurulum"><h1>Kurulum</h1></a>
 <a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h1>Merhaba, Dünya</h1></a>
