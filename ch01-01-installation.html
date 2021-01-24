@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Kurulum - Rust Programlama Dili</title>
+        <title>Kurulum - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -146,7 +140,50 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#kurulum" id="kurulum"><h1>Kurulum</h1></a>
+                        <a class="header" href="#kurulum" id="kurulum"><h2>Kurulum</h2></a>
+<p>İlk adımımız Rust'ı kurmak olacağından Rust sürümlerini ve bunlarla ilişkili araçları yönetmek için tasarlanmış bir komut satırı aracı olan <code>rustup</code> aracılığıyla Rust'ı indireceğiz. İndirme işlemini gerçekleştirebilmek için internet bağlantısına ihtiyacınız olacak.</p>
+<blockquote>
+<p>Herhangi bir nedenle <code>rustup</code> aracını kullanmak istemiyorsanız
+diğer seçenekler için lütfen <a href="https://www.rust-lang.org/tools/install">kurulum sayfasını</a> inceleyiniz.</p>
+</blockquote>
+<p>Aşağıdaki adımlar Rust derleyicisinin en son kararlı sürümünü yükleyecektir. Rust'ın kararlılık garantileri kitapta derlenen örneklerin, Rust'ın daha yeni sürümleriyle de derlenmeye devam etmesini sağlar. Rust genellikle hata mesaj ve uyarılarını iyileştirdiğinden, derleyici çıktıları sürümden sürüme biraz farklılık gösterebilir. Başka bir ifadeyle, buradaki kurulum adımlarına uyarak yüklediğiniz daha yeni ve kararlı Rust sürümleri, beklendiği gibi bu kitabın içeriğiyle uyumlu çalışacaktır.</p>
+<blockquote>
+<a class="header" href="#komut-satırı-gösterimi" id="komut-satırı-gösterimi"><h3>Komut Satırı Gösterimi</h3></a>
+<p>Bu bölümde ve kitap boyunca, terminalde kullanılan bazı komutları göstereceğiz.
+Bir terminale girmeniz gereken satırların her biri <code>$</code> karakteri ile başlar.
+Ancak bu karakter her komutun başlangıcını gösterdiğinden ayrıca elle yazılmasına gerek yoktur.
+<code>$</code> karakteri ile başlamayan satırlar genellikle önceki komutun çıktısını gösterir.
+Buna ek olarak PowerShell'e özgü örneklerde <code>$</code> yerine <code>&gt;</code> karakteri kullanılır.</p>
+</blockquote>
+<a class="header" href="#linux-veya-macos-İçin-rustup-kurulumu" id="linux-veya-macos-İçin-rustup-kurulumu"><h3>Linux veya macOS İçin <code>rustup</code> Kurulumu</h3></a>
+<p>Rust'ı Linux veya macOS bir sistemde kullanacaksanız bir terminal açarak aşağıdaki komutu giriniz:</p>
+<pre><code class="language-console">$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+</code></pre>
+<p>Bu komut bir betik dosyasını indirerek Rust'ın en son kararlı sürümünü sisteminize yükleyecek olan <code>rustup</code> aracının kurulumunu başlatır. Kurulum esnasında sistem şifrenizi girmeniz istenebilir. Kurulumunuz başarılı olduğu takdirde işlem sonunda aşağıdaki satır görünecektir.</p>
+<pre><code class="language-text">Rust is installed now. Great!
+</code></pre>
+<p>Ek olarak muhtemelen daha önceden sisteminize yüklenmiş olan bir tür bağlayıcıya da ihtiyacınız olacak. Eğer bir Rust programını derlemeye çalışırken bir bağlayıcının çalıştırılamadığını bildiren hatalar alıyorsanız bu, gerekli olan bağlayıcının sisteminizde yüklü olmadığını ve elle yüklemeniz gerektiği anlamına gelir. C derleyicileri genellikle doğru bağlayıcılarla birlikte gelir. C derleyicisinin kurulumunu öğrenmek için platformunuzun belgelerine göz atmanız gerekir. Ayrıca, bazı yaygın Rust paketleri C kodlarına bağımlı olduğundan bir C derleyicisine ihtiyaç duyacaktır. Bu nedenle şimdiden bir C derleyicisi edinmeniz yararlı olabilir.</p>
+<a class="header" href="#windows-İçin-rustup-kurulumu" id="windows-İçin-rustup-kurulumu"><h3>Windows İçin <code>rustup</code> Kurulumu</h3></a>
+<p>Rust'ı Windows işletim sisteminize kurabilmeniz için <a href="https://www.rust-lang.org/tools/install">Windows için yükle</a> adresine giderek yükleme talimatlarını uygulamanız gerekir. Kurulumun bir aşamasında Visual Studio 2013 veya sonrası için C++ derleme araçlarına da ihtiyacınız olacağını bildiren bir mesaj alacaksınız. Derleme araçlarını edinmenin en kolay yolu <a href="https://visualstudio.microsoft.com/tr/visual-cpp-build-tools/">Visual Studio 2019 için Derleme Araçları</a>'nı yüklemektir. Bu yükleme esnasında yüklenecek bileşenleri seçmeniz istendiğinde &quot;C++ Derleme Araçları&quot;nı seçtiğinizden ve Windows 10 SDK ile ingilizce dil paketi bileşenlerinin dahil edildiğinden emin olun.</p>
+<p>Bu kitabın geri kalanı, hem <em>cmd.exe</em> hem de PowerShell'de çalışan komutları kullanır. Bunların arasında belirgin farklılıklar olması durumunda hangisinin kullanılacağını size açıkça belirteceğiz.</p>
+<a class="header" href="#güncelleme-ve-kaldırma" id="güncelleme-ve-kaldırma"><h3>Güncelleme ve Kaldırma</h3></a>
+<p><code>rustup</code> aracılığıyla kurduğunuz Rust'ı en son sürümüne kolaylıkla güncelleyebilirsiniz. Bunun için terminalinizde aşağıdaki komut satırını çalıştırmanız yeterlidir:</p>
+<pre><code class="language-console">$ rustup update
+</code></pre>
+<p>Eğer Rust ve <code>rustup</code> aracını kaldırmak isterseniz terminalinizde aşağıdaki satırı çalıştırmanız yeterlidir.</p>
+<pre><code class="language-console">$ rustup self uninstall
+</code></pre>
+<a class="header" href="#sorun-giderme" id="sorun-giderme"><h3>Sorun Giderme</h3></a>
+<p>Rust'ın sisteminize doğru şekilde kurulup kurulmadığını kontrol etmek için terminalinizde aşağıdaki satırı çalıştırabilirsiniz:</p>
+<pre><code class="language-console">$ rustc --version 
+</code></pre>
+<p>Terminalinizde Rust'ın son kararlı sürümün numarasını, kayıt değeri ve işlem tarihini aşağıdaki biçimde görmelisiniz:</p>
+<pre><code class="language-text">rustc x.y.z (abcabcabc yyyy-mm-dd)
+</code></pre>
+<p>GGördüğünüz bilgiler bu biçimdeyse Rust'ı başarıyla yüklemişsiniz demektir. Eğer Windows kullanıyor ve bu çıktıyı göremiyorsanız Rust'ın <code>%PATH%</code> sistem değişkeninizde olup olmadığını kontrol etmelisiniz. Bunların her biri doğru uygulanmış, yerli yerindeyse ve Rust halen çalışmıyorsa yardım alacağınız birkaç yer var. Bunlardan en erişilebilir olanı <a href="https://discord.com/invite/rust-lang">Rust'ın Discord resmi kanalı</a> olan #beginners kanalıdır. Orada size yardımcı olabilecek diğer Rustaceans'larla (evet kendimizi bu saçma isimle adlandırıyoruz) çevrimiçi sohbet edip sorununuza çözüm bulabilirsiniz. Diğer harika kaynaklar arasında ise <a href="https://users.rust-lang.org/">Rust Kullanıcıları Forumu</a> ile <a href="https://stackoverflow.com/questions/tagged/rust">Stack Overflow</a> bulunmaktadır.</p>
+<a class="header" href="#yerel-belgeler" id="yerel-belgeler"><h3>Yerel Belgeler</h3></a>
+<p>Rust kurulumu, çevrim dışı okuyabilmeniz için Rust belgelerinin yerel bir kopyasını da içerir. Bu yerel belgeleri tarayıcınızda okuyabilmek için terminalinizde <code>rustup doc</code> komutunu çalıştırmanız yeterlidir.</p>
+<p>Standart kütüphane tarafından sağlanan bir tür veya işlev hakkında bilgi almak ve nasıl kullanılacağını öğrenmek istiyorsanız uygulama programlama arabirimi (API) belgelerini inceleyebilirsiniz. </p>
 
                     </main>
 
@@ -186,24 +223,22 @@
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

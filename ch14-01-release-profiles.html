@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Sürüm Profilleriyle Derlemeleri Özelleştirmek - Rust Programlama Dili</title>
+        <title>Sürüm Profilleriyle Derlemeleri Özelleştirmek - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -147,8 +141,8 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#sürüm-profilleriyle-derlemeleri-Özelleştirmek" id="sürüm-profilleriyle-derlemeleri-Özelleştirmek"><h2>Sürüm Profilleriyle Derlemeleri Özelleştirmek</h2></a>
-<p>Rust’ın <em>sürüm profilleri</em>, kodunu derleme aşamasına getirmiş olan programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
-<p>Cargo’nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
+<p>Rust'ın <em>sürüm profilleri</em>, kodunu derleme aşamasına getirmiş olan programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
+<p>Cargo'nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
 <p>Bu profil adları size sürüm çıktılarınızdan tanıdık geliyor olabilir:</p>
 <!-- manual-regeneration
 anywhere, run:
@@ -173,7 +167,7 @@ opt-level = 0
 opt-level = 3
 
 </code></pre>
-<p>0-3 aralığındaki <code>Opt-level</code> ayarı, Rust’ın kodunuza uygulayacağı optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, kodunuzu yayınlamaya hazır olduğunuzda derleme süresi için daha fazla zaman ayırmayı tercih edeceksiniz. Yani daha hızlı çalışan kodun üretim aşaması daha fazla zaman gerektireceğinden sürüm modu için varsayılan profil <code>opt-level = 3</code> düzeyine ayarlanmıştır.</p>
+<p>0-3 aralığındaki <code>Opt-level</code> ayarı, Rust'ın kodunuza uygulayacağı optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, kodunuzu yayınlamaya hazır olduğunuzda derleme süresi için daha fazla zaman ayırmayı tercih edeceksiniz. Yani daha hızlı çalışan kodun üretim aşaması daha fazla zaman gerektireceğinden sürüm modu için varsayılan profil <code>opt-level = 3</code> düzeyine ayarlanmıştır.</p>
 <p>Varsayılan ayarların herhangi birini projenizin <em>Cargo.toml</em> dosyasına farklı bir değer ekleyerek geçersiz kılabilirsiniz. Örneğin, <code>dev</code> profilinin optimizasyon düzeyini 1 olarak ayarlamak istiyorsanız, projenizin <em>Cargo.toml</em> dosyasına bu iki satırı eklemeniz yeterlidir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
@@ -182,7 +176,7 @@ opt-level = 1
 
 </code></pre>
 <p>Bu kod varsayılan <code>opt-level = 0</code> düzey ayarını geçersiz kılacağından, <code>cargo build</code> komutunu çalıştırdığımızda, Cargo tarafından <code>dev</code> profili için varsayılan değerlerle birlikte, <code>opt-level</code> düzeyinde gerçekleştirdiğimiz özelleştirme seviyesi değerlendirilecektir. Bununla birlikte derleyici, <code>opt-level</code> düzeyini <code>1</code> olarak ayarladığımızdan, sürüm profilinde olduğu kadar olmasa da, varsayılandan daha fazla iyileştirme uygular.</p>
-<p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>‘ni inceleyebilirsiniz.</p>
+<p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>'ni inceleyebilirsiniz.</p>
 
                     </main>
 
@@ -222,24 +216,22 @@ opt-level = 1
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

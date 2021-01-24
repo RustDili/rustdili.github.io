@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Merhaba, Dünya - Rust Programlama Dili</title>
+        <title>Merhaba, Dünya - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -146,7 +140,91 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h1>Merhaba, Dünya</h1></a>
+                        <a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h2>Merhaba, Dünya</h2></a>
+<p>Artık Rust'ı yüklediğimize göre ilk Rust programımızı yazabiliriz. Yeni bir programlama dilini öğrenme aşamasında <code>Merhaba, dünya!</code> çıktısını ekrana yazdırmak neredeyse gelenek haline geldiğinden biz de burada bu geleneğe uyacağız.</p>
+<blockquote>
+<p>Not: Bu kitap komut satırı hakkında temel düzeyde bilgi sahibi olduğunuzu varsayar. Bununla birlikte Rust,
+kodlarınızı nasıl düzenleyeceğinize, hangi araçları kullanacağınıza veya onları nereye kaydedeceğinize
+karışmadığından, dilerseniz komut satırı yerine aşina olduğunuz entegre geliştirme ortamınızı (IDE) kullanabilirsiniz.
+Son zamanlarda Rust ekibi farklı IDE'ler ile entegrasyonu iyileştirmeye odaklandığından artık birçok IDE belli
+düzeylerde dil desteği sağlıyor. Tercih ettiğiniz IDE'nin yeterli dil desteği sağlayıp sağlamadığını IDE belgelerinden
+kontrol edebilirsiniz.</p>
+</blockquote>
+<a class="header" href="#bir-proje-dizini-oluşturmak" id="bir-proje-dizini-oluşturmak"><h3>Bir Proje Dizini Oluşturmak</h3></a>
+<p>Öncelikle işe Rust kodlarımızı saklayacağımız bir proje dizini oluşturarak başlayalım. Rust için kodunuzu nerede sakladığınız önemli olmamakla beraber, bu kitapta yer alan alıştırma ve projeler için ana dizininizde (linux için Home)yeni bir <em>projeler</em> dizini oluşturup tüm çalışmalarınızı orada depolamanızı öneririz.</p>
+<p>Ana dizinde &quot;Merhaba, dünya&quot; projesinin saklanacağı <em>projeler</em> dizinin oluşturabilmek için bir terminal penceresi açarak sırasıyla aşağıdaki komutları uygulayalım.</p>
+<p>Linux, macOS ve Windows PowerShell için aşağıdaki komutları girin:</p>
+<pre><code class="language-console">$ mkdir ~/projeler
+$ cd ~/projeler
+$ mkdir merhaba_dunya
+$ cd merhaba_dunyamain.rsLE%\projeler&quot;
+&gt; cd /d &quot;%USERPROFILE%\projeler&quot;
+&gt; mkdir merhaba_dunya
+&gt; cd merhaba_dunya
+</code></pre>
+<a class="header" href="#bir-rust-programı-yazmak-ve-Çalıştırmak" id="bir-rust-programı-yazmak-ve-Çalıştırmak"><h3>Bir Rust Programı Yazmak ve Çalıştırmak</h3></a>
+<p>Artık <em>merhaba_dunya</em> dizini içinde bulunduğumuza göre, programın kaynak kodunu kaydedeceğimiz ve <em>main.rs</em> olarak adlandıracağımız yeni bir dosya oluşturabiliriz. Rust'ta dosya adlarının birden fazla kelime içermesi durumunda alt çizgi ile ayrılması gerektiğini ve daima .rs uzantısıyla sonlandığını unutmayın. Dizin veya dosya isimlerinin bitişik olarak yazılması mümkünse de bu yaklaşımın pek önerilmediğini, <em>merhabadunya.rs</em> yerine <em>merhaba_dunya.rs</em> biçimindeki adlandırmaların tercih edildiğini aklınızda bulundurun.</p>
+<p>Şimdi biraz önce oluşturduğumuz <em>main.rs</em> dosyasını açarak Örnek 1-1'de yer alan kod satırlarını dosyamıza ekleyelim:</p>
+<p><span class="filename">Dosya adı: main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+}
+</code></pre></pre>
+<p><span class="caption"> Örnek 1-1: Ekrana &quot;Merhaba, dünya!&quot; yazdıran bir program.</span></p>
+<p>Dosyayı kaydedip yeniden terminal penceresine dönelim. Programımızı Linux veya macOS üzerinde derleyip çalıştırabilmek için aşağıdaki komutları uygulayalım:</p>
+<pre><code class="language-console">$ rustc main.rs
+$ ./main
+Merhaba, dünya!
+</code></pre>
+<p>Windows kullanıyorsanız <code>./main</code> yerine <code>./main.exe</code> komutunu kullanmanız gerekir:</p>
+<pre><code class="language-powershell">&gt; rustc main.rs
+&gt; .\main.exe
+Merhaba, dünya!
+</code></pre>
+<p>Hangi işletim sistemini kullanıyor olursanız olun, bu komutları uyguladıktan sonra terminalinizde <code>Merhaba, dünya!</code> çıktısını görüyor olmalısınız. Bu çıktıyı görmüyorsanız, yardım için kurulum bölümündeki <a href="ch01-01-installation.html#troubleshooting">&quot;Sorun Giderme&quot;</a> başlığına göz atın.</p>
+<p>Eğer ekranınızda `Mmain.rs</p>
+<a class="header" href="#bir-rust-programının-anatomisi" id="bir-rust-programının-anatomisi"><h3>Bir Rust Programının Anatomisi</h3></a>
+<p>Ekranımıza <code>Merhaba, dünya!</code> yazısını bastıran programda neler olup bittiğine daha yakından bakalım. Bulmacanın ilk parçası aşağıdadır:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+#	println!(&quot;Merhaba, dünya!&quot;);	
+
+}
+</code></pre></pre>
+<p>Rust'ta bu satırlar bir işlevi tanımlar. Çalıştırılabilir tüm rust programlarında bulunan <code>main</code> işlevi, programın işletilen ilk kodu olması bakımından özel bir konumdadır. İlk satır parametre almayan ve hiçbir şey döndürmeyen işlev adını <code>main</code> olarak bildirir. Elimizde işleve iletilecek parametreler olsaydı onlar da yerlerini bu <code>()</code> parantezin içine konumlandırılmakla bulmuş olacaklardı.</p>
+<p>Dikkat ederseniz işlev gövdesinin süslü parantezler <code>{}</code> içine alınmış olduğunu göreceksiniz. Rust'ta işlev gövdeleri bu süslü parantezler içine alınmak zorundadır. İşlev gövdesini saran ilk süslü parantezi, işlev bildirimiyle aynı satıra yerleştirirken arada bir boşluk bırakmak iyi bir kod yazım tekniğidir. Rust projelerinde standart kod yazım tekniğine  bağlı kalmak ve kodlarınızı belirli bir şekilde biçimlendirmek için <code>rustfmt</code> adındaki otomatik biçimlendirme aracını kullanabilirsiniz. Bu araç Rust ekibi tarafından tıpkı <code>rustc</code> gibi standart Rust dağıtımına dahil edildiğinden halihazırda bilgisayarınızda kurulu durumda olmalıdır. Daha fazla ayrıntı için çevrimiçi belgelere başvurabilirsiniz.</p>
+<p>Gövdesi süslü parantezler ile sarmalanmış olan <code>main</code> işlevinin içinde aşağıdaki kod satırı bulunur.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+#}
+</code></pre></pre>
+<p>Bu küçük programdaki tüm işi üstlenerek metni ekrana yazdıran bu satırda dikkat edilmesi gereken dört önemli ayrıntı yer almaktadır.</p>
+<p>İlki ve en az dikkat edileni, Rust stili girintilerde bir sekme <em>(tab)</em> yerine dört boşluk <em>(space)</em> kullanılır.</p>
+<p>İkincisi, <code>println!</code> bir Rust makrosu çağırır. Eğer kodda bir işlev çağrısı yapılsaydı, <code>println</code> (<code>!</code> olmadan) yazılmış olacaktı. Rust makrolarını 19. bölümde ayrıntılarıyla inceleyeceğimizden şu an için <code>!</code> işaretini gördüğünüz her yerde bunun bir işlev yerine, bir makroya yapılan çağrı olduğunu bilmeniz yeterlidir.</p>
+<p>Üçüncüsü, <code>&quot;Merhaba, dünya!&quot;</code> olarak gördüğünüz dizgi, <code>println!</code> makrosuna argüman olarak geçirildiğinde ekrana yazdırılır.</p>
+<p>Dördüncüsü, satırı noktalı virgül (<code>;</code>) ile bitiriyor olmamız ifadenin bittiğini ve bir sonrakinin başlayabileceğini bildirir. Rust kodlarındaki pek çok satır noktalı virgül ile sonlandırılır.</p>
+<a class="header" href="#derlemek-ve-Çalıştırmak-ayrı-birer-adımdır" id="derlemek-ve-Çalıştırmak-ayrı-birer-adımdır"><h3>Derlemek ve Çalıştırmak Ayrı Birer Adımdır</h3></a>
+<p>Yeni oluşturulan bir programın çalıştırılma süreci adımlarını birlikte inceleyelim.</p>
+<p>Rust programları çalıştırılmadan önce Rust derleyicisi tarafından ve <code>rustc</code> komutuna aşağıdaki gibi kaynak dosyası adı ileterek derlenmelidir:</p>
+<pre><code class="language-console">$ rustc main.rs
+</code></pre>
+<p>Eğer C veya C++ dillerine aşina iseniz, bu işlemin <code>gcc</code> veya <code>clang</code> ile oldukça benzeştiğini fark edeceksiniz. Başarıyla gerçekleşen bir derlemenin ardından Rust çalıştırılabilir ikili (binary) bir dosya üretecektir.</p>
+<p>Bu çalıştırılabilir dosyaya, Linux, macOS veya Windows PowerShell sistemlerinde, dizin içindeyken terminalinize <code>ls</code> komutu girerek ulaşabilirsiniz. Linux ve macOS sistemlerinde aynı dizinde iki adet dosya gösterilirken, Windows'ta PowerShell veya CMD ile üç tane dosya görüntülenecektir.</p>
+<pre><code class="language-text">$ ls
+main main.rs
+</code></pre>
+<p>Eğer Windows üzerinde CMD kullanıyorsanız aşağıdaki komutu girmeniz gereklidir:</p>
+<pre><code class="language-cmd">&gt; dir /B %= Buradaki /B seçeneği yalnızca dosya isimlerinin görüntülenmesini sağlar =%
+main.exe
+main.pdb
+main.rs
+</code></pre>
+<p>Her iki durumda da <em>.rs</em> uzantılı bir kaynak kodu dosyası, (windows'ta <em>main.exe</em> olarak ancak diğer platformlarda sadece <em>main</em> olarak görünen) çalıştırılabilir ikili dosya, Windows için ek olarak hata ayıklama bilgilerini içeren <em>.pdb</em> uzantılı birer dosya gösterilecektir.</p>
+<p>Bu dizinde çalıştırılabilir halde bulunan <em>main</em> ya da <em>main.exe</em> dosyasını aşağıdaki gibi kullanarak işletebilirsiniz:</p>
+<pre><code class="language-console">$ ./main # ya da windows için .\main.exe
+</code></pre>
+<p>Eğer programınız &quot;Merhaba, dünya!&quot; metnini içeriyorsa bu komutu girdiğinizde terminalinizde <code>&quot;Merhaba, dünya!&quot;</code> yazdırılacaktır.</p>
+<p>Programlama tecrübeniz Ruby, Python veya JavaScript gibi dinamik dillerden oluşuyorsa bu programın ayrı adımlar halinde derleyip çalıştırılmasına alışkın olmayabilirsiniz. Ancak Rust <em>derlemeli bir dil</em>dir. Bu da bir Rust programının derlenmesiyle oluşturulan çalıştırılabilir dosyanın paylaşabilmesi ve Rust'ın kurulu olmadığı ortamlarda bile çalışması demektir. Oysa dinamik dillerden herhangi birinin kaynağını <em>.py, .rb veya .js</em> dosyası olarak biriyle paylaştığınızda bu dosyaların çalıştırılabilmesi, için o ortamda Python, Ruby ya da JavaScript uygulamalarının kurulu olması gerekmektedir.  Bununla birlikte bu dillerde de programın çalıştırılması için yalnızca tek bir komut yeterlidir. Dil tasarımlarında bulunan her şey bir uzlaşma meselesinden başka bir şey değildir.</p>
+<p>Programları <code>rustc</code> ile derlemek basit programlar için yeterli olmakla birlikte projeniz büyüyüp geliştikçe seçenekleri yönetmek ve kod paylaşımını kolaylaştırmanın yollarını arayacaksınız. Sonraki bölümde gerçek dünyada daha sık kullanılan ve daha karmaşık Rust programları yazmanıza yardım edecek olacak Cargo aracını keşfedeceğiz.</p>
 
                     </main>
 
@@ -186,24 +264,22 @@
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

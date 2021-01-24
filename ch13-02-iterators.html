@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Yineleyiciler ile Bir Dizi Öğeyi İşlemek - Rust Programlama Dili</title>
+        <title>Yineleyiciler ile Bir Dizi Öğeyi İşlemek - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -148,7 +142,7 @@
                     <main>
                         <a class="header" href="#yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek" id="yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek"><h2>Yineleyiciler ile Bir Dizi Öğeyi İşlemek</h2></a>
 <p>Bir koleksiyonun tüm elemanları tükenene kadar her bir elemanı üzerinde sırasıyla belirli işlemleri gerçekleştirmekten yineleyiciler sorumludurlar. Yineleyici kullandığınızda bütün bu işlemlerin her birini tekrar tekrar gerçekleştirmek zorunda kalmazsınız.</p>
-<p>Rust’ta yineleyiciler tembel olduklarından, kendilerini tüketen yöntemler çağırılana kadar programlarınızı etkilemezler. Örneğin aşağıdaki kod; <code>Vec&lt;T&gt;</code> üzerinde tanımlanan <code>iter</code> yöntemini çağırarak <code>v1</code> vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kod tek başına anlamlı bir şey gerçekleştirmez.</p>
+<p>Rust'ta yineleyiciler tembel olduklarından, kendilerini tüketen yöntemler çağırılana kadar programlarınızı etkilemezler. Örneğin aşağıdaki kod; <code>Vec&lt;T&gt;</code> üzerinde tanımlanan <code>iter</code> yöntemini çağırarak <code>v1</code> vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kod tek başına anlamlı bir şey gerçekleştirmez.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let v1 = vec![1, 2, 3];
@@ -157,7 +151,7 @@
 }
 </code></pre></pre>
 <p><span class="caption">Örnek 13-13: Bir yineleyici oluşturmak</span></p>
-<p>Bir yineleyici oluşturduktan sonra artık bunu çeşitli şekillerde kullanabiliriz. Bölüm 3’ün sonlarında yer alan örnek 3-5’te, her eleman üzerinde bir takım işlemleri gerçekleştirmek amacıyla <code>for</code> döngüsünün tüketimine verilen <code>iter</code> tanımlamasıyla yineleyici kullanmış, ancak yineleyicilere şu ana kadar derinlemesine odaklanamamıştık.</p>
+<p>Bir yineleyici oluşturduktan sonra artık bunu çeşitli şekillerde kullanabiliriz. Bölüm 3'ün sonlarında yer alan örnek 3-5'te, her eleman üzerinde bir takım işlemleri gerçekleştirmek amacıyla <code>for</code> döngüsünün tüketimine verilen <code>iter</code> tanımlamasıyla yineleyici kullanmış, ancak yineleyicilere şu ana kadar derinlemesine odaklanamamıştık.</p>
 <p>Aşağıdaki örnekte, yineleyicinin oluşturulması ile <code>for</code> döngüsünde kullanımı birbirinden bağımsız olarak sunulmaktadır. Kendi başına <code>v1_iter</code> değişkeninde saklanan yineleyicinin tanımlandığı satırda hiç bir işlem gerçekleşmezken, bu değişkene adapte edilmiş yineleyiciyi kullanan bir <code>for</code> döngüsü ile çağrıldığında, kendisine geçirilmiş olan her öğenin değerini ekrana yazdıran bir döngü yineleyicisi olarak kullanışlı hale gelir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
@@ -188,7 +182,7 @@ fn main() {
 </code></pre></pre>
 <p>Bu tanımda <code>type Item</code> ve <code>Self::Item</code> gibi bu özelliklerle ilişkilendirilmiş türü bildiren yeni söz dizimleri kullanıldığına dikkat edin. İlişkili türlerden bölüm 19’da ayrıntılı olarak bahsedeceğimizden şimdilik bilmeniz gereken tek şey; bu kodun yineleyici özelliğini <em>(<code>Itarator trait</code>)</em> uygulayabilmek için bir öğe türü <em>(<code>Item type</code>)</em> tanımlanması gerektiği ve bu öğe türünün <code>next</code> metodunun dönüş türünde kullanıldığını belirtmesidir. Başka bir deyişle öğe türü yineleyiciden döndürülen tür olacaktır.</p>
 <p>Yineleyici özelliği uygulayıcılara sadece bir metodu tanımlamak için ihtiyaç duyar. Tanımlanan <code>next</code> metodu yineleme devam ettiği sürece öğeleri <code>Some</code> ile sarmalayarak birer birer döndürürken, yineleme sona erdiğinde <code>None</code> döndürecektir.</p>
-<p>Yineleyicideki <code>next</code> metodunu doğrudan kendimiz de çağırabiliriz. Örnek 13-15’te, <code>v1</code> vektöründe oluşturulan yineleyiciye yapılan çağrılardan <code>next</code> metoduna hangi değerlerin döndürüldüğü gösterilmektedir.</p>
+<p>Yineleyicideki <code>next</code> metodunu doğrudan kendimiz de çağırabiliriz. Örnek 13-15'te, <code>v1</code> vektöründe oluşturulan yineleyiciye yapılan çağrılardan <code>next</code> metoduna hangi değerlerin döndürüldüğü gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 #[cfg(test)]
@@ -235,7 +229,7 @@ fn main() {}
 <p><code>sum</code> metodu, kendisine yapılan çağrı ile <code>v1_iter</code> değişmezindeki yineleyicinin mülkiyetini üzerine alacağından bu değişkenin kullanılmasına izin verilmez.</p>
 <a class="header" href="#diğer-yineleyicileri-Üreten-metodlar" id="diğer-yineleyicileri-Üreten-metodlar"><h3>Diğer Yineleyicileri Üreten Metodlar</h3></a>
 <p><code>Iterator</code> özelliğinde tanımlanan ve <em>yineleyici adaptörleri</em> adı verilen diğer yöntemler ise yineleyicileri farklı yineleyicilerle değiştirmenize olanak sağlarlar. Bu adaptörlere karmaşık eylemleri okunabilir şekilde gerçekleştirmek çok sayıda çağrı zincirleyebilirsiniz. Ancak tüm yineleyiciler tembel olduklarından, yineleyici adaptörlerine yapılan çağrılardan sonuç alabilmek için <em>tüketici adaptörleri</em>nden birini çağırmanız gerekir.</p>
-<p>Örnek 13-17’de yeni bir yineleyici üretmek üzere her öğenin çağrıldığı bir kapama işlevine sahip yineleyici adaptörü olan <code>map</code> metodunun bir örneği gösterilir. Buradaki kapama işlevi vektördeki her öğe değerinin 1 arttırıldığı yeni bir yineleyici oluşturacaktır. Ancak bu kod bir uyarı vermektedir.</p>
+<p>Örnek 13-17'de yeni bir yineleyici üretmek üzere her öğenin çağrıldığı bir kapama işlevine sahip yineleyici adaptörü olan <code>map</code> metodunun bir örneği gösterilir. Buradaki kapama işlevi vektördeki her öğe değerinin 1 arttırıldığı yeni bir yineleyici oluşturacaktır. Ancak bu kod bir uyarı vermektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust not_desired_behavior">
 fn main() {
@@ -263,9 +257,9 @@ warning: unused `std::iter::Map` that must be used
      Running `target/debug/iterators`
 
 </code></pre>
-<p>Örnek 13-17’de yer alan kod hiçbir şey yapmadığı gibi bildirdiğimiz kapama işlevi de hiçbir zaman çağrılmaz. Yineleyici adaptörleri tembel olduklarından, derleyicinin uyarısı bize yinelecinin tüketilmesi gerektiği uyarısını yapıyor.</p>
-<p>Bu durumu düzeltmek ve yineleyiciyi kullanabilmek için Bölüm 12, Örnek 12-1’de yer alan ve <code>env::args</code> ile kullandığımız <code>collect</code> metodundan yararlanacağız. Bu metod yineleyiciyi tüketerek elde ettiği değerleri bir koleksiyon veri türüne depolar.</p>
-<p>Örnek 13-18’de <code>map</code> metoduna yapılan çağrı vasıtasıyla yineleyici üzerinde yapılan yinelemeden döndürülen sonuçları bir vektörde topluyoruz. Sonuçların depolandığu bu vektör, orijinal vektördeki her öğenin değerine 1 eklenmiş sayılardan oluşmaktadır.</p>
+<p>Örnek 13-17'de yer alan kod hiçbir şey yapmadığı gibi bildirdiğimiz kapama işlevi de hiçbir zaman çağrılmaz. Yineleyici adaptörleri tembel olduklarından, derleyicinin uyarısı bize yinelecinin tüketilmesi gerektiği uyarısını yapıyor.</p>
+<p>Bu durumu düzeltmek ve yineleyiciyi kullanabilmek için Bölüm 12, Örnek 12-1'de yer alan ve <code>env::args</code> ile kullandığımız <code>collect</code> metodundan yararlanacağız. Bu metod yineleyiciyi tüketerek elde ettiği değerleri bir koleksiyon veri türüne depolar.</p>
+<p>Örnek 13-18'de <code>map</code> metoduna yapılan çağrı vasıtasıyla yineleyici üzerinde yapılan yinelemeden döndürülen sonuçları bir vektörde topluyoruz. Sonuçların depolandığu bu vektör, orijinal vektördeki her öğenin değerine 1 eklenmiş sayılardan oluşmaktadır.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 fn main() {
@@ -281,7 +275,7 @@ fn main() {
 <p><code>map</code> metodu bir kapama işlevi aldığından, her bir öğe için uygulamak istediğimiz herhangi bir işlemi belirtebiliriz. Bu örnek, <code>Iterator</code> özelliğinin sağladığı yineleme davranışını yeniden kullanırken, kapamaların bazı davranışları özelleştirmenize nasıl izin verdiğini gösteren harika bir örnektir.</p>
 <a class="header" href="#ortamlarını-yakalayan-kapamalar-kullanmak" id="ortamlarını-yakalayan-kapamalar-kullanmak"><h3>Ortamlarını Yakalayan Kapamalar Kullanmak</h3></a>
 <p>Artık yineleyicileri kullanıma sunduğumuza göre, bir yineleyici adaptörünü olan <code>filter</code> metodu kullanarak ortamlarını yakalayan kapamaların yaygın bir kullanımını gösterebiliriz. Bir yineleyicideki <code>filter</code> metodu, yineleyiciden aldığı her öğe karşılığında Boolean döndüren bir kapama işlevini kullanır. Kapama <code>true</code> döndürdüğünde, değer <code>filter</code> tarafından üretilen yineleyiciye dahil edilecek, <code>false</code> döndürdüğündeyse yineleyiciye dahil edilmeyecektir.</p>
-<p>Örnek 13-19’da <code>Shoe</code> adlı yapı örneklerinden oluşan koleksiyon üzerinde yineleme yapmak üzere <code>shoe_size</code> değişkenini ortamından elde eden bir kapama işleviyle <code>filter</code> metodunu birlikte kullanıyor ve sadece belirtilen boyuttaki ayakkabıları döndürüyoruz.</p>
+<p>Örnek 13-19'da <code>Shoe</code> adlı yapı örneklerinden oluşan koleksiyon üzerinde yineleme yapmak üzere <code>shoe_size</code> değişkenini ortamından elde eden bir kapama işleviyle <code>filter</code> metodunu birlikte kullanıyor ve sadece belirtilen boyuttaki ayakkabıları döndürüyoruz.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#[derive(PartialEq, Debug)]
 struct Shoe {
@@ -342,7 +336,7 @@ fn main() {}
 <p>Örneğimizdeki test, <code>shoes_in_my_size</code> işlevini çağırdığımızda, yalnızca belirttiğimiz ölçülere uygun ayakkabıların döndürüldüğünü göstermektedir.</p>
 <a class="header" href="#iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak" id="iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak"><h3><code>Iterator</code> Özelliği ile Kendi Yineleyicilerimizi Oluşturmak</h3></a>
 <p>Bir vektör üzerinde <code>iter</code>, <code>into_iter</code> veya <code>iter_mut</code> metodlarını çağırarak bir yineleyici oluşturabileceğinizi gösterdik. Tıpkı bu vektör için oluşturduğumuz yineleyici gibi, standart kütüphanedeki eşleme haritaları veya diğer koleksiyon türleri için de yineleyiciler hazırlayabilir, <code>Iterator</code> özelliğini kendi türlerinize uygulayarak dilediğiniz işlemleri gefçekleştiren yineleyiciler oluşturabilirsiniz. Daha önce de belirtildiği gibi, tanımlamanız gereken tek metod <code>next</code> metodu olduğundan, bu metodu tanımladığınızda, <code>Iterator</code> özelliği tarafından sağlanan varsayılan uygulamalara sahip metodların tümünü kullanabilirsiniz!</p>
-<p>Bu bilgiyi pekiştirmek adına, sadece 1’den 5’e kadar sayacak bir yineleyici oluşturalım. Öncelikle bunun için, bazı değerleri tutan bir yapı oluşturacak, ardından bu yapıya <code>Iterator</code> özelliğini uygulayacak ve bu uygulamadaki değerler vasıtasıyla bu yapıyı bir yineleyici haline getireceğiz.</p>
+<p>Bu bilgiyi pekiştirmek adına, sadece 1'den 5'e kadar sayacak bir yineleyici oluşturalım. Öncelikle bunun için, bazı değerleri tutan bir yapı oluşturacak, ardından bu yapıya <code>Iterator</code> özelliğini uygulayacak ve bu uygulamadaki değerler vasıtasıyla bu yapıyı bir yineleyici haline getireceğiz.</p>
 <p>Örnek 13-20, <code>Counter</code> yapısının tanımını ve bu yapının örneklerini oluşturmak amacıyla ilişkilendirilmiş <code>new()</code> işlevini göstermektedir:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
@@ -359,8 +353,8 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-20: <code>Counter</code> yapısı ve <code>count</code> alanı başlangıç değeri 0 olan yapı örnekleri başlatan <code>new</code> işlevini tanımlamak</span></p>
-<p><code>Counter</code> yapısının <code>count</code> adlı bir alanı vardır. Bu alan, 1’den 5’e kadar olan yineleme sürecinde nerede olduğumuzu takip edecek <code>u32</code> türünden bir değer tuttuğundan ve <code>count</code> uygulamasının değerini yöneteceğinden özeldir. <code>new</code> işlevi ise her yeni örnek başlatıldığında, başlatılan bu örnekleri <code>count</code> alanı sayesinde daima 0 değeriyle ilklendirmeye çalışır.</p>
-<p>Daha sonra, Örnek 13-21’de gösterildiği gibi, bu yineleyici kullanıldığında üstleneceği görevleri bildiren <code>next</code> metodunun gövdesini tanımlayarak <code>Counter</code> türüne <code>Iterator</code> özelliğini uygulayacağız:</p>
+<p><code>Counter</code> yapısının <code>count</code> adlı bir alanı vardır. Bu alan, 1'den 5'e kadar olan yineleme sürecinde nerede olduğumuzu takip edecek <code>u32</code> türünden bir değer tuttuğundan ve <code>count</code> uygulamasının değerini yöneteceğinden özeldir. <code>new</code> işlevi ise her yeni örnek başlatıldığında, başlatılan bu örnekleri <code>count</code> alanı sayesinde daima 0 değeriyle ilklendirmeye çalışır.</p>
+<p>Daha sonra, Örnek 13-21'de gösterildiği gibi, bu yineleyici kullanıldığında üstleneceği görevleri bildiren <code>next</code> metodunun gövdesini tanımlayarak <code>Counter</code> türüne <code>Iterator</code> özelliğini uygulayacağız:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 struct Counter {
@@ -390,10 +384,10 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-21: <code>Counter</code> yapısına <code>Iterator</code> özelliğini uygulamak</span></p>
-<p>Yineleyicimiz için ilişkili öğe türünü <code>u32</code> olarak belirleyip <code>type Item = u32;</code> şeklinde ayarladığımızdan yineleyiciden <code>u32</code> türünde değerler döndürülecektir. Bu noktada <em>İlişkili Türler</em> konusunu Bölüm 19’da ele alacağımızı hatırlatarak konuya devam ediyoruz.</p>
-<p>Yineleyicimizin mevcut duruma 1 eklemesini istediğimizden, 1’i döndürebilmesi için <code>count</code> u 0 olarak başlattık. <code>count</code> değeri 5’ten küçük olduğu sürece <code>next</code> metodu <code>count</code> değerini artırarak <code>Some</code> içine sarılmış geçerli değeri döndürecek, <code>count</code> değeri 5 olduğundaysa, yineleyicimiz <code>count</code> değerini artırmayı sona erdirerek <code>None</code> döndürmeye başlayacaktır.</p>
+<p>Yineleyicimiz için ilişkili öğe türünü <code>u32</code> olarak belirleyip <code>type Item = u32;</code> şeklinde ayarladığımızdan yineleyiciden <code>u32</code> türünde değerler döndürülecektir. Bu noktada <em>İlişkili Türler</em> konusunu Bölüm 19'da ele alacağımızı hatırlatarak konuya devam ediyoruz.</p>
+<p>Yineleyicimizin mevcut duruma 1 eklemesini istediğimizden, 1'i döndürebilmesi için <code>count</code> u 0 olarak başlattık. <code>count</code> değeri 5'ten küçük olduğu sürece <code>next</code> metodu <code>count</code> değerini artırarak <code>Some</code> içine sarılmış geçerli değeri döndürecek, <code>count</code> değeri 5 olduğundaysa, yineleyicimiz <code>count</code> değerini artırmayı sona erdirerek <code>None</code> döndürmeye başlayacaktır.</p>
 <a class="header" href="#counter-yineleyicisinin-next-metodunu-kullanmak" id="counter-yineleyicisinin-next-metodunu-kullanmak"><h4><code>Counter</code> Yineleyicisinin <code>next</code> Metodunu Kullanmak</h4></a>
-<p><code>Iterator</code> özelliğini uyguladığımıza göre artık elimizde bir yineleyicimiz var demektir. Tıpkı Örnek 13-15’te yaptığımız bir <em>vektörden oluşturulan yineleyici</em>de olduğu gibi, aşağıda yer alan Örnek 13-22 de, <code>Counter</code> yapısının yineleme işlevini <code>next</code> metodunu doğrudan çağırarak kullanabileceğimizi gösteren bir test bölümü içerir.</p>
+<p><code>Iterator</code> özelliğini uyguladığımıza göre artık elimizde bir yineleyicimiz var demektir. Tıpkı Örnek 13-15'te yaptığımız bir <em>vektörden oluşturulan yineleyici</em>de olduğu gibi, aşağıda yer alan Örnek 13-22 de, <code>Counter</code> yapısının yineleme işlevini <code>next</code> metodunu doğrudan çağırarak kullanabileceğimizi gösteren bir test bölümü içerir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
     count: u32,
@@ -439,10 +433,10 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-22: <code>next</code> metodu uygulamasının işlevselliğini test etmek</span></p>
-<p>Bu test, <code>counter</code> değişkeninde yeni bir <code>Counter</code> örneği oluşturur. Ardından <code>next</code> metodunu defalarca çağırıp bu yineleyicinin sahip olmasını istediğimiz davranışı uyguladığımızı doğrulayam 1’den 5’e kadar olan değerleri döndürür.</p>
+<p>Bu test, <code>counter</code> değişkeninde yeni bir <code>Counter</code> örneği oluşturur. Ardından <code>next</code> metodunu defalarca çağırıp bu yineleyicinin sahip olmasını istediğimiz davranışı uyguladığımızı doğrulayam 1'den 5'e kadar olan değerleri döndürür.</p>
 <a class="header" href="#diğer-iterator-Özellik-metodlarını-kullanmak" id="diğer-iterator-Özellik-metodlarını-kullanmak"><h4>Diğer <code>Iterator</code> Özellik Metodlarını Kullanmak</h4></a>
 <p>Artık <code>next</code> metodunu tanımlayarak <code>Iterator</code> özelliğini uyguladığımıza ve hepsinin <code>next</code> metodunun işlevselliğini kullandıklarını bildiğimize göre, bundan böyle standart kitaplıkta tanımlanan tüm <code>Iterator</code> özellik metodlarının varsayılan uygulamalarını kullanabiliriz.</p>
-<p>Örnek 13-23’teki testte de gösterildiği gibi, bir <code>Counter</code> örneği tarafından üretilen değerleri almak istediğimizi, bunları ilk değeri atladıktan sonra başka bir <code>Counter</code> örneği tarafından üretilen değerlerle eşleştirdiğimizi, her çifti birbiriyle çarptığımızı ve elde edilen değerlerin sadece 3’e bölünebilenlerini alarak birbiriyle topladığımız bir örneği düşünün:</p>
+<p>Örnek 13-23'teki testte de gösterildiği gibi, bir <code>Counter</code> örneği tarafından üretilen değerleri almak istediğimizi, bunları ilk değeri atladıktan sonra başka bir <code>Counter</code> örneği tarafından üretilen değerlerle eşleştirdiğimizi, her çifti birbiriyle çarptığımızı ve elde edilen değerlerin sadece 3'e bölünebilenlerini alarak birbiriyle topladığımız bir örneği düşünün:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
     count: u32,
@@ -539,24 +533,22 @@ fn main() {}
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

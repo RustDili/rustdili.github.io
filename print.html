@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Rust Programlama Dili</title>
+        <title></title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -147,41 +141,40 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#rust-programlama-dili" id="rust-programlama-dili"><h1>Rust Programlama Dili</h1></a>
-<p><em>Steve Klabnik ve Carol Nichols’tan, Rust Topluluğu’nun katkılarıyla...</em></p>
-<p>Metnin bu sürümü Rust 2018 baskısının deyimlerinden yararlanabilmek için, tüm projelerin <em>Cargo.toml</em> belgelerinde <code>edition = 2018</code> ifadesini içerdiğini ve Rust 1.41.0 veya daha üst bir sürümünü kullandığınızı varsayar. Rust’ı yüklemek veya güncellemek için kitabın <a href="https://rustdili.github.io/ch01-01-installation.html">Bölüm 1 “Kurulum”</a>  ayracını, sürümler hakkında bilgilere ulaşmak içinse <a href="https://rustdili.github.io/appendix-05-editions.html">Ek E</a> belgesini takip edin.</p>
-<p>Rust dili kitabının 2018 Sürümü, Rust’ı daha ergonomik ve öğrenilmesi kolay bir dil haline getiren iyileştirmeleri içerir. Kitabın bu baskısında aşağıdaki iyileştirmeleri yansıtan bir dizi değişiklik yer almaktadır:</p>
+<p><em>Steve Klabnik ve Carol Nichols'tan, Rust Topluluğu'nun katkılarıyla...</em></p>
+<p>Metnin bu sürümü Rust 2018 baskısının deyimlerinden yararlanabilmek için, tüm projelerin <em>Cargo.toml</em> belgelerinde <code>edition = 2018</code> ifadesini içerdiğini ve Rust 1.41.0 veya daha üst bir sürümünü kullandığınızı varsayar. Rust'ı yüklemek veya güncellemek için kitabın <a href="https://rustdili.github.io/ch01-01-installation.html">Bölüm 1 &quot;Kurulum&quot;</a>  ayracını, sürümler hakkında bilgilere ulaşmak içinse <a href="https://rustdili.github.io/appendix-05-editions.html">Ek E</a> belgesini takip edin.</p>
+<p>Rust dili kitabının 2018 Sürümü, Rust'ı daha ergonomik ve öğrenilmesi kolay bir dil haline getiren iyileştirmeleri içerir. Kitabın bu baskısında aşağıdaki iyileştirmeleri yansıtan bir dizi değişiklik yer almaktadır:</p>
 <ul>
-<li>“Büyüyen Projeleri Paketler, Sandıklar ve Modüller ile Yönetmek” başlıklı 7. Bölüm neredeyse yeniden yazıldı. 2018 Sürümü’ndeki modül sistemi ve yolların çalışma şekli daha tutarlı hale getirildi.</li>
-<li>Bölüm 10’da ise, yeni <code>impl Trait</code> söz dizimini açıklayan “Parametre Olarak Özellikler” ve “Özellikleri Uygulayan Geri Dönüş Türleri” başlıklı yeni konulara yer verildi.</li>
-<li>Bölüm 11’e, testlerin <code>?</code> işlecini kullanarak nasıl yazılacağını gösteren, “Testlerde <code>Result&lt;T, E&gt;</code> Kullanımı” başlıklı yeni bir konu eklendi.</li>
-<li>Derleyicide sağlanan iyileştirmeler yaşam süresi belirtimlerine daha az ihtiyaç duyduğundan, Bölüm 19’daki “Gelişmiş Yaşam Süreleri” bölümü kaldırıldı.</li>
-<li>Daha önce Ek D belgesinde yer alan “Makrolar” konusu, prosedür makrolarını da içerecek şekilde genişletilerek, Bölüm 19’da yer alan “Makrolar” başlıklı müstakil alana taşındı.</li>
-<li>Ek A’da yer alan “Anahtar Kelimeler” başlığında, 2015 ve 2018 Sürümü için yazılmış kodların birlikte çalışmasını sağlayan yeni “ham tanımlayıcılar” özelliğine yer verildi.</li>
-<li>Ek D artık “Faydalı Geliştirme Araçları” olarak adlandırılıyor ve yakın zamanda yayınlanmış olan Rust kodu yazmanıza katkı sağlayacak araçlara yer veriyor.</li>
+<li>&quot;Büyüyen Projeleri Paketler, Sandıklar ve Modüller ile Yönetmek&quot; başlıklı 7. Bölüm neredeyse yeniden yazıldı. 2018 Sürümü'ndeki modül sistemi ve yolların çalışma şekli daha tutarlı hale getirildi.</li>
+<li>Bölüm 10'da ise, yeni <code>impl Trait</code> söz dizimini açıklayan &quot;Parametre Olarak Özellikler&quot; ve &quot;Özellikleri Uygulayan Geri Dönüş Türleri&quot; başlıklı yeni konulara yer verildi.</li>
+<li>Bölüm 11'e, testlerin <code>?</code> işlecini kullanarak nasıl yazılacağını gösteren, &quot;Testlerde <code>Result&lt;T, E&gt;</code> Kullanımı&quot; başlıklı yeni bir konu eklendi.</li>
+<li>Derleyicide sağlanan iyileştirmeler yaşam süresi belirtimlerine daha az ihtiyaç duyduğundan, Bölüm 19'daki &quot;Gelişmiş Yaşam Süreleri&quot; bölümü kaldırıldı.</li>
+<li>Daha önce Ek D belgesinde yer alan &quot;Makrolar&quot; konusu, prosedür makrolarını da içerecek şekilde genişletilerek, Bölüm 19'da yer alan &quot;Makrolar&quot; başlıklı müstakil alana taşındı.</li>
+<li>Ek A'da yer alan &quot;Anahtar Kelimeler&quot; başlığında, 2015 ve 2018 Sürümü için yazılmış kodların birlikte çalışmasını sağlayan yeni &quot;ham tanımlayıcılar&quot; özelliğine yer verildi.</li>
+<li>Ek D artık &quot;Faydalı Geliştirme Araçları&quot; olarak adlandırılıyor ve yakın zamanda yayınlanmış olan Rust kodu yazmanıza katkı sağlayacak araçlara yer veriyor.</li>
 <li>Kitap boyunca bir dizi küçük hatayı ve kesin olmayan ifadeleri düzelttik. Bu sorunları bize bildiren okuyuculara teşekkür ederiz!</li>
 </ul>
 <p><em>Rust Programlama Dili</em> kitabının önceki sürümlerinde yer alan kodların, halihazırda kullandığınız Rust derleyicisinin sürümünü yükseltmiş olsanız bile, Cargo.toml belgelerinde <code>edition = &quot;2018&quot;</code> bildirimi olmadan da derlenmeye devam edeceğini hatırlatırız. İşte bu Rust’un geriye dönük uyumluluğunun bir garantisidir!</p>
-<p>Bu kitabın çevrimiçi HTML formatı <a href="https://rustdili.github.io/">https://rustdili.github.io/</a> adresinde yer almaktadır. Kitabın çevrimdışı çalışan Orijinal dildeki kopyası ise, <code>rustup</code> ile gerçekleştirilen Rust kurulumla ile gelir. Bu kitabı okumak için terminalinizde <code>rustup docs --book</code> komutunu çalıştırmanız yeterli olacaktır.</p>
+<p>Bu kitabın çevrimiçi HTML formatı <a href="https://rustdili.github.io/">https://rustdili.github.io/</a> adresinde yer almaktadır. Kitabın çevrimdışı çalışan Orijinal dildeki kopyası ise, <code>rustup</code> ile gerçekleştirilen Rust kurulumuyla birlikte gelir. Bu kitabı okumak için terminalinizde <code>rustup docs --book</code> komutunu çalıştırmanız yeterli olacaktır.</p>
 <p>Bu kitabı kapaksız ve e-kitap biçiminde <a href="https://nostarch.com/rust">No Starch Press</a> adresinden temin edebilirsiniz.</p>
 <a class="header" href="#Önsöz" id="Önsöz"><h1>Önsöz</h1></a>
-<p>Her zaman bu kadar net olmamakla beraber, Rust programlama dili temelde <em>güç vermek</em> ile ilgilidir: Şu anda ne tür bir kod yazıyor olursanız olun, Rust size daha ilerisine gitme, daha önce ulaştığınızdan çok daha geniş bir alanda ve  çeşitlilikte güvenli program yazma gücünü verir.</p>
-<p>Örneğin, bellek yönetimi, veri gösterimi ve eşzamanlılığın düşük düzeyli ayrıntılarıyla ilgilenen “sistem düzeyinde” çalışmayı ele alalım. Programlamanın bu alanı geleneksel olarak gizemli olarak görülmekte ve sadece yıllarını zorunlu olarak onun adı kötüye çıkmış tuzaklarından kaçınmayı öğrenmeye harcayan seçkin birkaç kişi tarafından erişilebilir durumdadır. Ve bu seçkin kişiler dahi kodlarını istismara, çökmeye yahut bozulmaya karşı korumak için dikkatli davranırlar.</p>
-<p>Rust, bu tuzaklardan sıyrılıp kodlama serüveniniz boyunca size yardımcı olacak dost canlısı ve şık bir araç seti sağlayarak bu engelleri aşar. Daha düşük seviyeli kontrole dalması gereken programcılar, bunu Rust ile, geleneksel çökme veya güvenlik açıkları riskini üstlenmeden ve kararsız bir araç zincirinin detaylarını öğrenmek zorunda kalmadan yapabilirler. Daha da güzeli Rust sizin, hız ve bellek kullanımı açısından verimli ve güvenilir kodlara doğallıkla  yönelmenizi sağlayacak şekilde tasarlanmıştır.</p>
-<p>Halihazırda düşük seviyeli kodlarla çalışan programcılar, tutku ve heveslerini diri tutmak amacıyla Rust’ı kullanabilirler. Örneğin, Rust’ta paralel işlemler, derleyicinin klasik hataları kolaylıkla yakalamasından dolayı nispeten düşük risk içerirler. Ek olarak kazaen çökmelere veya güvenlik açıklarına sebep olmayacağınızın güvencesiyle kodunuzda daha agresif iyileştirmeler gerçekleştirebilirsiniz.</p>
-<p>Ancak Rust sadece düşük seviyeli sistem programlama ile sınırlı değildir. Her birinin basit örneklerini kitabın ilerleyen bölümlerinde bulacağınız CLI uygulamaları, web sunucuları ve başka pek çok kod çeşidinin yazılmasını keyifli hale getirecek kadar etkileyici ve ergonomiktir. Rust ile çalışmak, bir alandan diğerine geçiş yapabileceğiniz beceriler geliştirmenize olanak sağlarken; bir web uygulaması yazarak bu dili öğrenebilir, öğrendiklerinizi bir Raspberry Pi üzerinde kolaylıkla uygulayabilirsiniz.</p>
+<p>Her zaman bu kadar net olmamakla beraber, Rust programlama dili temelde <em>güç katmak</em> ile ilgilidir: Şu an ne tür bir kodla uğraşıyor olursanız olun, Rust size daha ileri gitme, daha önce ulaştığınızdan çok daha geniş bir alan ve çeşitlilikte güvenli program yazma gücü ve olanaklarını sağlar.</p>
+<p>Örneğin, bellek yönetimi, veri gösterimi ve eşzamanlılığın düşük düzeyli ayrıntılarıyla ilgilenen &quot;sistem düzeyinde&quot; çalışmayı ele alalım. Programlamanın bu alanı geleneksel olarak gizemli olarak görülmekte ve sadece yıllarını zorunlu olarak onun adı kötüye çıkmış tuzaklarından kaçınmayı öğrenmeye harcayan seçkin birkaç kişi tarafından erişilebilir durumdadır. Ve bu seçkin kişiler dahi kodlarını istismara, çökmeye yahut bozulmaya karşı korumak için dikkatli davranırlar.</p>
+<p>Rust, bu tuzaklardan sıyrılıp kodlama serüveniniz boyunca size yardımcı olacak dost canlısı ve şık bir araç seti sağlayarak bu engelleri aşmanıza yardımcı olur. Daha düşük seviyeli kontrole dalması gereken programcılar, bunu Rust ile, geleneksel çökme veya güvenlik açıkları riskini üstlenmeden ve kararsız bir araç zincirinin detaylarını öğrenmek zorunda kalmadan yapabilirler. Daha da güzeli Rust sizin, hız ve bellek kullanımı açısından verimli ve güvenilir kodlara doğallıkla  yönelmenizi sağlayacak şekilde tasarlanmıştır.</p>
+<p>Halihazırda düşük seviyeli kodlarla çalışan programcılar, tutku ve heveslerini diri tutmak amacıyla Rust'ı kullanabilirler. Örneğin, Rust'ta paralel işlemler, derleyicinin klasik hataları kolaylıkla yakalamasından dolayı nispeten düşük ust lerinde bulacağınız CLI uygulamaları, web sunucuları ve başka pek çok kod çeşidinin yazılmasını keyifli hale getirecek kadar etkileyici ve ergonomiktir. Rust ile çalışmak, bir alandan diğerine geçiş yapabileceğiniz beceriler geliştirmenize olanak sağlarken; bir web uygulaması yazarak bu dili öğrenebilir, öğrendiklerinizi bir Raspberry Pi üzerinde kolaylıkla uygulayabilirsiniz.</p>
 <p>Bu kitap tam olarak Rust kullanıcılarını güçlendirme potansiyeli taşırken, sadece Rust bilginizi değil, bir programcı olarak gelişim ve güveninizi de arttırmayı hedefleyen samimi ve ulaşılabilir bir metindir. Öğrenmeye hazırsanız buyrun başlayalım. Rust topluluğuna hoş geldiniz!</p>
 <p>— Nicholas Matsakis ve Aaron Turon</p>
 <a class="header" href="#giriş" id="giriş"><h1>Giriş</h1></a>
 <blockquote>
-<p>Not: Kitabın bu baskısı <a href="https://nostarch.com/rust">basılı</a> ve <a href="https://nostarch.com/">e-kitap</a> biçiminde
+<p>Not: Kitabın orijinal dilindeki sürümü <a href="https://nostarch.com/rust">basılı</a> ve <a href="https://nostarch.com/">e-kitap</a> biçiminde
 No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 </blockquote>
-<p>Rust üzerine bir giriş kitabı olan Rust Programlama Dili’e hoş geldiniz. Rust programlama dili, daha hızlı ve daha güvenilir programlar yazmanıza yardımcı olur. Programlama dili tasarımlarında üst düzey ergonomi ile düşük seviyeli kontrol, genel bir anlaşmazlık halindedir ve Rust bu çatışmaya meydan okur. Bellek kullanımı gibi geleneksel olarak düşük seviyeli kontrol ile ilişkilendirilen tüm zorlukları ortadan kaldırırken, sağladığı güçlü teknik kapasite ve olağanüstü geliştirici deneyimini dengeleyerek bu ayrıntıları rahatlıkla kontrol etmenizi sağlar.</p>
+<p>Rust üzerine bir giriş kitabı olan Rust Programlama Dili'ne hoş geldiniz. Rust programlama dili, daha hızlı ve daha güvenilir programlar yazmanıza yardımcı olur. Programlama dili tasarımlarında üst düzey ergonomi ile düşük seviyeli kontrol, genel bir anlaşmazlık halindedir ve Rust bu çatışmaya meydan okur. Bu olağanüstü tasarım bir yandan bellek kullanımı gibi geleneksel olarak düşük seviyeli kontrol ile ilişkilendirilen tüm zorlukları ortadan kaldırırken, diğer yandan sağladığı güçlü teknik kapasite ve olağanüstü geliştirici deneyimini dengeleyerek bu ayrıntıları rahatlıkla kontrol etmenizi sağlar.</p>
 <a class="header" href="#rust-kimler-İçin" id="rust-kimler-İçin"><h2>Rust Kimler İçin</h2></a>
-<p>Rust, çeşitli nedenlerle birçok insan için idealdir. En önemli gruplardan birkaçına bakalım.</p>
-<a class="header" href="#geliştirici-ekipler" id="geliştirici-ekipler"><h3>Geliştirici Ekipler</h3></a>
-<p>Rust, sistem programlama bilgileri farklı düzeylerde olan kalabalık geliştirici ekipleri arasında işbirliğini tesis eden verimli bir araç olduğunu kanıtlıyor. Düşük seviyeli kod, pek çok dilde kapsamlı testler ve deneyimli geliştiriciler tarafından, kodun dikkatle incelenmesiyle yakalanabilen çözümü zor hatalara eğilimlidir. Rust derleyicisi, eşzamanlılık hataları dahil bu türden hatalı kodların derlenmesini reddederek adeta bir bekçi rolü oynar. Derleyiciyle birlikte çalışan geliştirici ekibi, değerli zamanlarını hataları takip etmek yerine, programın mantığına odaklanarak geçirebilirler.</p>
-<p>Rust ayrıca sistem programlama dünyasına çağdaş geliştirici araçları da getiriyor:</p>
+<p>Rust, çeşitli nedenlerden dolayı pek çok insan için idealdir. Bu insanların ait olduğu önemli üretim gruplardan birkaçına bakalım.</p>
+<a class="header" href="#geliştirici-ekipleri" id="geliştirici-ekipleri"><h3>Geliştirici Ekipleri</h3></a>
+<p>Rust, sistem programlama bilgileri farklı düzeylerde olan kalabalık geliştirici ekipleri arasında işbirliğini tesis eden verimli bir araç olduğunu kanıtlıyor. Düşük seviyeli kod, pek çok dilde kapsamlı testler ve deneyimli geliştiriciler tarafından, kodun dikkatle incelenmesiyle yakalanabilen çözümü zor hatalara eğilimlidir. Rust derleyicisi, eşzamanlılık hataları dahil bu türden hatalı kodların derlenmesini reddederek adeta bir bekçi rolü oynar. Böylelikle derleyiciyi takımın bir üyesi olarak gören geliştirici ekibi, değerli zamanlarını hataları takip etmek yerine, programın mantığına odaklanarak geçirebilirler.</p>
+<p>Rust ayrıca sistem programlama dünyasına çağdaş geliştirici araçları da sunar:</p>
 <ul>
 <li>Rust ile birlikte gelen bağımlılık yöneticisi ve derleme aracı olan Cargo, Rust ekosisteminde bağımlılıkları ekleme, derleme ve yönetmeyi sancısız ve tutarlı hale getirir.</li>
 <li>Rustfmt ise geliştiriciler arasında tutarlı bir kodlama tarzı oluşturur.</li>
@@ -189,20 +182,293 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 </ul>
 <p>Bunlar ve Rust ekosistemindeki diğer araçları kullanan geliştiriciler sistem düzeyinde kod yazarken daha üretken olabilirler.</p>
 <a class="header" href="#Öğrenciler" id="Öğrenciler"><h3>Öğrenciler</h3></a>
-<p>Rust, öğrenciler ve sistem kavramları hakkında bilgi edinmek isteyenler içindir. Pek çok kişi Rust kullanarak işletim sistemleri geliştirmek gibi konuları öğrendi. Rust topluluğu oldukça misafirperver olup öğrencilerin sorularını yanıtlamaktan mutluluk duyacaktır. Rust ekipleri sistem kavramlarını bu kitaba benzer çabalar üzerinden öncelikle programlamaya yeni başlayanlar olmak üzere daha fazla kişi için erişilebilir kılmak istiyor.</p>
+<p>Rust, öğrenciler ve sistem kavramlarını öğrenmekle ilgilenenler için tasarlanmıştır. Pek çok kişi Rust kullanarak işletim sistemleri geliştirme gibi alanları öğrenmiştir. Rust topluluğu oldukça misafirperver olup öğrencilerin sorularını heves ve heyacanla yanıtlamaktan çekinmezler. Bu kitap gibi girişimler aracılığıyla Rust ekipleri, sistem konseptlerini mümkün olduğunca çok kişi için, özellikle de programlamaya yeni başlayanlar için erişebilir hale getirmek istiyorlar.</p>
 <a class="header" href="#Şirketler" id="Şirketler"><h3>Şirketler</h3></a>
-<p>Büyüklü küçüklü yüzlerce şirket üretimlerinde çeşitli görevler için Rust’ı kullanıyorlar. Bu görevler arasında komut satırı araçları, web hizmetleri, DevOps araçları, gömülü cihazlar, ses, video analizi ve kod dönüştürme, kripto para birimleri, biyoinformatik, arama motorları, IOT uygulamaları, makine öğrenimi ve hatta Firefox web tarayıcısının önemli bölümleri bile bulunmakta.</p>
+<p>Büyüklü küçüklü yüzlerce şirket üretimlerinde çeşitli görevler için Rust'ı kullanıyorlar. Bu görevler arasında komut satırı araçları, web hizmetleri, DevOps araçları, gömülü cihazlar, ses, video analizi ve kod dönüştürme, kripto para birimleri, biyoinformatik, arama motorları, IOT uygulamaları, makine öğrenimi ve hatta Firefox web tarayıcısının önemli bölümleri bile bulunmakta.</p>
 <a class="header" href="#açık-kaynak-geliştiricileri" id="açık-kaynak-geliştiricileri"><h3>Açık Kaynak Geliştiricileri</h3></a>
 <p>Rust, Rust programlama dili, topluluğu, geliştirici araçları ve kütüphanelerinin oluşumuna katkı sağlamak isteyen kişiler içindir. Rust diline katkıda bulunmanızı çok isteriz.</p>
 <a class="header" href="#hız-ve-İstikrara-değer-verenler" id="hız-ve-İstikrara-değer-verenler"><h3>Hız ve İstikrara Değer Verenler</h3></a>
-<p>Biz hızdan bahsederken, hem Rust ile oluşturabileceğiniz programların hızından, hem de Rust’ın kodlama sürecinde sağladığı hızdan bahsediyoruz. Bu sebepten Rust, bir dilden hız bekleyenler içindir.</p>
-<p>Rust derleyicisinin kontrolleri özellik ekleme ve yeniden düzenleme aşamalarında kararlılık sağladığından, bu kontrollerin yapılamadığı dillerde geliştiricilerin eski ve kırılgan kodları değiştirmekten korktukları sürecin tam tersidir. Bu nedenle Rust, bir dilden istikrar bekleyenler içindir,</p>
-<p>Sıfır maliyetli soyutlamalar için çabalayan Rust, elle yazılan kodlar kadar çabuk düşük seviyeli kodlara derlenen üst düzey özellikler için gayret ederken, güvenli çalışan kodu hızlı çalışan bir kod haline getirmeye uğraşır. Dolayısıyla Rust, hız ve istikrar bekleyenler içindir!</p>
-<!-- Çeviride kaldığım yer -->
-<a class="header" href="#başlarken" id="başlarken"><h1>Başlarken</h1></a>
-<a class="header" href="#kurulum" id="kurulum"><h1>Kurulum</h1></a>
-<a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h1>Merhaba, Dünya</h1></a>
-<a class="header" href="#merhaba-cargo" id="merhaba-cargo"><h1>Merhaba, Cargo</h1></a>
+<p>Rust, bir dilden hız ve istikrar bekleyenler içindir.
+Aslında hız demekle, hem Rust ile oluşturabileceğiniz programların hızını, hem de Rust'ın kodlama sürecinde sağladığı hızı kastediyoruz. Rust'ın derleyici kontrolleri, yeni özellik ekleme ve kodun yeniden düzenlenmesi aşamalarında kararlılık sağlaması onu, benzer denetimlerin olmadığı, geliştiricilerin genellikle değişiklik yapmaktan kaçındıkları programlama dillerinden ayırır. Rust'ın sıfır maliyetli soyutlamarı, elle yazılmış kodlar kadar hızlı çalışan düşük seviyeli kodlara derlenirken, daha fazla üst düzey işlevsellik arayışındaki Rust, güvenle çalışan kodu hızlı çalışan bir kod haline getirmeye çalışır.</p>
+<p>Burada bahsedilen büyük ilgi gurupları dışında Rust, değişik konu ve geliştirme alanlarıyla alakalı pekçok kullanıcıya da destek olmayı umuyor. Sonuç olarak Rust'ın hedefi, geliştiricilerin onlarca yıldır verdiği ödünleri, güvenlik, üretkenlik, hız ve kullanılabilirlik sağlayarak ortadan kaldırmaktır. Rust'ın bu olanaklarını deneyerek sizin için yararlı olup olmayacağına karar verin.</p>
+<a class="header" href="#bu-kitap-kimler-İçin" id="bu-kitap-kimler-İçin"><h2>Bu Kitap Kimler İçin</h2></a>
+<p>Bu kitap handisi olduğundan bağımsız halihazırda başka bir programlama dilinde kod yazdığınız varsayar. Kitabın içeriğini farklı programlama geçmişlerine sahip geniş bir izleyici kitlesi için erişilebilir kılmaya çalıştık. Kitapta programlamanın ne olduğu veya nasıl düşünülmesi gerektiği konusuna zaman ayırmadık. Eğer programlama konusunda yeniyseniz, işe programlamaya giriş konusunda yazılmış kitaplardan başlamanızı öneririz.</p>
+<a class="header" href="#bu-kitap-nasıl-kullanılır" id="bu-kitap-nasıl-kullanılır"><h2>Bu Kitap Nasıl Kullanılır</h2></a>
+<p>Genel olarak bu kitabın baştan sona doğru sırayla okunması amaçlanmıştır. Sonraki bölümler, önceki bölümlerde işlenen kavramlar üzerine inşa edilmektedir. Genellikle önceki bölümlerde etraflıca incelenmeyen konuların ayrıntılarına daha sonraki bölümlerde değinilmektedir. Bu kitapta, kavramsal ve proje olarak ayrıştırılmış iki ayrı kısım bulunmaktadır. Rust hakkındaki bilinmesi gereken konular kavramsal kısımda işlenirken, öğrenilen konuların uygulamalarını proje kısmında gerçekleştireceğiz. Kitabın 2, 12 ve 20. bölümleri proje kısmını, diğer bölümler ise kavramsal kısmını oluşturmaktadır.</p>
+<p>Bölüm 1, Rust'ın nasıl kurulacağını, bir &quot;Merhaba Dünya&quot; programının nasıl yazılacağını, Rust'ın paket yöneticisi ve yapım aracı olan Cargo'nun nasıl kurulacağını anlatır.</p>
+<p>Bölüm 2, Rust diline uygulamalı giriş olarak tasarlandığından, bu bölümde işlenen yüksek düzeydeki kavramların ayrıntılarına sonraki bölümlerde değinilecektir. Kodlarla hemen haşır neşir olmak isteyenler için bu bölüm kol ve paçaların sıvanacağı yerdir.</p>
+<p>İstiyorsanız şimdilik Rust'ın diğer programlama dillerindeki benzer özelliklerini tartıştığımız 3. Bölümü atlayarak, Rust'ın mülkiyet sistemini öğrenmek amacıyla doğrudan kitabın 4. Bölümüne atlamak isteyebilirsiniz. Bununla birlikte, bir sonraki bölüme geçmeden önce her bir özelliği etraflıca öğrenmeyi tercih eden titiz bir öğrenciyseniz, proje kısmı olan 2. Bölümü  atlayarak doğrudan 3. Bölüme geçebilir, daha sonra etraflıca öğrendiklerinizi uygulamak üzere yeniden 2. Bölüme dönebilirsiniz.</p>
+<p>Bölüm 5, yapılar ve bundan böyle metot olarak adlandıracağımız yapı işlevlerini, Bölüm 6 ise, numaralandırmalar (enums), örüntü eşleme ifadeleri (match expressions) ve if let kontrol akış yapılarını içerir. Rust'ta özel türlerinizi oluştururken yapılar ve numaralandırmalardan fazlasıyla yararlanacaksınız.</p>
+<p>Bölüm 7 ise, kodunuz ve genel uygulama programlama arayüzünü (API) düzenleyebilmek için Rust'ın modül sistemi ve görünürlük kuralları hakkında bilgi verir.</p>
+<p>Bölüm 8, vektörler, diziler ve eşleme haritaları (hash maps) gibi standart kütüphane tarafından sağlanan yaygın veri yapılarını anlatır.</p>
+<p>Bölüm 9'da ise Rust'ın hata işleme felsefesini ve tekniklerini inceleyeceğiz.</p>
+<p>Bölüm 10, farklı türlerin tek bir türmüş gibi davranabileği kodları yazmanıza olanak sağlayan genellenmiş veri türleri (generics), özellikler ve yaşam süreleri hakkında ayrıntılı bilgiler içerir.</p>
+<p>Bölüm 11 ise, Rust'ın güvenlik garantilerine rağmen program mantığınızın doğru olup olmadığından emin olabilmeniz için gerekli olan testlerle ilgilidir.</p>
+<p>Bölüm 12'de, metni dosyalarda arayan grep komut satırı aracından bir işlev alt kümesi oluştururken, önceki bölümlerde öğrendiğimiz kavramların çoğunu kullanacağız.</p>
+<p>Bölüm 13, Rust'ın işlevsel programlama dillerinden esinlendiği özellikler olan kapamalar ve yineleyicilere odaklanıyor.</p>
+<p>Bölüm 14'te, Cargo'yu derinlemesine inceleyecek, kendi kütüphanelerinizi başkalarıyla paylaşmanın en iyi yollarından bahsedeceğiz.</p>
+<p>Bölüm 15, standart kütüphanenin sunduğu akıllı işaretçileri ve bu işaretçilerin işlevselliğini sağlayan özellikleri anlatır.
+ust ak kabul edilen belirli özellikleri ve bu özelliklerin deyimsel Rust'a nasıl dönüştürüldüğünü inceler.</p>
+<p>Bölüm 18, Rust programlarında fikirleri ifade etmenin güçlü birer yolu olan örüntüler ve örüntü eşleştirme üzerine bir başvuru kaynağıdır.
+Liste gibi bir dizi ilginç ve gelişmiş konuları içerir.</p>
+<p>Bölüm 20'de, eşzamanlı çoklu görevleri düşük seviyede bir program olarak çalıştıran web sunucusu projesini bitireceğiz.</p>
+<p>Son olarak dil hakkında başvuru niteliğinde yararlı bilgiler içeren bazı ekler aşağıda listelenmektedir.
+Ek A, Rust'ın anahtar kelimelerini içerirç
+Ek B, Rust programlama dilinin işleç ve sembollerine yer verir.
+Ek C, Standart kütüphanenin sağladığı türetilebilir özellikleri kapsar.
+Ek D, Bazı faydalı geliştirme araçlarına atıfta bulunur.
+Ek E'de ise, Rust'ın sürümlerine yer verilmektedir.</p>
+<p>Öğrenim sürenizce kitabın bazı bölümleri atlamak isterseniz, bunun kitabı yanlış okuduğunuz anlamına gelmediğini bilin ve bunu yapmaktan çekinmeyin. Herhangi bir güçlükle karşılaştığınızda önceki bölümlere dönmeniz gerekse bile size uygun olan öğrenim yolunu uygulamaktan çekinmeyin.</p>
+<p>Rust öğrenme sürecinin önemli bir parçası, derleyicinin görüntülediği hata mesajlarının nasıl okunacağını öğrenmektir. Bu mesajlar sizi doğru koda yönlendireceğinden, pekçok hata senaryosunu içeren derlenmeyen örnekler vereceğiz. Rastgele bir örneği kopyalayıp çalıştırır ve bir hata alırsanız bunun hata gösterim örneği olup olmadığını anlamak için ilişkili metni okuduğunuzdan emin olun. Maskotumuz Ferris'i dikkatle takip ederseniz, çalışmaması gereken kodları kolayca anlayabilirsiniz.</p>
+<table><thead><tr><th> Ferris                                                                 </th><th> Anlamı                                          </th></tr></thead><tbody>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/does_not_compile.svg" class="ferris-explain"/>    </td><td> Bu kod derlenmez!                      </td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/panics.svg" class="ferris-explain"/>              </td><td> Bu kod panik üretir!                   </td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/unsafe.svg" class="ferris-explain"/>              </td><td> Bu kod bloğu güvenli olmayan kod içerir.</td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/not_desired_behavior.svg" class="ferris-explain"/></td><td> Bu kod beklenen davranışı üretmiyor. </td></tr>
+</tbody></table>
+<p>Çoğu durumda, hangi kod sürümünün çalışması gerektiğine dair sizi yönlendireceğiz.</p>
+<a class="header" href="#kaynak-kodu" id="kaynak-kodu"><h2>Kaynak Kodu</h2></a>
+<p>Bu kitabın oluşmasını sağlayan kaynak kodlara <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler">Github</a> üzerinden ulaşabilirsiniz.</p>
+<a class="header" href="#başlangıç" id="başlangıç"><h1>Başlangıç</h1></a>
+<p>Öğrenilecek çok şey olmasına rağmen her yolculuğun bir başlangıç noktası vardır diyerek Rust yolculuğumuzu başlatalım. Bu bölümde aşağıdaki konuları tartışacağız:</p>
+<ul>
+<li>Rust'ı Linux, macOS ve Windows işletim sistemlerine yüklemek.</li>
+<li>Ekrana <code>Merhaba Dünya</code> yazan ilk Rust programımızı yazmak.</li>
+<li>Rust'ın paket yöneticisi ve derleme sistemi olan <code>Cargo</code>'yu kullanmak.</li>
+</ul>
+<a class="header" href="#kurulum" id="kurulum"><h2>Kurulum</h2></a>
+<p>İlk adımımız Rust'ı kurmak olacağından Rust sürümlerini ve bunlarla ilişkili araçları yönetmek için tasarlanmış bir komut satırı aracı olan <code>rustup</code> aracılığıyla Rust'ı indireceğiz. İndirme işlemini gerçekleştirebilmek için internet bağlantısına ihtiyacınız olacak.</p>
+<blockquote>
+<p>Herhangi bir nedenle <code>rustup</code> aracını kullanmak istemiyorsanız
+diğer seçenekler için lütfen <a href="https://www.rust-lang.org/tools/install">kurulum sayfasını</a> inceleyiniz.</p>
+</blockquote>
+<p>Aşağıdaki adımlar Rust derleyicisinin en son kararlı sürümünü yükleyecektir. Rust'ın kararlılık garantileri kitapta derlenen örneklerin, Rust'ın daha yeni sürümleriyle de derlenmeye devam etmesini sağlar. Rust genellikle hata mesaj ve uyarılarını iyileştirdiğinden, derleyici çıktıları sürümden sürüme biraz farklılık gösterebilir. Başka bir ifadeyle, buradaki kurulum adımlarına uyarak yüklediğiniz daha yeni ve kararlı Rust sürümleri, beklendiği gibi bu kitabın içeriğiyle uyumlu çalışacaktır.</p>
+<blockquote>
+<a class="header" href="#komut-satırı-gösterimi" id="komut-satırı-gösterimi"><h3>Komut Satırı Gösterimi</h3></a>
+<p>Bu bölümde ve kitap boyunca, terminalde kullanılan bazı komutları göstereceğiz.
+Bir terminale girmeniz gereken satırların her biri <code>$</code> karakteri ile başlar.
+Ancak bu karakter her komutun başlangıcını gösterdiğinden ayrıca elle yazılmasına gerek yoktur.
+<code>$</code> karakteri ile başlamayan satırlar genellikle önceki komutun çıktısını gösterir.
+Buna ek olarak PowerShell'e özgü örneklerde <code>$</code> yerine <code>&gt;</code> karakteri kullanılır.</p>
+</blockquote>
+<a class="header" href="#linux-veya-macos-İçin-rustup-kurulumu" id="linux-veya-macos-İçin-rustup-kurulumu"><h3>Linux veya macOS İçin <code>rustup</code> Kurulumu</h3></a>
+<p>Rust'ı Linux veya macOS bir sistemde kullanacaksanız bir terminal açarak aşağıdaki komutu giriniz:</p>
+<pre><code class="language-console">$ curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+</code></pre>
+<p>Bu komut bir betik dosyasını indirerek Rust'ın en son kararlı sürümünü sisteminize yükleyecek olan <code>rustup</code> aracının kurulumunu başlatır. Kurulum esnasında sistem şifrenizi girmeniz istenebilir. Kurulumunuz başarılı olduğu takdirde işlem sonunda aşağıdaki satır görünecektir.</p>
+<pre><code class="language-text">Rust is installed now. Great!
+</code></pre>
+<p>Ek olarak muhtemelen daha önceden sisteminize yüklenmiş olan bir tür bağlayıcıya da ihtiyacınız olacak. Eğer bir Rust programını derlemeye çalışırken bir bağlayıcının çalıştırılamadığını bildiren hatalar alıyorsanız bu, gerekli olan bağlayıcının sisteminizde yüklü olmadığını ve elle yüklemeniz gerektiği anlamına gelir. C derleyicileri genellikle doğru bağlayıcılarla birlikte gelir. C derleyicisinin kurulumunu öğrenmek için platformunuzun belgelerine göz atmanız gerekir. Ayrıca, bazı yaygın Rust paketleri C kodlarına bağımlı olduğundan bir C derleyicisine ihtiyaç duyacaktır. Bu nedenle şimdiden bir C derleyicisi edinmeniz yararlı olabilir.</p>
+<a class="header" href="#windows-İçin-rustup-kurulumu" id="windows-İçin-rustup-kurulumu"><h3>Windows İçin <code>rustup</code> Kurulumu</h3></a>
+<p>Rust'ı Windows işletim sisteminize kurabilmeniz için <a href="https://www.rust-lang.org/tools/install">Windows için yükle</a> adresine giderek yükleme talimatlarını uygulamanız gerekir. Kurulumun bir aşamasında Visual Studio 2013 veya sonrası için C++ derleme araçlarına da ihtiyacınız olacağını bildiren bir mesaj alacaksınız. Derleme araçlarını edinmenin en kolay yolu <a href="https://visualstudio.microsoft.com/tr/visual-cpp-build-tools/">Visual Studio 2019 için Derleme Araçları</a>'nı yüklemektir. Bu yükleme esnasında yüklenecek bileşenleri seçmeniz istendiğinde &quot;C++ Derleme Araçları&quot;nı seçtiğinizden ve Windows 10 SDK ile ingilizce dil paketi bileşenlerinin dahil edildiğinden emin olun.</p>
+<p>Bu kitabın geri kalanı, hem <em>cmd.exe</em> hem de PowerShell'de çalışan komutları kullanır. Bunların arasında belirgin farklılıklar olması durumunda hangisinin kullanılacağını size açıkça belirteceğiz.</p>
+<a class="header" href="#güncelleme-ve-kaldırma" id="güncelleme-ve-kaldırma"><h3>Güncelleme ve Kaldırma</h3></a>
+<p><code>rustup</code> aracılığıyla kurduğunuz Rust'ı en son sürümüne kolaylıkla güncelleyebilirsiniz. Bunun için terminalinizde aşağıdaki komut satırını çalıştırmanız yeterlidir:</p>
+<pre><code class="language-console">$ rustup update
+</code></pre>
+<p>Eğer Rust ve <code>rustup</code> aracını kaldırmak isterseniz terminalinizde aşağıdaki satırı çalıştırmanız yeterlidir.</p>
+<pre><code class="language-console">$ rustup self uninstall
+</code></pre>
+<a class="header" href="#sorun-giderme" id="sorun-giderme"><h3>Sorun Giderme</h3></a>
+<p>Rust'ın sisteminize doğru şekilde kurulup kurulmadığını kontrol etmek için terminalinizde aşağıdaki satırı çalıştırabilirsiniz:</p>
+<pre><code class="language-console">$ rustc --version 
+</code></pre>
+<p>Terminalinizde Rust'ın son kararlı sürümün numarasını, kayıt değeri ve işlem tarihini aşağıdaki biçimde görmelisiniz:</p>
+<pre><code class="language-text">rustc x.y.z (abcabcabc yyyy-mm-dd)
+</code></pre>
+<p>GGördüğünüz bilgiler bu biçimdeyse Rust'ı başarıyla yüklemişsiniz demektir. Eğer Windows kullanıyor ve bu çıktıyı göremiyorsanız Rust'ın <code>%PATH%</code> sistem değişkeninizde olup olmadığını kontrol etmelisiniz. Bunların her biri doğru uygulanmış, yerli yerindeyse ve Rust halen çalışmıyorsa yardım alacağınız birkaç yer var. Bunlardan en erişilebilir olanı <a href="https://discord.com/invite/rust-lang">Rust'ın Discord resmi kanalı</a> olan #beginners kanalıdır. Orada size yardımcı olabilecek diğer Rustaceans'larla (evet kendimizi bu saçma isimle adlandırıyoruz) çevrimiçi sohbet edip sorununuza çözüm bulabilirsiniz. Diğer harika kaynaklar arasında ise <a href="https://users.rust-lang.org/">Rust Kullanıcıları Forumu</a> ile <a href="https://stackoverflow.com/questions/tagged/rust">Stack Overflow</a> bulunmaktadır.</p>
+<a class="header" href="#yerel-belgeler" id="yerel-belgeler"><h3>Yerel Belgeler</h3></a>
+<p>Rust kurulumu, çevrim dışı okuyabilmeniz için Rust belgelerinin yerel bir kopyasını da içerir. Bu yerel belgeleri tarayıcınızda okuyabilmek için terminalinizde <code>rustup doc</code> komutunu çalıştırmanız yeterlidir.</p>
+<p>Standart kütüphane tarafından sağlanan bir tür veya işlev hakkında bilgi almak ve nasıl kullanılacağını öğrenmek istiyorsanız uygulama programlama arabirimi (API) belgelerini inceleyebilirsiniz. </p>
+<a class="header" href="#merhaba-dünya" id="merhaba-dünya"><h2>Merhaba, Dünya</h2></a>
+<p>Artık Rust'ı yüklediğimize göre ilk Rust programımızı yazabiliriz. Yeni bir programlama dilini öğrenme aşamasında <code>Merhaba, dünya!</code> çıktısını ekrana yazdırmak neredeyse gelenek haline geldiğinden biz de burada bu geleneğe uyacağız.</p>
+<blockquote>
+<p>Not: Bu kitap komut satırı hakkında temel düzeyde bilgi sahibi olduğunuzu varsayar. Bununla birlikte Rust,
+kodlarınızı nasıl düzenleyeceğinize, hangi araçları kullanacağınıza veya onları nereye kaydedeceğinize
+karışmadığından, dilerseniz komut satırı yerine aşina olduğunuz entegre geliştirme ortamınızı (IDE) kullanabilirsiniz.
+Son zamanlarda Rust ekibi farklı IDE'ler ile entegrasyonu iyileştirmeye odaklandığından artık birçok IDE belli
+düzeylerde dil desteği sağlıyor. Tercih ettiğiniz IDE'nin yeterli dil desteği sağlayıp sağlamadığını IDE belgelerinden
+kontrol edebilirsiniz.</p>
+</blockquote>
+<a class="header" href="#bir-proje-dizini-oluşturmak" id="bir-proje-dizini-oluşturmak"><h3>Bir Proje Dizini Oluşturmak</h3></a>
+<p>Öncelikle işe Rust kodlarımızı saklayacağımız bir proje dizini oluşturarak başlayalım. Rust için kodunuzu nerede sakladığınız önemli olmamakla beraber, bu kitapta yer alan alıştırma ve projeler için ana dizininizde (linux için Home)yeni bir <em>projeler</em> dizini oluşturup tüm çalışmalarınızı orada depolamanızı öneririz.</p>
+<p>Ana dizinde &quot;Merhaba, dünya&quot; projesinin saklanacağı <em>projeler</em> dizinin oluşturabilmek için bir terminal penceresi açarak sırasıyla aşağıdaki komutları uygulayalım.</p>
+<p>Linux, macOS ve Windows PowerShell için aşağıdaki komutları girin:</p>
+<pre><code class="language-console">$ mkdir ~/projeler
+$ cd ~/projeler
+$ mkdir merhaba_dunya
+$ cd merhaba_dunyamain.rsLE%\projeler&quot;
+&gt; cd /d &quot;%USERPROFILE%\projeler&quot;
+&gt; mkdir merhaba_dunya
+&gt; cd merhaba_dunya
+</code></pre>
+<a class="header" href="#bir-rust-programı-yazmak-ve-Çalıştırmak" id="bir-rust-programı-yazmak-ve-Çalıştırmak"><h3>Bir Rust Programı Yazmak ve Çalıştırmak</h3></a>
+<p>Artık <em>merhaba_dunya</em> dizini içinde bulunduğumuza göre, programın kaynak kodunu kaydedeceğimiz ve <em>main.rs</em> olarak adlandıracağımız yeni bir dosya oluşturabiliriz. Rust'ta dosya adlarının birden fazla kelime içermesi durumunda alt çizgi ile ayrılması gerektiğini ve daima .rs uzantısıyla sonlandığını unutmayın. Dizin veya dosya isimlerinin bitişik olarak yazılması mümkünse de bu yaklaşımın pek önerilmediğini, <em>merhabadunya.rs</em> yerine <em>merhaba_dunya.rs</em> biçimindeki adlandırmaların tercih edildiğini aklınızda bulundurun.</p>
+<p>Şimdi biraz önce oluşturduğumuz <em>main.rs</em> dosyasını açarak Örnek 1-1'de yer alan kod satırlarını dosyamıza ekleyelim:</p>
+<p><span class="filename">Dosya adı: main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+}
+</code></pre></pre>
+<p><span class="caption"> Örnek 1-1: Ekrana &quot;Merhaba, dünya!&quot; yazdıran bir program.</span></p>
+<p>Dosyayı kaydedip yeniden terminal penceresine dönelim. Programımızı Linux veya macOS üzerinde derleyip çalıştırabilmek için aşağıdaki komutları uygulayalım:</p>
+<pre><code class="language-console">$ rustc main.rs
+$ ./main
+Merhaba, dünya!
+</code></pre>
+<p>Windows kullanıyorsanız <code>./main</code> yerine <code>./main.exe</code> komutunu kullanmanız gerekir:</p>
+<pre><code class="language-powershell">&gt; rustc main.rs
+&gt; .\main.exe
+Merhaba, dünya!
+</code></pre>
+<p>Hangi işletim sistemini kullanıyor olursanız olun, bu komutları uyguladıktan sonra terminalinizde <code>Merhaba, dünya!</code> çıktısını görüyor olmalısınız. Bu çıktıyı görmüyorsanız, yardım için kurulum bölümündeki <a href="ch01-01-installation.html#troubleshooting">&quot;Sorun Giderme&quot;</a> başlığına göz atın.</p>
+<p>Eğer ekranınızda `Mmain.rs</p>
+<a class="header" href="#bir-rust-programının-anatomisi" id="bir-rust-programının-anatomisi"><h3>Bir Rust Programının Anatomisi</h3></a>
+<p>Ekranımıza <code>Merhaba, dünya!</code> yazısını bastıran programda neler olup bittiğine daha yakından bakalım. Bulmacanın ilk parçası aşağıdadır:</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+#	println!(&quot;Merhaba, dünya!&quot;);	
+
+}
+</code></pre></pre>
+<p>Rust'ta bu satırlar bir işlevi tanımlar. Çalıştırılabilir tüm rust programlarında bulunan <code>main</code> işlevi, programın işletilen ilk kodu olması bakımından özel bir konumdadır. İlk satır parametre almayan ve hiçbir şey döndürmeyen işlev adını <code>main</code> olarak bildirir. Elimizde işleve iletilecek parametreler olsaydı onlar da yerlerini bu <code>()</code> parantezin içine konumlandırılmakla bulmuş olacaklardı.</p>
+<p>Dikkat ederseniz işlev gövdesinin süslü parantezler <code>{}</code> içine alınmış olduğunu göreceksiniz. Rust'ta işlev gövdeleri bu süslü parantezler içine alınmak zorundadır. İşlev gövdesini saran ilk süslü parantezi, işlev bildirimiyle aynı satıra yerleştirirken arada bir boşluk bırakmak iyi bir kod yazım tekniğidir. Rust projelerinde standart kod yazım tekniğine  bağlı kalmak ve kodlarınızı belirli bir şekilde biçimlendirmek için <code>rustfmt</code> adındaki otomatik biçimlendirme aracını kullanabilirsiniz. Bu araç Rust ekibi tarafından tıpkı <code>rustc</code> gibi standart Rust dağıtımına dahil edildiğinden halihazırda bilgisayarınızda kurulu durumda olmalıdır. Daha fazla ayrıntı için çevrimiçi belgelere başvurabilirsiniz.</p>
+<p>Gövdesi süslü parantezler ile sarmalanmış olan <code>main</code> işlevinin içinde aşağıdaki kod satırı bulunur.</p>
+<pre><pre class="playpen"><code class="language-rust">#fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+#}
+</code></pre></pre>
+<p>Bu küçük programdaki tüm işi üstlenerek metni ekrana yazdıran bu satırda dikkat edilmesi gereken dört önemli ayrıntı yer almaktadır.</p>
+<p>İlki ve en az dikkat edileni, Rust stili girintilerde bir sekme <em>(tab)</em> yerine dört boşluk <em>(space)</em> kullanılır.</p>
+<p>İkincisi, <code>println!</code> bir Rust makrosu çağırır. Eğer kodda bir işlev çağrısı yapılsaydı, <code>println</code> (<code>!</code> olmadan) yazılmış olacaktı. Rust makrolarını 19. bölümde ayrıntılarıyla inceleyeceğimizden şu an için <code>!</code> işaretini gördüğünüz her yerde bunun bir işlev yerine, bir makroya yapılan çağrı olduğunu bilmeniz yeterlidir.</p>
+<p>Üçüncüsü, <code>&quot;Merhaba, dünya!&quot;</code> olarak gördüğünüz dizgi, <code>println!</code> makrosuna argüman olarak geçirildiğinde ekrana yazdırılır.</p>
+<p>Dördüncüsü, satırı noktalı virgül (<code>;</code>) ile bitiriyor olmamız ifadenin bittiğini ve bir sonrakinin başlayabileceğini bildirir. Rust kodlarındaki pek çok satır noktalı virgül ile sonlandırılır.</p>
+<a class="header" href="#derlemek-ve-Çalıştırmak-ayrı-birer-adımdır" id="derlemek-ve-Çalıştırmak-ayrı-birer-adımdır"><h3>Derlemek ve Çalıştırmak Ayrı Birer Adımdır</h3></a>
+<p>Yeni oluşturulan bir programın çalıştırılma süreci adımlarını birlikte inceleyelim.</p>
+<p>Rust programları çalıştırılmadan önce Rust derleyicisi tarafından ve <code>rustc</code> komutuna aşağıdaki gibi kaynak dosyası adı ileterek derlenmelidir:</p>
+<pre><code class="language-console">$ rustc main.rs
+</code></pre>
+<p>Eğer C veya C++ dillerine aşina iseniz, bu işlemin <code>gcc</code> veya <code>clang</code> ile oldukça benzeştiğini fark edeceksiniz. Başarıyla gerçekleşen bir derlemenin ardından Rust çalıştırılabilir ikili (binary) bir dosya üretecektir.</p>
+<p>Bu çalıştırılabilir dosyaya, Linux, macOS veya Windows PowerShell sistemlerinde, dizin içindeyken terminalinize <code>ls</code> komutu girerek ulaşabilirsiniz. Linux ve macOS sistemlerinde aynı dizinde iki adet dosya gösterilirken, Windows'ta PowerShell veya CMD ile üç tane dosya görüntülenecektir.</p>
+<pre><code class="language-text">$ ls
+main main.rs
+</code></pre>
+<p>Eğer Windows üzerinde CMD kullanıyorsanız aşağıdaki komutu girmeniz gereklidir:</p>
+<pre><code class="language-cmd">&gt; dir /B %= Buradaki /B seçeneği yalnızca dosya isimlerinin görüntülenmesini sağlar =%
+main.exe
+main.pdb
+main.rs
+</code></pre>
+<p>Her iki durumda da <em>.rs</em> uzantılı bir kaynak kodu dosyası, (windows'ta <em>main.exe</em> olarak ancak diğer platformlarda sadece <em>main</em> olarak görünen) çalıştırılabilir ikili dosya, Windows için ek olarak hata ayıklama bilgilerini içeren <em>.pdb</em> uzantılı birer dosya gösterilecektir.</p>
+<p>Bu dizinde çalıştırılabilir halde bulunan <em>main</em> ya da <em>main.exe</em> dosyasını aşağıdaki gibi kullanarak işletebilirsiniz:</p>
+<pre><code class="language-console">$ ./main # ya da windows için .\main.exe
+</code></pre>
+<p>Eğer programınız &quot;Merhaba, dünya!&quot; metnini içeriyorsa bu komutu girdiğinizde terminalinizde <code>&quot;Merhaba, dünya!&quot;</code> yazdırılacaktır.</p>
+<p>Programlama tecrübeniz Ruby, Python veya JavaScript gibi dinamik dillerden oluşuyorsa bu programın ayrı adımlar halinde derleyip çalıştırılmasına alışkın olmayabilirsiniz. Ancak Rust <em>derlemeli bir dil</em>dir. Bu da bir Rust programının derlenmesiyle oluşturulan çalıştırılabilir dosyanın paylaşabilmesi ve Rust'ın kurulu olmadığı ortamlarda bile çalışması demektir. Oysa dinamik dillerden herhangi birinin kaynağını <em>.py, .rb veya .js</em> dosyası olarak biriyle paylaştığınızda bu dosyaların çalıştırılabilmesi, için o ortamda Python, Ruby ya da JavaScript uygulamalarının kurulu olması gerekmektedir.  Bununla birlikte bu dillerde de programın çalıştırılması için yalnızca tek bir komut yeterlidir. Dil tasarımlarında bulunan her şey bir uzlaşma meselesinden başka bir şey değildir.</p>
+<p>Programları <code>rustc</code> ile derlemek basit programlar için yeterli olmakla birlikte projeniz büyüyüp geliştikçe seçenekleri yönetmek ve kod paylaşımını kolaylaştırmanın yollarını arayacaksınız. Sonraki bölümde gerçek dünyada daha sık kullanılan ve daha karmaşık Rust programları yazmanıza yardım edecek olacak Cargo aracını keşfedeceğiz.</p>
+<a class="header" href="#merhaba-cargo" id="merhaba-cargo"><h2>Merhaba, Cargo</h2></a>
+<p>Cargo Rust'ın derleme sistemi ve paket yöneticisidir. Bu araç sizin için; kod oluşturmak, kodun bağımlı olduğu kütüphaneleri <em>(kodunuzun ihtiyaç duyduğu kitaplıklara bağımlılık adını veriyoruz)</em> indirmek ve bunları derlemek gibi pek çok görevi yerine getirdiğinden çoğu Rustacean bu aracı Rust projelerini yönetmek için kullanır.</p>
+<p>Daha önce yazdığımıza benzeyen basit Rust programlarının herhangi bir kütüphaneye bağımlılığı bulunmadığından &quot;Merhaba dünya!&quot; gibi basit bir projeyi Cargo ile derlemeye çalışsaydık, Cargo'nun sadece kodu derlemekle ilgili olan bölümü kullanılmış olacaktı. Daha karmaşık ve farklı kütüphanelerle çalışmaya ihtiyaç duyan Rust programları yazmaya niyetlendiğinizde, projenin Cargo aracılığıyla oluşturulması bağımlılıkları yönetmenize epey yardımcı olacaktır.</p>
+<p>Rust projelerinin büyük çoğunluğu Cargo aracını kullandığından, bu kitabın geri kalan bölümlerinde sizin de bu aracı kullandığınız varsayılacaktır. Eğer <a href="ch01-01-installation.html">&quot;Kurulum&quot;</a> bölümünde açıklanan resmi yükleyicileri kullandıysanız Cargo aracı Rust ile birlikte gelmiş demektir. Rust'ı başka yollar ile kurduysanız sisteminizde Cargo'nun kurulu olup olmadığını terminalinize aşağıdaki kodları girerek kontrol edebilirsiniz.</p>
+<pre><code class="language-console">$ cargo --version
+</code></pre>
+<p>Terminalinizde çıktı olarak bir sürüm numarası görünüyorsa Cargo aracınız Rust kurulumuyla birlikte yüklenmiş demektir. Eğer <code>Command not found</code> şeklinde bir hata ile karşılaşıyorsanız Cargo'nun nasıl kurulacağına dair kullandığınız kurulum yönteminin belgelerine bakmalısınız.</p>
+<a class="header" href="#cargo-ile-proje-oluşturmak" id="cargo-ile-proje-oluşturmak"><h3>Cargo ile Proje Oluşturmak</h3></a>
+<p>Cargo aracılığıyla yeni bir proje oluşturarak bunun ilk projemiz olan &quot;Merhaba dünya!&quot; ile farklılıklarını incelemeye çalışalım. Hamgi işletim sizteminde olduğunuzdan bağımsız <em>projeler</em> dizini ya da kodlarınızı nereye kaydediyorsanız o dizine gelerek aşağıdaki komutları çalıştırım:</p>
+<pre><code class="language-console">$ cargo new merhaba_cargo
+$ cd merhaba_cargo
+</code></pre>
+<p>İlk komut &quot;merhaba_cargo&quot; adlı yeni bir dizin oluşturur. Cargo bir proje için gerekli olan dosyaları aynı zamanda projemizin de adı olan bu dizinde oluşturur.</p>
+<p>Daha sonraki komutla da Cargo aracı tarafından yaratılan: Cargo.toml, main.rs adlı iki dosya ve src adlı bir dizinin listelendiği &quot;merhaba_cargo&quot; içeriği görüntülenir.</p>
+<p>Bununla birlikte Cargo .gitignore dosyası ile eşliğinde yeni bir git deposunun da başlatılmasını sağlar. Eğer halihazırda mevcut bir deposu bulunuyorsa <code>cargo new</code> komutu yeni bir git deposu oluşturmaz. Eğer yine de bir git deposu oluşturmak istiyorsanız bunun için <code>cargo new --vcs=git</code> komutunu kullanmanız gerekir.</p>
+<blockquote>
+<p>Not: Git yaygın olarak kullanılan bir sürüm kontrol sistemidir. Cargo'yu --vcs bayrağı aracılığıyla farklı bir
+sürüm kontrol sistemi kullanmak ya da sürüm kontrol sistemini kullanmamak üzere ayarlayabilirsiniz. Mevcut
+seçenekleri görmek için <code>cargo new -help</code> komutunu çalıştırmanız yeterlidir.</p>
+</blockquote>
+<p>Cargo.toml dosyasını metin düzenleyicinizde açtığınızda içeriği örnek 1-2'dekine benzer biçimde görünmelidir.</p>
+<p><span class="filename">Dosya adı: Cargo.toml</span></p>
+<pre><code class="language-toml">[package]
+name = &quot;merhaba_cargo&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
+edition = &quot;2018&quot;
+
+[dependencies]
+</code></pre>
+<p><span class="caption"> Örnek 1-2: <code>cargo new</code> komutuyla oluşturulan Cargo.toml dosyası içeriği</span></p>
+<p>Bu dosya, Cargo'nun yapılandırma formatı olan <a href="https://toml.io/en/">TOML</a>(Tom's Obvious, Minimal Language) biçimindedir.</p>
+<p>İlk satırda bildirilen ve altındaki ifadeler tarafından oluşturulan [package] bölüm başlığı, paketin nasıl yapılandırıldığını gösterir. Paket içeriğine ayrıntı eklendikçe, farklı bölüm başlıkları da eklenecektir.</p>
+<p>Sonraki dört satır ise programınızın Cargo tarafından derlenebilmesi için gereken: İsim, sürüm, programın yazarı ve kullanılacak Rust sürümü gibi yapılandırma bilgilerinden oluşur. Cargo isim ve e-posta gibi bilgileri ortamınzdan edineceğinden bilgileriniz eksik veya yanlış ise bu dosyayı şimdiden düzenleyerek kaydetmeniz gerekir. <code>Sürüm</code> anahtarı konusuna ise Ek E bölümünde değineceğiz.</p>
+<p>Son satırda projenizin bağımlılıklarını listelemeye yarayan [dependencies] bölümü yer alır. Rust'ta kodların paketler halinde tutulduğu yapılara <code>crate</code> yani sandık adı verilir. Bu proje için harici bir sandığa ihtiyaç duymayacak fakat 2. Bölümde gerçekleştireceğimiz ilk projede bağımlılıklar bölümünü kullanacağız.</p>
+<p>Şimdi <em>src/main.rs</em> dosyasını açalım ve inceleyelim:</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+}
+</code></pre></pre>
+<p>Cargo sizin için tıpkı Örnek 1-1'de olduğu gibi ekranınıza &quot;Merhaba, dünya!&quot; metnini bastıran bir program oluşturdu. Önceki projemiz ile Cargo tarafından üretilen bu proje arasındaki farklar ise, Cargonun projeyi <em>src</em> adlı dizine yerleştirmesi ve üst dizinde ise bir <em>Cargo.toml</em> dosyası yaratması olarak özetlenebilir.</p>
+<p>Cargo kaynak dosyalarının <em>src</em> dizininde bulundurulmasını bekler. Projenin ana dizin içeriği, sadece README dosyaları, lisans bilgileri, yapılandırma bilgileri ve kodunuzu ilgilendiren diğer şeyler içindir. Dolayısıyla Cargo, her şeyin kendi yerinde depolanmasını sağlayarak projelerinizin düzenlenmesine yardımcı olur.</p>
+<p>Eğer bir projeyi ilk &quot;Merhaba, dünya!&quot; örneğindeki gibi Cargo kullanmadan başlattıysanız, bu projeyi Cargo kullanarak olşuturulmuş haline döndürebilirsiniz. Bunun için proje kodunu <em>src</em> dizinine taşımanız ve projenin ana dizinde <em>Cargo.toml</em> dosyası oluşturmanız yeterlidir.</p>
+<a class="header" href="#bir-cargo-projesini-derleyip-Çalıştırmak" id="bir-cargo-projesini-derleyip-Çalıştırmak"><h3>Bir Cargo Projesini Derleyip Çalıştırmak</h3></a>
+<p>Şimdi &quot;Merhaba, dünya!&quot; programını Cargo kullanarak derleyip çalıştırdığımızda oluşan farklılıkları gözlemleyelim. Terminalinizde <em>merhaba_cargo</em> dizinine gelerek aşağıdaki komut yardımıyla projenizi oluşturun:</p>
+<pre><code class="language-console">$ cargo build
+    Compiling merhaba_cargo v0.1.0 (/home/rustdili/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.54s
+</code></pre>
+<p>Bu komut geçerli dizininiz yerine <em>target/debug/merhaba_cargo</em> (veya Windows ortamında <em>target\debug\merhaba_cargo.exe</em>)
+konumunda çalıştırılabilir bir dosya oluşturu Bu dosyayı şu komutla çalıştırabilirsiniz:</p>
+<pre><code class="language-console">$ ./target/debug/merhaba_cargo # veya Windows ortamında .\target\debug\merhaba_cargo.exe
+Hello, world!
+</code></pre>
+<p>Her şey yolunda giderse terminalinizde &quot;Hello, world!&quot; yazısı görünecektir. Cargo uygulamasının ilk kez çalıştırılması projenizin ana dizininde <em>Cargo.lock</em> adında yeni bir dosya oluşturulmasına neden olur. Bu dosya projenizdeki bağımlılıkların tam sürümlerini takip eder. Halihazırda bu proje harici bir kasaya bağımlı olmadığından bu dosya epey boş görünecektir. Bu dosya içeriği Cargo tarafından otomatik olarak yönetildiğinden bunu elle değiştirmeniz gerekmez.</p>
+<p>Aslında <em>cargo build</em> komutu ile derleyip <em>./target/debug/merhaba_cargo</em> komutu ile çalıştırdığımız bu projeyi, <code>cargo run</code> komutu ile hem derleyip hem çalıştırabiliriz. Vereceğimiz tek bir <code>cargo run</code> komutu ile proje derlenecek ve ardından oluşturulan çalıştırılabilir dosya hemen işletilecektir.</p>
+<pre><code class="language-console">$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/merhaba_cargo`
+Hello, world!
+</code></pre>
+<p>Bu kez Cargo'nun <code>merhaba_cargo</code> programını derlediğini bildiren çıktıyı göremediğimize dikkat edin. Bunun sebebi, Cargo'nun kaynak kodun değişmediğini bilmesidir. Eğer kaynak kodunu değiştirmiş olsaydınız program Cargo tarafından yeniden derlenerek çalıştırılacak ve terminalde aşağıdaki çıktı görünecekti:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling merhaba_cargo v0.1.0 (/home/dogan/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.25s
+     Running `target/debug/merhaba_cargo`
+Merhaba Cargo!
+</code></pre>
+<p>Yine Cargo tarafından sağlanan ve kodunuzun çalıştırılabilir olup olmadığını denetleyen, ancak çalıştırılabilir bir dosya oluşturmayan <code>cargo check</code> adında bir komut daha vardır:</p>
+<pre><code class="language-console">$ cargo check
+    Checking merhaba_cargo v0.1.0 (/home/dogan/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.12s
+</code></pre>
+<p>Hangi durumlarda çalıştırılabilir dosya oluşturmanız gerekmez? Çoğu zaman <code>cargo check</code>, çalıştırılabilir dosya oluşturma adımını atladığı için <code>cargo build</code> işleminden daha hızlı olacaktır. Kodunuzu yazarken düzenli olarak çalışmanızın derlenip derlenmediğini kontrol etmek istiyorsanız <code>cargo check</code> komutunu kullanmanız yazım sürecinizi oldukça hızlandıracaktır. Bu sebepten birçok Rustacean, programın derlendiğindne emin olabilmek için, programlarını yazarken periyodik olarak <code>cargo check</code> ile çalıştırılabilirlik kontrolünü gerçekleştirir. En nihayetinde çalıştırılabilir dosyayı oluşturmaya hazır olduklarında <code>cargo build</code> komutunu uygularlar.</p>
+<p>Cargo hakkında şimdiye kadar öğrendiklerimizi özetleyecek olursak:</p>
+<ul>
+<li>Bir projeyi derlemek için <code>cargo build</code> komutunu kullanabiliriz.</li>
+<li>Bir projeyi tek bir adımla derleyip çalıştırabilmek için <code>cargo run</code> komutunu kullanabiliriz.</li>
+<li>Bir projenin hatalarını ikili kod üretmeden derleyerek kontrol edebilmek için  <code>cargo check</code> komutundan yararlanabiliriz.</li>
+<li>Cargo, derleme sonucunda oluşturulan çalıştırılabilir ikili dosyayı, kaynak koduyla aynı dizine koymak yerine <em>target/debug</em> dizinine kaydeder.</li>
+</ul>
+<p>Cargo kullanmanın ek bir avantajı da, hangi işletim sisteminde çalışıyor olursanız olun, kullanacağınız komutların aynı olmasıdır. O nedenle bundan sonra Linux, macOS veya Windows işletim sistemlerinin her biri içn ayrı ayrı özel talimatlar sağlamayacağız.</p>
+<a class="header" href="#sürüm-amaçlı-derleme" id="sürüm-amaçlı-derleme"><h3>Sürüm Amaçlı Derleme</h3></a>
+<p>Pisayasa sürülmeye hazır hale gelen projenizi en iyileştirme olanakları ile derleyebilmek için <code>cargo build --release</code> komutundan yararlanabilirsiniz. Bu komut çalıştırılabilir dosyanızı <em>target/debug</em> dizini yerine <em>target/release</em> dizinine kaydedecektir. Fakat en iyileştirmeler, Rust kodlarının daha hızlı çalışmalarını sağlamakla birlikte, programın derlenmesi için gereken süreyi uzatır. O nedenle en iyileştirme olanaklarında: İlki, hızlı ve sık derleme işlemleri için kullanılan geliştirme profili, diğeriyse tekrar tekrar derlenmeyecek ve çalışır halini olabilecek en kısa sürede kullanıcıya teslim edebileceğiniz nihai programı oluşturan olmak üzere iki farklı profil sunulur.</p>
+<p>Eğer kodunuzun çalışma süresini ölçmek istiyorsanız, <em>target/release</em> dizininde bulunan çalıştırılabilir dosyayı <code>cargo build --release</code> komutu ile test ettiğinizden emin olun.</p>
+<a class="header" href="#konvansiyonel-cargo" id="konvansiyonel-cargo"><h3>Konvansiyonel Cargo</h3></a>
+<p>Basit projeler için Cargo rustc kullanımından daha kullanışı değilse de programlarınız karmaşıklaştıkça değerini kanıtlayacaktır. Birden fazla sandıktan oluşan karmaşık projelerde yapı koordinasyonu Cargo'ya devretmek oldukça faydalıdır.</p>
+<p>Her ne kadar <code>merhaba_cargo</code> projesi basit bir projeymiş gibi görünüyor olsa da Rust kariyeriniz boyunca karşılaşacağınız birçok aleti kullanmanızı sağlıyor. Bununla birlikte mevcut herhangi bir Rust projesi üzerinde çalışabilmeniz için, Git üzerinden arzu ettiğiniz kodu indirmek, ardından projenin bulunduğu dizinde kodu derleyecek olan şu komutları girmeniz yeterlidir:</p>
+<pre><code class="language-console">$ git clone herhangibirurl.com/herhangibirproje
+$ cd herhangibirproje
+$ cargo build
+</code></pre>
+<p>Cargo hakkında daha fazla bilgi edinmek istiyorsanız <a href="https://doc.rust-lang.org/cargo/">kendi belgelerine</a> bakmanız yeterlidir.</p>
+<a class="header" href="#Özet" id="Özet"><h2>Özet</h2></a>
+<p>Oldukça iyi başlayan Rust yolculuğunuzda aşağıdakileri öğrendiniz:</p>
+<ul>
+<li>Rust'ı, <code>rustup</code> kullanarak en son kararlı sürümüne yüklemek.</li>
+<li>Rust'ı daha yeni bir sürümüne yükseltmek.</li>
+<li>Yerel olarak yüklenen belgelere erişmek.</li>
+<li>Bir &quot;Merhaba, dünya!&quot; programını yazarak doğrudan <code>rustc</code> kullanarak çalıştırmak.</li>
+<li>Yeni bir projeyi Cargo komut ve kurallarını kullanarak derleyip çalıştırmak.</li>
+</ul>
+<p>Şimdi Rust kodu okuyup yazma becerilerimizi geliştirebilmek için daha sağlam bir program yazmamız gerekiyor. Bu nedenle 2. Bölümde bir tahmin oyunu programı yazacak ve inceleyeceğiz. Eğer öğrenme sürecinize &quot;Ortak Programlama Kavramları&quot;nın nasıl çalıştığını öğrenerek devam etmek istiyorsanız 3. Bölüme ilerleyebilir, ardından 2. Bölüme geri dönebilirsiniz.    </p>
 <a class="header" href="#bir-tahmin-oyunu-programlamak" id="bir-tahmin-oyunu-programlamak"><h1>Bir Tahmin Oyunu Programlamak</h1></a>
 <a class="header" href="#ortak-programlama-kavramları" id="ortak-programlama-kavramları"><h1>Ortak Programlama Kavramları</h1></a>
 <a class="header" href="#değişkenler-ve-değişkenlik" id="değişkenler-ve-değişkenlik"><h2>Değişkenler ve Değişkenlik</h2></a>
@@ -211,7 +477,7 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 <a class="header" href="#yorumlar" id="yorumlar"><h2>Yorumlar</h2></a>
 <a class="header" href="#kontrol-akışı" id="kontrol-akışı"><h2>Kontrol Akışı</h2></a>
 <a class="header" href="#mülkiyeti-anlamak" id="mülkiyeti-anlamak"><h1>Mülkiyeti Anlamak</h1></a>
-<p>Mülkiyet kavramı, Rust’ın bellek garantilerini bir çöp toplayıcı mekanizmasına gerek duymadan vermesini sağlayan benzersiz bir özelliktir. Bu nedenle, Rust’ ta mülkiyetin nasıl çalıştığını anlamak oldukça önemlidir. Bu bölümde mülkiyetin yanı sıra bu kavramla ilişkili; borçlanma, dilimler ve Rust’ın verileri belleğe nasıl yerleştirdiğinden bahsedeceğiz.</p>
+<p>Mülkiyet kavramı, Rust'ın bellek garantilerini bir çöp toplayıcı mekanizmasına gerek duymadan vermesini sağlayan benzersiz bir özelliktir. Bu nedenle, Rust' ta mülkiyetin nasıl çalıştığını anlamak oldukça önemlidir. Bu bölümde mülkiyetin yanı sıra bu kavramla ilişkili; borçlanma, dilimler ve Rust'ın verileri belleğe nasıl yerleştirdiğinden bahsedeceğiz.</p>
 <a class="header" href="#mülkiyet-nedir" id="mülkiyet-nedir"><h2>Mülkiyet Nedir?</h2></a>
 <a class="header" href="#referanslar-ve-borçlanma" id="referanslar-ve-borçlanma"><h2>Referanslar ve Borçlanma</h2></a>
 <a class="header" href="#dilim-türü" id="dilim-türü"><h2>Dilim Türü</h2></a>
@@ -219,7 +485,7 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 <a class="header" href="#yapıları-tanımlamak-ve-Örneklemek" id="yapıları-tanımlamak-ve-Örneklemek"><h2>Yapıları Tanımlamak ve Örneklemek</h2></a>
 <a class="header" href="#yapıları-kullanan-Örnek-bir-program" id="yapıları-kullanan-Örnek-bir-program"><h2>Yapıları Kullanan Örnek Bir Program</h2></a>
 <a class="header" href="#metod-sözdizimi" id="metod-sözdizimi"><h2>Metod Sözdizimi</h2></a>
-<a class="header" href="#sıralamalar-ve-Örüntü-eşleme" id="sıralamalar-ve-Örüntü-eşleme"><h1>Sıralamalar ve Örüntü Eşleme</h1></a>
+<a class="header" href="#numaralandırmalar-enums-ve-Örüntü-eşleme-pattern-matching" id="numaralandırmalar-enums-ve-Örüntü-eşleme-pattern-matching"><h1>Numaralandırmalar (Enums) ve Örüntü Eşleme (Pattern Matching)</h1></a>
 <a class="header" href="#bir-sıralama-tanımlamak" id="bir-sıralama-tanımlamak"><h2>Bir Sıralama Tanımlamak</h2></a>
 <a class="header" href="#kontrol-akışı-İşleci-match" id="kontrol-akışı-İşleci-match"><h2>Kontrol Akışı İşleci <code>match</code></h2></a>
 <a class="header" href="#if-let-ile-kısa-kontrol-akışı" id="if-let-ile-kısa-kontrol-akışı"><h2><code>if let</code> ile Kısa Kontrol Akışı</h2></a>
@@ -253,22 +519,22 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 <a class="header" href="#ortam-değişkenleriyle-Çalışmak" id="ortam-değişkenleriyle-Çalışmak"><h2>Ortam Değişkenleriyle Çalışmak</h2></a>
 <a class="header" href="#hata-mesajlarını-standart-Çıktı-yerine-standart-hataya-yazmak" id="hata-mesajlarını-standart-Çıktı-yerine-standart-hataya-yazmak"><h2>Hata Mesajlarını Standart Çıktı Yerine Standart Hataya Yazmak</h2></a>
 <a class="header" href="#İşlevsel-dil-Özellikleri-yineleyiciler-ve-kapamalar" id="İşlevsel-dil-Özellikleri-yineleyiciler-ve-kapamalar"><h1>İşlevsel Dil Özellikleri: Yineleyiciler ve Kapamalar</h1></a>
-<p>Rust’un tasarımında mevcut birçok dil ve teknikten esinlenilmesinin dile en önemli katkısı işlevsel programlama olmuştur. İşlevsel programlamanın temelindeyse; işlevleri bağımsız değişkenlere geçirirerek değer olarak kullanmak, başka işlevlerden değer döndürmek, elde edilen değerleri daha sonra kullanmak üzere değişkenlere atamak gibi işlemler bulunur.</p>
-<p>Bu bölümde, işlevsel programlamanın ne olup olmadığını tartışmak yerine Rust’ın, işlevsel olarak adlandırılan birçok dildeki özelliklere benzer bazı özelliklerini tartışacağız.</p>
+<p>Rust'un tasarımında mevcut birçok dil ve teknikten esinlenilmesinin dile en önemli katkısı işlevsel programlama olmuştur. İşlevsel programlamanın temelindeyse; işlevleri bağımsız değişkenlere geçirirerek değer olarak kullanmak, başka işlevlerden değer döndürmek, elde edilen değerleri daha sonra kullanmak üzere değişkenlere atamak gibi işlemler bulunur.</p>
+<p>Bu bölümde, işlevsel programlamanın ne olup olmadığını tartışmak yerine Rust'ın, işlevsel olarak adlandırılan birçok dildeki özelliklere benzer bazı özelliklerini tartışacağız.</p>
 <p>Dahası özellikle şu konuları ele alacağız:</p>
 <ul>
 <li><em>Kapamalar</em>, bir değişkene depolanabilen işlev benzeri yapılar</li>
 <li><em>Yineleyiciler</em>, dizi öğelerini seri olarak işlemenin yolları</li>
-<li>Bu iki özeliğin, Bölüm 12’deki I/O projesini geliştirmek için kullanılması</li>
+<li>Bu iki özeliğin, Bölüm 12'deki I/O projesini geliştirmek için kullanılması</li>
 <li>Ve bu özelliklerin performansı (Spoiler uyarısı: düşündüğünüzden daha hızlı!)</li>
 </ul>
 <p>Diğer bölümlerde ele aldığımız <strong>sıralamalar</strong> ve <strong>örüntü eşleme</strong> gibi diğer Rust özellikleri de işlevsel programlama tekniklerinden etkilenirler. Kapamalar ve yineleyicilerde uzmanlaşmak, hızlı ve deyimsel Rust kodları üretmenin önemli bir parçası olduğundan bu bölümün tamamını bu konulara ayıracağız.</p>
 <a class="header" href="#kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler" id="kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler"><h2>Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler</h2></a>
-<p>Rust’un kapamaları, bir değişkene kaydedebileceğiniz veya diğer işlevlere argüman olarak iletebileceğiniz isimsiz işlevlerdir. Kapamaları tek bir yerde oluşturabilir ve daha sonra farklı bir bağlamda değerlendirmek için yeniden çağırabilirsiniz. İşlevlerin aksine kapamalar, kullanacakları değerleri tanımlandıkları kapsamdan elde edebilirler. Kapamaların sahip olduğu bu özelliklerin, kodların yeniden kullanımına ve davranışlarının özelleştirilmesine nasıl izin verdiğini göstereceğiz.</p>
+<p>Rust'un kapamaları, bir değişkene kaydedebileceğiniz veya diğer işlevlere argüman olarak iletebileceğiniz isimsiz işlevlerdir. Kapamaları tek bir yerde oluşturabilir ve daha sonra farklı bir bağlamda değerlendirmek için yeniden çağırabilirsiniz. İşlevlerin aksine kapamalar, kullanacakları değerleri tanımlandıkları kapsamdan elde edebilirler. Kapamaların sahip olduğu bu özelliklerin, kodların yeniden kullanımına ve davranışlarının özelleştirilmesine nasıl izin verdiğini göstereceğiz.</p>
 <a class="header" href="#kapamalar-ile-bir-davranışı-soyutlamak" id="kapamalar-ile-bir-davranışı-soyutlamak"><h3>Kapamalar ile bir davranışı soyutlamak</h3></a>
 <p>Bir kapamayı daha sonra işletilmek üzere saklamanın yararlı olduğu bir örnek üzerinden ilerleyerek, kapama söz dizimi, tür çıkarımı ve özelliklerinden bahsedelim.</p>
 <p>Özel egzersiz planları üreten bir uygulama projesinde çalıştığımızı varsayalım. Egzersiz planlarını oluştururken kullanıcısının belirttiği; yaş, vücut kitle indeksi, egzersiz tercihleri, son egzersizler gibi birçok faktörü dikkate alan bu algoritmanın arka ucunu da Rust ile yazdığımızı düşünelim. Bu örnekte algoritmanın kullanılabilir olmasından ziyade birkaç saniye gibi kısa bir sürede çalışması beklendiğinden, algoritmayı bir kez ve sadece ihtiyacımız olduğunda çağararak kullanıcıyı boş yere bekletmek istemiyoruz.</p>
-<p>Bu varsayımsal algoritmayı örnek 13-1’ de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz:</p>
+<p>Bu varsayımsal algoritmayı örnek 13-1' de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">use std::thread;
 use std::time::Duration; 
@@ -334,8 +600,8 @@ fn main() {
 }
 </code></pre></pre>
 <p><span class="caption">Örnek 13-2: Kullanıcı girişi ve rastgele sayı oluşturmayı simüle etmek için kodlanmış değerlerden oluşan <code>main</code> işlevi</span></p>
-<p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm’ deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
-<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3’ te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır:</p>
+<p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm' deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
+<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3' te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -379,13 +645,13 @@ fn generate_workout(intensity: u32, random_number: u32) {
 #}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-3: Girdi ve çağrılarına göre egzersiz planları yazdıran <code>simulated_expensive_calculation</code> işlevi</span></p>
-<p>Örnek13-3’teki kod, yavaş hesaplama yapan işleve çok sayıda başvuruda bulunur. İlk <code>if</code> bloğu <code>simulated_expensive_calculation</code> işlevini iki defa çağırırken, <code>else</code> bloğunun içindeki birinci <code>if</code> bloğu ise başvuruda bulunmaz. Oysa bir sonraki <code>else</code> bloğunda <code>simulated_expensive_calculation</code> işlevine yeniden çağrıda bulunulur.</p>
-<p>Öncelikle <code>generate_workout</code> işlevinin beklenen davranışı, kullanıcının düşük yoğunluklu bir egzersizi mi <em>(25’ten az bir sayı ile gösterilir)</em> yoksa yüksek yoğunluklu bir egzersizi mi <em>(25 veya daha büyük bir sayı)</em> isteyip istemediğini kontrol etmektir.</p>
+<p>Örnek13-3'teki kod, yavaş hesaplama yapan işleve çok sayıda başvuruda bulunur. İlk <code>if</code> bloğu <code>simulated_expensive_calculation</code> işlevini iki defa çağırırken, <code>else</code> bloğunun içindeki birinci <code>if</code> bloğu ise başvuruda bulunmaz. Oysa bir sonraki <code>else</code> bloğunda <code>simulated_expensive_calculation</code> işlevine yeniden çağrıda bulunulur.</p>
+<p>Öncelikle <code>generate_workout</code> işlevinin beklenen davranışı, kullanıcının düşük yoğunluklu bir egzersizi mi <em>(25'ten az bir sayı ile gösterilir)</em> yoksa yüksek yoğunluklu bir egzersizi mi <em>(25 veya daha büyük bir sayı)</em> isteyip istemediğini kontrol etmektir.</p>
 <p>Düşük yoğunluklu egzersiz planları, simüle ettiğimiz karmaşık algoritmaya dayanan bir dizi şınav ve mekik antremanını önerecektir.</p>
 <p>Kullanıcının yüksek yoğunluklu bir egzersiz planı istemesi halinde; işin içine biraz daha mantık girecek ve: Uygulamanın oluşturduğu rastgele sayı 3 olduğunda kullanıcıya mola vererek sıvı tüketmesi önerilecek, diğer hallerdeyse algoritmanın belirlediği süre kadar koşması önerilecektir.</p>
 <p>Bu kod, şimdilik işverenimizin istediği şekilde çalışmaktadır. Ancak bir süre sonra, şirketimizin veri bilimi ekibinin, <code>simulated_expensive_calculation</code> işlevini çağırma yönteminde bir takım değişiklikler yapılması gerektiğine karar verdiğini varsayalım. Bu güncelleme senaryosunda değişikliklerin basit tutulabilmesi için <code>simulated_expensive_calculation</code> işlevini kendisine başka bir çağrı eklemeden, sadece bir kez çağırmak ve halihazırda kendisine yapılmakta olan gereksiz çağrıları da kesip atmak istiyoruz. Nihayetinde bu işlev maliyetli bir işlev olduğundan, gerekmedikçe çağrıda bulunmamak, gerekiyorsa da sadece bir kez çağrıda bulunmak istiyoruz.</p>
 <a class="header" href="#İşlevleri-kullanarak-yeniden-düzenlemek" id="İşlevleri-kullanarak-yeniden-düzenlemek"><h4>İşlevleri kullanarak yeniden düzenlemek</h4></a>
-<p>Egzersiz programını birçok şekilde yeniden yapılandırabiliriz. Öncelikle, örnek 13-4’ te gösterildiği gibi, <code>simulated_expensive_calculation</code> işlevi için tekrarlanan çağrıyı bir değişkene çıkarmayı deneyeceğiz.</p>
+<p>Egzersiz programını birçok şekilde yeniden yapılandırabiliriz. Öncelikle, örnek 13-4' te gösterildiği gibi, <code>simulated_expensive_calculation</code> işlevi için tekrarlanan çağrıyı bir değişkene çıkarmayı deneyeceğiz.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -434,7 +700,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 <p>Bu değişiklik, <code>simulated_expensive_calculation</code> çağrılarını birleştirerek işlevi gereksiz yere iki kez çağıran ilk <code>if</code> bloğunun sorununu çözecektir. Fakat ne yazık ki, bu defa da sonuç değerini hiç kullanmayan iç <code>if</code> bloğu da dahil, her durumda sonucu beklemek zorunda kalıyoruz.</p>
 <p>Oysa biz bu kodu, programımızın tek bir yerinde tanımlamak ve sadece sonuca gerçekten ihtiyaç duyduğumuz yerde <em>çalıştırmak</em> istiyorduk. İşte bu durum tam da kapamaların kullanılmasını gerektiren bir durumdur.</p>
 <a class="header" href="#bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek" id="bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek"><h4>Bir kodu kapama işlevi kullanarak yeniden düzenlemek</h4></a>
-<p>Her <code>if</code> bloğu öncesinde <code>simulated_expensive_calculation</code> işlevini çağırmak yerine, örnek 13-5’te gösterildiği gibi bir <em>kapama</em> işlevi tanımlayabilir ve bu kapama işlevini bir değişkene depolayarak işlev çağrısı sonucunu saklamaktan kurtulabiliriz. Hatta gerektiğinde <code>simulated_expensive_calculation</code>‘ ın tüm gövdesini de bu kapama işlevine taşıyabiliriz.</p>
+<p>Her <code>if</code> bloğu öncesinde <code>simulated_expensive_calculation</code> işlevini çağırmak yerine, örnek 13-5'te gösterildiği gibi bir <em>kapama</em> işlevi tanımlayabilir ve bu kapama işlevini bir değişkene depolayarak işlev çağrısı sonucunu saklamaktan kurtulabiliriz. Hatta gerektiğinde <code>simulated_expensive_calculation</code>' ın tüm gövdesini de bu kapama işlevine taşıyabiliriz.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -477,7 +743,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 #}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-5: Bir kapama işlevinin <code>expensive_closure</code> değişkeninde saklanması</span></p>
-<p>Kapama tanımı <code>expensive_closure</code> değişkenine atanabilmesi için atama operatöründen sonra gerçekleştirilir. Bir kapamanın tanımlanmasına içinde kapama parametrelerinin yer alacağı bir çift dikey boru <code>(|)</code> ile başlanır. Bu sözdizimi, Smalltalk ve Ruby’deki kapama tanımlarına benzediğinden dolayı seçilmiştir. Örneğimizdeki kapama, <code>num</code> adında yalnızca bir parametreye sahip olduğundan <code>|num|</code> biçiminde ifade edilir: Eğer kullanmamız gereken çok sayıda parametremiz olsaydı, bu parametreleri yine çift boru içine <code>|param1, param2|</code> şeklinde virgüllerle ayırırarak kullanmamız gerekecekti.</p>
+<p>Kapama tanımı <code>expensive_closure</code> değişkenine atanabilmesi için atama operatöründen sonra gerçekleştirilir. Bir kapamanın tanımlanmasına içinde kapama parametrelerinin yer alacağı bir çift dikey boru <code>(|)</code> ile başlanır. Bu sözdizimi, Smalltalk ve Ruby'deki kapama tanımlarına benzediğinden dolayı seçilmiştir. Örneğimizdeki kapama, <code>num</code> adında yalnızca bir parametreye sahip olduğundan <code>|num|</code> biçiminde ifade edilir: Eğer kullanmamız gereken çok sayıda parametremiz olsaydı, bu parametreleri yine çift boru içine <code>|param1, param2|</code> şeklinde virgüllerle ayırırarak kullanmamız gerekecekti.</p>
 <p>Parametrelerin ardından, kapama gövdesini tutan kıvrımlı parantezleri yerleştirilir. Eğer kapama gövdesi tek bir ifadeden oluşuyorsa bu parantezleri kullanmak tercihinize bırakılır. <code>let</code> ifadesinin tamamlanabilmesi için kapamanın sonunda, yani kıvrımlı parantezin bitiminde, <strong><code>;</code></strong> noktalı virgülün kullanılması şarttır. İşlev gövdelerinde olduğu gibi kapama gövdelerindeki son değerler de döndürülen değer statüsünde olduklarından <em>(örneğimizde num)</em> noktalı virgül ile sonlandırılmazlar.</p>
 <p><code>expensive_closure</code> adındaki bu <code>let</code> ifadesinin; isimsiz işlevin çağrılmasıyla oluşan sonuç değerini değil, <strong>isimsiz işlev tanımını</strong> içerdiğine dikkat edin. Kapamaları: Bir noktada çağrılacak kodu tanımlamak, bu kodu saklamak ve programın ilerleyen safhalarında kendisine yeniden başvurabilmek için kullandığımızı unutmayın. Bu aşamada çağırmak istediğimiz kod artık <code>expensive_closure</code> içinde saklanmaya başlamıştır.</p>
 <p>Tanımlanan kapama işleviyle kodu yürüterek oluşan değeri elde etmek için <code>if</code> blokları arasındaki kodu değiştirebiliriz. Kapamaları, örnek 13-6’ da gösterilene benzer şekilde, tıpkı bir işlev çağırıyormuş gibi, kapama tanımını tutan değişken adını verip, parantez içindede alacağı bağımsız değişkenleri belirtirek çağırabiliyoruz.</p>
@@ -524,12 +790,12 @@ fn generate_workout(intensity: u32, random_number: u32) {
 </code></pre></pre>
 <p><span class="caption">Örnek 13-6: Tanımladığımız <code>expensive_closure</code> adlı kapama işlevini çağırmak</span></p>
 <p>Şimdi, pahalı hesaplama işlevi sadece tek bir yerde çağrılıyor ve bu kodu, sadece gerçekten sonuçlara ihtiyacımız olan yerde işletmiş oluyoruz.</p>
-<p>Bununla birlikte bu defa da, ilk <code>if</code> bloğundaki kapamayı iki kez çağırmakla örnek 13-3’teki sorunlardan biriyle yeniden karşılaşıyor ve bu pahalı kodu ikinci kez çağırılmasıyla, kullanıcının uzun zaman alan iki işlem boyunca beklemesine neden oluyoruz. Bu sorunu ilk <code>if</code> bloğu kapsamında, kapamayı çağıran ve elde ettiği sonucu tutan yerel bir değişken tanımlayarak çözümleyebiliriz. Ancak kapamalar bize başka bir çözüm sağlar. Bu çözüm hakkında konuşmaya başlamadan önce, neden kapama tanımında ek açıklamalar bulunmadığından ve kapalarla ilgili bazı özelliklerden bahsedelim.</p>
+<p>Bununla birlikte bu defa da, ilk <code>if</code> bloğundaki kapamayı iki kez çağırmakla örnek 13-3'teki sorunlardan biriyle yeniden karşılaşıyor ve bu pahalı kodu ikinci kez çağırılmasıyla, kullanıcının uzun zaman alan iki işlem boyunca beklemesine neden oluyoruz. Bu sorunu ilk <code>if</code> bloğu kapsamında, kapamayı çağıran ve elde ettiği sonucu tutan yerel bir değişken tanımlayarak çözümleyebiliriz. Ancak kapamalar bize başka bir çözüm sağlar. Bu çözüm hakkında konuşmaya başlamadan önce, neden kapama tanımında ek açıklamalar bulunmadığından ve kapalarla ilgili bazı özelliklerden bahsedelim.</p>
 <a class="header" href="#kapamalarda-tür-çıkarımı-ve-ek-açıklamalar" id="kapamalarda-tür-çıkarımı-ve-ek-açıklamalar"><h4>Kapamalarda tür çıkarımı ve ek açıklamalar</h4></a>
 <p>Kapamalar, <code>fn</code> işlevlerinin gerektirdiği gibi parametre türlerinde veya dönüş değerlerinde açıklama girilmesine ihtiyaç duymazlar. Bununla birlikte standart işlevler, kullanıcılara açık bir arayüzün parçaları olduklarından tür ek açıklamaları gerektirirler. İşlevin ne tür değerler kullandığı veya hangi türden değerler döndürdüğünün, tüm kullanıcılar tarafından açıkça anlaşılabilmesi için, bu arayüzü katı bir şekilde tanımlamak önemlidir. Ancak kapamalar böyle açık bir arayüzde kullanılmak yerine; değişkenlerde depolanmakta, isimsiz olarak kullanılmakta ve kütüphanemizin diğer kullanıcılarına gösterilmeden değerlendirilebilmektedir.</p>
 <p>Bir kapama işlevi genellikle kısa ve herhangi bir keyfi senaryodan ziyade, sadece dar bir bağlamda geçerlidir. Bu sınırlı bağlamda derleyici, değişken türlerinin çıkarsanmasına benzer şekilde, kapama parametre ve dönüş türlerini güvenli bir şekilde çıkarsayabilmektedir.</p>
 <p>Programcıların bu isimsiz ve küçük işlevlerdeki türlere açıklama eklemesi, derleyicinin zaten sahip olduğu bilgilerle oldukça can sıkıcı ve büyük ölçüde gereksiz olacaktır.</p>
-<p>Değişkenlerde olduğu gibi, açıklığı ve netliği gerekli olandan daha ayrıntılı olma pahasına artırmak istiyorsak, kapamalara da tür ek açıklamaları ekleyebiliriz. Örnek 13-5’te tanımladığımız kapama işlevinin kullanacağı türler için ekleyeceğimiz tür ek açıklamaları örnek 13-7’ deki kodda gösterilmektedir.</p>
+<p>Değişkenlerde olduğu gibi, açıklığı ve netliği gerekli olandan daha ayrıntılı olma pahasına artırmak istiyorsak, kapamalara da tür ek açıklamaları ekleyebiliriz. Örnek 13-5'te tanımladığımız kapama işlevinin kullanacağı türler için ekleyeceğimiz tür ek açıklamaları örnek 13-7' deki kodda gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration;
@@ -591,10 +857,10 @@ let n = example_closure(5);
 </code></pre>
 <p>Kapama işlevimiz olan <code>example_closure</code> dizgi değeri ile çağrıldığında, derleyici <code>x</code> parametresi ve dönüş türünü dizgi olarak algılar. Algılanan bu türler daha sonra <code>example_closure</code> içindeki kapamaya kilitlenir ve aynı kapama ile farklı bir tür kullanmaya çalışıldığında bir <em>uyumsuz tür</em> hatası ile karşılaşılır.</p>
 <a class="header" href="#jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak" id="jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak"><h3>Jenerik parametreler ve <code>Fn</code> özelliklerini kullanarak kapamaları hafızaya almak</h3></a>
-<p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6’ daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
+<p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6' daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
 <p>Neyse ki bizim için başka bir çözüm yolu daha var. Kapamayı tutacak bir yapı tanımlayıp, kapama çağrıldığında sonuç değerini o yapı üzerinden oluşturabiliriz. Tanımlayacağımız bu yapı kapamayı yalnızca sonuç değerine ihtiyaç duyduğumuzda işleterek sonucunu önbelleğe alacak, böylelikle kodun geri kalanı sonucu kaydetmek ve yeniden kullanmak zorunda kalmamış olacaktır. Bu kalıbı daha önceki tecrübelerinizden, <strong>tembel değerlendirmeler</strong> veya <strong>ezberleme</strong> olarak biliyor olabilirsiniz.</p>
-<p>Kapama tutabilen yapıların tanımlanabilmesi için, kapama işlevinin giriş ve dönüş türlerinin bildirilmesi gereklidir. Çünkü yapılar oluşturulurken sahip oldukları alanlar isimlendirildiklerinde türlerinin de bildirilmesi gerekmektedir. Her kapama örneğinin kendine özgü isimsiz türü olacağından, iki kapama aynı imzaya sahip olsalar bile, farklı türlerde oldukları kabul edilmektedir. Kapamaları kullanan <strong>yapı</strong>, <strong>enum</strong> veya <strong>işlev parametreleri</strong>ni tanımlarken Bölüm 10’da tartıştığımız <strong>jenerikler ve özellik sınırlarını</strong> da kullanabiliyoruz.</p>
-<p><code>Fn</code> özellikleriyse standart kütüphane tarafından sağlanmaktadır ve tüm kapama işlevleri; <code>Fn</code>, <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden en az birini uygular. Bu özelliklerin arasındaki farkları <a href="#kapamalar-ile-ortam-bilgilerini-elde-etmek">“Kapamalar ile ortam bilgilerini elde etmek”</a><!-- ignore --> bölümünde tartışacağız; bu örnek için, <code>Fn</code> özelliğini kullanmamızda sakınca yok.</p>
+<p>Kapama tutabilen yapıların tanımlanabilmesi için, kapama işlevinin giriş ve dönüş türlerinin bildirilmesi gereklidir. Çünkü yapılar oluşturulurken sahip oldukları alanlar isimlendirildiklerinde türlerinin de bildirilmesi gerekmektedir. Her kapama örneğinin kendine özgü isimsiz türü olacağından, iki kapama aynı imzaya sahip olsalar bile, farklı türlerde oldukları kabul edilmektedir. Kapamaları kullanan <strong>yapı</strong>, <strong>enum</strong> veya <strong>işlev parametreleri</strong>ni tanımlarken Bölüm 10'da tartıştığımız <strong>jenerikler ve özellik sınırlarını</strong> da kullanabiliyoruz.</p>
+<p><code>Fn</code> özellikleriyse standart kütüphane tarafından sağlanmaktadır ve tüm kapama işlevleri; <code>Fn</code>, <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden en az birini uygular. Bu özelliklerin arasındaki farkları <a href="#kapamalar-ile-ortam-bilgilerini-elde-etmek">&quot;Kapamalar ile ortam bilgilerini elde etmek&quot;</a><!-- ignore --> bölümünde tartışacağız; bu örnek için, <code>Fn</code> özelliğini kullanmamızda sakınca yok.</p>
 <p>Parametrelerin türlerini temsil etmek ve kapamaların bu özellik sınırıyla eşleşmesi gereken değerleri döndürmek için <code>Fn</code> özelliğine bağlı türler ekliyoruz. Bu durumda, kapama işlevinin <code>u32</code> türünde bir parametresi olacak ve bir <code>u32</code> türü döndüreceğinden belirttiğimiz özellik sınırı <code>Fn (u32) -&gt; u32</code> olacaktır.</p>
 <p>Örnek 13-9, bir kapama ve opsiyonel sonuç değeri tutan <code>Cacher</code> yapısının tanımını gösterir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
@@ -607,13 +873,13 @@ let n = example_closure(5);
 #fn main() {}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-9: Bir <code>calculation</code> ve opsiyonel sonuç değerinden oluşan kapamayı tutan <code>Cacher</code> adlı yapının tanımlanması</span></p>
-<p><code>Cacher</code> yapısı, <code>T</code> türünde jenerik bir hesaplama alanına sahiptir. <code>T</code> üzerindeki özellik sınırları, bunun <code>Fn</code> özelliğini kullanmakta olan bir kapama olduğunu belirtir. Yapının <code>calculation</code> adlı hesaplama alanında saklamak istediğimiz tüm kapamaların <code>u32</code> türünden bir parametresi <em>(Fn’den sonra parantez içinde belirtilir)</em> bulunmalı ve bu kapamadan bir <code>u32</code> türünde <em>(-&gt; işaretinden sonra belirtilir)</em> değer döndürülmelidir.</p>
+<p><code>Cacher</code> yapısı, <code>T</code> türünde jenerik bir hesaplama alanına sahiptir. <code>T</code> üzerindeki özellik sınırları, bunun <code>Fn</code> özelliğini kullanmakta olan bir kapama olduğunu belirtir. Yapının <code>calculation</code> adlı hesaplama alanında saklamak istediğimiz tüm kapamaların <code>u32</code> türünden bir parametresi <em>(Fn'den sonra parantez içinde belirtilir)</em> bulunmalı ve bu kapamadan bir <code>u32</code> türünde <em>(-&gt; işaretinden sonra belirtilir)</em> değer döndürülmelidir.</p>
 <blockquote>
 <p>Not: İşlevler Fn özelliklerinin üçünü de uygulayabilir. Yapmak istediğimiz şey, ortamdan bir değer yakalamayı
 gerektirmiyorsa ve Fn özelliğini uygulayan bir şeye ihtiyacımız varsa kapatma yerine işlev kullanmayı tercih edebiliriz.</p>
 </blockquote>
 <p>Yapının <code>value</code> adındaki alanı <code>Option&lt;u32&gt;</code> türündedir. Kapama işletilmeden önce bu alan <code>None</code> varyantını göstermektedir. Eğer <code>Cacher</code> yapısını kullanan bir program kapamanın sonucunu isterse, yapı içerisindeki kapama işletilecek, bu defa da oluşan sonuç değeri <code>value</code> alanının <code>Some</code> varyantı içinde saklanacaktır. Eğer kapamanın sonucu bu program tarafından yeniden talep edilirse, sonuç zaten depolanmış olduğundan kapama tekrar işletilmeyecek, bu yapının <code>Some</code> varyantında tutulan değer döndürülecektir.</p>
-<p>Az önce tanımladığımız <code>value</code> alanının mantığı örnek 13-10’ da gösterilmektedir.</p>
+<p>Az önce tanımladığımız <code>value</code> alanının mantığı örnek 13-10' da gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Cacher&lt;T&gt;
 where
@@ -652,8 +918,8 @@ where
 <p>Bu yapıyı çağıracak olan kodun alanlardaki değerleri doğrudan değiştirmesini tercih etmek yerine, sadece yapı alanlarının değerleriyle ilgilenmesini istediğimizden bu alanları dışarıdan erişime kapatarak özelleştiriyoruz.</p>
 <p><code>Cacher::new</code> işlevi, <code>Cacher</code> yapısıyla aynı özelliğe bağlı olarak tanımladığımız jenerik <code>T</code> parametresi alır. Daha sonra kapama işlevini henüz gerçekleştirmemiş olduğundan <code>calculation</code> alanında belirtilen kapama değeri ve <code>value</code> alanındaki <code>None</code> değerinden oluşan bir <code>Cacher</code> örneği döndürür.</p>
 <p>Böylelikle kodu çağıran taraf, kapama işleminden elde edilen sonuca ihtiyaç duyduğunda, kapamayı doğrudan çağırmak yerine <code>value</code> yöntemini çağırmış olacaktır. Bu yöntem, <code>Some</code> varyantında <code>self.value</code> türünde bir değere sahip olup olmadığımızı kontrol eder. Bu değere sahipsek kapama bir daha işletilmez ve <code>Some</code> içinde depolanmakta olan değer döndürülür.</p>
-<p>Ancak <code>self.value</code> değeri <code>None</code> olarak görünüyorsa, kod <code>self.calculation</code>‘da depolanan kapamayı çağıracak, sonucu ileride kullanılmak üzere <code>self.value</code>‘ye kaydedecek ve oluşan değeri çağıran tarafa döndürecektir.</p>
-<p>Aşağıdaki örnek, <code>Cacher</code> yapısını örnek 13-6’da bulunan <code>create_workout</code> işlevinde nasıl kullanabileceğimizi göstermektedir.</p>
+<p>Ancak <code>self.value</code> değeri <code>None</code> olarak görünüyorsa, kod <code>self.calculation</code>'da depolanan kapamayı çağıracak, sonucu ileride kullanılmak üzere <code>self.value</code>'ye kaydedecek ve oluşan değeri çağıran tarafa döndürecektir.</p>
+<p>Aşağıdaki örnek, <code>Cacher</code> yapısını örnek 13-6'da bulunan <code>create_workout</code> işlevinde nasıl kullanabileceğimizi göstermektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -727,9 +993,9 @@ fn generate_workout(intensity: u32, random_number: u32) {
 </code></pre></pre>
 <p><span class="caption">Örnek 13-11:Önbellek mantığını soyutlamak için <code>generate_workout</code> işlevinde Cacher yapısını kullanmak</span></p>
 <p>Böylelikle kapamayı doğrudan bir değişkene kaydetmek yerine, bu kapamayı tutması için yeni bir <code>Cacher</code> örneğini kaydediyoruz. Bu noktadan itibaren sonuca ihtiyacımız olan her yerde, <code>Cacher</code> yapısının bir örneğini oluşturup, <code>value</code> metodunu çağırırarak tembelce hesaplanan sonuca ulaşırız. Ayrıca pahalı hesaplama sonucunu döndüren <code>expensive_result</code> işlevi en fazla bir kez çağırılacağından <code>value</code> yöntemini çağırmak tercihimize kalmıştır.</p>
-<p>Bu programı örnek 13-2’ deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
+<p>Bu programı örnek 13-2' deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
 <a class="header" href="#cacher-uygulamasının-kısıtlamaları" id="cacher-uygulamasının-kısıtlamaları"><h3>Cacher Uygulamasının Kısıtlamaları</h3></a>
-<p>Değerleri önbelleğe almak, kodumuzun diğer bölümlerinde genellikle farklı kapamalarda kullanmak isteyebileceğimiz yararlı bir davranıştır. Bununla birlikte, <code>Cacher</code>‘in mevcut uygulamasında, farklı bağlamlarda yeniden kullanılmasını zorlaştıracak iki sorun bulunmaktadır.</p>
+<p>Değerleri önbelleğe almak, kodumuzun diğer bölümlerinde genellikle farklı kapamalarda kullanmak isteyebileceğimiz yararlı bir davranıştır. Bununla birlikte, <code>Cacher</code>'in mevcut uygulamasında, farklı bağlamlarda yeniden kullanılmasını zorlaştıracak iki sorun bulunmaktadır.</p>
 <p>İlk sorun, bir <code>Cacher</code> örneğinin <code>value</code> metodunda bulunan <code>arg</code> parametresinin her zaman aynı değeri alacağı varsayılır. Yani, bu <code>Cacher</code> testi başarısız olacaktır:</p>
 <pre><code class="language-rust ignore panics">#struct Cacher&lt;T&gt;
 #where
@@ -778,7 +1044,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 }
 </code></pre>
 <p>Bu testte, kendisine iletilen değeri döndüren bir kapamayla yeni bir <code>Cacher</code> örneği oluşturulmaktadır. Örneğin <code>value</code> metodunu <code>arg</code> parametre değeri olarak önce 1, ardından 2 vererek çağırdığımızda; <code>arg</code> 2 değeriyle yaptığımız çağrının 2 değerini döndürmesini bekleriz.</p>
-<p>Oysa bu testi örnek 13-9 veya 13-10’daki <code>Cacher</code> uygulaması ile gerçekleştirdiğimizde program <code>assert_eq!</code>‘ de başarız olacak ve şu hata mesajını döndürecektir:</p>
+<p>Oysa bu testi örnek 13-9 veya 13-10’daki <code>Cacher</code> uygulaması ile gerçekleştirdiğimizde program <code>assert_eq!</code>' de başarız olacak ve şu hata mesajını döndürecektir:</p>
 <pre><code class="language-console">$ cargo test
    Compiling cacher v0.1.0 (file:///projects/cacher)
     Finished test [unoptimized + debuginfo] target(s) in 0.72s
@@ -803,12 +1069,12 @@ test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 
 error: test failed, to rerun pass '--lib'
 </code></pre>
-<p>Buradaki sorun, başlangıçta <code>c.value</code>‘yu 1 ile çağırdığımızda, Catcher örneğinin <code>Some(1)</code> değerini <code>self.value</code> içine kaydetmesinden kaynaklanmaktadır. Bu noktadan sonra, value yöntemine hangi değeri iletirsek iletelim, her zaman başlangıçta verdiğimiz 1 değerini döndürecektir.</p>
-<p><code>Cacher</code>‘ı tek bir değer yerine bir eşleme tablosu tutacak şekilde değiştirmeyi deneyin. <code>value</code> metoduna geçirilecek <code>arg</code> değerleri eşleme tablosunun anahtarlarını oluşturacak şekilde verildiğinde, eşleme tablosunun değerlerinde de kapama çağrılarının sonuçları tutulmuş olacaktır. Böylece <code>self.value</code> öğesinin doğrudan <code>Some</code> veya <code>None</code> değeri olup olmadığını kontrol etmek yerine, <code>value</code> işlevi eşleme tablosunun anahtarlarında <code>arg</code> öğesini arayacak bulduğu anda değerini döndürecektir. Eğer <code>arg</code> öğesi tabloda yoksa, <code>Cacher</code> tarafından kapama çağırılacak ve oluşan değer, <code>arg</code> değeriyle ilişkili eşleme tablosuna kaydedecektir.</p>
+<p>Buradaki sorun, başlangıçta <code>c.value</code>'yu 1 ile çağırdığımızda, Catcher örneğinin <code>Some(1)</code> değerini <code>self.value</code> içine kaydetmesinden kaynaklanmaktadır. Bu noktadan sonra, value yöntemine hangi değeri iletirsek iletelim, her zaman başlangıçta verdiğimiz 1 değerini döndürecektir.</p>
+<p><code>Cacher</code>'ı tek bir değer yerine bir eşleme tablosu tutacak şekilde değiştirmeyi deneyin. <code>value</code> metoduna geçirilecek <code>arg</code> değerleri eşleme tablosunun anahtarlarını oluşturacak şekilde verildiğinde, eşleme tablosunun değerlerinde de kapama çağrılarının sonuçları tutulmuş olacaktır. Böylece <code>self.value</code> öğesinin doğrudan <code>Some</code> veya <code>None</code> değeri olup olmadığını kontrol etmek yerine, <code>value</code> işlevi eşleme tablosunun anahtarlarında <code>arg</code> öğesini arayacak bulduğu anda değerini döndürecektir. Eğer <code>arg</code> öğesi tabloda yoksa, <code>Cacher</code> tarafından kapama çağırılacak ve oluşan değer, <code>arg</code> değeriyle ilişkili eşleme tablosuna kaydedecektir.</p>
 <p>Bu uygulamadaki ikinci sorun ise yalnızca <code>u32</code> türünde parametre alması ve <code>u32</code> türünde değer döndüren kapamaları kabul etmesidir. Örneğin, bir dizgi dilimi alan ve <code>usize</code> değerleri döndüren kapama sonuçlarını önbelleğe almak isteyebiliriz. Bu sorunu gidermek ve <code>Cacher</code> işlevinin esnekliğini artırmak için jenerik parametreler eklemeyi deneyin.</p>
 <a class="header" href="#a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek" id="a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek"><h3><a name="kapamalar-ile-ortam-bilgilerini-elde-etmek"></a>Kapamalar ile ortam bilgilerini elde etmek</h3></a>
 <p>Egzersiz planı oluşturan örneğimizde, kapamaları sadece satır içi isimsiz işlevler olarak kullandık. Bununla birlikte kapamalar, işlevlerin sahip olmadığı ek bir yeteneğe sahiplerdir: ortam bilgilerini yakalayabilir ve tanımlandıkları kapsamdan değişkenlere erişebilirler.</p>
-<p>Örnek 13-12’de, tanımlandığı kapsamda bulunan <code>x</code> değişkenini <code>equal_to_x</code> adlı değişkene depolayarak kullanan bir kapama örneği sunulmaktadır.</p>
+<p>Örnek 13-12'de, tanımlandığı kapsamda bulunan <code>x</code> değişkenini <code>equal_to_x</code> adlı değişkene depolayarak kullanan bir kapama örneği sunulmaktadır.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust"> fn main() {
     let x = 4;
@@ -861,10 +1127,10 @@ To learn more, run the command again with --verbose.
 <li><code>FnMut</code> Değişebilen değerleri ödünç aldığı için ortamı değiştirebilir.</li>
 <li><code>Fn</code> ortamdaki değerleri değişmez olarak ödünç alır.</li>
 </ul>
-<p>Bir kapama oluşturduğunuzda, Rust, kapamanın ortamdaki değerleri nasıl kullandığına bağlı olarak hangi özelliğin kullanılacağını otomatik olarak belirler. Tüm kapamalar <code>FnOnce</code>‘i uygular, çünkü hepsi en az bir kez çağrılabilir. Yakalanan değişkenleri taşımayan kapamalar da <code>FnMut</code>‘u uygularlar. Yakalanan değişkenlere değiştirilebilir erişim gerektirmeyen kapamalar ise <code>Fn</code>‘i uygularlar.
-Örnek 13-12’de <code>equal_to_x</code> değişkenine depolanan kapama, değişmez olarak tanımlanan <code>x</code> değişkenini, değişmez olarak ödünç alır; yani <code>equal_to_x</code> <code>Fn</code> özelliğine sahiptir, çünkü kapama gövdesinin sadece <code>x</code> değerini okuması gerekmektedir.</p>
+<p>Bir kapama oluşturduğunuzda, Rust, kapamanın ortamdaki değerleri nasıl kullandığına bağlı olarak hangi özelliğin kullanılacağını otomatik olarak belirler. Tüm kapamalar <code>FnOnce</code>'i uygular, çünkü hepsi en az bir kez çağrılabilir. Yakalanan değişkenleri taşımayan kapamalar da <code>FnMut</code>'u uygularlar. Yakalanan değişkenlere değiştirilebilir erişim gerektirmeyen kapamalar ise <code>Fn</code>'i uygularlar.
+Örnek 13-12'de <code>equal_to_x</code> değişkenine depolanan kapama, değişmez olarak tanımlanan <code>x</code> değişkenini, değişmez olarak ödünç alır; yani <code>equal_to_x</code> <code>Fn</code> özelliğine sahiptir, çünkü kapama gövdesinin sadece <code>x</code> değerini okuması gerekmektedir.</p>
 <p>Kapamaları ortamlarından kullandığı değerlerin mülkiyetini almaya zorlamak istiyorsanız, parametre listesinden önce <code>move</code> anahtar sözcüğünü kullanabilirsiniz. Bu teknik, verilerin mülkiyetlerinin işlenmek üzere yeni iş parçasına aktarırken oldukça yararlıdır.</p>
-<p>Bölüm 16’da eşzamanlılık hakkında konuşurken, kapamaların taşınması hakkında daha fazla örnek vereceğiz. Ancak şimdilik, tam sayılar taşınmak yerine kopyalandıklarından, bunların yerine vektör kullanan ve tanımına <code>move</code> anahtar sözcüğü ekleyerek yeniden düzenlediğimiz kapama işlevini gösteren örnek 13-12’yi sunalım. Bu kodun henüz derlenmeyeceğini unutmayın:</p>
+<p>Bölüm 16’da eşzamanlılık hakkında konuşurken, kapamaların taşınması hakkında daha fazla örnek vereceğiz. Ancak şimdilik, tam sayılar taşınmak yerine kopyalandıklarından, bunların yerine vektör kullanan ve tanımına <code>move</code> anahtar sözcüğü ekleyerek yeniden düzenlediğimiz kapama işlevini gösteren örnek 13-12'yi sunalım. Bu kodun henüz derlenmeyeceğini unutmayın:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = vec![1, 2, 3];
@@ -904,12 +1170,12 @@ error: could not compile `equal-to-x'.
 To learn more, run the command again with --verbose.
 
 </code></pre>
-<p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>‘in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>‘i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
+<p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>'in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>'i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
 <p>Nihayetinde derleyici, kapama gövdesini analiz ederek <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden hangisine ihtiyacınız olup olmadığını söyleyeceğinden, özellik sınırlarından birini belirlerken, <code>Fn</code> ile başlamak çoğu zaman iyi fikirdir.</p>
 <p>Ortamlarını yakalayabilen kapamaların işlev parametreleri olarak kullanılmasının yararlı olduğu durumları daha iyi gösterebilmek için bir sonraki Yineleyiciler başlığımıza geçelim.</p>
 <a class="header" href="#yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek" id="yineleyiciler-ile-bir-dizi-Öğeyi-İşlemek"><h2>Yineleyiciler ile Bir Dizi Öğeyi İşlemek</h2></a>
 <p>Bir koleksiyonun tüm elemanları tükenene kadar her bir elemanı üzerinde sırasıyla belirli işlemleri gerçekleştirmekten yineleyiciler sorumludurlar. Yineleyici kullandığınızda bütün bu işlemlerin her birini tekrar tekrar gerçekleştirmek zorunda kalmazsınız.</p>
-<p>Rust’ta yineleyiciler tembel olduklarından, kendilerini tüketen yöntemler çağırılana kadar programlarınızı etkilemezler. Örneğin aşağıdaki kod; <code>Vec&lt;T&gt;</code> üzerinde tanımlanan <code>iter</code> yöntemini çağırarak <code>v1</code> vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kod tek başına anlamlı bir şey gerçekleştirmez.</p>
+<p>Rust'ta yineleyiciler tembel olduklarından, kendilerini tüketen yöntemler çağırılana kadar programlarınızı etkilemezler. Örneğin aşağıdaki kod; <code>Vec&lt;T&gt;</code> üzerinde tanımlanan <code>iter</code> yöntemini çağırarak <code>v1</code> vektöründeki öğeler üzerinde bir yineleyici oluşturur. Bu kod tek başına anlamlı bir şey gerçekleştirmez.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
     let v1 = vec![1, 2, 3];
@@ -918,7 +1184,7 @@ To learn more, run the command again with --verbose.
 }
 </code></pre></pre>
 <p><span class="caption">Örnek 13-13: Bir yineleyici oluşturmak</span></p>
-<p>Bir yineleyici oluşturduktan sonra artık bunu çeşitli şekillerde kullanabiliriz. Bölüm 3’ün sonlarında yer alan örnek 3-5’te, her eleman üzerinde bir takım işlemleri gerçekleştirmek amacıyla <code>for</code> döngüsünün tüketimine verilen <code>iter</code> tanımlamasıyla yineleyici kullanmış, ancak yineleyicilere şu ana kadar derinlemesine odaklanamamıştık.</p>
+<p>Bir yineleyici oluşturduktan sonra artık bunu çeşitli şekillerde kullanabiliriz. Bölüm 3'ün sonlarında yer alan örnek 3-5'te, her eleman üzerinde bir takım işlemleri gerçekleştirmek amacıyla <code>for</code> döngüsünün tüketimine verilen <code>iter</code> tanımlamasıyla yineleyici kullanmış, ancak yineleyicilere şu ana kadar derinlemesine odaklanamamıştık.</p>
 <p>Aşağıdaki örnekte, yineleyicinin oluşturulması ile <code>for</code> döngüsünde kullanımı birbirinden bağımsız olarak sunulmaktadır. Kendi başına <code>v1_iter</code> değişkeninde saklanan yineleyicinin tanımlandığı satırda hiç bir işlem gerçekleşmezken, bu değişkene adapte edilmiş yineleyiciyi kullanan bir <code>for</code> döngüsü ile çağrıldığında, kendisine geçirilmiş olan her öğenin değerini ekrana yazdıran bir döngü yineleyicisi olarak kullanışlı hale gelir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">fn main() {
@@ -949,7 +1215,7 @@ fn main() {
 </code></pre></pre>
 <p>Bu tanımda <code>type Item</code> ve <code>Self::Item</code> gibi bu özelliklerle ilişkilendirilmiş türü bildiren yeni söz dizimleri kullanıldığına dikkat edin. İlişkili türlerden bölüm 19’da ayrıntılı olarak bahsedeceğimizden şimdilik bilmeniz gereken tek şey; bu kodun yineleyici özelliğini <em>(<code>Itarator trait</code>)</em> uygulayabilmek için bir öğe türü <em>(<code>Item type</code>)</em> tanımlanması gerektiği ve bu öğe türünün <code>next</code> metodunun dönüş türünde kullanıldığını belirtmesidir. Başka bir deyişle öğe türü yineleyiciden döndürülen tür olacaktır.</p>
 <p>Yineleyici özelliği uygulayıcılara sadece bir metodu tanımlamak için ihtiyaç duyar. Tanımlanan <code>next</code> metodu yineleme devam ettiği sürece öğeleri <code>Some</code> ile sarmalayarak birer birer döndürürken, yineleme sona erdiğinde <code>None</code> döndürecektir.</p>
-<p>Yineleyicideki <code>next</code> metodunu doğrudan kendimiz de çağırabiliriz. Örnek 13-15’te, <code>v1</code> vektöründe oluşturulan yineleyiciye yapılan çağrılardan <code>next</code> metoduna hangi değerlerin döndürüldüğü gösterilmektedir.</p>
+<p>Yineleyicideki <code>next</code> metodunu doğrudan kendimiz de çağırabiliriz. Örnek 13-15'te, <code>v1</code> vektöründe oluşturulan yineleyiciye yapılan çağrılardan <code>next</code> metoduna hangi değerlerin döndürüldüğü gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 #[cfg(test)]
@@ -996,7 +1262,7 @@ fn main() {}
 <p><code>sum</code> metodu, kendisine yapılan çağrı ile <code>v1_iter</code> değişmezindeki yineleyicinin mülkiyetini üzerine alacağından bu değişkenin kullanılmasına izin verilmez.</p>
 <a class="header" href="#diğer-yineleyicileri-Üreten-metodlar" id="diğer-yineleyicileri-Üreten-metodlar"><h3>Diğer Yineleyicileri Üreten Metodlar</h3></a>
 <p><code>Iterator</code> özelliğinde tanımlanan ve <em>yineleyici adaptörleri</em> adı verilen diğer yöntemler ise yineleyicileri farklı yineleyicilerle değiştirmenize olanak sağlarlar. Bu adaptörlere karmaşık eylemleri okunabilir şekilde gerçekleştirmek çok sayıda çağrı zincirleyebilirsiniz. Ancak tüm yineleyiciler tembel olduklarından, yineleyici adaptörlerine yapılan çağrılardan sonuç alabilmek için <em>tüketici adaptörleri</em>nden birini çağırmanız gerekir.</p>
-<p>Örnek 13-17’de yeni bir yineleyici üretmek üzere her öğenin çağrıldığı bir kapama işlevine sahip yineleyici adaptörü olan <code>map</code> metodunun bir örneği gösterilir. Buradaki kapama işlevi vektördeki her öğe değerinin 1 arttırıldığı yeni bir yineleyici oluşturacaktır. Ancak bu kod bir uyarı vermektedir.</p>
+<p>Örnek 13-17'de yeni bir yineleyici üretmek üzere her öğenin çağrıldığı bir kapama işlevine sahip yineleyici adaptörü olan <code>map</code> metodunun bir örneği gösterilir. Buradaki kapama işlevi vektördeki her öğe değerinin 1 arttırıldığı yeni bir yineleyici oluşturacaktır. Ancak bu kod bir uyarı vermektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust not_desired_behavior">
 fn main() {
@@ -1024,9 +1290,9 @@ warning: unused `std::iter::Map` that must be used
      Running `target/debug/iterators`
 
 </code></pre>
-<p>Örnek 13-17’de yer alan kod hiçbir şey yapmadığı gibi bildirdiğimiz kapama işlevi de hiçbir zaman çağrılmaz. Yineleyici adaptörleri tembel olduklarından, derleyicinin uyarısı bize yinelecinin tüketilmesi gerektiği uyarısını yapıyor.</p>
-<p>Bu durumu düzeltmek ve yineleyiciyi kullanabilmek için Bölüm 12, Örnek 12-1’de yer alan ve <code>env::args</code> ile kullandığımız <code>collect</code> metodundan yararlanacağız. Bu metod yineleyiciyi tüketerek elde ettiği değerleri bir koleksiyon veri türüne depolar.</p>
-<p>Örnek 13-18’de <code>map</code> metoduna yapılan çağrı vasıtasıyla yineleyici üzerinde yapılan yinelemeden döndürülen sonuçları bir vektörde topluyoruz. Sonuçların depolandığu bu vektör, orijinal vektördeki her öğenin değerine 1 eklenmiş sayılardan oluşmaktadır.</p>
+<p>Örnek 13-17'de yer alan kod hiçbir şey yapmadığı gibi bildirdiğimiz kapama işlevi de hiçbir zaman çağrılmaz. Yineleyici adaptörleri tembel olduklarından, derleyicinin uyarısı bize yinelecinin tüketilmesi gerektiği uyarısını yapıyor.</p>
+<p>Bu durumu düzeltmek ve yineleyiciyi kullanabilmek için Bölüm 12, Örnek 12-1'de yer alan ve <code>env::args</code> ile kullandığımız <code>collect</code> metodundan yararlanacağız. Bu metod yineleyiciyi tüketerek elde ettiği değerleri bir koleksiyon veri türüne depolar.</p>
+<p>Örnek 13-18'de <code>map</code> metoduna yapılan çağrı vasıtasıyla yineleyici üzerinde yapılan yinelemeden döndürülen sonuçları bir vektörde topluyoruz. Sonuçların depolandığu bu vektör, orijinal vektördeki her öğenin değerine 1 eklenmiş sayılardan oluşmaktadır.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 fn main() {
@@ -1042,7 +1308,7 @@ fn main() {
 <p><code>map</code> metodu bir kapama işlevi aldığından, her bir öğe için uygulamak istediğimiz herhangi bir işlemi belirtebiliriz. Bu örnek, <code>Iterator</code> özelliğinin sağladığı yineleme davranışını yeniden kullanırken, kapamaların bazı davranışları özelleştirmenize nasıl izin verdiğini gösteren harika bir örnektir.</p>
 <a class="header" href="#ortamlarını-yakalayan-kapamalar-kullanmak" id="ortamlarını-yakalayan-kapamalar-kullanmak"><h3>Ortamlarını Yakalayan Kapamalar Kullanmak</h3></a>
 <p>Artık yineleyicileri kullanıma sunduğumuza göre, bir yineleyici adaptörünü olan <code>filter</code> metodu kullanarak ortamlarını yakalayan kapamaların yaygın bir kullanımını gösterebiliriz. Bir yineleyicideki <code>filter</code> metodu, yineleyiciden aldığı her öğe karşılığında Boolean döndüren bir kapama işlevini kullanır. Kapama <code>true</code> döndürdüğünde, değer <code>filter</code> tarafından üretilen yineleyiciye dahil edilecek, <code>false</code> döndürdüğündeyse yineleyiciye dahil edilmeyecektir.</p>
-<p>Örnek 13-19’da <code>Shoe</code> adlı yapı örneklerinden oluşan koleksiyon üzerinde yineleme yapmak üzere <code>shoe_size</code> değişkenini ortamından elde eden bir kapama işleviyle <code>filter</code> metodunu birlikte kullanıyor ve sadece belirtilen boyuttaki ayakkabıları döndürüyoruz.</p>
+<p>Örnek 13-19'da <code>Shoe</code> adlı yapı örneklerinden oluşan koleksiyon üzerinde yineleme yapmak üzere <code>shoe_size</code> değişkenini ortamından elde eden bir kapama işleviyle <code>filter</code> metodunu birlikte kullanıyor ve sadece belirtilen boyuttaki ayakkabıları döndürüyoruz.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#[derive(PartialEq, Debug)]
 struct Shoe {
@@ -1103,7 +1369,7 @@ fn main() {}
 <p>Örneğimizdeki test, <code>shoes_in_my_size</code> işlevini çağırdığımızda, yalnızca belirttiğimiz ölçülere uygun ayakkabıların döndürüldüğünü göstermektedir.</p>
 <a class="header" href="#iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak" id="iterator-Özelliği-ile-kendi-yineleyicilerimizi-oluşturmak"><h3><code>Iterator</code> Özelliği ile Kendi Yineleyicilerimizi Oluşturmak</h3></a>
 <p>Bir vektör üzerinde <code>iter</code>, <code>into_iter</code> veya <code>iter_mut</code> metodlarını çağırarak bir yineleyici oluşturabileceğinizi gösterdik. Tıpkı bu vektör için oluşturduğumuz yineleyici gibi, standart kütüphanedeki eşleme haritaları veya diğer koleksiyon türleri için de yineleyiciler hazırlayabilir, <code>Iterator</code> özelliğini kendi türlerinize uygulayarak dilediğiniz işlemleri gefçekleştiren yineleyiciler oluşturabilirsiniz. Daha önce de belirtildiği gibi, tanımlamanız gereken tek metod <code>next</code> metodu olduğundan, bu metodu tanımladığınızda, <code>Iterator</code> özelliği tarafından sağlanan varsayılan uygulamalara sahip metodların tümünü kullanabilirsiniz!</p>
-<p>Bu bilgiyi pekiştirmek adına, sadece 1’den 5’e kadar sayacak bir yineleyici oluşturalım. Öncelikle bunun için, bazı değerleri tutan bir yapı oluşturacak, ardından bu yapıya <code>Iterator</code> özelliğini uygulayacak ve bu uygulamadaki değerler vasıtasıyla bu yapıyı bir yineleyici haline getireceğiz.</p>
+<p>Bu bilgiyi pekiştirmek adına, sadece 1'den 5'e kadar sayacak bir yineleyici oluşturalım. Öncelikle bunun için, bazı değerleri tutan bir yapı oluşturacak, ardından bu yapıya <code>Iterator</code> özelliğini uygulayacak ve bu uygulamadaki değerler vasıtasıyla bu yapıyı bir yineleyici haline getireceğiz.</p>
 <p>Örnek 13-20, <code>Counter</code> yapısının tanımını ve bu yapının örneklerini oluşturmak amacıyla ilişkilendirilmiş <code>new()</code> işlevini göstermektedir:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
@@ -1120,8 +1386,8 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-20: <code>Counter</code> yapısı ve <code>count</code> alanı başlangıç değeri 0 olan yapı örnekleri başlatan <code>new</code> işlevini tanımlamak</span></p>
-<p><code>Counter</code> yapısının <code>count</code> adlı bir alanı vardır. Bu alan, 1’den 5’e kadar olan yineleme sürecinde nerede olduğumuzu takip edecek <code>u32</code> türünden bir değer tuttuğundan ve <code>count</code> uygulamasının değerini yöneteceğinden özeldir. <code>new</code> işlevi ise her yeni örnek başlatıldığında, başlatılan bu örnekleri <code>count</code> alanı sayesinde daima 0 değeriyle ilklendirmeye çalışır.</p>
-<p>Daha sonra, Örnek 13-21’de gösterildiği gibi, bu yineleyici kullanıldığında üstleneceği görevleri bildiren <code>next</code> metodunun gövdesini tanımlayarak <code>Counter</code> türüne <code>Iterator</code> özelliğini uygulayacağız:</p>
+<p><code>Counter</code> yapısının <code>count</code> adlı bir alanı vardır. Bu alan, 1'den 5'e kadar olan yineleme sürecinde nerede olduğumuzu takip edecek <code>u32</code> türünden bir değer tuttuğundan ve <code>count</code> uygulamasının değerini yöneteceğinden özeldir. <code>new</code> işlevi ise her yeni örnek başlatıldığında, başlatılan bu örnekleri <code>count</code> alanı sayesinde daima 0 değeriyle ilklendirmeye çalışır.</p>
+<p>Daha sonra, Örnek 13-21'de gösterildiği gibi, bu yineleyici kullanıldığında üstleneceği görevleri bildiren <code>next</code> metodunun gövdesini tanımlayarak <code>Counter</code> türüne <code>Iterator</code> özelliğini uygulayacağız:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">
 struct Counter {
@@ -1151,10 +1417,10 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-21: <code>Counter</code> yapısına <code>Iterator</code> özelliğini uygulamak</span></p>
-<p>Yineleyicimiz için ilişkili öğe türünü <code>u32</code> olarak belirleyip <code>type Item = u32;</code> şeklinde ayarladığımızdan yineleyiciden <code>u32</code> türünde değerler döndürülecektir. Bu noktada <em>İlişkili Türler</em> konusunu Bölüm 19’da ele alacağımızı hatırlatarak konuya devam ediyoruz.</p>
-<p>Yineleyicimizin mevcut duruma 1 eklemesini istediğimizden, 1’i döndürebilmesi için <code>count</code> u 0 olarak başlattık. <code>count</code> değeri 5’ten küçük olduğu sürece <code>next</code> metodu <code>count</code> değerini artırarak <code>Some</code> içine sarılmış geçerli değeri döndürecek, <code>count</code> değeri 5 olduğundaysa, yineleyicimiz <code>count</code> değerini artırmayı sona erdirerek <code>None</code> döndürmeye başlayacaktır.</p>
+<p>Yineleyicimiz için ilişkili öğe türünü <code>u32</code> olarak belirleyip <code>type Item = u32;</code> şeklinde ayarladığımızdan yineleyiciden <code>u32</code> türünde değerler döndürülecektir. Bu noktada <em>İlişkili Türler</em> konusunu Bölüm 19'da ele alacağımızı hatırlatarak konuya devam ediyoruz.</p>
+<p>Yineleyicimizin mevcut duruma 1 eklemesini istediğimizden, 1'i döndürebilmesi için <code>count</code> u 0 olarak başlattık. <code>count</code> değeri 5'ten küçük olduğu sürece <code>next</code> metodu <code>count</code> değerini artırarak <code>Some</code> içine sarılmış geçerli değeri döndürecek, <code>count</code> değeri 5 olduğundaysa, yineleyicimiz <code>count</code> değerini artırmayı sona erdirerek <code>None</code> döndürmeye başlayacaktır.</p>
 <a class="header" href="#counter-yineleyicisinin-next-metodunu-kullanmak" id="counter-yineleyicisinin-next-metodunu-kullanmak"><h4><code>Counter</code> Yineleyicisinin <code>next</code> Metodunu Kullanmak</h4></a>
-<p><code>Iterator</code> özelliğini uyguladığımıza göre artık elimizde bir yineleyicimiz var demektir. Tıpkı Örnek 13-15’te yaptığımız bir <em>vektörden oluşturulan yineleyici</em>de olduğu gibi, aşağıda yer alan Örnek 13-22 de, <code>Counter</code> yapısının yineleme işlevini <code>next</code> metodunu doğrudan çağırarak kullanabileceğimizi gösteren bir test bölümü içerir.</p>
+<p><code>Iterator</code> özelliğini uyguladığımıza göre artık elimizde bir yineleyicimiz var demektir. Tıpkı Örnek 13-15'te yaptığımız bir <em>vektörden oluşturulan yineleyici</em>de olduğu gibi, aşağıda yer alan Örnek 13-22 de, <code>Counter</code> yapısının yineleme işlevini <code>next</code> metodunu doğrudan çağırarak kullanabileceğimizi gösteren bir test bölümü içerir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
     count: u32,
@@ -1200,10 +1466,10 @@ fn main() {}
 
 </code></pre></pre>
 <p><span class="caption">Örnek 13-22: <code>next</code> metodu uygulamasının işlevselliğini test etmek</span></p>
-<p>Bu test, <code>counter</code> değişkeninde yeni bir <code>Counter</code> örneği oluşturur. Ardından <code>next</code> metodunu defalarca çağırıp bu yineleyicinin sahip olmasını istediğimiz davranışı uyguladığımızı doğrulayam 1’den 5’e kadar olan değerleri döndürür.</p>
+<p>Bu test, <code>counter</code> değişkeninde yeni bir <code>Counter</code> örneği oluşturur. Ardından <code>next</code> metodunu defalarca çağırıp bu yineleyicinin sahip olmasını istediğimiz davranışı uyguladığımızı doğrulayam 1'den 5'e kadar olan değerleri döndürür.</p>
 <a class="header" href="#diğer-iterator-Özellik-metodlarını-kullanmak" id="diğer-iterator-Özellik-metodlarını-kullanmak"><h4>Diğer <code>Iterator</code> Özellik Metodlarını Kullanmak</h4></a>
 <p>Artık <code>next</code> metodunu tanımlayarak <code>Iterator</code> özelliğini uyguladığımıza ve hepsinin <code>next</code> metodunun işlevselliğini kullandıklarını bildiğimize göre, bundan böyle standart kitaplıkta tanımlanan tüm <code>Iterator</code> özellik metodlarının varsayılan uygulamalarını kullanabiliriz.</p>
-<p>Örnek 13-23’teki testte de gösterildiği gibi, bir <code>Counter</code> örneği tarafından üretilen değerleri almak istediğimizi, bunları ilk değeri atladıktan sonra başka bir <code>Counter</code> örneği tarafından üretilen değerlerle eşleştirdiğimizi, her çifti birbiriyle çarptığımızı ve elde edilen değerlerin sadece 3’e bölünebilenlerini alarak birbiriyle topladığımız bir örneği düşünün:</p>
+<p>Örnek 13-23'teki testte de gösterildiği gibi, bir <code>Counter</code> örneği tarafından üretilen değerleri almak istediğimizi, bunları ilk değeri atladıktan sonra başka bir <code>Counter</code> örneği tarafından üretilen değerlerle eşleştirdiğimizi, her çifti birbiriyle çarptığımızı ve elde edilen değerlerin sadece 3'e bölünebilenlerini alarak birbiriyle topladığımız bir örneği düşünün:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Counter {
     count: u32,
@@ -1264,19 +1530,19 @@ fn main() {}
 <a class="header" href="#io-projemizi-geliştirmek" id="io-projemizi-geliştirmek"><h2>I/O Projemizi Geliştirmek</h2></a>
 <a class="header" href="#performans-karşılaştırması-döngüler-vs-yineleyiciler" id="performans-karşılaştırması-döngüler-vs-yineleyiciler"><h2>Performans Karşılaştırması: Döngüler vs. Yineleyiciler</h2></a>
 <a class="header" href="#cargo-ve-cratesio-hakkında-daha-fazla-bilgi" id="cargo-ve-cratesio-hakkında-daha-fazla-bilgi"><h1>Cargo ve Crates.io Hakkında Daha Fazla Bilgi</h1></a>
-<p>Şimdiye kadar kodumuzu oluşturmak, çalıştırmak ve test etmek için Cargo’nun yalnızca en temel özelliklerini kullandık,
-ancak Cargo ile çok daha fazlası yapılabilir. Bu bölümde, aşağıdaki işlemlerin nasıl yapılacağını gösterebilmek amacıyla Cargo’nun gelişmiş özelliklerinden bazılarını tartışacağız:</p>
+<p>Şimdiye kadar kodumuzu oluşturmak, çalıştırmak ve test etmek için Cargo'nun yalnızca en temel özelliklerini kullandık,
+ancak Cargo ile çok daha fazlası yapılabilir. Bu bölümde, aşağıdaki işlemlerin nasıl yapılacağını gösterebilmek amacıyla Cargo'nun gelişmiş özelliklerinden bazılarını tartışacağız:</p>
 <ul>
 <li>Sürüm profilleri aracılığıyla derlemenin özelleştirilmesi</li>
-<li>Kütüphanelerin <a href="https://crates.io/">crates.io</a><!-- ignore -->‘da yayınlanması</li>
+<li>Kütüphanelerin <a href="https://crates.io/">crates.io</a><!-- ignore -->'da yayınlanması</li>
 <li>Büyük projelerin çalışma alanları aracılığıyla düzenlenmesi</li>
-<li><a href="https://crates.io/">crates.io</a><!-- ignore -->‘da yer alan ikili dosyaları <code>cargo install</code> yardımıyla kurmak</li>
-<li>Özel komutları kullanarak Cargo’yu genişletmek</li>
+<li><a href="https://crates.io/">crates.io</a><!-- ignore -->'da yer alan ikili dosyaları <code>cargo install</code> yardımıyla kurmak</li>
+<li>Özel komutları kullanarak Cargo'yu genişletmek</li>
 </ul>
-<p>Cargo’nun yetenekleri bu bölümde ele aldığımızdan konulardan çok daha fazlasını barındırdığından, tüm özellikleri değerlendirebilmek için <a href="https://doc.rust-lang.org/cargo/">bu bağlantıda yer alan belgelerine</a> başvurabilirsiniz.</p>
+<p>Cargo'nun yetenekleri bu bölümde ele aldığımızdan konulardan çok daha fazlasını barındırdığından, tüm özellikleri değerlendirebilmek için <a href="https://doc.rust-lang.org/cargo/">bu bağlantıda yer alan belgelerine</a> başvurabilirsiniz.</p>
 <a class="header" href="#sürüm-profilleriyle-derlemeleri-Özelleştirmek" id="sürüm-profilleriyle-derlemeleri-Özelleştirmek"><h2>Sürüm Profilleriyle Derlemeleri Özelleştirmek</h2></a>
-<p>Rust’ın <em>sürüm profilleri</em>, kodunu derleme aşamasına getirmiş olan programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
-<p>Cargo’nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
+<p>Rust'ın <em>sürüm profilleri</em>, kodunu derleme aşamasına getirmiş olan programcıya, çeşitli seçenekler üzerinde daha fazla denetim izni veren, değişik yapılandırmalara sahip önceden tanımlanmış ve özelleştirilebilir profillerdir. Her profil diğerlerinden bağımsız olarak yapılandırılır.</p>
+<p>Cargo'nun iki ana profili vardır: Bunlardan <code>dev</code> seçeneği, programın <code>cargo build</code> komutuyla işletilmesi sırasında kullanılan profil, release seçeneğiyse <code>cargo build --release</code> komutuyla işletilirken kullanılan profildir. Geliştirici profili <em>(dev)</em>, geliştirme için iyileştirilen donanımlara sahipken, sürüm profili <em>(release)</em>, sürüm derlemeleri için iyileştirilen donanımlarla gelir.</p>
 <p>Bu profil adları size sürüm çıktılarınızdan tanıdık geliyor olabilir:</p>
 <!-- manual-regeneration
 anywhere, run:
@@ -1301,7 +1567,7 @@ opt-level = 0
 opt-level = 3
 
 </code></pre>
-<p>0-3 aralığındaki <code>Opt-level</code> ayarı, Rust’ın kodunuza uygulayacağı optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, kodunuzu yayınlamaya hazır olduğunuzda derleme süresi için daha fazla zaman ayırmayı tercih edeceksiniz. Yani daha hızlı çalışan kodun üretim aşaması daha fazla zaman gerektireceğinden sürüm modu için varsayılan profil <code>opt-level = 3</code> düzeyine ayarlanmıştır.</p>
+<p>0-3 aralığındaki <code>Opt-level</code> ayarı, Rust'ın kodunuza uygulayacağı optimizasyon değerini kontrol eder. Henüz geliştirme aşamasındaysanız ve kodunuzu sık sık derliyorsanız, daha fazla optimizasyon uygulamak derleme süresini uzatacağından, kodunuz yavaş çalışsa bile derleme sürenizin hızlı olmasını istersiniz. O nedenle <code>dev</code> profili için <code>opt-level</code> düzeyi varsayılanı <code>0</code> olarak atanmıştır. Oysa sürüm modunda, programınızı bir kere derleyeceğiniz ve sonrasında çok kere çalıştıracağınızdan, kodunuzu yayınlamaya hazır olduğunuzda derleme süresi için daha fazla zaman ayırmayı tercih edeceksiniz. Yani daha hızlı çalışan kodun üretim aşaması daha fazla zaman gerektireceğinden sürüm modu için varsayılan profil <code>opt-level = 3</code> düzeyine ayarlanmıştır.</p>
 <p>Varsayılan ayarların herhangi birini projenizin <em>Cargo.toml</em> dosyasına farklı bir değer ekleyerek geçersiz kılabilirsiniz. Örneğin, <code>dev</code> profilinin optimizasyon düzeyini 1 olarak ayarlamak istiyorsanız, projenizin <em>Cargo.toml</em> dosyasına bu iki satırı eklemeniz yeterlidir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
@@ -1310,12 +1576,12 @@ opt-level = 1
 
 </code></pre>
 <p>Bu kod varsayılan <code>opt-level = 0</code> düzey ayarını geçersiz kılacağından, <code>cargo build</code> komutunu çalıştırdığımızda, Cargo tarafından <code>dev</code> profili için varsayılan değerlerle birlikte, <code>opt-level</code> düzeyinde gerçekleştirdiğimiz özelleştirme seviyesi değerlendirilecektir. Bununla birlikte derleyici, <code>opt-level</code> düzeyini <code>1</code> olarak ayarladığımızdan, sürüm profilinde olduğu kadar olmasa da, varsayılandan daha fazla iyileştirme uygular.</p>
-<p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>‘ni inceleyebilirsiniz.</p>
+<p>Profillerin yapılandırma seçenekleri ve varsayılan değerlerinin tam listesi için <a href="https://doc.rust-lang.org/cargo/reference/profiles.html">Cargo belgeleri</a>'ni inceleyebilirsiniz.</p>
 <a class="header" href="#bir-sandığı-cratesio-Üzerinde-yayınlamak" id="bir-sandığı-cratesio-Üzerinde-yayınlamak"><h2>Bir Sandığı Crates.io Üzerinde Yayınlamak</h2></a>
-<p>Önceki bölümlerde gerçekleştirdiğimiz bazı örnek projeler, çalışabilmek için <a href="https://crates.io/">crates.io</a>‘daki bazı paketlere bağımlı olduklarından, bu paketleri projelerimize dahil etmeyi öğrenmiştik. Halbuki sizler de kendi paketlerinizi yayınlayarak kodlarınızı başkalarıyla paylaşabilirsiniz. <a href="https://crates.io/">Crates.io</a> sitesinde bulunan sandık kayıt defteri, paketlerinizin kaynak kodunu dağıtacağından, öncelikle projenizin açık kaynak kodunu barındırmak zorundadır.</p>
+<p>Önceki bölümlerde gerçekleştirdiğimiz bazı örnek projeler, çalışabilmek için <a href="https://crates.io/">crates.io</a>'daki bazı paketlere bağımlı olduklarından, bu paketleri projelerimize dahil etmeyi öğrenmiştik. Halbuki sizler de kendi paketlerinizi yayınlayarak kodlarınızı başkalarıyla paylaşabilirsiniz. <a href="https://crates.io/">Crates.io</a> sitesinde bulunan sandık kayıt defteri, paketlerinizin kaynak kodunu dağıtacağından, öncelikle projenizin açık kaynak kodunu barındırmak zorundadır.</p>
 <p>Rust ve Cargo, yayınlanan paketleri başka geliştiricilerin kolaylıkla bulup kullanabilmelerini sağlayan özelliklere sahiptir. Az sonra bu özelliklerin bazılarından bahsedecek ve ardından bir paketin nasıl yayınlanacağını anlatacağız.</p>
 <a class="header" href="#kullanışlı-belgeleme-yorumları-oluşturmak" id="kullanışlı-belgeleme-yorumları-oluşturmak"><h3>Kullanışlı Belgeleme Yorumları Oluşturmak</h3></a>
-<p>Paketlerinizin doğru biçimde belgelenmesi, bu paketlerin başka kullanıcılar tarafından nasıl ve ne zaman kullanılabileceğine ışık tutacağından, belgeleme sürecine zaman ayırmak önemlidir. Bölüm 3’te, Rust kodlarını iki eğik çizgi <code>//</code> kullanarak nasıl yorumlayacağımızı tartışmıştık. Bu normal yorumların yanısıra Rust, <em>belgeleme yorumları</em> olarak bilinen ve kod içinde yapılan açıklamaları, HTML belgelerine çevirmeye yarayan özel bir yorumlama biçimine sahiptir. Bu HTML belgeleri, sandığınızın nasıl <em>uygulandığını</em> anlatmaktan ziyade, nasıl <em>kullanılacağını</em> öğrenmek isteyen programcılara yol gösteren genel API öğelerinin belgelenmiş içeriğinden oluşur.</p>
+<p>Paketlerinizin doğru biçimde belgelenmesi, bu paketlerin başka kullanıcılar tarafından nasıl ve ne zaman kullanılabileceğine ışık tutacağından, belgeleme sürecine zaman ayırmak önemlidir. Bölüm 3'te, Rust kodlarını iki eğik çizgi <code>//</code> kullanarak nasıl yorumlayacağımızı tartışmıştık. Bu normal yorumların yanısıra Rust, <em>belgeleme yorumları</em> olarak bilinen ve kod içinde yapılan açıklamaları, HTML belgelerine çevirmeye yarayan özel bir yorumlama biçimine sahiptir. Bu HTML belgeleri, sandığınızın nasıl <em>uygulandığını</em> anlatmaktan ziyade, nasıl <em>kullanılacağını</em> öğrenmek isteyen programcılara yol gösteren genel API öğelerinin belgelenmiş içeriğinden oluşur.</p>
 <p>Belgeledikleri öğeden hemen önce yerleştirilen ve iki yerine <code>///</code> üç eğik çizgi ile ifade edilen belgeleme yorumları, metni biçimlendirmek için Markdown gösterimini destekler. Örnek 14-1, <code>sandigim</code> adlı sandıkta yer alan <code>bir_ekle</code> işlevi için belgeleme yorumlarını göstermektedir:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
@@ -1337,19 +1603,19 @@ pub fn bir_ekle(x: i32) -&gt; i32 {
 </code></pre>
 <p><span class="caption">Örnek 14-1: Bir işlevin belgelenmesi</span></p>
 <p>Örnekteki <code>bir_ekle</code> işlevinin görevini anlatıp, <code>Örnekler</code> etiketli bir bölüm başlatarak <code>bir_ekle</code> işlevinin nasıl kullanılacağını gösteren kodlarla başlıyoruz. Bu işlemleri tamamladıktan sonra <code>cargo doc</code> komutunu çalıştırarak bu yorum satırlarının işlenmesiyle oluşturulan bir HTML belgesine sahip oluruz. Bu komutla oluşturulan HTML belgeleri <code>rustdoc</code> araç seti çalıştırılarak <code>target/doc</code> dizinine yerleştirilecektir.</p>
-<p>Biraz daha rahatlık sağlayan <code>cargo doc --open</code> komutu ise, hem sandığınıza ait tüm bağımlılıkların HTML belgelerini oluşturacak, hem de oluşturduğu belgeleri web tarayıcınızda açarak kullanımınıza sunacaktır. Şimdi <code>bir_ekle</code> işlevine giderek, Resim 14-1’de gösterilen belgeleme yorumlarının metne nasıl dönüştürüldüğünü inceleyebilirsiniz:</p>
+<p>Biraz daha rahatlık sağlayan <code>cargo doc --open</code> komutu ise, hem sandığınıza ait tüm bağımlılıkların HTML belgelerini oluşturacak, hem de oluşturduğu belgeleri web tarayıcınızda açarak kullanımınıza sunacaktır. Şimdi <code>bir_ekle</code> işlevine giderek, Resim 14-1'de gösterilen belgeleme yorumlarının metne nasıl dönüştürüldüğünü inceleyebilirsiniz:</p>
 <p><img alt="`my_crate` sandığında `bir_ekle` işlevi için oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-01.png" class="center" /></p>
 <p><span class="caption">Resim 14-1: <code>bir_ekle</code> işlevinin HTML belgeleri</span></p>
 <a class="header" href="#yaygın-olarak-kullanılan-bölümler" id="yaygın-olarak-kullanılan-bölümler"><h4>Yaygın Olarak Kullanılan Bölümler</h4></a>
-<p>HTML belgesinde <code># Örnekler</code> başlıklı bir bölüm oluşturabilmek için Örnek 14-1’de <code># Örnek</code> şeklinde bir Markdown başlığı sözdizimi kullandık. Pek çok sandık yazarının belgelerinde yaygın olarak kullandığı bazı bölümler ise aşağıda sıralanmaktadır:</p>
+<p>HTML belgesinde <code># Örnekler</code> başlıklı bir bölüm oluşturabilmek için Örnek 14-1'de <code># Örnek</code> şeklinde bir Markdown başlığı sözdizimi kullandık. Pek çok sandık yazarının belgelerinde yaygın olarak kullandığı bazı bölümler ise aşağıda sıralanmaktadır:</p>
 <ul>
 <li><strong>Panikler:</strong> Belgelenen işlevin panik üretebileceği senaryolar. İşlevin çağrıldığı programlarda panik üretmesi istenmiyorsa, kullanıcıların bu senaryoların gerçekleşebileceği durumlarda işlevi çağırmadıklarından emin olunmalıdır.</li>
 <li><strong>Hatalar:</strong> İşlev bir <code>Result</code> türü döndürdüğünde, oluşması muhtemel hata çeşitlerinin ve bu hataların döndürülme neden ve koşullarının tanımlanması, işlevi çağıran tarafların farklı türden hataları farklı şekillerde işlemelerini sağlayacak şekilde kod üretmelerine yardımcı olabilir.</li>
-<li><strong>Güvenlik:</strong> Eğer işlev çağrısı <code>unsafe</code> yani emniyetsiz bir çağrı ise (Rust’ın emniyetsiz kullanım seçeneğini Bölüm 19’da tartışacağız), işlevin güvensiz olma nedenlerini açıklayan ve çağıran tarafların desteklemesi gereken değişmezleri kapsayan bir bölüm olmalıdır.</li>
+<li><strong>Güvenlik:</strong> Eğer işlev çağrısı <code>unsafe</code> yani emniyetsiz bir çağrı ise (Rust'ın emniyetsiz kullanım seçeneğini Bölüm 19'da tartışacağız), işlevin güvensiz olma nedenlerini açıklayan ve çağıran tarafların desteklemesi gereken değişmezleri kapsayan bir bölüm olmalıdır.</li>
 </ul>
 <p>Çoğu belgelendirme çalışmasında bu bölümlerin her birinin yorumlanmasına ihtiyaç duyulmaz. Bununla birlikte bu bölümler kodlarınızı çağıran tarafların bilmek isteyeceği yönleri hatırlamanız amacıyla tavsiye edilen bir kontrol listesidir.</p>
 <a class="header" href="#test-amaçlı-belgeleme-yorumları" id="test-amaçlı-belgeleme-yorumları"><h4>Test Amaçlı Belgeleme Yorumları</h4></a>
-<p>Belgeleme yorumlarınıza örnek kod blokları eklemek, kütüphanenizin nasıl kullanılacağını göstermenize yardımcı olabileceği gibi ek bir avantaj olarak <code>cargo test</code> komutu çalıştırıldığında kod örneklerinizin test edilmesine olanak sağlar. Hiçbir şey test edilebilecek örnekler içeren belgelerden daha iyi olamaz. Ancak, belgeleme sonrası gerçekleşen kod değişiklikleri yüzünden işe yaramayan örneklerden daha kötü bir şey de yoktur. Örnek 14-1’deki <code>bir_ekle</code> işlevi için oluşturduğumuz belgeleme koduna <code>cargo test</code> komutunu uyguladığımızda, aşağıdakine benzer bir test sonucu göreceğiz:</p>
+<p>Belgeleme yorumlarınıza örnek kod blokları eklemek, kütüphanenizin nasıl kullanılacağını göstermenize yardımcı olabileceği gibi ek bir avantaj olarak <code>cargo test</code> komutu çalıştırıldığında kod örneklerinizin test edilmesine olanak sağlar. Hiçbir şey test edilebilecek örnekler içeren belgelerden daha iyi olamaz. Ancak, belgeleme sonrası gerçekleşen kod değişiklikleri yüzünden işe yaramayan örneklerden daha kötü bir şey de yoktur. Örnek 14-1'deki <code>bir_ekle</code> işlevi için oluşturduğumuz belgeleme koduna <code>cargo test</code> komutunu uyguladığımızda, aşağıdakine benzer bir test sonucu göreceğiz:</p>
 <pre><code class="language-test">
    Doc-tests sandigim
 
@@ -1362,7 +1628,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 <p>Bu aşamada işlev ya da örnek değiştirilecek olursa, örnekteki <code>assert_eq!</code> ifadesi panik üreteceğinden <code>cargo test</code> komutu tekrar çalıştırıldığında, test sürecinin örnek ve kod bölümlerinin uyumsuzluğunu fark ettiğini gözlemleyeceğiz.</p>
 <a class="header" href="#İçerilen-Öğelerin-yorumlanması" id="İçerilen-Öğelerin-yorumlanması"><h4>İçerilen Öğelerin Yorumlanması</h4></a>
 <p>Bir başka belgeleme biçimi olan <code>//!</code> ise, yorum satırlarının hemen altına eklenenen öğeleri belgelemek yerine, yorumun ait olduğu, yani içerildiği öğeyi belgelemek için kullanılır. Bu tarz yorum satırlarını genellikle sandık veya modülün tamamını bir bütün olarak belgelemek amacıyla, kök dosyasının içinde (kural gereği src/lib.src) ya da bir modül içerisinde kullanırız.</p>
-<p>Örnek 14-2’de gösterildiği gibi, eğer daha önce oluşturduğumuz ve <code>bir_ekle</code> işlevini içeren <code>sandigim</code> için, bu sandığın amacını açıklayan belgeler eklemek istiyorsak, bunları <em>src/lib.rs</em> dosyasının en başına <code>//!</code> işaretini kullanarak eklememiz gerekir.</p>
+<p>Örnek 14-2'de gösterildiği gibi, eğer daha önce oluşturduğumuz ve <code>bir_ekle</code> işlevini içeren <code>sandigim</code> için, bu sandığın amacını açıklayan belgeler eklemek istiyorsak, bunları <em>src/lib.rs</em> dosyasının en başına <code>//!</code> işaretini kullanarak eklememiz gerekir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
 //! # Sandigim
@@ -1388,15 +1654,15 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 </code></pre>
 <p><span class="caption">Örnek 14-2: Bir bütün olarak <code>Sandigim</code> belgeleri</span></p>
 <p><code>//!</code> işaretiyle başlayan son satırın altında herhangi bir kod satırının bulunmadığına ve bir satırın boş bırakılmış olduğuna dikkat edin! Bunun sebebi, içerilen belge yorumlarını <code>///</code> yerine, <code>//!</code> işaretiyle başlattığımızdan sonraki satırlarda bulunan öğeler yerine, işaretin bulunduğu satırdaki öğelerin belgelenecek olmasıdır. Bu durumda bu yorumu içeren öğe, sandık kökümüz olan <em>src/lib.rs</em> dosyası olacağından, bu yorumlar da sandığın tamamı için yapılan açıklamaları içerecektir.</p>
-<p>Eğer <code>cargo doc --open</code> komutunu çalıştırırsak, işaretlemiş olduğumuz bu yorum satırları, tıpkı Şekil 14-2’de gösterildiği gibi <code>sandigim</code> belgesinin ön sayfasında, sandıktaki genel öğeler listesinin üstünde görüntülenecektir:</p>
+<p>Eğer <code>cargo doc --open</code> komutunu çalıştırırsak, işaretlemiş olduğumuz bu yorum satırları, tıpkı Şekil 14-2'de gösterildiği gibi <code>sandigim</code> belgesinin ön sayfasında, sandıktaki genel öğeler listesinin üstünde görüntülenecektir:</p>
 <p><img alt="Sandığın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-02.png" class="center" /></p>
-<p><span class="caption">Resim 14-2: <code>Sandigim</code>‘ın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri</span></p>
+<p><span class="caption">Resim 14-2: <code>Sandigim</code>'ın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri</span></p>
 <p>Öğelerdeki belge yorumları, özellikle sandık ve modülleri tanımlamak için kullanışlıdır. Bu yorumları, paketlerinizi kullanacak olan kişilerin paket düzeninizi anlamalarına yardımcı olmak ve paket kapsamının genel amacını açıklamak için kullanmanız önemlidir.</p>
-<a class="header" href="#uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak" id="uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak"><h3>Uygun Bir Genel API’yi <code>pub use</code> ile Dışa Aktarmak</h3></a>
-<p>Bölüm 7’de kodlarımız, <code>mod</code> anahtar kelimesini kullanarak modüller halinde nasıl düzenleyeceğinizi, <code>pub</code> anahtar sözcüğüyle öğelerin nasıl genelleştirileceğini ve <code>use</code> anahtar kelimesiyle de öğelerin kapsama nasıl dahil edileceğini incelemiştik. Ancak, bir sandığın geliştirilme sürecinde sizin için anlamlı olan organizasyon yapısı, kullanıcılarınız için çok uygun olmayabilir. Sandığınızı çok katmanlı ve hiyerarşik bir yapıda düzenlediğinizde, bu hiyerarşinin alt katmanlarında tanımlanmış bir türü kullanmak isteyen kişiler, bu türe erişmekte sorun yaşayabilirler. Hem ayrıca bir türe <code>use sandigim::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak yerine,  <code>sandigim::bir_modul::baska_bir_modul::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak oldukça rahatsız edici olabilir.</p>
-<p>Bir sandık yayınlarken herkese açık olarak tasarlanmış olan API’nizin yapısı oldukça önemlidir. Sandığınızı kullanan kişiler bu yapıya sizin kadar aşina olmadıklarından, sandığınız büyüyüp karmaşık bir <em>modüller hiyerarşisine</em> dönüştüğünde, kullanmak istedikleri API parçalarına ulaşmakta zorluk çekebilirler.</p>
+<a class="header" href="#uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak" id="uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak"><h3>Uygun Bir Genel API'yi <code>pub use</code> ile Dışa Aktarmak</h3></a>
+<p>Bölüm 7'de kodlarımız, <code>mod</code> anahtar kelimesini kullanarak modüller halinde nasıl düzenleyeceğinizi, <code>pub</code> anahtar sözcüğüyle öğelerin nasıl genelleştirileceğini ve <code>use</code> anahtar kelimesiyle de öğelerin kapsama nasıl dahil edileceğini incelemiştik. Ancak, bir sandığın geliştirilme sürecinde sizin için anlamlı olan organizasyon yapısı, kullanıcılarınız için çok uygun olmayabilir. Sandığınızı çok katmanlı ve hiyerarşik bir yapıda düzenlediğinizde, bu hiyerarşinin alt katmanlarında tanımlanmış bir türü kullanmak isteyen kişiler, bu türe erişmekte sorun yaşayabilirler. Hem ayrıca bir türe <code>use sandigim::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak yerine,  <code>sandigim::bir_modul::baska_bir_modul::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak oldukça rahatsız edici olabilir.</p>
+<p>Bir sandık yayınlarken herkese açık olarak tasarlanmış olan API'nizin yapısı oldukça önemlidir. Sandığınızı kullanan kişiler bu yapıya sizin kadar aşina olmadıklarından, sandığınız büyüyüp karmaşık bir <em>modüller hiyerarşisine</em> dönüştüğünde, kullanmak istedikleri API parçalarına ulaşmakta zorluk çekebilirler.</p>
 <p>İyi haber şu ki, eğer organizasyon yapınız başkaları tarafından farklı kütüphaneler ile kullanılamayacak gibiyse, API hiyerarşisini veya tasarımını baştan sona yeniden düzenlemek yerine, <code>pub use</code> anahtar kelimesini kullanarak, bu yapının genel kullanıma uygun bir sürümünü tüm öğeleriyle birlikte yeniden ihraç edebilirsiniz. Yeniden ihraç işleminde, bir konumda bulunan genel bir öğe yerinden alınarak, sanki başka bir yerde ve başka bir konumda tanımlanmış gibi herkese açık hale getirilir.</p>
-<p>Örnek 14-3’te de görüleceği gibi, sanatsal kavramları modellemek için <code>sanat</code> adında bir kütüphane tasarladığımızı varsayalım. Ve bu kütüphanenin içinde <code>BirincilRenk</code> ve <code>IkincilRenk</code> olarak isimlendirilmiş iki sıralamadan <em>(enum)</em> oluşan <code>turler</code> modülü ve <code>karisim</code> adında bir işlev içeren <code>araclar</code> modülü bulunsun:</p>
+<p>Örnek 14-3'te de görüleceği gibi, sanatsal kavramları modellemek için <code>sanat</code> adında bir kütüphane tasarladığımızı varsayalım. Ve bu kütüphanenin içinde <code>BirincilRenk</code> ve <code>IkincilRenk</code> olarak isimlendirilmiş iki sıralamadan <em>(enum)</em> oluşan <code>turler</code> modülü ve <code>karisim</code> adında bir işlev içeren <code>araclar</code> modülü bulunsun:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">//! # Sanat
 //!
@@ -1450,8 +1716,8 @@ fn main() {
 
 </code></pre>
 <p><span class="caption">Örnek 14-4: İç yapısı dışa aktarılan sanat sandığının öğelerini kullanan başka bir sandık</span></p>
-<p>Örnek 14-4’te yer alan <code>sanat</code> sandığını kullanan kodun programcısı, <code>BirincilRenk</code> türünün <code>turler</code> modülünde ve <code>karisim</code> işlevinin de  <code>araclar</code> modülünde olduğunu anlayabilmelidir. Sandığın modül yapısı, <code>sanat</code> sandığını geliştiren programcılardan çok, bu sandığı kullanan  programcılar için önemlidir. Sandığın parçalarını <code>turler</code> ve <code>sanat</code> modülleri olarak düzenleyen iç yapı, bu sandığın nasıl kullanılacağını öğrenmek isteyenler için herhangi bir yararlı bilgi içermediği gibi, <code>sanat</code> sandığı modül yapısının yarattığı karmaşa, <code>use</code> ifadelerinde modül adlarını belirtmek isteyen kullanıcıların nereye bakacaklarını karıştırmalarına neden olacağından kullanışsız bir yapıdır.</p>
-<p>Herkesin kullanacağı bu API’nin sorunlu iç düzenlemesini <code>pub use</code> kullanarak kaldırıp, öğeleri en üst düzeyde yeniden dışa aktarabilmek için, Örnek 14-3’te yer alan <code>sanat</code> sandığının kodlarını, Örnek 14-5’te gösterildiği şekilde yeniden düzenleyebiliriz.</p>
+<p>Örnek 14-4'te yer alan <code>sanat</code> sandığını kullanan kodun programcısı, <code>BirincilRenk</code> türünün <code>turler</code> modülünde ve <code>karisim</code> işlevinin de  <code>araclar</code> modülünde olduğunu anlayabilmelidir. Sandığın modül yapısı, <code>sanat</code> sandığını geliştiren programcılardan çok, bu sandığı kullanan  programcılar için önemlidir. Sandığın parçalarını <code>turler</code> ve <code>sanat</code> modülleri olarak düzenleyen iç yapı, bu sandığın nasıl kullanılacağını öğrenmek isteyenler için herhangi bir yararlı bilgi içermediği gibi, <code>sanat</code> sandığı modül yapısının yarattığı karmaşa, <code>use</code> ifadelerinde modül adlarını belirtmek isteyen kullanıcıların nereye bakacaklarını karıştırmalarına neden olacağından kullanışsız bir yapıdır.</p>
+<p>Herkesin kullanacağı bu API'nin sorunlu iç düzenlemesini <code>pub use</code> kullanarak kaldırıp, öğeleri en üst düzeyde yeniden dışa aktarabilmek için, Örnek 14-3'te yer alan <code>sanat</code> sandığının kodlarını, Örnek 14-5'te gösterildiği şekilde yeniden düzenleyebiliriz.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
 //! # Sanat
@@ -1494,10 +1760,10 @@ pub mod araclar {
 
 </code></pre>
 <p><span class="caption">Örnek 14-5: Öğeleri yeniden dışa aktarmak için <code>pub use</code> ifadesi eklemek</span></p>
-<p>Şekil 14-4’te görebileceğiniz gibi <code>cargo doc</code> komutunun bu sandık için oluşturduğu API belgeleri, dışa aktarımları yeniden ön sayfada listeleyerek bağlayacak, <code>BirincilRenk</code> ve <code>IkincilRenk</code> türleriyle <code>karisim</code> işlevinin bulunmasını oldukça kolaylaştıracaktır.</p>
+<p>Şekil 14-4'te görebileceğiniz gibi <code>cargo doc</code> komutunun bu sandık için oluşturduğu API belgeleri, dışa aktarımları yeniden ön sayfada listeleyerek bağlayacak, <code>BirincilRenk</code> ve <code>IkincilRenk</code> türleriyle <code>karisim</code> işlevinin bulunmasını oldukça kolaylaştıracaktır.</p>
 <p><img alt="`sanat` sandığının yeniden dışa aktarımıyla oluşan belgelerin ön sayfası" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-04.png" class="center" /></p>
 <p><span class="caption">Resim 14-4: Yeniden dışa aktarımı örnekleyen <code>sanat</code> sandığının ön yüzü</span></p>
-<p>Artk <code>sanat</code> sandığını kullanmak isteyen programcılar, ister hâlâ kullanılmaya uygun durumdaki Örnek 14-3 ve Örnek 14-4’ün iç yapılarını inceleyerek kodlarına bunları dahil edebilirler, isterlerse Örnek 14-5 ve 14-6’da yenilenerek kullanıma daha uygun hale getirilen yapıyı tercih edebilirler.</p>
+<p>Artk <code>sanat</code> sandığını kullanmak isteyen programcılar, ister hâlâ kullanılmaya uygun durumdaki Örnek 14-3 ve Örnek 14-4'ün iç yapılarını inceleyerek kodlarına bunları dahil edebilirler, isterlerse Örnek 14-5 ve 14-6'da yenilenerek kullanıma daha uygun hale getirilen yapıyı tercih edebilirler.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><code class="language-rust ignore">
 use sanat::karisim;
@@ -1520,10 +1786,10 @@ fn main() {
 $ cargo login abcdefghijklmnopqrstuvwxyz012345
 
 </code></pre>
-<p>Bu komut API anahtarınızı Cargo’ya bildirecek ve yerel olarak onu <em>~/.cargo/credentials</em> içinde depolayacaktır. Anahtarınızın <em>size özel</em> olduğunu, <em>gizli</em> kalması ve kimseyle paylaşılmaması gerektiğini unutmayın. Eğer herhangi bir sebeple anahtarınızı birileriyle paylaşmak zorunda kalırsanız, eskisini derhal iptal ederek yeni bir anahtar oluşturun.</p>
+<p>Bu komut API anahtarınızı Cargo'ya bildirecek ve yerel olarak onu <em>~/.cargo/credentials</em> içinde depolayacaktır. Anahtarınızın <em>size özel</em> olduğunu, <em>gizli</em> kalması ve kimseyle paylaşılmaması gerektiğini unutmayın. Eğer herhangi bir sebeple anahtarınızı birileriyle paylaşmak zorunda kalırsanız, eskisini derhal iptal ederek yeni bir anahtar oluşturun.</p>
 <a class="header" href="#yeni-oluşturulmuş-sandığa-meta-veri-eklemek" id="yeni-oluşturulmuş-sandığa-meta-veri-eklemek"><h3>Yeni Oluşturulmuş Sandığa Meta Veri Eklemek</h3></a>
 <p>Artık hesabınızı oluşturduğunuza göre, yayınlamak istediğiniz bir sandığınız olduğunu düşünebiliriz. Ancak sandığınızı yayınlamadan önce, <em>Cargo.toml</em> dosyasının <code>[package]</code> bölümüne sandığınıza ait meta veriler eklemeniz gerekir.</p>
-<p>Bir sandık üzerinde yerel olarak çalışırken onu istediğiniz gibi adlandırabilirsiniz. Ancak sandığınız yayın aşamasına geldiğinde benzersiz bir isme ihtiyacı olacak. <a href="https://crates.io/">crates.io</a>‘daki sandık isimlerinde öncelik ilk gelene verildiğinden, bir isim bir sandığa tahsis edildikten sonra başka bir sandığa tahsis edilemez. Başka bir ifadeyle, sandık adı bir kez alındığında aynı isimde başka bir sandık yayınlanamaz. O yüzden sandığınızı <a href="https://crates.io/">crates.io</a> üzerinde yayınlanmadan önce, sandık adınızı kullanan başka bir sandık olup olmadığını araştırmalısınız. Eğer sandık adınız halihazırda başka bir sandık tarafından kullanılmakta ise, yenileyeceğiniz sandık adını, paketinizin <em>Cargo.toml</em> dosyasında bulunan <code>[package]</code> bölümüne, isim alanıyla birlikte aşağıda gösterildiği gibi girmeniz gerekir.</p>
+<p>Bir sandık üzerinde yerel olarak çalışırken onu istediğiniz gibi adlandırabilirsiniz. Ancak sandığınız yayın aşamasına geldiğinde benzersiz bir isme ihtiyacı olacak. <a href="https://crates.io/">crates.io</a>'daki sandık isimlerinde öncelik ilk gelene verildiğinden, bir isim bir sandığa tahsis edildikten sonra başka bir sandığa tahsis edilemez. Başka bir ifadeyle, sandık adı bir kez alındığında aynı isimde başka bir sandık yayınlanamaz. O yüzden sandığınızı <a href="https://crates.io/">crates.io</a> üzerinde yayınlanmadan önce, sandık adınızı kullanan başka bir sandık olup olmadığını araştırmalısınız. Eğer sandık adınız halihazırda başka bir sandık tarafından kullanılmakta ise, yenileyeceğiniz sandık adını, paketinizin <em>Cargo.toml</em> dosyasında bulunan <code>[package]</code> bölümüne, isim alanıyla birlikte aşağıda gösterildiği gibi girmeniz gerekir.</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
 [package]
@@ -1542,7 +1808,7 @@ error: api errors (status 200 OK): missing or empty metadata fields: description
 
 </code></pre>
 <p>Bunun sebebi, sandığınızı kullanmak isteyecek programcılar için hazırlamanız gereken, sandığınızın neler yaptığını ve hangi koşullar altında kullanılabileceğini düzenleyen açıklama ve lisans bilgileri gibi önemli detayları atlamış olmanızdır. Bu hatayı düzeltmek için gerekli olan bilgileri paketinizin <em>Cargo.toml</em> dosyasına işlemeniz gerekir.</p>
-<p>Girdiğiniz açıklamalar arama sonuçlarında görüntüleneceğinden, en azından bir iki cümlelik açıklama eklemeniz yerinde olur. Lisans alanı içinse bir <code>license</code> tanımlayıcı değeri vermeniz gereklidir. <a href="http://spdx.org/licenses/">Linux Vakfı’nın Yazılım Paketi veri değişimi (SPDX)</a>, bu alan için kullanabileceğiniz tanımlayıcıları listeler. Örneğin, sandığınızı MIT Lisansı ile lisansladığınızı belirtmek için <code>MIT</code> tanımlayıcısını eklemeniz gerekir:</p>
+<p>Girdiğiniz açıklamalar arama sonuçlarında görüntüleneceğinden, en azından bir iki cümlelik açıklama eklemeniz yerinde olur. Lisans alanı içinse bir <code>license</code> tanımlayıcı değeri vermeniz gereklidir. <a href="http://spdx.org/licenses/">Linux Vakfı'nın Yazılım Paketi veri değişimi (SPDX)</a>, bu alan için kullanabileceğiniz tanımlayıcıları listeler. Örneğin, sandığınızı MIT Lisansı ile lisansladığınızı belirtmek için <code>MIT</code> tanımlayıcısını eklemeniz gerekir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
 [package]
@@ -1550,8 +1816,8 @@ name = &quot;tahmin_oyunu&quot;
 license = &quot;MIT&quot;
 
 </code></pre>
-<p>SPDX’te listelenmemiş bir lisans kullanmak istiyorsanız, söz konusu lisansın metnini bir dosyaya yerleştirmeniz, dosyayı projenize eklemeniz ve ardından <code>license</code> alanındaki tanımı <code>license-file</code> şeklinde dosya adını tanımlayacak şekilde belirtmeniz gerekmektedir.</p>
-<p>Projeniz için hangi lisansın daha uygun olacağına dair rehberlik bu kitabın kapsamı dışındadır. Rust topluluğunun pek çok üyesi projelerini, Rust’ın tercih ettiği gibi <code>MIT OR Apache-2.0</code> olarak çifte lisans kullanarak sunar. Bu uygulama biçimi projenizi <code>OR</code> ekiyle birden fazla lisansa sahip olacak şekilde lisans tanımlayıcısıyla ilişkilendirebileceğinizi gösterir.</p>
+<p>SPDX'te listelenmemiş bir lisans kullanmak istiyorsanız, söz konusu lisansın metnini bir dosyaya yerleştirmeniz, dosyayı projenize eklemeniz ve ardından <code>license</code> alanındaki tanımı <code>license-file</code> şeklinde dosya adını tanımlayacak şekilde belirtmeniz gerekmektedir.</p>
+<p>Projeniz için hangi lisansın daha uygun olacağına dair rehberlik bu kitabın kapsamı dışındadır. Rust topluluğunun pek çok üyesi projelerini, Rust'ın tercih ettiği gibi <code>MIT OR Apache-2.0</code> olarak çifte lisans kullanarak sunar. Bu uygulama biçimi projenizi <code>OR</code> ekiyle birden fazla lisansa sahip olacak şekilde lisans tanımlayıcısıyla ilişkilendirebileceğinizi gösterir.</p>
 <p>Benzersiz bir isim seçtiğiniz sandığınıza; yazar adı, sürüm bilgisi, paket açıklaması ve lisans bilgileri eklendikten sonra, yayına hazır hale gelen projenizin <code>Cargo.toml</code> dosyası aşağıdaki dosya gibi görünecektir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
@@ -1567,9 +1833,9 @@ license = &quot;MIT OR Apache-2.0&quot;
 
 </code></pre>
 <p>Sandıklarınızın kolaylıkla fark edilip kullanabilmesi için değerlendirebileceğiniz meta verilere <a href="https://doc.rust-lang.org/cargo/">Cargo Belgeleri</a> üzerinden kolaylıkla ulaşabilirisiniz.</p>
-<a class="header" href="#bir-sandığı-cratesioda-yayınlamak" id="bir-sandığı-cratesioda-yayınlamak"><h3>Bir sandığı Crates.io’da Yayınlamak</h3></a>
+<a class="header" href="#bir-sandığı-cratesioda-yayınlamak" id="bir-sandığı-cratesioda-yayınlamak"><h3>Bir sandığı Crates.io'da Yayınlamak</h3></a>
 <p>Artık bir hesabınız, API anahtarınız, benzersiz ada sahip bir sandığınız olduğuna ve bu sandığa gerekli meta verileri eklediğinize göre sandığızı yayınlamaya hazırsınız demektir. Bir sandığı yayınlamak demek, sandığınızın belirli bir sürümünü başka kullanıcılar için <a href="https://crates.io/">crates.io</a> sitesine yüklemek anlamına gelir.</p>
-<p><a href="https://crates.io/">Crates.io</a>‘nun asıl hedeflerinden biri yayınlanan sandıklara bağımlı tüm projelerin çalışmaya devam edebilmesi için kalıcı bir kod arşivi oluşturmaktır. Bu nedenle bir sandık yayınlandıktan sonra, yayınlanan sürümün üzerinde ekleme, düzenleme yahut silme gibi işlemler artık yapılamayacağından, sandık yayınlarken dikkatli olunması gerekir. Sürüm silme işlemine izin vermek bu hedefi imkansızlaştıracağından, sürüm silmek yerine sandığın başka sürümlerinin yayınlaması yeğlenir. O nedenle bir sandığa ait sürümlerin yayın sınırı yoktur.</p>
+<p><a href="https://crates.io/">Crates.io</a>'nun asıl hedeflerinden biri yayınlanan sandıklara bağımlı tüm projelerin çalışmaya devam edebilmesi için kalıcı bir kod arşivi oluşturmaktır. Bu nedenle bir sandık yayınlandıktan sonra, yayınlanan sürümün üzerinde ekleme, düzenleme yahut silme gibi işlemler artık yapılamayacağından, sandık yayınlarken dikkatli olunması gerekir. Sürüm silme işlemine izin vermek bu hedefi imkansızlaştıracağından, sürüm silmek yerine sandığın başka sürümlerinin yayınlaması yeğlenir. O nedenle bir sandığa ait sürümlerin yayın sınırı yoktur.</p>
 <p>Şimdi <code>cargo publish</code> komutunu tekrar çalıştırdığınızda paketinizin başarıyla yayınlandığını göreceksiniz:</p>
 <pre><code class="language-console">
 $ cargo publish
@@ -1585,8 +1851,8 @@ $ cargo publish
 <p>Tebrikler! Artık kodunuzu Rust topluluğuyla paylaştığınıza göre, herkes sizin sandığınızı kendi projesine bağımlılık olarak kolayca ekleyebilir.</p>
 <a class="header" href="#mevcut-sandığın-yeni-sürümünü-yayınlamak" id="mevcut-sandığın-yeni-sürümünü-yayınlamak"><h3>Mevcut Sandığın Yeni Sürümünü Yayınlamak</h3></a>
 <p>Daha önce yayınladığınız bir sandık üzerinde tüm kullanıcıları etkileyebilecek değişiklikler yaptığınızda ya da sandığınızın yeni sürümünü yayınlamak istediğinizde, <em>Cargo.toml</em> dosyasında belirtilen sürüm değerini değiştirerek yeniden yayınlayabilirsiniz. Yaptığınız değişiklik türlerine bağlı olarak, sonraki sürümün numarasına karar verirken <a href="http://semver.org/">Anlamsal Sürüm Oluşturma Kuralları</a> sitesini kullanabilirsiniz. Yeni sürümünüzü, düzenlemelerinizi gerçekleştirdikten sonra <code>cargo publish</code> komutunu kullanarak yayınlayabilirsiniz.</p>
-<a class="header" href="#sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak" id="sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak"><h3>Sürümleri Crates.io’dan <code>cargo yank</code> Komutu Kullanarak Kaldırmak</h3></a>
-<p>Yayımlanmış bir sandığın önceki sürümlerini kaldıramıyor olsanız bile, bir sebepten sandık sürümünüz bozulmuşsa, yeni projelerin bu sürümleri kullanmasını ve bağımlılık olarak eklemesini engelleyebilirsiniz. Cargo’nun böyle durumlarda kullanılan <code>yank</code> komutu ilgili sürümün geri çekilmesini sağlar.</p>
+<a class="header" href="#sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak" id="sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak"><h3>Sürümleri Crates.io'dan <code>cargo yank</code> Komutu Kullanarak Kaldırmak</h3></a>
+<p>Yayımlanmış bir sandığın önceki sürümlerini kaldıramıyor olsanız bile, bir sebepten sandık sürümünüz bozulmuşsa, yeni projelerin bu sürümleri kullanmasını ve bağımlılık olarak eklemesini engelleyebilirsiniz. Cargo'nun böyle durumlarda kullanılan <code>yank</code> komutu ilgili sürümün geri çekilmesini sağlar.</p>
 <p>Bir sürümün geri çekilmesi, yeni projelerin bu sürüme bağlanmasını önlerken, halihazırda kendisine bağımlı olan projelerin bu sürümü indirmesine ve bağımlı olarak çalışmasına izin verir. Temel olarak <code>yank</code>, yani geri çekme işlemi, <em>Cargo.lock</em> dosyasına işlenmiş projelerin bozulmadan kullanılmaya devam edeileceğini, ama yeni bağımlılık taleplerinde bu sürümün kullanılmasına izin verilmeyeceği anlamına gelmektedir.</p>
 <p>Geri çekilmek istenen sandık sürümü için <code>cargo yank</code> komutunun aşağıda örneğe benzer biçimde kullanılması gerekir:</p>
 <pre><code class="language-console">
@@ -1614,7 +1880,7 @@ $ cargo yank --vers 1.0.1 --undo
 <a class="header" href="#İşlikler-arasında-veri-aktarmak-amacıyla-mesajlaşma" id="İşlikler-arasında-veri-aktarmak-amacıyla-mesajlaşma"><h2>İşlikler Arasında Veri Aktarmak Amacıyla Mesajlaşma</h2></a>
 <a class="header" href="#durum-paylaşımlı-eşzamanlılık" id="durum-paylaşımlı-eşzamanlılık"><h2>Durum Paylaşımlı Eşzamanlılık</h2></a>
 <a class="header" href="#sync-and-send-Özellikleri-ile-genişletilebilir-eşzamanlılık" id="sync-and-send-Özellikleri-ile-genişletilebilir-eşzamanlılık"><h2><code>Sync</code> and <code>Send</code> Özellikleri ile Genişletilebilir Eşzamanlılık</h2></a>
-<a class="header" href="#rustın-nesne-yönelimli-programlama-Özellikleri" id="rustın-nesne-yönelimli-programlama-Özellikleri"><h1>Rust’ın Nesne Yönelimli Programlama Özellikleri</h1></a>
+<a class="header" href="#rustın-nesne-yönelimli-programlama-Özellikleri" id="rustın-nesne-yönelimli-programlama-Özellikleri"><h1>Rust'ın Nesne Yönelimli Programlama Özellikleri</h1></a>
 <a class="header" href="#nesne-yönelimli-dillerin-Özellikleri" id="nesne-yönelimli-dillerin-Özellikleri"><h2>Nesne Yönelimli Dillerin Özellikleri</h2></a>
 <a class="header" href="#farklı-türden-değerlere-İzin-veren-Özellik-nesnelerini-kullanmak" id="farklı-türden-değerlere-İzin-veren-Özellik-nesnelerini-kullanmak"><h2>Farklı Türden Değerlere İzin Veren Özellik Nesnelerini Kullanmak</h2></a>
 <a class="header" href="#nesne-yönelimli-tasarım-kalıbı-uygulamak" id="nesne-yönelimli-tasarım-kalıbı-uygulamak"><h2>Nesne Yönelimli Tasarım Kalıbı Uygulamak</h2></a>
@@ -1623,7 +1889,7 @@ $ cargo yank --vers 1.0.1 --undo
 <a class="header" href="#Çürütülebilirlik-bir-Örüntünün-eşleşmeme-İhtimali" id="Çürütülebilirlik-bir-Örüntünün-eşleşmeme-İhtimali"><h2>Çürütülebilirlik: Bir Örüntünün Eşleşmeme İhtimali</h2></a>
 <a class="header" href="#Örüntü-sözdizimi" id="Örüntü-sözdizimi"><h2>Örüntü Sözdizimi</h2></a>
 <a class="header" href="#gelişmiş-Özellikler" id="gelişmiş-Özellikler"><h1>Gelişmiş Özellikler</h1></a>
-<a class="header" href="#emniyetsiz-rust" id="emniyetsiz-rust"><h2>Emniyetsiz Rust</h2></a>
+<a class="header" href="#güvenli-olmayan-rust-kodları" id="güvenli-olmayan-rust-kodları"><h2>Güvenli olmayan Rust Kodları</h2></a>
 <a class="header" href="#gelişmiş-Özellikler-1" id="gelişmiş-Özellikler-1"><h2>Gelişmiş Özellikler</h2></a>
 <a class="header" href="#gelişmiş-türler" id="gelişmiş-türler"><h2>Gelişmiş Türler</h2></a>
 <a class="header" href="#gelişmiş-İşlev-ve-kapamalar" id="gelişmiş-İşlev-ve-kapamalar"><h2>Gelişmiş İşlev ve Kapamalar</h2></a>
@@ -1664,24 +1930,22 @@ $ cargo yank --vers 1.0.1 --undo
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

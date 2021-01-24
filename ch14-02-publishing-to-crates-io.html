@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Bir Sandığı Crates.io Üzerinde Yayınlamak - Rust Programlama Dili</title>
+        <title>Bir Sandığı Crates.io Üzerinde Yayınlamak - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -147,10 +141,10 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#bir-sandığı-cratesio-Üzerinde-yayınlamak" id="bir-sandığı-cratesio-Üzerinde-yayınlamak"><h2>Bir Sandığı Crates.io Üzerinde Yayınlamak</h2></a>
-<p>Önceki bölümlerde gerçekleştirdiğimiz bazı örnek projeler, çalışabilmek için <a href="https://crates.io/">crates.io</a>‘daki bazı paketlere bağımlı olduklarından, bu paketleri projelerimize dahil etmeyi öğrenmiştik. Halbuki sizler de kendi paketlerinizi yayınlayarak kodlarınızı başkalarıyla paylaşabilirsiniz. <a href="https://crates.io/">Crates.io</a> sitesinde bulunan sandık kayıt defteri, paketlerinizin kaynak kodunu dağıtacağından, öncelikle projenizin açık kaynak kodunu barındırmak zorundadır.</p>
+<p>Önceki bölümlerde gerçekleştirdiğimiz bazı örnek projeler, çalışabilmek için <a href="https://crates.io/">crates.io</a>'daki bazı paketlere bağımlı olduklarından, bu paketleri projelerimize dahil etmeyi öğrenmiştik. Halbuki sizler de kendi paketlerinizi yayınlayarak kodlarınızı başkalarıyla paylaşabilirsiniz. <a href="https://crates.io/">Crates.io</a> sitesinde bulunan sandık kayıt defteri, paketlerinizin kaynak kodunu dağıtacağından, öncelikle projenizin açık kaynak kodunu barındırmak zorundadır.</p>
 <p>Rust ve Cargo, yayınlanan paketleri başka geliştiricilerin kolaylıkla bulup kullanabilmelerini sağlayan özelliklere sahiptir. Az sonra bu özelliklerin bazılarından bahsedecek ve ardından bir paketin nasıl yayınlanacağını anlatacağız.</p>
 <a class="header" href="#kullanışlı-belgeleme-yorumları-oluşturmak" id="kullanışlı-belgeleme-yorumları-oluşturmak"><h3>Kullanışlı Belgeleme Yorumları Oluşturmak</h3></a>
-<p>Paketlerinizin doğru biçimde belgelenmesi, bu paketlerin başka kullanıcılar tarafından nasıl ve ne zaman kullanılabileceğine ışık tutacağından, belgeleme sürecine zaman ayırmak önemlidir. Bölüm 3’te, Rust kodlarını iki eğik çizgi <code>//</code> kullanarak nasıl yorumlayacağımızı tartışmıştık. Bu normal yorumların yanısıra Rust, <em>belgeleme yorumları</em> olarak bilinen ve kod içinde yapılan açıklamaları, HTML belgelerine çevirmeye yarayan özel bir yorumlama biçimine sahiptir. Bu HTML belgeleri, sandığınızın nasıl <em>uygulandığını</em> anlatmaktan ziyade, nasıl <em>kullanılacağını</em> öğrenmek isteyen programcılara yol gösteren genel API öğelerinin belgelenmiş içeriğinden oluşur.</p>
+<p>Paketlerinizin doğru biçimde belgelenmesi, bu paketlerin başka kullanıcılar tarafından nasıl ve ne zaman kullanılabileceğine ışık tutacağından, belgeleme sürecine zaman ayırmak önemlidir. Bölüm 3'te, Rust kodlarını iki eğik çizgi <code>//</code> kullanarak nasıl yorumlayacağımızı tartışmıştık. Bu normal yorumların yanısıra Rust, <em>belgeleme yorumları</em> olarak bilinen ve kod içinde yapılan açıklamaları, HTML belgelerine çevirmeye yarayan özel bir yorumlama biçimine sahiptir. Bu HTML belgeleri, sandığınızın nasıl <em>uygulandığını</em> anlatmaktan ziyade, nasıl <em>kullanılacağını</em> öğrenmek isteyen programcılara yol gösteren genel API öğelerinin belgelenmiş içeriğinden oluşur.</p>
 <p>Belgeledikleri öğeden hemen önce yerleştirilen ve iki yerine <code>///</code> üç eğik çizgi ile ifade edilen belgeleme yorumları, metni biçimlendirmek için Markdown gösterimini destekler. Örnek 14-1, <code>sandigim</code> adlı sandıkta yer alan <code>bir_ekle</code> işlevi için belgeleme yorumlarını göstermektedir:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
@@ -172,19 +166,19 @@ pub fn bir_ekle(x: i32) -&gt; i32 {
 </code></pre>
 <p><span class="caption">Örnek 14-1: Bir işlevin belgelenmesi</span></p>
 <p>Örnekteki <code>bir_ekle</code> işlevinin görevini anlatıp, <code>Örnekler</code> etiketli bir bölüm başlatarak <code>bir_ekle</code> işlevinin nasıl kullanılacağını gösteren kodlarla başlıyoruz. Bu işlemleri tamamladıktan sonra <code>cargo doc</code> komutunu çalıştırarak bu yorum satırlarının işlenmesiyle oluşturulan bir HTML belgesine sahip oluruz. Bu komutla oluşturulan HTML belgeleri <code>rustdoc</code> araç seti çalıştırılarak <code>target/doc</code> dizinine yerleştirilecektir.</p>
-<p>Biraz daha rahatlık sağlayan <code>cargo doc --open</code> komutu ise, hem sandığınıza ait tüm bağımlılıkların HTML belgelerini oluşturacak, hem de oluşturduğu belgeleri web tarayıcınızda açarak kullanımınıza sunacaktır. Şimdi <code>bir_ekle</code> işlevine giderek, Resim 14-1’de gösterilen belgeleme yorumlarının metne nasıl dönüştürüldüğünü inceleyebilirsiniz:</p>
+<p>Biraz daha rahatlık sağlayan <code>cargo doc --open</code> komutu ise, hem sandığınıza ait tüm bağımlılıkların HTML belgelerini oluşturacak, hem de oluşturduğu belgeleri web tarayıcınızda açarak kullanımınıza sunacaktır. Şimdi <code>bir_ekle</code> işlevine giderek, Resim 14-1'de gösterilen belgeleme yorumlarının metne nasıl dönüştürüldüğünü inceleyebilirsiniz:</p>
 <p><img alt="`my_crate` sandığında `bir_ekle` işlevi için oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-01.png" class="center" /></p>
 <p><span class="caption">Resim 14-1: <code>bir_ekle</code> işlevinin HTML belgeleri</span></p>
 <a class="header" href="#yaygın-olarak-kullanılan-bölümler" id="yaygın-olarak-kullanılan-bölümler"><h4>Yaygın Olarak Kullanılan Bölümler</h4></a>
-<p>HTML belgesinde <code># Örnekler</code> başlıklı bir bölüm oluşturabilmek için Örnek 14-1’de <code># Örnek</code> şeklinde bir Markdown başlığı sözdizimi kullandık. Pek çok sandık yazarının belgelerinde yaygın olarak kullandığı bazı bölümler ise aşağıda sıralanmaktadır:</p>
+<p>HTML belgesinde <code># Örnekler</code> başlıklı bir bölüm oluşturabilmek için Örnek 14-1'de <code># Örnek</code> şeklinde bir Markdown başlığı sözdizimi kullandık. Pek çok sandık yazarının belgelerinde yaygın olarak kullandığı bazı bölümler ise aşağıda sıralanmaktadır:</p>
 <ul>
 <li><strong>Panikler:</strong> Belgelenen işlevin panik üretebileceği senaryolar. İşlevin çağrıldığı programlarda panik üretmesi istenmiyorsa, kullanıcıların bu senaryoların gerçekleşebileceği durumlarda işlevi çağırmadıklarından emin olunmalıdır.</li>
 <li><strong>Hatalar:</strong> İşlev bir <code>Result</code> türü döndürdüğünde, oluşması muhtemel hata çeşitlerinin ve bu hataların döndürülme neden ve koşullarının tanımlanması, işlevi çağıran tarafların farklı türden hataları farklı şekillerde işlemelerini sağlayacak şekilde kod üretmelerine yardımcı olabilir.</li>
-<li><strong>Güvenlik:</strong> Eğer işlev çağrısı <code>unsafe</code> yani emniyetsiz bir çağrı ise (Rust’ın emniyetsiz kullanım seçeneğini Bölüm 19’da tartışacağız), işlevin güvensiz olma nedenlerini açıklayan ve çağıran tarafların desteklemesi gereken değişmezleri kapsayan bir bölüm olmalıdır.</li>
+<li><strong>Güvenlik:</strong> Eğer işlev çağrısı <code>unsafe</code> yani emniyetsiz bir çağrı ise (Rust'ın emniyetsiz kullanım seçeneğini Bölüm 19'da tartışacağız), işlevin güvensiz olma nedenlerini açıklayan ve çağıran tarafların desteklemesi gereken değişmezleri kapsayan bir bölüm olmalıdır.</li>
 </ul>
 <p>Çoğu belgelendirme çalışmasında bu bölümlerin her birinin yorumlanmasına ihtiyaç duyulmaz. Bununla birlikte bu bölümler kodlarınızı çağıran tarafların bilmek isteyeceği yönleri hatırlamanız amacıyla tavsiye edilen bir kontrol listesidir.</p>
 <a class="header" href="#test-amaçlı-belgeleme-yorumları" id="test-amaçlı-belgeleme-yorumları"><h4>Test Amaçlı Belgeleme Yorumları</h4></a>
-<p>Belgeleme yorumlarınıza örnek kod blokları eklemek, kütüphanenizin nasıl kullanılacağını göstermenize yardımcı olabileceği gibi ek bir avantaj olarak <code>cargo test</code> komutu çalıştırıldığında kod örneklerinizin test edilmesine olanak sağlar. Hiçbir şey test edilebilecek örnekler içeren belgelerden daha iyi olamaz. Ancak, belgeleme sonrası gerçekleşen kod değişiklikleri yüzünden işe yaramayan örneklerden daha kötü bir şey de yoktur. Örnek 14-1’deki <code>bir_ekle</code> işlevi için oluşturduğumuz belgeleme koduna <code>cargo test</code> komutunu uyguladığımızda, aşağıdakine benzer bir test sonucu göreceğiz:</p>
+<p>Belgeleme yorumlarınıza örnek kod blokları eklemek, kütüphanenizin nasıl kullanılacağını göstermenize yardımcı olabileceği gibi ek bir avantaj olarak <code>cargo test</code> komutu çalıştırıldığında kod örneklerinizin test edilmesine olanak sağlar. Hiçbir şey test edilebilecek örnekler içeren belgelerden daha iyi olamaz. Ancak, belgeleme sonrası gerçekleşen kod değişiklikleri yüzünden işe yaramayan örneklerden daha kötü bir şey de yoktur. Örnek 14-1'deki <code>bir_ekle</code> işlevi için oluşturduğumuz belgeleme koduna <code>cargo test</code> komutunu uyguladığımızda, aşağıdakine benzer bir test sonucu göreceğiz:</p>
 <pre><code class="language-test">
    Doc-tests sandigim
 
@@ -197,7 +191,7 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 <p>Bu aşamada işlev ya da örnek değiştirilecek olursa, örnekteki <code>assert_eq!</code> ifadesi panik üreteceğinden <code>cargo test</code> komutu tekrar çalıştırıldığında, test sürecinin örnek ve kod bölümlerinin uyumsuzluğunu fark ettiğini gözlemleyeceğiz.</p>
 <a class="header" href="#İçerilen-Öğelerin-yorumlanması" id="İçerilen-Öğelerin-yorumlanması"><h4>İçerilen Öğelerin Yorumlanması</h4></a>
 <p>Bir başka belgeleme biçimi olan <code>//!</code> ise, yorum satırlarının hemen altına eklenenen öğeleri belgelemek yerine, yorumun ait olduğu, yani içerildiği öğeyi belgelemek için kullanılır. Bu tarz yorum satırlarını genellikle sandık veya modülün tamamını bir bütün olarak belgelemek amacıyla, kök dosyasının içinde (kural gereği src/lib.src) ya da bir modül içerisinde kullanırız.</p>
-<p>Örnek 14-2’de gösterildiği gibi, eğer daha önce oluşturduğumuz ve <code>bir_ekle</code> işlevini içeren <code>sandigim</code> için, bu sandığın amacını açıklayan belgeler eklemek istiyorsak, bunları <em>src/lib.rs</em> dosyasının en başına <code>//!</code> işaretini kullanarak eklememiz gerekir.</p>
+<p>Örnek 14-2'de gösterildiği gibi, eğer daha önce oluşturduğumuz ve <code>bir_ekle</code> işlevini içeren <code>sandigim</code> için, bu sandığın amacını açıklayan belgeler eklemek istiyorsak, bunları <em>src/lib.rs</em> dosyasının en başına <code>//!</code> işaretini kullanarak eklememiz gerekir.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
 //! # Sandigim
@@ -223,15 +217,15 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 </code></pre>
 <p><span class="caption">Örnek 14-2: Bir bütün olarak <code>Sandigim</code> belgeleri</span></p>
 <p><code>//!</code> işaretiyle başlayan son satırın altında herhangi bir kod satırının bulunmadığına ve bir satırın boş bırakılmış olduğuna dikkat edin! Bunun sebebi, içerilen belge yorumlarını <code>///</code> yerine, <code>//!</code> işaretiyle başlattığımızdan sonraki satırlarda bulunan öğeler yerine, işaretin bulunduğu satırdaki öğelerin belgelenecek olmasıdır. Bu durumda bu yorumu içeren öğe, sandık kökümüz olan <em>src/lib.rs</em> dosyası olacağından, bu yorumlar da sandığın tamamı için yapılan açıklamaları içerecektir.</p>
-<p>Eğer <code>cargo doc --open</code> komutunu çalıştırırsak, işaretlemiş olduğumuz bu yorum satırları, tıpkı Şekil 14-2’de gösterildiği gibi <code>sandigim</code> belgesinin ön sayfasında, sandıktaki genel öğeler listesinin üstünde görüntülenecektir:</p>
+<p>Eğer <code>cargo doc --open</code> komutunu çalıştırırsak, işaretlemiş olduğumuz bu yorum satırları, tıpkı Şekil 14-2'de gösterildiği gibi <code>sandigim</code> belgesinin ön sayfasında, sandıktaki genel öğeler listesinin üstünde görüntülenecektir:</p>
 <p><img alt="Sandığın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-02.png" class="center" /></p>
-<p><span class="caption">Resim 14-2: <code>Sandigim</code>‘ın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri</span></p>
+<p><span class="caption">Resim 14-2: <code>Sandigim</code>'ın tamamını içeren yorumlarla oluşturulmuş HTML belgeleri</span></p>
 <p>Öğelerdeki belge yorumları, özellikle sandık ve modülleri tanımlamak için kullanışlıdır. Bu yorumları, paketlerinizi kullanacak olan kişilerin paket düzeninizi anlamalarına yardımcı olmak ve paket kapsamının genel amacını açıklamak için kullanmanız önemlidir.</p>
-<a class="header" href="#uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak" id="uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak"><h3>Uygun Bir Genel API’yi <code>pub use</code> ile Dışa Aktarmak</h3></a>
-<p>Bölüm 7’de kodlarımız, <code>mod</code> anahtar kelimesini kullanarak modüller halinde nasıl düzenleyeceğinizi, <code>pub</code> anahtar sözcüğüyle öğelerin nasıl genelleştirileceğini ve <code>use</code> anahtar kelimesiyle de öğelerin kapsama nasıl dahil edileceğini incelemiştik. Ancak, bir sandığın geliştirilme sürecinde sizin için anlamlı olan organizasyon yapısı, kullanıcılarınız için çok uygun olmayabilir. Sandığınızı çok katmanlı ve hiyerarşik bir yapıda düzenlediğinizde, bu hiyerarşinin alt katmanlarında tanımlanmış bir türü kullanmak isteyen kişiler, bu türe erişmekte sorun yaşayabilirler. Hem ayrıca bir türe <code>use sandigim::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak yerine,  <code>sandigim::bir_modul::baska_bir_modul::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak oldukça rahatsız edici olabilir.</p>
-<p>Bir sandık yayınlarken herkese açık olarak tasarlanmış olan API’nizin yapısı oldukça önemlidir. Sandığınızı kullanan kişiler bu yapıya sizin kadar aşina olmadıklarından, sandığınız büyüyüp karmaşık bir <em>modüller hiyerarşisine</em> dönüştüğünde, kullanmak istedikleri API parçalarına ulaşmakta zorluk çekebilirler.</p>
+<a class="header" href="#uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak" id="uygun-bir-genel-apiyi-pub-use-ile-dışa-aktarmak"><h3>Uygun Bir Genel API'yi <code>pub use</code> ile Dışa Aktarmak</h3></a>
+<p>Bölüm 7'de kodlarımız, <code>mod</code> anahtar kelimesini kullanarak modüller halinde nasıl düzenleyeceğinizi, <code>pub</code> anahtar sözcüğüyle öğelerin nasıl genelleştirileceğini ve <code>use</code> anahtar kelimesiyle de öğelerin kapsama nasıl dahil edileceğini incelemiştik. Ancak, bir sandığın geliştirilme sürecinde sizin için anlamlı olan organizasyon yapısı, kullanıcılarınız için çok uygun olmayabilir. Sandığınızı çok katmanlı ve hiyerarşik bir yapıda düzenlediğinizde, bu hiyerarşinin alt katmanlarında tanımlanmış bir türü kullanmak isteyen kişiler, bu türe erişmekte sorun yaşayabilirler. Hem ayrıca bir türe <code>use sandigim::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak yerine,  <code>sandigim::bir_modul::baska_bir_modul::KullanisliBirTur;</code> şeklinde bir söz dizimiyle ulaşmak oldukça rahatsız edici olabilir.</p>
+<p>Bir sandık yayınlarken herkese açık olarak tasarlanmış olan API'nizin yapısı oldukça önemlidir. Sandığınızı kullanan kişiler bu yapıya sizin kadar aşina olmadıklarından, sandığınız büyüyüp karmaşık bir <em>modüller hiyerarşisine</em> dönüştüğünde, kullanmak istedikleri API parçalarına ulaşmakta zorluk çekebilirler.</p>
 <p>İyi haber şu ki, eğer organizasyon yapınız başkaları tarafından farklı kütüphaneler ile kullanılamayacak gibiyse, API hiyerarşisini veya tasarımını baştan sona yeniden düzenlemek yerine, <code>pub use</code> anahtar kelimesini kullanarak, bu yapının genel kullanıma uygun bir sürümünü tüm öğeleriyle birlikte yeniden ihraç edebilirsiniz. Yeniden ihraç işleminde, bir konumda bulunan genel bir öğe yerinden alınarak, sanki başka bir yerde ve başka bir konumda tanımlanmış gibi herkese açık hale getirilir.</p>
-<p>Örnek 14-3’te de görüleceği gibi, sanatsal kavramları modellemek için <code>sanat</code> adında bir kütüphane tasarladığımızı varsayalım. Ve bu kütüphanenin içinde <code>BirincilRenk</code> ve <code>IkincilRenk</code> olarak isimlendirilmiş iki sıralamadan <em>(enum)</em> oluşan <code>turler</code> modülü ve <code>karisim</code> adında bir işlev içeren <code>araclar</code> modülü bulunsun:</p>
+<p>Örnek 14-3'te de görüleceği gibi, sanatsal kavramları modellemek için <code>sanat</code> adında bir kütüphane tasarladığımızı varsayalım. Ve bu kütüphanenin içinde <code>BirincilRenk</code> ve <code>IkincilRenk</code> olarak isimlendirilmiş iki sıralamadan <em>(enum)</em> oluşan <code>turler</code> modülü ve <code>karisim</code> adında bir işlev içeren <code>araclar</code> modülü bulunsun:</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">//! # Sanat
 //!
@@ -285,8 +279,8 @@ fn main() {
 
 </code></pre>
 <p><span class="caption">Örnek 14-4: İç yapısı dışa aktarılan sanat sandığının öğelerini kullanan başka bir sandık</span></p>
-<p>Örnek 14-4’te yer alan <code>sanat</code> sandığını kullanan kodun programcısı, <code>BirincilRenk</code> türünün <code>turler</code> modülünde ve <code>karisim</code> işlevinin de  <code>araclar</code> modülünde olduğunu anlayabilmelidir. Sandığın modül yapısı, <code>sanat</code> sandığını geliştiren programcılardan çok, bu sandığı kullanan  programcılar için önemlidir. Sandığın parçalarını <code>turler</code> ve <code>sanat</code> modülleri olarak düzenleyen iç yapı, bu sandığın nasıl kullanılacağını öğrenmek isteyenler için herhangi bir yararlı bilgi içermediği gibi, <code>sanat</code> sandığı modül yapısının yarattığı karmaşa, <code>use</code> ifadelerinde modül adlarını belirtmek isteyen kullanıcıların nereye bakacaklarını karıştırmalarına neden olacağından kullanışsız bir yapıdır.</p>
-<p>Herkesin kullanacağı bu API’nin sorunlu iç düzenlemesini <code>pub use</code> kullanarak kaldırıp, öğeleri en üst düzeyde yeniden dışa aktarabilmek için, Örnek 14-3’te yer alan <code>sanat</code> sandığının kodlarını, Örnek 14-5’te gösterildiği şekilde yeniden düzenleyebiliriz.</p>
+<p>Örnek 14-4'te yer alan <code>sanat</code> sandığını kullanan kodun programcısı, <code>BirincilRenk</code> türünün <code>turler</code> modülünde ve <code>karisim</code> işlevinin de  <code>araclar</code> modülünde olduğunu anlayabilmelidir. Sandığın modül yapısı, <code>sanat</code> sandığını geliştiren programcılardan çok, bu sandığı kullanan  programcılar için önemlidir. Sandığın parçalarını <code>turler</code> ve <code>sanat</code> modülleri olarak düzenleyen iç yapı, bu sandığın nasıl kullanılacağını öğrenmek isteyenler için herhangi bir yararlı bilgi içermediği gibi, <code>sanat</code> sandığı modül yapısının yarattığı karmaşa, <code>use</code> ifadelerinde modül adlarını belirtmek isteyen kullanıcıların nereye bakacaklarını karıştırmalarına neden olacağından kullanışsız bir yapıdır.</p>
+<p>Herkesin kullanacağı bu API'nin sorunlu iç düzenlemesini <code>pub use</code> kullanarak kaldırıp, öğeleri en üst düzeyde yeniden dışa aktarabilmek için, Örnek 14-3'te yer alan <code>sanat</code> sandığının kodlarını, Örnek 14-5'te gösterildiği şekilde yeniden düzenleyebiliriz.</p>
 <p><span class="filename">Dosya adı: src/lib.rs</span></p>
 <pre><code class="language-rust ignore">
 //! # Sanat
@@ -329,10 +323,10 @@ pub mod araclar {
 
 </code></pre>
 <p><span class="caption">Örnek 14-5: Öğeleri yeniden dışa aktarmak için <code>pub use</code> ifadesi eklemek</span></p>
-<p>Şekil 14-4’te görebileceğiniz gibi <code>cargo doc</code> komutunun bu sandık için oluşturduğu API belgeleri, dışa aktarımları yeniden ön sayfada listeleyerek bağlayacak, <code>BirincilRenk</code> ve <code>IkincilRenk</code> türleriyle <code>karisim</code> işlevinin bulunmasını oldukça kolaylaştıracaktır.</p>
+<p>Şekil 14-4'te görebileceğiniz gibi <code>cargo doc</code> komutunun bu sandık için oluşturduğu API belgeleri, dışa aktarımları yeniden ön sayfada listeleyerek bağlayacak, <code>BirincilRenk</code> ve <code>IkincilRenk</code> türleriyle <code>karisim</code> işlevinin bulunmasını oldukça kolaylaştıracaktır.</p>
 <p><img alt="`sanat` sandığının yeniden dışa aktarımıyla oluşan belgelerin ön sayfası" src="https://raw.githubusercontent.com/rustdili/dokuman/master/ceviriler/img/trpl14-04.png" class="center" /></p>
 <p><span class="caption">Resim 14-4: Yeniden dışa aktarımı örnekleyen <code>sanat</code> sandığının ön yüzü</span></p>
-<p>Artk <code>sanat</code> sandığını kullanmak isteyen programcılar, ister hâlâ kullanılmaya uygun durumdaki Örnek 14-3 ve Örnek 14-4’ün iç yapılarını inceleyerek kodlarına bunları dahil edebilirler, isterlerse Örnek 14-5 ve 14-6’da yenilenerek kullanıma daha uygun hale getirilen yapıyı tercih edebilirler.</p>
+<p>Artk <code>sanat</code> sandığını kullanmak isteyen programcılar, ister hâlâ kullanılmaya uygun durumdaki Örnek 14-3 ve Örnek 14-4'ün iç yapılarını inceleyerek kodlarına bunları dahil edebilirler, isterlerse Örnek 14-5 ve 14-6'da yenilenerek kullanıma daha uygun hale getirilen yapıyı tercih edebilirler.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><code class="language-rust ignore">
 use sanat::karisim;
@@ -355,10 +349,10 @@ fn main() {
 $ cargo login abcdefghijklmnopqrstuvwxyz012345
 
 </code></pre>
-<p>Bu komut API anahtarınızı Cargo’ya bildirecek ve yerel olarak onu <em>~/.cargo/credentials</em> içinde depolayacaktır. Anahtarınızın <em>size özel</em> olduğunu, <em>gizli</em> kalması ve kimseyle paylaşılmaması gerektiğini unutmayın. Eğer herhangi bir sebeple anahtarınızı birileriyle paylaşmak zorunda kalırsanız, eskisini derhal iptal ederek yeni bir anahtar oluşturun.</p>
+<p>Bu komut API anahtarınızı Cargo'ya bildirecek ve yerel olarak onu <em>~/.cargo/credentials</em> içinde depolayacaktır. Anahtarınızın <em>size özel</em> olduğunu, <em>gizli</em> kalması ve kimseyle paylaşılmaması gerektiğini unutmayın. Eğer herhangi bir sebeple anahtarınızı birileriyle paylaşmak zorunda kalırsanız, eskisini derhal iptal ederek yeni bir anahtar oluşturun.</p>
 <a class="header" href="#yeni-oluşturulmuş-sandığa-meta-veri-eklemek" id="yeni-oluşturulmuş-sandığa-meta-veri-eklemek"><h3>Yeni Oluşturulmuş Sandığa Meta Veri Eklemek</h3></a>
 <p>Artık hesabınızı oluşturduğunuza göre, yayınlamak istediğiniz bir sandığınız olduğunu düşünebiliriz. Ancak sandığınızı yayınlamadan önce, <em>Cargo.toml</em> dosyasının <code>[package]</code> bölümüne sandığınıza ait meta veriler eklemeniz gerekir.</p>
-<p>Bir sandık üzerinde yerel olarak çalışırken onu istediğiniz gibi adlandırabilirsiniz. Ancak sandığınız yayın aşamasına geldiğinde benzersiz bir isme ihtiyacı olacak. <a href="https://crates.io/">crates.io</a>‘daki sandık isimlerinde öncelik ilk gelene verildiğinden, bir isim bir sandığa tahsis edildikten sonra başka bir sandığa tahsis edilemez. Başka bir ifadeyle, sandık adı bir kez alındığında aynı isimde başka bir sandık yayınlanamaz. O yüzden sandığınızı <a href="https://crates.io/">crates.io</a> üzerinde yayınlanmadan önce, sandık adınızı kullanan başka bir sandık olup olmadığını araştırmalısınız. Eğer sandık adınız halihazırda başka bir sandık tarafından kullanılmakta ise, yenileyeceğiniz sandık adını, paketinizin <em>Cargo.toml</em> dosyasında bulunan <code>[package]</code> bölümüne, isim alanıyla birlikte aşağıda gösterildiği gibi girmeniz gerekir.</p>
+<p>Bir sandık üzerinde yerel olarak çalışırken onu istediğiniz gibi adlandırabilirsiniz. Ancak sandığınız yayın aşamasına geldiğinde benzersiz bir isme ihtiyacı olacak. <a href="https://crates.io/">crates.io</a>'daki sandık isimlerinde öncelik ilk gelene verildiğinden, bir isim bir sandığa tahsis edildikten sonra başka bir sandığa tahsis edilemez. Başka bir ifadeyle, sandık adı bir kez alındığında aynı isimde başka bir sandık yayınlanamaz. O yüzden sandığınızı <a href="https://crates.io/">crates.io</a> üzerinde yayınlanmadan önce, sandık adınızı kullanan başka bir sandık olup olmadığını araştırmalısınız. Eğer sandık adınız halihazırda başka bir sandık tarafından kullanılmakta ise, yenileyeceğiniz sandık adını, paketinizin <em>Cargo.toml</em> dosyasında bulunan <code>[package]</code> bölümüne, isim alanıyla birlikte aşağıda gösterildiği gibi girmeniz gerekir.</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
 [package]
@@ -377,7 +371,7 @@ error: api errors (status 200 OK): missing or empty metadata fields: description
 
 </code></pre>
 <p>Bunun sebebi, sandığınızı kullanmak isteyecek programcılar için hazırlamanız gereken, sandığınızın neler yaptığını ve hangi koşullar altında kullanılabileceğini düzenleyen açıklama ve lisans bilgileri gibi önemli detayları atlamış olmanızdır. Bu hatayı düzeltmek için gerekli olan bilgileri paketinizin <em>Cargo.toml</em> dosyasına işlemeniz gerekir.</p>
-<p>Girdiğiniz açıklamalar arama sonuçlarında görüntüleneceğinden, en azından bir iki cümlelik açıklama eklemeniz yerinde olur. Lisans alanı içinse bir <code>license</code> tanımlayıcı değeri vermeniz gereklidir. <a href="http://spdx.org/licenses/">Linux Vakfı’nın Yazılım Paketi veri değişimi (SPDX)</a>, bu alan için kullanabileceğiniz tanımlayıcıları listeler. Örneğin, sandığınızı MIT Lisansı ile lisansladığınızı belirtmek için <code>MIT</code> tanımlayıcısını eklemeniz gerekir:</p>
+<p>Girdiğiniz açıklamalar arama sonuçlarında görüntüleneceğinden, en azından bir iki cümlelik açıklama eklemeniz yerinde olur. Lisans alanı içinse bir <code>license</code> tanımlayıcı değeri vermeniz gereklidir. <a href="http://spdx.org/licenses/">Linux Vakfı'nın Yazılım Paketi veri değişimi (SPDX)</a>, bu alan için kullanabileceğiniz tanımlayıcıları listeler. Örneğin, sandığınızı MIT Lisansı ile lisansladığınızı belirtmek için <code>MIT</code> tanımlayıcısını eklemeniz gerekir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
 [package]
@@ -385,8 +379,8 @@ name = &quot;tahmin_oyunu&quot;
 license = &quot;MIT&quot;
 
 </code></pre>
-<p>SPDX’te listelenmemiş bir lisans kullanmak istiyorsanız, söz konusu lisansın metnini bir dosyaya yerleştirmeniz, dosyayı projenize eklemeniz ve ardından <code>license</code> alanındaki tanımı <code>license-file</code> şeklinde dosya adını tanımlayacak şekilde belirtmeniz gerekmektedir.</p>
-<p>Projeniz için hangi lisansın daha uygun olacağına dair rehberlik bu kitabın kapsamı dışındadır. Rust topluluğunun pek çok üyesi projelerini, Rust’ın tercih ettiği gibi <code>MIT OR Apache-2.0</code> olarak çifte lisans kullanarak sunar. Bu uygulama biçimi projenizi <code>OR</code> ekiyle birden fazla lisansa sahip olacak şekilde lisans tanımlayıcısıyla ilişkilendirebileceğinizi gösterir.</p>
+<p>SPDX'te listelenmemiş bir lisans kullanmak istiyorsanız, söz konusu lisansın metnini bir dosyaya yerleştirmeniz, dosyayı projenize eklemeniz ve ardından <code>license</code> alanındaki tanımı <code>license-file</code> şeklinde dosya adını tanımlayacak şekilde belirtmeniz gerekmektedir.</p>
+<p>Projeniz için hangi lisansın daha uygun olacağına dair rehberlik bu kitabın kapsamı dışındadır. Rust topluluğunun pek çok üyesi projelerini, Rust'ın tercih ettiği gibi <code>MIT OR Apache-2.0</code> olarak çifte lisans kullanarak sunar. Bu uygulama biçimi projenizi <code>OR</code> ekiyle birden fazla lisansa sahip olacak şekilde lisans tanımlayıcısıyla ilişkilendirebileceğinizi gösterir.</p>
 <p>Benzersiz bir isim seçtiğiniz sandığınıza; yazar adı, sürüm bilgisi, paket açıklaması ve lisans bilgileri eklendikten sonra, yayına hazır hale gelen projenizin <code>Cargo.toml</code> dosyası aşağıdaki dosya gibi görünecektir:</p>
 <p><span class="filename">Dosya adı: Cargo.toml</span></p>
 <pre><code class="language-toml">
@@ -402,9 +396,9 @@ license = &quot;MIT OR Apache-2.0&quot;
 
 </code></pre>
 <p>Sandıklarınızın kolaylıkla fark edilip kullanabilmesi için değerlendirebileceğiniz meta verilere <a href="https://doc.rust-lang.org/cargo/">Cargo Belgeleri</a> üzerinden kolaylıkla ulaşabilirisiniz.</p>
-<a class="header" href="#bir-sandığı-cratesioda-yayınlamak" id="bir-sandığı-cratesioda-yayınlamak"><h3>Bir sandığı Crates.io’da Yayınlamak</h3></a>
+<a class="header" href="#bir-sandığı-cratesioda-yayınlamak" id="bir-sandığı-cratesioda-yayınlamak"><h3>Bir sandığı Crates.io'da Yayınlamak</h3></a>
 <p>Artık bir hesabınız, API anahtarınız, benzersiz ada sahip bir sandığınız olduğuna ve bu sandığa gerekli meta verileri eklediğinize göre sandığızı yayınlamaya hazırsınız demektir. Bir sandığı yayınlamak demek, sandığınızın belirli bir sürümünü başka kullanıcılar için <a href="https://crates.io/">crates.io</a> sitesine yüklemek anlamına gelir.</p>
-<p><a href="https://crates.io/">Crates.io</a>‘nun asıl hedeflerinden biri yayınlanan sandıklara bağımlı tüm projelerin çalışmaya devam edebilmesi için kalıcı bir kod arşivi oluşturmaktır. Bu nedenle bir sandık yayınlandıktan sonra, yayınlanan sürümün üzerinde ekleme, düzenleme yahut silme gibi işlemler artık yapılamayacağından, sandık yayınlarken dikkatli olunması gerekir. Sürüm silme işlemine izin vermek bu hedefi imkansızlaştıracağından, sürüm silmek yerine sandığın başka sürümlerinin yayınlaması yeğlenir. O nedenle bir sandığa ait sürümlerin yayın sınırı yoktur.</p>
+<p><a href="https://crates.io/">Crates.io</a>'nun asıl hedeflerinden biri yayınlanan sandıklara bağımlı tüm projelerin çalışmaya devam edebilmesi için kalıcı bir kod arşivi oluşturmaktır. Bu nedenle bir sandık yayınlandıktan sonra, yayınlanan sürümün üzerinde ekleme, düzenleme yahut silme gibi işlemler artık yapılamayacağından, sandık yayınlarken dikkatli olunması gerekir. Sürüm silme işlemine izin vermek bu hedefi imkansızlaştıracağından, sürüm silmek yerine sandığın başka sürümlerinin yayınlaması yeğlenir. O nedenle bir sandığa ait sürümlerin yayın sınırı yoktur.</p>
 <p>Şimdi <code>cargo publish</code> komutunu tekrar çalıştırdığınızda paketinizin başarıyla yayınlandığını göreceksiniz:</p>
 <pre><code class="language-console">
 $ cargo publish
@@ -420,8 +414,8 @@ $ cargo publish
 <p>Tebrikler! Artık kodunuzu Rust topluluğuyla paylaştığınıza göre, herkes sizin sandığınızı kendi projesine bağımlılık olarak kolayca ekleyebilir.</p>
 <a class="header" href="#mevcut-sandığın-yeni-sürümünü-yayınlamak" id="mevcut-sandığın-yeni-sürümünü-yayınlamak"><h3>Mevcut Sandığın Yeni Sürümünü Yayınlamak</h3></a>
 <p>Daha önce yayınladığınız bir sandık üzerinde tüm kullanıcıları etkileyebilecek değişiklikler yaptığınızda ya da sandığınızın yeni sürümünü yayınlamak istediğinizde, <em>Cargo.toml</em> dosyasında belirtilen sürüm değerini değiştirerek yeniden yayınlayabilirsiniz. Yaptığınız değişiklik türlerine bağlı olarak, sonraki sürümün numarasına karar verirken <a href="http://semver.org/">Anlamsal Sürüm Oluşturma Kuralları</a> sitesini kullanabilirsiniz. Yeni sürümünüzü, düzenlemelerinizi gerçekleştirdikten sonra <code>cargo publish</code> komutunu kullanarak yayınlayabilirsiniz.</p>
-<a class="header" href="#sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak" id="sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak"><h3>Sürümleri Crates.io’dan <code>cargo yank</code> Komutu Kullanarak Kaldırmak</h3></a>
-<p>Yayımlanmış bir sandığın önceki sürümlerini kaldıramıyor olsanız bile, bir sebepten sandık sürümünüz bozulmuşsa, yeni projelerin bu sürümleri kullanmasını ve bağımlılık olarak eklemesini engelleyebilirsiniz. Cargo’nun böyle durumlarda kullanılan <code>yank</code> komutu ilgili sürümün geri çekilmesini sağlar.</p>
+<a class="header" href="#sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak" id="sürümleri-cratesiodan-cargo-yank-komutu-kullanarak-kaldırmak"><h3>Sürümleri Crates.io'dan <code>cargo yank</code> Komutu Kullanarak Kaldırmak</h3></a>
+<p>Yayımlanmış bir sandığın önceki sürümlerini kaldıramıyor olsanız bile, bir sebepten sandık sürümünüz bozulmuşsa, yeni projelerin bu sürümleri kullanmasını ve bağımlılık olarak eklemesini engelleyebilirsiniz. Cargo'nun böyle durumlarda kullanılan <code>yank</code> komutu ilgili sürümün geri çekilmesini sağlar.</p>
 <p>Bir sürümün geri çekilmesi, yeni projelerin bu sürüme bağlanmasını önlerken, halihazırda kendisine bağımlı olan projelerin bu sürümü indirmesine ve bağımlı olarak çalışmasına izin verir. Temel olarak <code>yank</code>, yani geri çekme işlemi, <em>Cargo.lock</em> dosyasına işlenmiş projelerin bozulmadan kullanılmaya devam edeileceğini, ama yeni bağımlılık taleplerinde bu sürümün kullanılmasına izin verilmeyeceği anlamına gelmektedir.</p>
 <p>Geri çekilmek istenen sandık sürümü için <code>cargo yank</code> komutunun aşağıda örneğe benzer biçimde kullanılması gerekir:</p>
 <pre><code class="language-console">
@@ -473,24 +467,22 @@ $ cargo yank --vers 1.0.1 --undo
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

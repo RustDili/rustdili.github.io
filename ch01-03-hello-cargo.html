@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Merhaba, Cargo - Rust Programlama Dili</title>
+        <title>Merhaba, Cargo - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -146,7 +140,110 @@
 
                 <div id="content" class="content">
                     <main>
-                        <a class="header" href="#merhaba-cargo" id="merhaba-cargo"><h1>Merhaba, Cargo</h1></a>
+                        <a class="header" href="#merhaba-cargo" id="merhaba-cargo"><h2>Merhaba, Cargo</h2></a>
+<p>Cargo Rust'ın derleme sistemi ve paket yöneticisidir. Bu araç sizin için; kod oluşturmak, kodun bağımlı olduğu kütüphaneleri <em>(kodunuzun ihtiyaç duyduğu kitaplıklara bağımlılık adını veriyoruz)</em> indirmek ve bunları derlemek gibi pek çok görevi yerine getirdiğinden çoğu Rustacean bu aracı Rust projelerini yönetmek için kullanır.</p>
+<p>Daha önce yazdığımıza benzeyen basit Rust programlarının herhangi bir kütüphaneye bağımlılığı bulunmadığından &quot;Merhaba dünya!&quot; gibi basit bir projeyi Cargo ile derlemeye çalışsaydık, Cargo'nun sadece kodu derlemekle ilgili olan bölümü kullanılmış olacaktı. Daha karmaşık ve farklı kütüphanelerle çalışmaya ihtiyaç duyan Rust programları yazmaya niyetlendiğinizde, projenin Cargo aracılığıyla oluşturulması bağımlılıkları yönetmenize epey yardımcı olacaktır.</p>
+<p>Rust projelerinin büyük çoğunluğu Cargo aracını kullandığından, bu kitabın geri kalan bölümlerinde sizin de bu aracı kullandığınız varsayılacaktır. Eğer <a href="ch01-01-installation.html">&quot;Kurulum&quot;</a> bölümünde açıklanan resmi yükleyicileri kullandıysanız Cargo aracı Rust ile birlikte gelmiş demektir. Rust'ı başka yollar ile kurduysanız sisteminizde Cargo'nun kurulu olup olmadığını terminalinize aşağıdaki kodları girerek kontrol edebilirsiniz.</p>
+<pre><code class="language-console">$ cargo --version
+</code></pre>
+<p>Terminalinizde çıktı olarak bir sürüm numarası görünüyorsa Cargo aracınız Rust kurulumuyla birlikte yüklenmiş demektir. Eğer <code>Command not found</code> şeklinde bir hata ile karşılaşıyorsanız Cargo'nun nasıl kurulacağına dair kullandığınız kurulum yönteminin belgelerine bakmalısınız.</p>
+<a class="header" href="#cargo-ile-proje-oluşturmak" id="cargo-ile-proje-oluşturmak"><h3>Cargo ile Proje Oluşturmak</h3></a>
+<p>Cargo aracılığıyla yeni bir proje oluşturarak bunun ilk projemiz olan &quot;Merhaba dünya!&quot; ile farklılıklarını incelemeye çalışalım. Hamgi işletim sizteminde olduğunuzdan bağımsız <em>projeler</em> dizini ya da kodlarınızı nereye kaydediyorsanız o dizine gelerek aşağıdaki komutları çalıştırım:</p>
+<pre><code class="language-console">$ cargo new merhaba_cargo
+$ cd merhaba_cargo
+</code></pre>
+<p>İlk komut &quot;merhaba_cargo&quot; adlı yeni bir dizin oluşturur. Cargo bir proje için gerekli olan dosyaları aynı zamanda projemizin de adı olan bu dizinde oluşturur.</p>
+<p>Daha sonraki komutla da Cargo aracı tarafından yaratılan: Cargo.toml, main.rs adlı iki dosya ve src adlı bir dizinin listelendiği &quot;merhaba_cargo&quot; içeriği görüntülenir.</p>
+<p>Bununla birlikte Cargo .gitignore dosyası ile eşliğinde yeni bir git deposunun da başlatılmasını sağlar. Eğer halihazırda mevcut bir deposu bulunuyorsa <code>cargo new</code> komutu yeni bir git deposu oluşturmaz. Eğer yine de bir git deposu oluşturmak istiyorsanız bunun için <code>cargo new --vcs=git</code> komutunu kullanmanız gerekir.</p>
+<blockquote>
+<p>Not: Git yaygın olarak kullanılan bir sürüm kontrol sistemidir. Cargo'yu --vcs bayrağı aracılığıyla farklı bir
+sürüm kontrol sistemi kullanmak ya da sürüm kontrol sistemini kullanmamak üzere ayarlayabilirsiniz. Mevcut
+seçenekleri görmek için <code>cargo new -help</code> komutunu çalıştırmanız yeterlidir.</p>
+</blockquote>
+<p>Cargo.toml dosyasını metin düzenleyicinizde açtığınızda içeriği örnek 1-2'dekine benzer biçimde görünmelidir.</p>
+<p><span class="filename">Dosya adı: Cargo.toml</span></p>
+<pre><code class="language-toml">[package]
+name = &quot;merhaba_cargo&quot;
+version = &quot;0.1.0&quot;
+authors = [&quot;Your Name &lt;you@example.com&gt;&quot;]
+edition = &quot;2018&quot;
+
+[dependencies]
+</code></pre>
+<p><span class="caption"> Örnek 1-2: <code>cargo new</code> komutuyla oluşturulan Cargo.toml dosyası içeriği</span></p>
+<p>Bu dosya, Cargo'nun yapılandırma formatı olan <a href="https://toml.io/en/">TOML</a>(Tom's Obvious, Minimal Language) biçimindedir.</p>
+<p>İlk satırda bildirilen ve altındaki ifadeler tarafından oluşturulan [package] bölüm başlığı, paketin nasıl yapılandırıldığını gösterir. Paket içeriğine ayrıntı eklendikçe, farklı bölüm başlıkları da eklenecektir.</p>
+<p>Sonraki dört satır ise programınızın Cargo tarafından derlenebilmesi için gereken: İsim, sürüm, programın yazarı ve kullanılacak Rust sürümü gibi yapılandırma bilgilerinden oluşur. Cargo isim ve e-posta gibi bilgileri ortamınzdan edineceğinden bilgileriniz eksik veya yanlış ise bu dosyayı şimdiden düzenleyerek kaydetmeniz gerekir. <code>Sürüm</code> anahtarı konusuna ise Ek E bölümünde değineceğiz.</p>
+<p>Son satırda projenizin bağımlılıklarını listelemeye yarayan [dependencies] bölümü yer alır. Rust'ta kodların paketler halinde tutulduğu yapılara <code>crate</code> yani sandık adı verilir. Bu proje için harici bir sandığa ihtiyaç duymayacak fakat 2. Bölümde gerçekleştireceğimiz ilk projede bağımlılıklar bölümünü kullanacağız.</p>
+<p>Şimdi <em>src/main.rs</em> dosyasını açalım ve inceleyelim:</p>
+<p><span class="filename">Dosya adı: src/main.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    println!(&quot;Merhaba, dünya!&quot;);
+}
+</code></pre></pre>
+<p>Cargo sizin için tıpkı Örnek 1-1'de olduğu gibi ekranınıza &quot;Merhaba, dünya!&quot; metnini bastıran bir program oluşturdu. Önceki projemiz ile Cargo tarafından üretilen bu proje arasındaki farklar ise, Cargonun projeyi <em>src</em> adlı dizine yerleştirmesi ve üst dizinde ise bir <em>Cargo.toml</em> dosyası yaratması olarak özetlenebilir.</p>
+<p>Cargo kaynak dosyalarının <em>src</em> dizininde bulundurulmasını bekler. Projenin ana dizin içeriği, sadece README dosyaları, lisans bilgileri, yapılandırma bilgileri ve kodunuzu ilgilendiren diğer şeyler içindir. Dolayısıyla Cargo, her şeyin kendi yerinde depolanmasını sağlayarak projelerinizin düzenlenmesine yardımcı olur.</p>
+<p>Eğer bir projeyi ilk &quot;Merhaba, dünya!&quot; örneğindeki gibi Cargo kullanmadan başlattıysanız, bu projeyi Cargo kullanarak olşuturulmuş haline döndürebilirsiniz. Bunun için proje kodunu <em>src</em> dizinine taşımanız ve projenin ana dizinde <em>Cargo.toml</em> dosyası oluşturmanız yeterlidir.</p>
+<a class="header" href="#bir-cargo-projesini-derleyip-Çalıştırmak" id="bir-cargo-projesini-derleyip-Çalıştırmak"><h3>Bir Cargo Projesini Derleyip Çalıştırmak</h3></a>
+<p>Şimdi &quot;Merhaba, dünya!&quot; programını Cargo kullanarak derleyip çalıştırdığımızda oluşan farklılıkları gözlemleyelim. Terminalinizde <em>merhaba_cargo</em> dizinine gelerek aşağıdaki komut yardımıyla projenizi oluşturun:</p>
+<pre><code class="language-console">$ cargo build
+    Compiling merhaba_cargo v0.1.0 (/home/rustdili/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.54s
+</code></pre>
+<p>Bu komut geçerli dizininiz yerine <em>target/debug/merhaba_cargo</em> (veya Windows ortamında <em>target\debug\merhaba_cargo.exe</em>)
+konumunda çalıştırılabilir bir dosya oluşturu Bu dosyayı şu komutla çalıştırabilirsiniz:</p>
+<pre><code class="language-console">$ ./target/debug/merhaba_cargo # veya Windows ortamında .\target\debug\merhaba_cargo.exe
+Hello, world!
+</code></pre>
+<p>Her şey yolunda giderse terminalinizde &quot;Hello, world!&quot; yazısı görünecektir. Cargo uygulamasının ilk kez çalıştırılması projenizin ana dizininde <em>Cargo.lock</em> adında yeni bir dosya oluşturulmasına neden olur. Bu dosya projenizdeki bağımlılıkların tam sürümlerini takip eder. Halihazırda bu proje harici bir kasaya bağımlı olmadığından bu dosya epey boş görünecektir. Bu dosya içeriği Cargo tarafından otomatik olarak yönetildiğinden bunu elle değiştirmeniz gerekmez.</p>
+<p>Aslında <em>cargo build</em> komutu ile derleyip <em>./target/debug/merhaba_cargo</em> komutu ile çalıştırdığımız bu projeyi, <code>cargo run</code> komutu ile hem derleyip hem çalıştırabiliriz. Vereceğimiz tek bir <code>cargo run</code> komutu ile proje derlenecek ve ardından oluşturulan çalıştırılabilir dosya hemen işletilecektir.</p>
+<pre><code class="language-console">$ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/merhaba_cargo`
+Hello, world!
+</code></pre>
+<p>Bu kez Cargo'nun <code>merhaba_cargo</code> programını derlediğini bildiren çıktıyı göremediğimize dikkat edin. Bunun sebebi, Cargo'nun kaynak kodun değişmediğini bilmesidir. Eğer kaynak kodunu değiştirmiş olsaydınız program Cargo tarafından yeniden derlenerek çalıştırılacak ve terminalde aşağıdaki çıktı görünecekti:</p>
+<pre><code class="language-console">$ cargo run
+   Compiling merhaba_cargo v0.1.0 (/home/dogan/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.25s
+     Running `target/debug/merhaba_cargo`
+Merhaba Cargo!
+</code></pre>
+<p>Yine Cargo tarafından sağlanan ve kodunuzun çalıştırılabilir olup olmadığını denetleyen, ancak çalıştırılabilir bir dosya oluşturmayan <code>cargo check</code> adında bir komut daha vardır:</p>
+<pre><code class="language-console">$ cargo check
+    Checking merhaba_cargo v0.1.0 (/home/dogan/projeler/merhaba_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.12s
+</code></pre>
+<p>Hangi durumlarda çalıştırılabilir dosya oluşturmanız gerekmez? Çoğu zaman <code>cargo check</code>, çalıştırılabilir dosya oluşturma adımını atladığı için <code>cargo build</code> işleminden daha hızlı olacaktır. Kodunuzu yazarken düzenli olarak çalışmanızın derlenip derlenmediğini kontrol etmek istiyorsanız <code>cargo check</code> komutunu kullanmanız yazım sürecinizi oldukça hızlandıracaktır. Bu sebepten birçok Rustacean, programın derlendiğindne emin olabilmek için, programlarını yazarken periyodik olarak <code>cargo check</code> ile çalıştırılabilirlik kontrolünü gerçekleştirir. En nihayetinde çalıştırılabilir dosyayı oluşturmaya hazır olduklarında <code>cargo build</code> komutunu uygularlar.</p>
+<p>Cargo hakkında şimdiye kadar öğrendiklerimizi özetleyecek olursak:</p>
+<ul>
+<li>Bir projeyi derlemek için <code>cargo build</code> komutunu kullanabiliriz.</li>
+<li>Bir projeyi tek bir adımla derleyip çalıştırabilmek için <code>cargo run</code> komutunu kullanabiliriz.</li>
+<li>Bir projenin hatalarını ikili kod üretmeden derleyerek kontrol edebilmek için  <code>cargo check</code> komutundan yararlanabiliriz.</li>
+<li>Cargo, derleme sonucunda oluşturulan çalıştırılabilir ikili dosyayı, kaynak koduyla aynı dizine koymak yerine <em>target/debug</em> dizinine kaydeder.</li>
+</ul>
+<p>Cargo kullanmanın ek bir avantajı da, hangi işletim sisteminde çalışıyor olursanız olun, kullanacağınız komutların aynı olmasıdır. O nedenle bundan sonra Linux, macOS veya Windows işletim sistemlerinin her biri içn ayrı ayrı özel talimatlar sağlamayacağız.</p>
+<a class="header" href="#sürüm-amaçlı-derleme" id="sürüm-amaçlı-derleme"><h3>Sürüm Amaçlı Derleme</h3></a>
+<p>Pisayasa sürülmeye hazır hale gelen projenizi en iyileştirme olanakları ile derleyebilmek için <code>cargo build --release</code> komutundan yararlanabilirsiniz. Bu komut çalıştırılabilir dosyanızı <em>target/debug</em> dizini yerine <em>target/release</em> dizinine kaydedecektir. Fakat en iyileştirmeler, Rust kodlarının daha hızlı çalışmalarını sağlamakla birlikte, programın derlenmesi için gereken süreyi uzatır. O nedenle en iyileştirme olanaklarında: İlki, hızlı ve sık derleme işlemleri için kullanılan geliştirme profili, diğeriyse tekrar tekrar derlenmeyecek ve çalışır halini olabilecek en kısa sürede kullanıcıya teslim edebileceğiniz nihai programı oluşturan olmak üzere iki farklı profil sunulur.</p>
+<p>Eğer kodunuzun çalışma süresini ölçmek istiyorsanız, <em>target/release</em> dizininde bulunan çalıştırılabilir dosyayı <code>cargo build --release</code> komutu ile test ettiğinizden emin olun.</p>
+<a class="header" href="#konvansiyonel-cargo" id="konvansiyonel-cargo"><h3>Konvansiyonel Cargo</h3></a>
+<p>Basit projeler için Cargo rustc kullanımından daha kullanışı değilse de programlarınız karmaşıklaştıkça değerini kanıtlayacaktır. Birden fazla sandıktan oluşan karmaşık projelerde yapı koordinasyonu Cargo'ya devretmek oldukça faydalıdır.</p>
+<p>Her ne kadar <code>merhaba_cargo</code> projesi basit bir projeymiş gibi görünüyor olsa da Rust kariyeriniz boyunca karşılaşacağınız birçok aleti kullanmanızı sağlıyor. Bununla birlikte mevcut herhangi bir Rust projesi üzerinde çalışabilmeniz için, Git üzerinden arzu ettiğiniz kodu indirmek, ardından projenin bulunduğu dizinde kodu derleyecek olan şu komutları girmeniz yeterlidir:</p>
+<pre><code class="language-console">$ git clone herhangibirurl.com/herhangibirproje
+$ cd herhangibirproje
+$ cargo build
+</code></pre>
+<p>Cargo hakkında daha fazla bilgi edinmek istiyorsanız <a href="https://doc.rust-lang.org/cargo/">kendi belgelerine</a> bakmanız yeterlidir.</p>
+<a class="header" href="#Özet" id="Özet"><h2>Özet</h2></a>
+<p>Oldukça iyi başlayan Rust yolculuğunuzda aşağıdakileri öğrendiniz:</p>
+<ul>
+<li>Rust'ı, <code>rustup</code> kullanarak en son kararlı sürümüne yüklemek.</li>
+<li>Rust'ı daha yeni bir sürümüne yükseltmek.</li>
+<li>Yerel olarak yüklenen belgelere erişmek.</li>
+<li>Bir &quot;Merhaba, dünya!&quot; programını yazarak doğrudan <code>rustc</code> kullanarak çalıştırmak.</li>
+<li>Yeni bir projeyi Cargo komut ve kurallarını kullanarak derleyip çalıştırmak.</li>
+</ul>
+<p>Şimdi Rust kodu okuyup yazma becerilerimizi geliştirebilmek için daha sağlam bir program yazmamız gerekiyor. Bu nedenle 2. Bölümde bir tahmin oyunu programı yazacak ve inceleyeceğiz. Eğer öğrenme sürecinize &quot;Ortak Programlama Kavramları&quot;nın nasıl çalıştığını öğrenerek devam etmek istiyorsanız 3. Bölüme ilerleyebilir, ardından 2. Bölüme geri dönebilirsiniz.    </p>
 
                     </main>
 
@@ -186,24 +283,22 @@
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

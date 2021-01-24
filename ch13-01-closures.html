@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler - Rust Programlama Dili</title>
+        <title>Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -147,11 +141,11 @@
                 <div id="content" class="content">
                     <main>
                         <a class="header" href="#kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler" id="kapamalar-ortam-değişkenlerini-yakalayabilen-İsimsiz-İşlevler"><h2>Kapamalar: Ortam Değişkenlerini Yakalayabilen İsimsiz İşlevler</h2></a>
-<p>Rust’un kapamaları, bir değişkene kaydedebileceğiniz veya diğer işlevlere argüman olarak iletebileceğiniz isimsiz işlevlerdir. Kapamaları tek bir yerde oluşturabilir ve daha sonra farklı bir bağlamda değerlendirmek için yeniden çağırabilirsiniz. İşlevlerin aksine kapamalar, kullanacakları değerleri tanımlandıkları kapsamdan elde edebilirler. Kapamaların sahip olduğu bu özelliklerin, kodların yeniden kullanımına ve davranışlarının özelleştirilmesine nasıl izin verdiğini göstereceğiz.</p>
+<p>Rust'un kapamaları, bir değişkene kaydedebileceğiniz veya diğer işlevlere argüman olarak iletebileceğiniz isimsiz işlevlerdir. Kapamaları tek bir yerde oluşturabilir ve daha sonra farklı bir bağlamda değerlendirmek için yeniden çağırabilirsiniz. İşlevlerin aksine kapamalar, kullanacakları değerleri tanımlandıkları kapsamdan elde edebilirler. Kapamaların sahip olduğu bu özelliklerin, kodların yeniden kullanımına ve davranışlarının özelleştirilmesine nasıl izin verdiğini göstereceğiz.</p>
 <a class="header" href="#kapamalar-ile-bir-davranışı-soyutlamak" id="kapamalar-ile-bir-davranışı-soyutlamak"><h3>Kapamalar ile bir davranışı soyutlamak</h3></a>
 <p>Bir kapamayı daha sonra işletilmek üzere saklamanın yararlı olduğu bir örnek üzerinden ilerleyerek, kapama söz dizimi, tür çıkarımı ve özelliklerinden bahsedelim.</p>
 <p>Özel egzersiz planları üreten bir uygulama projesinde çalıştığımızı varsayalım. Egzersiz planlarını oluştururken kullanıcısının belirttiği; yaş, vücut kitle indeksi, egzersiz tercihleri, son egzersizler gibi birçok faktörü dikkate alan bu algoritmanın arka ucunu da Rust ile yazdığımızı düşünelim. Bu örnekte algoritmanın kullanılabilir olmasından ziyade birkaç saniye gibi kısa bir sürede çalışması beklendiğinden, algoritmayı bir kez ve sadece ihtiyacımız olduğunda çağararak kullanıcıyı boş yere bekletmek istemiyoruz.</p>
-<p>Bu varsayımsal algoritmayı örnek 13-1’ de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz:</p>
+<p>Bu varsayımsal algoritmayı örnek 13-1' de yer alan <code>simulated_expensive_calculation</code> işlevini çağırarak simüle edecek, ekrana <code>&quot;yavaşça hesaplanıyor...&quot;</code> yazdırdıktan sonra iki saniye beklecek, ardından işleve ilettiğimiz sayıyı geriye döndüreceğiz:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">use std::thread;
 use std::time::Duration; 
@@ -217,8 +211,8 @@ fn main() {
 }
 </code></pre></pre>
 <p><span class="caption">Örnek 13-2: Kullanıcı girişi ve rastgele sayı oluşturmayı simüle etmek için kodlanmış değerlerden oluşan <code>main</code> işlevi</span></p>
-<p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm’ deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
-<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3’ te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır:</p>
+<p>Sadeliği koruyabilmek amacıyla <code>simulated_user_specified_value</code> değişkenini 10, <code>simulated_random_number</code> değişkenini 7 değerleriyle sabit biçimde kodladık. Oysa gerçek bir programda, yoğunluk numarasını uygulamanın ön ucundan alır ve 2. Bölüm' deki tahmin oyunu örneğinde yaptığımız gibi <code>rand</code> sandığını rastgele bir sayı üretmek için kullanmaya çalışırdık. Örneğimizdeki <code>main</code> işlevi simüle giriş değerlerini kullanarak <code>create_workout</code> işlevini çağırmaktadır.</p>
+<p>Artık ihtiyaç duyduğumuz içeriği elde ettiğimize göre, algoritma üzerine yoğunlaşabiliriz. Örnek 13-3' te yer alan <code>generate_workout</code> işlevi uygulamanın çalışma mantığını yansıtan en önemli kısmı olduğundan, örnek üzerinde çalıştığımız sürece gerçekleştireceğimiz bütün kod değişiklikleri yalnızca bu işlevi kapsayacaktır:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -262,13 +256,13 @@ fn generate_workout(intensity: u32, random_number: u32) {
 #}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-3: Girdi ve çağrılarına göre egzersiz planları yazdıran <code>simulated_expensive_calculation</code> işlevi</span></p>
-<p>Örnek13-3’teki kod, yavaş hesaplama yapan işleve çok sayıda başvuruda bulunur. İlk <code>if</code> bloğu <code>simulated_expensive_calculation</code> işlevini iki defa çağırırken, <code>else</code> bloğunun içindeki birinci <code>if</code> bloğu ise başvuruda bulunmaz. Oysa bir sonraki <code>else</code> bloğunda <code>simulated_expensive_calculation</code> işlevine yeniden çağrıda bulunulur.</p>
-<p>Öncelikle <code>generate_workout</code> işlevinin beklenen davranışı, kullanıcının düşük yoğunluklu bir egzersizi mi <em>(25’ten az bir sayı ile gösterilir)</em> yoksa yüksek yoğunluklu bir egzersizi mi <em>(25 veya daha büyük bir sayı)</em> isteyip istemediğini kontrol etmektir.</p>
+<p>Örnek13-3'teki kod, yavaş hesaplama yapan işleve çok sayıda başvuruda bulunur. İlk <code>if</code> bloğu <code>simulated_expensive_calculation</code> işlevini iki defa çağırırken, <code>else</code> bloğunun içindeki birinci <code>if</code> bloğu ise başvuruda bulunmaz. Oysa bir sonraki <code>else</code> bloğunda <code>simulated_expensive_calculation</code> işlevine yeniden çağrıda bulunulur.</p>
+<p>Öncelikle <code>generate_workout</code> işlevinin beklenen davranışı, kullanıcının düşük yoğunluklu bir egzersizi mi <em>(25'ten az bir sayı ile gösterilir)</em> yoksa yüksek yoğunluklu bir egzersizi mi <em>(25 veya daha büyük bir sayı)</em> isteyip istemediğini kontrol etmektir.</p>
 <p>Düşük yoğunluklu egzersiz planları, simüle ettiğimiz karmaşık algoritmaya dayanan bir dizi şınav ve mekik antremanını önerecektir.</p>
 <p>Kullanıcının yüksek yoğunluklu bir egzersiz planı istemesi halinde; işin içine biraz daha mantık girecek ve: Uygulamanın oluşturduğu rastgele sayı 3 olduğunda kullanıcıya mola vererek sıvı tüketmesi önerilecek, diğer hallerdeyse algoritmanın belirlediği süre kadar koşması önerilecektir.</p>
 <p>Bu kod, şimdilik işverenimizin istediği şekilde çalışmaktadır. Ancak bir süre sonra, şirketimizin veri bilimi ekibinin, <code>simulated_expensive_calculation</code> işlevini çağırma yönteminde bir takım değişiklikler yapılması gerektiğine karar verdiğini varsayalım. Bu güncelleme senaryosunda değişikliklerin basit tutulabilmesi için <code>simulated_expensive_calculation</code> işlevini kendisine başka bir çağrı eklemeden, sadece bir kez çağırmak ve halihazırda kendisine yapılmakta olan gereksiz çağrıları da kesip atmak istiyoruz. Nihayetinde bu işlev maliyetli bir işlev olduğundan, gerekmedikçe çağrıda bulunmamak, gerekiyorsa da sadece bir kez çağrıda bulunmak istiyoruz.</p>
 <a class="header" href="#İşlevleri-kullanarak-yeniden-düzenlemek" id="İşlevleri-kullanarak-yeniden-düzenlemek"><h4>İşlevleri kullanarak yeniden düzenlemek</h4></a>
-<p>Egzersiz programını birçok şekilde yeniden yapılandırabiliriz. Öncelikle, örnek 13-4’ te gösterildiği gibi, <code>simulated_expensive_calculation</code> işlevi için tekrarlanan çağrıyı bir değişkene çıkarmayı deneyeceğiz.</p>
+<p>Egzersiz programını birçok şekilde yeniden yapılandırabiliriz. Öncelikle, örnek 13-4' te gösterildiği gibi, <code>simulated_expensive_calculation</code> işlevi için tekrarlanan çağrıyı bir değişkene çıkarmayı deneyeceğiz.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -317,7 +311,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 <p>Bu değişiklik, <code>simulated_expensive_calculation</code> çağrılarını birleştirerek işlevi gereksiz yere iki kez çağıran ilk <code>if</code> bloğunun sorununu çözecektir. Fakat ne yazık ki, bu defa da sonuç değerini hiç kullanmayan iç <code>if</code> bloğu da dahil, her durumda sonucu beklemek zorunda kalıyoruz.</p>
 <p>Oysa biz bu kodu, programımızın tek bir yerinde tanımlamak ve sadece sonuca gerçekten ihtiyaç duyduğumuz yerde <em>çalıştırmak</em> istiyorduk. İşte bu durum tam da kapamaların kullanılmasını gerektiren bir durumdur.</p>
 <a class="header" href="#bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek" id="bir-kodu-kapama-işlevi-kullanarak-yeniden-düzenlemek"><h4>Bir kodu kapama işlevi kullanarak yeniden düzenlemek</h4></a>
-<p>Her <code>if</code> bloğu öncesinde <code>simulated_expensive_calculation</code> işlevini çağırmak yerine, örnek 13-5’te gösterildiği gibi bir <em>kapama</em> işlevi tanımlayabilir ve bu kapama işlevini bir değişkene depolayarak işlev çağrısı sonucunu saklamaktan kurtulabiliriz. Hatta gerektiğinde <code>simulated_expensive_calculation</code>‘ ın tüm gövdesini de bu kapama işlevine taşıyabiliriz.</p>
+<p>Her <code>if</code> bloğu öncesinde <code>simulated_expensive_calculation</code> işlevini çağırmak yerine, örnek 13-5'te gösterildiği gibi bir <em>kapama</em> işlevi tanımlayabilir ve bu kapama işlevini bir değişkene depolayarak işlev çağrısı sonucunu saklamaktan kurtulabiliriz. Hatta gerektiğinde <code>simulated_expensive_calculation</code>' ın tüm gövdesini de bu kapama işlevine taşıyabiliriz.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -360,7 +354,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 #}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-5: Bir kapama işlevinin <code>expensive_closure</code> değişkeninde saklanması</span></p>
-<p>Kapama tanımı <code>expensive_closure</code> değişkenine atanabilmesi için atama operatöründen sonra gerçekleştirilir. Bir kapamanın tanımlanmasına içinde kapama parametrelerinin yer alacağı bir çift dikey boru <code>(|)</code> ile başlanır. Bu sözdizimi, Smalltalk ve Ruby’deki kapama tanımlarına benzediğinden dolayı seçilmiştir. Örneğimizdeki kapama, <code>num</code> adında yalnızca bir parametreye sahip olduğundan <code>|num|</code> biçiminde ifade edilir: Eğer kullanmamız gereken çok sayıda parametremiz olsaydı, bu parametreleri yine çift boru içine <code>|param1, param2|</code> şeklinde virgüllerle ayırırarak kullanmamız gerekecekti.</p>
+<p>Kapama tanımı <code>expensive_closure</code> değişkenine atanabilmesi için atama operatöründen sonra gerçekleştirilir. Bir kapamanın tanımlanmasına içinde kapama parametrelerinin yer alacağı bir çift dikey boru <code>(|)</code> ile başlanır. Bu sözdizimi, Smalltalk ve Ruby'deki kapama tanımlarına benzediğinden dolayı seçilmiştir. Örneğimizdeki kapama, <code>num</code> adında yalnızca bir parametreye sahip olduğundan <code>|num|</code> biçiminde ifade edilir: Eğer kullanmamız gereken çok sayıda parametremiz olsaydı, bu parametreleri yine çift boru içine <code>|param1, param2|</code> şeklinde virgüllerle ayırırarak kullanmamız gerekecekti.</p>
 <p>Parametrelerin ardından, kapama gövdesini tutan kıvrımlı parantezleri yerleştirilir. Eğer kapama gövdesi tek bir ifadeden oluşuyorsa bu parantezleri kullanmak tercihinize bırakılır. <code>let</code> ifadesinin tamamlanabilmesi için kapamanın sonunda, yani kıvrımlı parantezin bitiminde, <strong><code>;</code></strong> noktalı virgülün kullanılması şarttır. İşlev gövdelerinde olduğu gibi kapama gövdelerindeki son değerler de döndürülen değer statüsünde olduklarından <em>(örneğimizde num)</em> noktalı virgül ile sonlandırılmazlar.</p>
 <p><code>expensive_closure</code> adındaki bu <code>let</code> ifadesinin; isimsiz işlevin çağrılmasıyla oluşan sonuç değerini değil, <strong>isimsiz işlev tanımını</strong> içerdiğine dikkat edin. Kapamaları: Bir noktada çağrılacak kodu tanımlamak, bu kodu saklamak ve programın ilerleyen safhalarında kendisine yeniden başvurabilmek için kullandığımızı unutmayın. Bu aşamada çağırmak istediğimiz kod artık <code>expensive_closure</code> içinde saklanmaya başlamıştır.</p>
 <p>Tanımlanan kapama işleviyle kodu yürüterek oluşan değeri elde etmek için <code>if</code> blokları arasındaki kodu değiştirebiliriz. Kapamaları, örnek 13-6’ da gösterilene benzer şekilde, tıpkı bir işlev çağırıyormuş gibi, kapama tanımını tutan değişken adını verip, parantez içindede alacağı bağımsız değişkenleri belirtirek çağırabiliyoruz.</p>
@@ -407,12 +401,12 @@ fn generate_workout(intensity: u32, random_number: u32) {
 </code></pre></pre>
 <p><span class="caption">Örnek 13-6: Tanımladığımız <code>expensive_closure</code> adlı kapama işlevini çağırmak</span></p>
 <p>Şimdi, pahalı hesaplama işlevi sadece tek bir yerde çağrılıyor ve bu kodu, sadece gerçekten sonuçlara ihtiyacımız olan yerde işletmiş oluyoruz.</p>
-<p>Bununla birlikte bu defa da, ilk <code>if</code> bloğundaki kapamayı iki kez çağırmakla örnek 13-3’teki sorunlardan biriyle yeniden karşılaşıyor ve bu pahalı kodu ikinci kez çağırılmasıyla, kullanıcının uzun zaman alan iki işlem boyunca beklemesine neden oluyoruz. Bu sorunu ilk <code>if</code> bloğu kapsamında, kapamayı çağıran ve elde ettiği sonucu tutan yerel bir değişken tanımlayarak çözümleyebiliriz. Ancak kapamalar bize başka bir çözüm sağlar. Bu çözüm hakkında konuşmaya başlamadan önce, neden kapama tanımında ek açıklamalar bulunmadığından ve kapalarla ilgili bazı özelliklerden bahsedelim.</p>
+<p>Bununla birlikte bu defa da, ilk <code>if</code> bloğundaki kapamayı iki kez çağırmakla örnek 13-3'teki sorunlardan biriyle yeniden karşılaşıyor ve bu pahalı kodu ikinci kez çağırılmasıyla, kullanıcının uzun zaman alan iki işlem boyunca beklemesine neden oluyoruz. Bu sorunu ilk <code>if</code> bloğu kapsamında, kapamayı çağıran ve elde ettiği sonucu tutan yerel bir değişken tanımlayarak çözümleyebiliriz. Ancak kapamalar bize başka bir çözüm sağlar. Bu çözüm hakkında konuşmaya başlamadan önce, neden kapama tanımında ek açıklamalar bulunmadığından ve kapalarla ilgili bazı özelliklerden bahsedelim.</p>
 <a class="header" href="#kapamalarda-tür-çıkarımı-ve-ek-açıklamalar" id="kapamalarda-tür-çıkarımı-ve-ek-açıklamalar"><h4>Kapamalarda tür çıkarımı ve ek açıklamalar</h4></a>
 <p>Kapamalar, <code>fn</code> işlevlerinin gerektirdiği gibi parametre türlerinde veya dönüş değerlerinde açıklama girilmesine ihtiyaç duymazlar. Bununla birlikte standart işlevler, kullanıcılara açık bir arayüzün parçaları olduklarından tür ek açıklamaları gerektirirler. İşlevin ne tür değerler kullandığı veya hangi türden değerler döndürdüğünün, tüm kullanıcılar tarafından açıkça anlaşılabilmesi için, bu arayüzü katı bir şekilde tanımlamak önemlidir. Ancak kapamalar böyle açık bir arayüzde kullanılmak yerine; değişkenlerde depolanmakta, isimsiz olarak kullanılmakta ve kütüphanemizin diğer kullanıcılarına gösterilmeden değerlendirilebilmektedir.</p>
 <p>Bir kapama işlevi genellikle kısa ve herhangi bir keyfi senaryodan ziyade, sadece dar bir bağlamda geçerlidir. Bu sınırlı bağlamda derleyici, değişken türlerinin çıkarsanmasına benzer şekilde, kapama parametre ve dönüş türlerini güvenli bir şekilde çıkarsayabilmektedir.</p>
 <p>Programcıların bu isimsiz ve küçük işlevlerdeki türlere açıklama eklemesi, derleyicinin zaten sahip olduğu bilgilerle oldukça can sıkıcı ve büyük ölçüde gereksiz olacaktır.</p>
-<p>Değişkenlerde olduğu gibi, açıklığı ve netliği gerekli olandan daha ayrıntılı olma pahasına artırmak istiyorsak, kapamalara da tür ek açıklamaları ekleyebiliriz. Örnek 13-5’te tanımladığımız kapama işlevinin kullanacağı türler için ekleyeceğimiz tür ek açıklamaları örnek 13-7’ deki kodda gösterilmektedir.</p>
+<p>Değişkenlerde olduğu gibi, açıklığı ve netliği gerekli olandan daha ayrıntılı olma pahasına artırmak istiyorsak, kapamalara da tür ek açıklamaları ekleyebiliriz. Örnek 13-5'te tanımladığımız kapama işlevinin kullanacağı türler için ekleyeceğimiz tür ek açıklamaları örnek 13-7' deki kodda gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration;
@@ -474,10 +468,10 @@ let n = example_closure(5);
 </code></pre>
 <p>Kapama işlevimiz olan <code>example_closure</code> dizgi değeri ile çağrıldığında, derleyici <code>x</code> parametresi ve dönüş türünü dizgi olarak algılar. Algılanan bu türler daha sonra <code>example_closure</code> içindeki kapamaya kilitlenir ve aynı kapama ile farklı bir tür kullanmaya çalışıldığında bir <em>uyumsuz tür</em> hatası ile karşılaşılır.</p>
 <a class="header" href="#jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak" id="jenerik-parametreler-ve-fn-özelliklerini-kullanarak-kapamaları-hafızaya-almak"><h3>Jenerik parametreler ve <code>Fn</code> özelliklerini kullanarak kapamaları hafızaya almak</h3></a>
-<p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6’ daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
+<p>Egzersiz planı üreten uygulamamıza geri dönecek olursak; örnek 13-6' daki kodumuz, halen pahalı hesaplama yapan kapama işlevimizi gerekenden daha fazla çağırmaktadır. Bu sorunu çözmenin bir yolu; maliyetli kapama sonucunu daha sonra yeniden kullanabilmek için bir değişkene kaydetmek ve kapama işlevini tekrar tekrar çağırmak yerine, sonuca ihtiyacımız olan yerde bu değişkeni kullanmaktır. Ancak, bu yöntem de çok sayıda kod tekrarı yapılmasını gerektirir.</p>
 <p>Neyse ki bizim için başka bir çözüm yolu daha var. Kapamayı tutacak bir yapı tanımlayıp, kapama çağrıldığında sonuç değerini o yapı üzerinden oluşturabiliriz. Tanımlayacağımız bu yapı kapamayı yalnızca sonuç değerine ihtiyaç duyduğumuzda işleterek sonucunu önbelleğe alacak, böylelikle kodun geri kalanı sonucu kaydetmek ve yeniden kullanmak zorunda kalmamış olacaktır. Bu kalıbı daha önceki tecrübelerinizden, <strong>tembel değerlendirmeler</strong> veya <strong>ezberleme</strong> olarak biliyor olabilirsiniz.</p>
-<p>Kapama tutabilen yapıların tanımlanabilmesi için, kapama işlevinin giriş ve dönüş türlerinin bildirilmesi gereklidir. Çünkü yapılar oluşturulurken sahip oldukları alanlar isimlendirildiklerinde türlerinin de bildirilmesi gerekmektedir. Her kapama örneğinin kendine özgü isimsiz türü olacağından, iki kapama aynı imzaya sahip olsalar bile, farklı türlerde oldukları kabul edilmektedir. Kapamaları kullanan <strong>yapı</strong>, <strong>enum</strong> veya <strong>işlev parametreleri</strong>ni tanımlarken Bölüm 10’da tartıştığımız <strong>jenerikler ve özellik sınırlarını</strong> da kullanabiliyoruz.</p>
-<p><code>Fn</code> özellikleriyse standart kütüphane tarafından sağlanmaktadır ve tüm kapama işlevleri; <code>Fn</code>, <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden en az birini uygular. Bu özelliklerin arasındaki farkları <a href="#kapamalar-ile-ortam-bilgilerini-elde-etmek">“Kapamalar ile ortam bilgilerini elde etmek”</a><!-- ignore --> bölümünde tartışacağız; bu örnek için, <code>Fn</code> özelliğini kullanmamızda sakınca yok.</p>
+<p>Kapama tutabilen yapıların tanımlanabilmesi için, kapama işlevinin giriş ve dönüş türlerinin bildirilmesi gereklidir. Çünkü yapılar oluşturulurken sahip oldukları alanlar isimlendirildiklerinde türlerinin de bildirilmesi gerekmektedir. Her kapama örneğinin kendine özgü isimsiz türü olacağından, iki kapama aynı imzaya sahip olsalar bile, farklı türlerde oldukları kabul edilmektedir. Kapamaları kullanan <strong>yapı</strong>, <strong>enum</strong> veya <strong>işlev parametreleri</strong>ni tanımlarken Bölüm 10'da tartıştığımız <strong>jenerikler ve özellik sınırlarını</strong> da kullanabiliyoruz.</p>
+<p><code>Fn</code> özellikleriyse standart kütüphane tarafından sağlanmaktadır ve tüm kapama işlevleri; <code>Fn</code>, <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden en az birini uygular. Bu özelliklerin arasındaki farkları <a href="#kapamalar-ile-ortam-bilgilerini-elde-etmek">&quot;Kapamalar ile ortam bilgilerini elde etmek&quot;</a><!-- ignore --> bölümünde tartışacağız; bu örnek için, <code>Fn</code> özelliğini kullanmamızda sakınca yok.</p>
 <p>Parametrelerin türlerini temsil etmek ve kapamaların bu özellik sınırıyla eşleşmesi gereken değerleri döndürmek için <code>Fn</code> özelliğine bağlı türler ekliyoruz. Bu durumda, kapama işlevinin <code>u32</code> türünde bir parametresi olacak ve bir <code>u32</code> türü döndüreceğinden belirttiğimiz özellik sınırı <code>Fn (u32) -&gt; u32</code> olacaktır.</p>
 <p>Örnek 13-9, bir kapama ve opsiyonel sonuç değeri tutan <code>Cacher</code> yapısının tanımını gösterir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
@@ -490,13 +484,13 @@ let n = example_closure(5);
 #fn main() {}
 </code></pre></pre>
 <p><span class="caption">Örnek 13-9: Bir <code>calculation</code> ve opsiyonel sonuç değerinden oluşan kapamayı tutan <code>Cacher</code> adlı yapının tanımlanması</span></p>
-<p><code>Cacher</code> yapısı, <code>T</code> türünde jenerik bir hesaplama alanına sahiptir. <code>T</code> üzerindeki özellik sınırları, bunun <code>Fn</code> özelliğini kullanmakta olan bir kapama olduğunu belirtir. Yapının <code>calculation</code> adlı hesaplama alanında saklamak istediğimiz tüm kapamaların <code>u32</code> türünden bir parametresi <em>(Fn’den sonra parantez içinde belirtilir)</em> bulunmalı ve bu kapamadan bir <code>u32</code> türünde <em>(-&gt; işaretinden sonra belirtilir)</em> değer döndürülmelidir.</p>
+<p><code>Cacher</code> yapısı, <code>T</code> türünde jenerik bir hesaplama alanına sahiptir. <code>T</code> üzerindeki özellik sınırları, bunun <code>Fn</code> özelliğini kullanmakta olan bir kapama olduğunu belirtir. Yapının <code>calculation</code> adlı hesaplama alanında saklamak istediğimiz tüm kapamaların <code>u32</code> türünden bir parametresi <em>(Fn'den sonra parantez içinde belirtilir)</em> bulunmalı ve bu kapamadan bir <code>u32</code> türünde <em>(-&gt; işaretinden sonra belirtilir)</em> değer döndürülmelidir.</p>
 <blockquote>
 <p>Not: İşlevler Fn özelliklerinin üçünü de uygulayabilir. Yapmak istediğimiz şey, ortamdan bir değer yakalamayı
 gerektirmiyorsa ve Fn özelliğini uygulayan bir şeye ihtiyacımız varsa kapatma yerine işlev kullanmayı tercih edebiliriz.</p>
 </blockquote>
 <p>Yapının <code>value</code> adındaki alanı <code>Option&lt;u32&gt;</code> türündedir. Kapama işletilmeden önce bu alan <code>None</code> varyantını göstermektedir. Eğer <code>Cacher</code> yapısını kullanan bir program kapamanın sonucunu isterse, yapı içerisindeki kapama işletilecek, bu defa da oluşan sonuç değeri <code>value</code> alanının <code>Some</code> varyantı içinde saklanacaktır. Eğer kapamanın sonucu bu program tarafından yeniden talep edilirse, sonuç zaten depolanmış olduğundan kapama tekrar işletilmeyecek, bu yapının <code>Some</code> varyantında tutulan değer döndürülecektir.</p>
-<p>Az önce tanımladığımız <code>value</code> alanının mantığı örnek 13-10’ da gösterilmektedir.</p>
+<p>Az önce tanımladığımız <code>value</code> alanının mantığı örnek 13-10' da gösterilmektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">struct Cacher&lt;T&gt;
 where
@@ -535,8 +529,8 @@ where
 <p>Bu yapıyı çağıracak olan kodun alanlardaki değerleri doğrudan değiştirmesini tercih etmek yerine, sadece yapı alanlarının değerleriyle ilgilenmesini istediğimizden bu alanları dışarıdan erişime kapatarak özelleştiriyoruz.</p>
 <p><code>Cacher::new</code> işlevi, <code>Cacher</code> yapısıyla aynı özelliğe bağlı olarak tanımladığımız jenerik <code>T</code> parametresi alır. Daha sonra kapama işlevini henüz gerçekleştirmemiş olduğundan <code>calculation</code> alanında belirtilen kapama değeri ve <code>value</code> alanındaki <code>None</code> değerinden oluşan bir <code>Cacher</code> örneği döndürür.</p>
 <p>Böylelikle kodu çağıran taraf, kapama işleminden elde edilen sonuca ihtiyaç duyduğunda, kapamayı doğrudan çağırmak yerine <code>value</code> yöntemini çağırmış olacaktır. Bu yöntem, <code>Some</code> varyantında <code>self.value</code> türünde bir değere sahip olup olmadığımızı kontrol eder. Bu değere sahipsek kapama bir daha işletilmez ve <code>Some</code> içinde depolanmakta olan değer döndürülür.</p>
-<p>Ancak <code>self.value</code> değeri <code>None</code> olarak görünüyorsa, kod <code>self.calculation</code>‘da depolanan kapamayı çağıracak, sonucu ileride kullanılmak üzere <code>self.value</code>‘ye kaydedecek ve oluşan değeri çağıran tarafa döndürecektir.</p>
-<p>Aşağıdaki örnek, <code>Cacher</code> yapısını örnek 13-6’da bulunan <code>create_workout</code> işlevinde nasıl kullanabileceğimizi göstermektedir.</p>
+<p>Ancak <code>self.value</code> değeri <code>None</code> olarak görünüyorsa, kod <code>self.calculation</code>'da depolanan kapamayı çağıracak, sonucu ileride kullanılmak üzere <code>self.value</code>'ye kaydedecek ve oluşan değeri çağıran tarafa döndürecektir.</p>
+<p>Aşağıdaki örnek, <code>Cacher</code> yapısını örnek 13-6'da bulunan <code>create_workout</code> işlevinde nasıl kullanabileceğimizi göstermektedir.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust">#use std::thread;
 #use std::time::Duration; 
@@ -610,9 +604,9 @@ fn generate_workout(intensity: u32, random_number: u32) {
 </code></pre></pre>
 <p><span class="caption">Örnek 13-11:Önbellek mantığını soyutlamak için <code>generate_workout</code> işlevinde Cacher yapısını kullanmak</span></p>
 <p>Böylelikle kapamayı doğrudan bir değişkene kaydetmek yerine, bu kapamayı tutması için yeni bir <code>Cacher</code> örneğini kaydediyoruz. Bu noktadan itibaren sonuca ihtiyacımız olan her yerde, <code>Cacher</code> yapısının bir örneğini oluşturup, <code>value</code> metodunu çağırırarak tembelce hesaplanan sonuca ulaşırız. Ayrıca pahalı hesaplama sonucunu döndüren <code>expensive_result</code> işlevi en fazla bir kez çağırılacağından <code>value</code> yöntemini çağırmak tercihimize kalmıştır.</p>
-<p>Bu programı örnek 13-2’ deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
+<p>Bu programı örnek 13-2' deki <code>main</code> işleviyle çalıştırmayı deneyin. Tüm <code>if</code> ve <code>else</code> bloklarında, <code>yavaşça hesaplanıyor...</code> çıktısının sadece bir kez ve gerektiğinde göründüğünü test edebilmeniz için <code>simulated_user_specified_value</code> ve <code>simulated_random_number</code> değişken değerlerini dilediğiniz kadar değiştirebilirsiniz. <code>Cacher</code> ön bellek yapısı, pahalı hesaplamayı ihtiyacımız kadar çağırarak <code>create_workout</code> iş mantığına rahatlıkla odaklanabilir.</p>
 <a class="header" href="#cacher-uygulamasının-kısıtlamaları" id="cacher-uygulamasının-kısıtlamaları"><h3>Cacher Uygulamasının Kısıtlamaları</h3></a>
-<p>Değerleri önbelleğe almak, kodumuzun diğer bölümlerinde genellikle farklı kapamalarda kullanmak isteyebileceğimiz yararlı bir davranıştır. Bununla birlikte, <code>Cacher</code>‘in mevcut uygulamasında, farklı bağlamlarda yeniden kullanılmasını zorlaştıracak iki sorun bulunmaktadır.</p>
+<p>Değerleri önbelleğe almak, kodumuzun diğer bölümlerinde genellikle farklı kapamalarda kullanmak isteyebileceğimiz yararlı bir davranıştır. Bununla birlikte, <code>Cacher</code>'in mevcut uygulamasında, farklı bağlamlarda yeniden kullanılmasını zorlaştıracak iki sorun bulunmaktadır.</p>
 <p>İlk sorun, bir <code>Cacher</code> örneğinin <code>value</code> metodunda bulunan <code>arg</code> parametresinin her zaman aynı değeri alacağı varsayılır. Yani, bu <code>Cacher</code> testi başarısız olacaktır:</p>
 <pre><code class="language-rust ignore panics">#struct Cacher&lt;T&gt;
 #where
@@ -661,7 +655,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
 }
 </code></pre>
 <p>Bu testte, kendisine iletilen değeri döndüren bir kapamayla yeni bir <code>Cacher</code> örneği oluşturulmaktadır. Örneğin <code>value</code> metodunu <code>arg</code> parametre değeri olarak önce 1, ardından 2 vererek çağırdığımızda; <code>arg</code> 2 değeriyle yaptığımız çağrının 2 değerini döndürmesini bekleriz.</p>
-<p>Oysa bu testi örnek 13-9 veya 13-10’daki <code>Cacher</code> uygulaması ile gerçekleştirdiğimizde program <code>assert_eq!</code>‘ de başarız olacak ve şu hata mesajını döndürecektir:</p>
+<p>Oysa bu testi örnek 13-9 veya 13-10’daki <code>Cacher</code> uygulaması ile gerçekleştirdiğimizde program <code>assert_eq!</code>' de başarız olacak ve şu hata mesajını döndürecektir:</p>
 <pre><code class="language-console">$ cargo test
    Compiling cacher v0.1.0 (file:///projects/cacher)
     Finished test [unoptimized + debuginfo] target(s) in 0.72s
@@ -686,12 +680,12 @@ test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
 
 error: test failed, to rerun pass '--lib'
 </code></pre>
-<p>Buradaki sorun, başlangıçta <code>c.value</code>‘yu 1 ile çağırdığımızda, Catcher örneğinin <code>Some(1)</code> değerini <code>self.value</code> içine kaydetmesinden kaynaklanmaktadır. Bu noktadan sonra, value yöntemine hangi değeri iletirsek iletelim, her zaman başlangıçta verdiğimiz 1 değerini döndürecektir.</p>
-<p><code>Cacher</code>‘ı tek bir değer yerine bir eşleme tablosu tutacak şekilde değiştirmeyi deneyin. <code>value</code> metoduna geçirilecek <code>arg</code> değerleri eşleme tablosunun anahtarlarını oluşturacak şekilde verildiğinde, eşleme tablosunun değerlerinde de kapama çağrılarının sonuçları tutulmuş olacaktır. Böylece <code>self.value</code> öğesinin doğrudan <code>Some</code> veya <code>None</code> değeri olup olmadığını kontrol etmek yerine, <code>value</code> işlevi eşleme tablosunun anahtarlarında <code>arg</code> öğesini arayacak bulduğu anda değerini döndürecektir. Eğer <code>arg</code> öğesi tabloda yoksa, <code>Cacher</code> tarafından kapama çağırılacak ve oluşan değer, <code>arg</code> değeriyle ilişkili eşleme tablosuna kaydedecektir.</p>
+<p>Buradaki sorun, başlangıçta <code>c.value</code>'yu 1 ile çağırdığımızda, Catcher örneğinin <code>Some(1)</code> değerini <code>self.value</code> içine kaydetmesinden kaynaklanmaktadır. Bu noktadan sonra, value yöntemine hangi değeri iletirsek iletelim, her zaman başlangıçta verdiğimiz 1 değerini döndürecektir.</p>
+<p><code>Cacher</code>'ı tek bir değer yerine bir eşleme tablosu tutacak şekilde değiştirmeyi deneyin. <code>value</code> metoduna geçirilecek <code>arg</code> değerleri eşleme tablosunun anahtarlarını oluşturacak şekilde verildiğinde, eşleme tablosunun değerlerinde de kapama çağrılarının sonuçları tutulmuş olacaktır. Böylece <code>self.value</code> öğesinin doğrudan <code>Some</code> veya <code>None</code> değeri olup olmadığını kontrol etmek yerine, <code>value</code> işlevi eşleme tablosunun anahtarlarında <code>arg</code> öğesini arayacak bulduğu anda değerini döndürecektir. Eğer <code>arg</code> öğesi tabloda yoksa, <code>Cacher</code> tarafından kapama çağırılacak ve oluşan değer, <code>arg</code> değeriyle ilişkili eşleme tablosuna kaydedecektir.</p>
 <p>Bu uygulamadaki ikinci sorun ise yalnızca <code>u32</code> türünde parametre alması ve <code>u32</code> türünde değer döndüren kapamaları kabul etmesidir. Örneğin, bir dizgi dilimi alan ve <code>usize</code> değerleri döndüren kapama sonuçlarını önbelleğe almak isteyebiliriz. Bu sorunu gidermek ve <code>Cacher</code> işlevinin esnekliğini artırmak için jenerik parametreler eklemeyi deneyin.</p>
 <a class="header" href="#a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek" id="a-namekapamalar-ile-ortam-bilgilerini-elde-etmekakapamalar-ile-ortam-bilgilerini-elde-etmek"><h3><a name="kapamalar-ile-ortam-bilgilerini-elde-etmek"></a>Kapamalar ile ortam bilgilerini elde etmek</h3></a>
 <p>Egzersiz planı oluşturan örneğimizde, kapamaları sadece satır içi isimsiz işlevler olarak kullandık. Bununla birlikte kapamalar, işlevlerin sahip olmadığı ek bir yeteneğe sahiplerdir: ortam bilgilerini yakalayabilir ve tanımlandıkları kapsamdan değişkenlere erişebilirler.</p>
-<p>Örnek 13-12’de, tanımlandığı kapsamda bulunan <code>x</code> değişkenini <code>equal_to_x</code> adlı değişkene depolayarak kullanan bir kapama örneği sunulmaktadır.</p>
+<p>Örnek 13-12'de, tanımlandığı kapsamda bulunan <code>x</code> değişkenini <code>equal_to_x</code> adlı değişkene depolayarak kullanan bir kapama örneği sunulmaktadır.</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><pre class="playpen"><code class="language-rust"> fn main() {
     let x = 4;
@@ -744,10 +738,10 @@ To learn more, run the command again with --verbose.
 <li><code>FnMut</code> Değişebilen değerleri ödünç aldığı için ortamı değiştirebilir.</li>
 <li><code>Fn</code> ortamdaki değerleri değişmez olarak ödünç alır.</li>
 </ul>
-<p>Bir kapama oluşturduğunuzda, Rust, kapamanın ortamdaki değerleri nasıl kullandığına bağlı olarak hangi özelliğin kullanılacağını otomatik olarak belirler. Tüm kapamalar <code>FnOnce</code>‘i uygular, çünkü hepsi en az bir kez çağrılabilir. Yakalanan değişkenleri taşımayan kapamalar da <code>FnMut</code>‘u uygularlar. Yakalanan değişkenlere değiştirilebilir erişim gerektirmeyen kapamalar ise <code>Fn</code>‘i uygularlar.
-Örnek 13-12’de <code>equal_to_x</code> değişkenine depolanan kapama, değişmez olarak tanımlanan <code>x</code> değişkenini, değişmez olarak ödünç alır; yani <code>equal_to_x</code> <code>Fn</code> özelliğine sahiptir, çünkü kapama gövdesinin sadece <code>x</code> değerini okuması gerekmektedir.</p>
+<p>Bir kapama oluşturduğunuzda, Rust, kapamanın ortamdaki değerleri nasıl kullandığına bağlı olarak hangi özelliğin kullanılacağını otomatik olarak belirler. Tüm kapamalar <code>FnOnce</code>'i uygular, çünkü hepsi en az bir kez çağrılabilir. Yakalanan değişkenleri taşımayan kapamalar da <code>FnMut</code>'u uygularlar. Yakalanan değişkenlere değiştirilebilir erişim gerektirmeyen kapamalar ise <code>Fn</code>'i uygularlar.
+Örnek 13-12'de <code>equal_to_x</code> değişkenine depolanan kapama, değişmez olarak tanımlanan <code>x</code> değişkenini, değişmez olarak ödünç alır; yani <code>equal_to_x</code> <code>Fn</code> özelliğine sahiptir, çünkü kapama gövdesinin sadece <code>x</code> değerini okuması gerekmektedir.</p>
 <p>Kapamaları ortamlarından kullandığı değerlerin mülkiyetini almaya zorlamak istiyorsanız, parametre listesinden önce <code>move</code> anahtar sözcüğünü kullanabilirsiniz. Bu teknik, verilerin mülkiyetlerinin işlenmek üzere yeni iş parçasına aktarırken oldukça yararlıdır.</p>
-<p>Bölüm 16’da eşzamanlılık hakkında konuşurken, kapamaların taşınması hakkında daha fazla örnek vereceğiz. Ancak şimdilik, tam sayılar taşınmak yerine kopyalandıklarından, bunların yerine vektör kullanan ve tanımına <code>move</code> anahtar sözcüğü ekleyerek yeniden düzenlediğimiz kapama işlevini gösteren örnek 13-12’yi sunalım. Bu kodun henüz derlenmeyeceğini unutmayın:</p>
+<p>Bölüm 16’da eşzamanlılık hakkında konuşurken, kapamaların taşınması hakkında daha fazla örnek vereceğiz. Ancak şimdilik, tam sayılar taşınmak yerine kopyalandıklarından, bunların yerine vektör kullanan ve tanımına <code>move</code> anahtar sözcüğü ekleyerek yeniden düzenlediğimiz kapama işlevini gösteren örnek 13-12'yi sunalım. Bu kodun henüz derlenmeyeceğini unutmayın:</p>
 <p><span class="filename">Dosya adı: src/main.rs</span></p>
 <pre><code class="language-rust ignore does_not_compile">fn main() {
     let x = vec![1, 2, 3];
@@ -787,7 +781,7 @@ error: could not compile `equal-to-x'.
 To learn more, run the command again with --verbose.
 
 </code></pre>
-<p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>‘in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>‘i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
+<p>Kapama tanımlanırken <code>move</code> anahtar sözcüğü eklediğimizden <code>x</code> değeri kapamaya taşınır. Artık <code>x</code>'in mülkiyeti kapamaya ait olduğundan <code>main</code> işlevindeki <code>println!</code> ifadesinde <code>x</code>'i kullanılmasına izin verilmez. Sorunun giderilmesi için <code>println!</code> ifadesinin kaldırılması yeterli olacaktır.</p>
 <p>Nihayetinde derleyici, kapama gövdesini analiz ederek <code>FnMut</code> veya <code>FnOnce</code> özelliklerinden hangisine ihtiyacınız olup olmadığını söyleyeceğinden, özellik sınırlarından birini belirlerken, <code>Fn</code> ile başlamak çoğu zaman iyi fikirdir.</p>
 <p>Ortamlarını yakalayabilen kapamaların işlev parametreleri olarak kullanılmasının yararlı olduğu durumları daha iyi gösterebilmek için bir sonraki Yineleyiciler başlığımıza geçelim.</p>
 
@@ -829,24 +823,22 @@ To learn more, run the command again with --verbose.
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         

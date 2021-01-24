@@ -3,9 +3,9 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Giriş - Rust Programlama Dili</title>
+        <title>Giriş - </title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="Rust Programlama Dili Resmi Kitabı Türkçe çevirisi">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -26,8 +26,6 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-        <link rel="stylesheet" href="custom.css">
         
 
         
@@ -107,15 +105,11 @@
                             
                         </div>
 
-                        <h1 class="menu-title">Rust Programlama Dili</h1> 
+                        <h1 class="menu-title"></h1> 
 
                         <div class="right-buttons">
                             <a href="print.html" title="Print this book" aria-label="Print this book">
                                 <i id="print-button" class="fa fa-print"></i>
-                            </a>
-                            
-                            <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler" title="Git repository" aria-label="Git repository">
-                                <i id="git-repository-button" class="fa fa-github"></i>
                             </a>
                             
                         </div>
@@ -148,15 +142,15 @@
                     <main>
                         <a class="header" href="#giriş" id="giriş"><h1>Giriş</h1></a>
 <blockquote>
-<p>Not: Kitabın bu baskısı <a href="https://nostarch.com/rust">basılı</a> ve <a href="https://nostarch.com/">e-kitap</a> biçiminde
+<p>Not: Kitabın orijinal dilindeki sürümü <a href="https://nostarch.com/rust">basılı</a> ve <a href="https://nostarch.com/">e-kitap</a> biçiminde
 No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 </blockquote>
-<p>Rust üzerine bir giriş kitabı olan Rust Programlama Dili’e hoş geldiniz. Rust programlama dili, daha hızlı ve daha güvenilir programlar yazmanıza yardımcı olur. Programlama dili tasarımlarında üst düzey ergonomi ile düşük seviyeli kontrol, genel bir anlaşmazlık halindedir ve Rust bu çatışmaya meydan okur. Bellek kullanımı gibi geleneksel olarak düşük seviyeli kontrol ile ilişkilendirilen tüm zorlukları ortadan kaldırırken, sağladığı güçlü teknik kapasite ve olağanüstü geliştirici deneyimini dengeleyerek bu ayrıntıları rahatlıkla kontrol etmenizi sağlar.</p>
+<p>Rust üzerine bir giriş kitabı olan Rust Programlama Dili'ne hoş geldiniz. Rust programlama dili, daha hızlı ve daha güvenilir programlar yazmanıza yardımcı olur. Programlama dili tasarımlarında üst düzey ergonomi ile düşük seviyeli kontrol, genel bir anlaşmazlık halindedir ve Rust bu çatışmaya meydan okur. Bu olağanüstü tasarım bir yandan bellek kullanımı gibi geleneksel olarak düşük seviyeli kontrol ile ilişkilendirilen tüm zorlukları ortadan kaldırırken, diğer yandan sağladığı güçlü teknik kapasite ve olağanüstü geliştirici deneyimini dengeleyerek bu ayrıntıları rahatlıkla kontrol etmenizi sağlar.</p>
 <a class="header" href="#rust-kimler-İçin" id="rust-kimler-İçin"><h2>Rust Kimler İçin</h2></a>
-<p>Rust, çeşitli nedenlerle birçok insan için idealdir. En önemli gruplardan birkaçına bakalım.</p>
-<a class="header" href="#geliştirici-ekipler" id="geliştirici-ekipler"><h3>Geliştirici Ekipler</h3></a>
-<p>Rust, sistem programlama bilgileri farklı düzeylerde olan kalabalık geliştirici ekipleri arasında işbirliğini tesis eden verimli bir araç olduğunu kanıtlıyor. Düşük seviyeli kod, pek çok dilde kapsamlı testler ve deneyimli geliştiriciler tarafından, kodun dikkatle incelenmesiyle yakalanabilen çözümü zor hatalara eğilimlidir. Rust derleyicisi, eşzamanlılık hataları dahil bu türden hatalı kodların derlenmesini reddederek adeta bir bekçi rolü oynar. Derleyiciyle birlikte çalışan geliştirici ekibi, değerli zamanlarını hataları takip etmek yerine, programın mantığına odaklanarak geçirebilirler.</p>
-<p>Rust ayrıca sistem programlama dünyasına çağdaş geliştirici araçları da getiriyor:</p>
+<p>Rust, çeşitli nedenlerden dolayı pek çok insan için idealdir. Bu insanların ait olduğu önemli üretim gruplardan birkaçına bakalım.</p>
+<a class="header" href="#geliştirici-ekipleri" id="geliştirici-ekipleri"><h3>Geliştirici Ekipleri</h3></a>
+<p>Rust, sistem programlama bilgileri farklı düzeylerde olan kalabalık geliştirici ekipleri arasında işbirliğini tesis eden verimli bir araç olduğunu kanıtlıyor. Düşük seviyeli kod, pek çok dilde kapsamlı testler ve deneyimli geliştiriciler tarafından, kodun dikkatle incelenmesiyle yakalanabilen çözümü zor hatalara eğilimlidir. Rust derleyicisi, eşzamanlılık hataları dahil bu türden hatalı kodların derlenmesini reddederek adeta bir bekçi rolü oynar. Böylelikle derleyiciyi takımın bir üyesi olarak gören geliştirici ekibi, değerli zamanlarını hataları takip etmek yerine, programın mantığına odaklanarak geçirebilirler.</p>
+<p>Rust ayrıca sistem programlama dünyasına çağdaş geliştirici araçları da sunar:</p>
 <ul>
 <li>Rust ile birlikte gelen bağımlılık yöneticisi ve derleme aracı olan Cargo, Rust ekosisteminde bağımlılıkları ekleme, derleme ve yönetmeyi sancısız ve tutarlı hale getirir.</li>
 <li>Rustfmt ise geliştiriciler arasında tutarlı bir kodlama tarzı oluşturur.</li>
@@ -164,16 +158,53 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
 </ul>
 <p>Bunlar ve Rust ekosistemindeki diğer araçları kullanan geliştiriciler sistem düzeyinde kod yazarken daha üretken olabilirler.</p>
 <a class="header" href="#Öğrenciler" id="Öğrenciler"><h3>Öğrenciler</h3></a>
-<p>Rust, öğrenciler ve sistem kavramları hakkında bilgi edinmek isteyenler içindir. Pek çok kişi Rust kullanarak işletim sistemleri geliştirmek gibi konuları öğrendi. Rust topluluğu oldukça misafirperver olup öğrencilerin sorularını yanıtlamaktan mutluluk duyacaktır. Rust ekipleri sistem kavramlarını bu kitaba benzer çabalar üzerinden öncelikle programlamaya yeni başlayanlar olmak üzere daha fazla kişi için erişilebilir kılmak istiyor.</p>
+<p>Rust, öğrenciler ve sistem kavramlarını öğrenmekle ilgilenenler için tasarlanmıştır. Pek çok kişi Rust kullanarak işletim sistemleri geliştirme gibi alanları öğrenmiştir. Rust topluluğu oldukça misafirperver olup öğrencilerin sorularını heves ve heyacanla yanıtlamaktan çekinmezler. Bu kitap gibi girişimler aracılığıyla Rust ekipleri, sistem konseptlerini mümkün olduğunca çok kişi için, özellikle de programlamaya yeni başlayanlar için erişebilir hale getirmek istiyorlar.</p>
 <a class="header" href="#Şirketler" id="Şirketler"><h3>Şirketler</h3></a>
-<p>Büyüklü küçüklü yüzlerce şirket üretimlerinde çeşitli görevler için Rust’ı kullanıyorlar. Bu görevler arasında komut satırı araçları, web hizmetleri, DevOps araçları, gömülü cihazlar, ses, video analizi ve kod dönüştürme, kripto para birimleri, biyoinformatik, arama motorları, IOT uygulamaları, makine öğrenimi ve hatta Firefox web tarayıcısının önemli bölümleri bile bulunmakta.</p>
+<p>Büyüklü küçüklü yüzlerce şirket üretimlerinde çeşitli görevler için Rust'ı kullanıyorlar. Bu görevler arasında komut satırı araçları, web hizmetleri, DevOps araçları, gömülü cihazlar, ses, video analizi ve kod dönüştürme, kripto para birimleri, biyoinformatik, arama motorları, IOT uygulamaları, makine öğrenimi ve hatta Firefox web tarayıcısının önemli bölümleri bile bulunmakta.</p>
 <a class="header" href="#açık-kaynak-geliştiricileri" id="açık-kaynak-geliştiricileri"><h3>Açık Kaynak Geliştiricileri</h3></a>
 <p>Rust, Rust programlama dili, topluluğu, geliştirici araçları ve kütüphanelerinin oluşumuna katkı sağlamak isteyen kişiler içindir. Rust diline katkıda bulunmanızı çok isteriz.</p>
 <a class="header" href="#hız-ve-İstikrara-değer-verenler" id="hız-ve-İstikrara-değer-verenler"><h3>Hız ve İstikrara Değer Verenler</h3></a>
-<p>Biz hızdan bahsederken, hem Rust ile oluşturabileceğiniz programların hızından, hem de Rust’ın kodlama sürecinde sağladığı hızdan bahsediyoruz. Bu sebepten Rust, bir dilden hız bekleyenler içindir.</p>
-<p>Rust derleyicisinin kontrolleri özellik ekleme ve yeniden düzenleme aşamalarında kararlılık sağladığından, bu kontrollerin yapılamadığı dillerde geliştiricilerin eski ve kırılgan kodları değiştirmekten korktukları sürecin tam tersidir. Bu nedenle Rust, bir dilden istikrar bekleyenler içindir,</p>
-<p>Sıfır maliyetli soyutlamalar için çabalayan Rust, elle yazılan kodlar kadar çabuk düşük seviyeli kodlara derlenen üst düzey özellikler için gayret ederken, güvenli çalışan kodu hızlı çalışan bir kod haline getirmeye uğraşır. Dolayısıyla Rust, hız ve istikrar bekleyenler içindir!</p>
-<!-- Çeviride kaldığım yer -->
+<p>Rust, bir dilden hız ve istikrar bekleyenler içindir.
+Aslında hız demekle, hem Rust ile oluşturabileceğiniz programların hızını, hem de Rust'ın kodlama sürecinde sağladığı hızı kastediyoruz. Rust'ın derleyici kontrolleri, yeni özellik ekleme ve kodun yeniden düzenlenmesi aşamalarında kararlılık sağlaması onu, benzer denetimlerin olmadığı, geliştiricilerin genellikle değişiklik yapmaktan kaçındıkları programlama dillerinden ayırır. Rust'ın sıfır maliyetli soyutlamarı, elle yazılmış kodlar kadar hızlı çalışan düşük seviyeli kodlara derlenirken, daha fazla üst düzey işlevsellik arayışındaki Rust, güvenle çalışan kodu hızlı çalışan bir kod haline getirmeye çalışır.</p>
+<p>Burada bahsedilen büyük ilgi gurupları dışında Rust, değişik konu ve geliştirme alanlarıyla alakalı pekçok kullanıcıya da destek olmayı umuyor. Sonuç olarak Rust'ın hedefi, geliştiricilerin onlarca yıldır verdiği ödünleri, güvenlik, üretkenlik, hız ve kullanılabilirlik sağlayarak ortadan kaldırmaktır. Rust'ın bu olanaklarını deneyerek sizin için yararlı olup olmayacağına karar verin.</p>
+<a class="header" href="#bu-kitap-kimler-İçin" id="bu-kitap-kimler-İçin"><h2>Bu Kitap Kimler İçin</h2></a>
+<p>Bu kitap handisi olduğundan bağımsız halihazırda başka bir programlama dilinde kod yazdığınız varsayar. Kitabın içeriğini farklı programlama geçmişlerine sahip geniş bir izleyici kitlesi için erişilebilir kılmaya çalıştık. Kitapta programlamanın ne olduğu veya nasıl düşünülmesi gerektiği konusuna zaman ayırmadık. Eğer programlama konusunda yeniyseniz, işe programlamaya giriş konusunda yazılmış kitaplardan başlamanızı öneririz.</p>
+<a class="header" href="#bu-kitap-nasıl-kullanılır" id="bu-kitap-nasıl-kullanılır"><h2>Bu Kitap Nasıl Kullanılır</h2></a>
+<p>Genel olarak bu kitabın baştan sona doğru sırayla okunması amaçlanmıştır. Sonraki bölümler, önceki bölümlerde işlenen kavramlar üzerine inşa edilmektedir. Genellikle önceki bölümlerde etraflıca incelenmeyen konuların ayrıntılarına daha sonraki bölümlerde değinilmektedir. Bu kitapta, kavramsal ve proje olarak ayrıştırılmış iki ayrı kısım bulunmaktadır. Rust hakkındaki bilinmesi gereken konular kavramsal kısımda işlenirken, öğrenilen konuların uygulamalarını proje kısmında gerçekleştireceğiz. Kitabın 2, 12 ve 20. bölümleri proje kısmını, diğer bölümler ise kavramsal kısmını oluşturmaktadır.</p>
+<p>Bölüm 1, Rust'ın nasıl kurulacağını, bir &quot;Merhaba Dünya&quot; programının nasıl yazılacağını, Rust'ın paket yöneticisi ve yapım aracı olan Cargo'nun nasıl kurulacağını anlatır.</p>
+<p>Bölüm 2, Rust diline uygulamalı giriş olarak tasarlandığından, bu bölümde işlenen yüksek düzeydeki kavramların ayrıntılarına sonraki bölümlerde değinilecektir. Kodlarla hemen haşır neşir olmak isteyenler için bu bölüm kol ve paçaların sıvanacağı yerdir.</p>
+<p>İstiyorsanız şimdilik Rust'ın diğer programlama dillerindeki benzer özelliklerini tartıştığımız 3. Bölümü atlayarak, Rust'ın mülkiyet sistemini öğrenmek amacıyla doğrudan kitabın 4. Bölümüne atlamak isteyebilirsiniz. Bununla birlikte, bir sonraki bölüme geçmeden önce her bir özelliği etraflıca öğrenmeyi tercih eden titiz bir öğrenciyseniz, proje kısmı olan 2. Bölümü  atlayarak doğrudan 3. Bölüme geçebilir, daha sonra etraflıca öğrendiklerinizi uygulamak üzere yeniden 2. Bölüme dönebilirsiniz.</p>
+<p>Bölüm 5, yapılar ve bundan böyle metot olarak adlandıracağımız yapı işlevlerini, Bölüm 6 ise, numaralandırmalar (enums), örüntü eşleme ifadeleri (match expressions) ve if let kontrol akış yapılarını içerir. Rust'ta özel türlerinizi oluştururken yapılar ve numaralandırmalardan fazlasıyla yararlanacaksınız.</p>
+<p>Bölüm 7 ise, kodunuz ve genel uygulama programlama arayüzünü (API) düzenleyebilmek için Rust'ın modül sistemi ve görünürlük kuralları hakkında bilgi verir.</p>
+<p>Bölüm 8, vektörler, diziler ve eşleme haritaları (hash maps) gibi standart kütüphane tarafından sağlanan yaygın veri yapılarını anlatır.</p>
+<p>Bölüm 9'da ise Rust'ın hata işleme felsefesini ve tekniklerini inceleyeceğiz.</p>
+<p>Bölüm 10, farklı türlerin tek bir türmüş gibi davranabileği kodları yazmanıza olanak sağlayan genellenmiş veri türleri (generics), özellikler ve yaşam süreleri hakkında ayrıntılı bilgiler içerir.</p>
+<p>Bölüm 11 ise, Rust'ın güvenlik garantilerine rağmen program mantığınızın doğru olup olmadığından emin olabilmeniz için gerekli olan testlerle ilgilidir.</p>
+<p>Bölüm 12'de, metni dosyalarda arayan grep komut satırı aracından bir işlev alt kümesi oluştururken, önceki bölümlerde öğrendiğimiz kavramların çoğunu kullanacağız.</p>
+<p>Bölüm 13, Rust'ın işlevsel programlama dillerinden esinlendiği özellikler olan kapamalar ve yineleyicilere odaklanıyor.</p>
+<p>Bölüm 14'te, Cargo'yu derinlemesine inceleyecek, kendi kütüphanelerinizi başkalarıyla paylaşmanın en iyi yollarından bahsedeceğiz.</p>
+<p>Bölüm 15, standart kütüphanenin sunduğu akıllı işaretçileri ve bu işaretçilerin işlevselliğini sağlayan özellikleri anlatır.
+ust ak kabul edilen belirli özellikleri ve bu özelliklerin deyimsel Rust'a nasıl dönüştürüldüğünü inceler.</p>
+<p>Bölüm 18, Rust programlarında fikirleri ifade etmenin güçlü birer yolu olan örüntüler ve örüntü eşleştirme üzerine bir başvuru kaynağıdır.
+Liste gibi bir dizi ilginç ve gelişmiş konuları içerir.</p>
+<p>Bölüm 20'de, eşzamanlı çoklu görevleri düşük seviyede bir program olarak çalıştıran web sunucusu projesini bitireceğiz.</p>
+<p>Son olarak dil hakkında başvuru niteliğinde yararlı bilgiler içeren bazı ekler aşağıda listelenmektedir.
+Ek A, Rust'ın anahtar kelimelerini içerirç
+Ek B, Rust programlama dilinin işleç ve sembollerine yer verir.
+Ek C, Standart kütüphanenin sağladığı türetilebilir özellikleri kapsar.
+Ek D, Bazı faydalı geliştirme araçlarına atıfta bulunur.
+Ek E'de ise, Rust'ın sürümlerine yer verilmektedir.</p>
+<p>Öğrenim sürenizce kitabın bazı bölümleri atlamak isterseniz, bunun kitabı yanlış okuduğunuz anlamına gelmediğini bilin ve bunu yapmaktan çekinmeyin. Herhangi bir güçlükle karşılaştığınızda önceki bölümlere dönmeniz gerekse bile size uygun olan öğrenim yolunu uygulamaktan çekinmeyin.</p>
+<p>Rust öğrenme sürecinin önemli bir parçası, derleyicinin görüntülediği hata mesajlarının nasıl okunacağını öğrenmektir. Bu mesajlar sizi doğru koda yönlendireceğinden, pekçok hata senaryosunu içeren derlenmeyen örnekler vereceğiz. Rastgele bir örneği kopyalayıp çalıştırır ve bir hata alırsanız bunun hata gösterim örneği olup olmadığını anlamak için ilişkili metni okuduğunuzdan emin olun. Maskotumuz Ferris'i dikkatle takip ederseniz, çalışmaması gereken kodları kolayca anlayabilirsiniz.</p>
+<table><thead><tr><th> Ferris                                                                 </th><th> Anlamı                                          </th></tr></thead><tbody>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/does_not_compile.svg" class="ferris-explain"/>    </td><td> Bu kod derlenmez!                      </td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/panics.svg" class="ferris-explain"/>              </td><td> Bu kod panik üretir!                   </td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/unsafe.svg" class="ferris-explain"/>              </td><td> Bu kod bloğu güvenli olmayan kod içerir.</td></tr>
+<tr><td> <img src="https://github.com/rust-lang/book/raw/master/src/img/ferris/not_desired_behavior.svg" class="ferris-explain"/></td><td> Bu kod beklenen davranışı üretmiyor. </td></tr>
+</tbody></table>
+<p>Çoğu durumda, hangi kod sürümünün çalışması gerektiğine dair sizi yönlendireceğiz.</p>
+<a class="header" href="#kaynak-kodu" id="kaynak-kodu"><h2>Kaynak Kodu</h2></a>
+<p>Bu kitabın oluşmasını sağlayan kaynak kodlara <a href="https://github.com/RustDili/dokuman/tree/master/ceviriler">Github</a> üzerinden ulaşabilirsiniz.</p>
 
                     </main>
 
@@ -213,24 +244,22 @@ No Starch Press üzerinde ve orijinal dilinde sunulmaktadır.</p>
         </div>
 
         
-
-        
-        <!-- Google Analytics Tag -->
+        <!-- Livereload script (if served using the cli tool) -->
         <script type="text/javascript">
-            var localAddrs = ["localhost", "127.0.0.1", ""];
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload(true); // force reload from server (not from cache)
+                }
+            };
 
-            // make sure we don't activate google analytics if the developer is
-            // inspecting the book locally...
-            if (localAddrs.indexOf(document.location.hostname) === -1) {
-                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-                ga('create', 'UA-123456-7', 'auto');
-                ga('send', 'pageview');
+            window.onbeforeunload = function() {
+                socket.close();
             }
         </script>
+        
+
         
 
         
